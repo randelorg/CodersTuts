@@ -1,0 +1,10 @@
+E:\2ND YEAR - 2ND SEM\databaseSubject\DellRainInventorySystem\DellRainInventorySystem\bin\Debug\DellRainInventorySystem.exe.config
+E:\2ND YEAR - 2ND SEM\databaseSubject\DellRainInventorySystem\DellRainInventorySystem\bin\Debug\DellRainInventorySystem.exe
+E:\2ND YEAR - 2ND SEM\databaseSubject\DellRainInventorySystem\DellRainInventorySystem\bin\Debug\DellRainInventorySystem.pdb
+E:\2ND YEAR - 2ND SEM\databaseSubject\DellRainInventorySystem\DellRainInventorySystem\obj\Debug\DellRainInventorySystem.csprojAssemblyReference.cache
+E:\2ND YEAR - 2ND SEM\databaseSubject\DellRainInventorySystem\DellRainInventorySystem\obj\Debug\DellRainInventorySystem.Form1.resources
+E:\2ND YEAR - 2ND SEM\databaseSubject\DellRainInventorySystem\DellRainInventorySystem\obj\Debug\DellRainInventorySystem.index.resources
+E:\2ND YEAR - 2ND SEM\databaseSubject\DellRainInventorySystem\DellRainInventorySystem\obj\Debug\DellRainInventorySystem.Properties.Resources.resources
+E:\2ND YEAR - 2ND SEM\databaseSubject\DellRainInventorySystem\DellRainInventorySystem\obj\Debug\DellRainInventorySystem.csproj.GenerateResource.cache
+E:\2ND YEAR - 2ND SEM\databaseSubject\DellRainInventorySystem\DellRainInventorySystem\obj\Debug\DellRainInventorySystem.exe
+E:\2ND YEAR - 2ND SEM\databaseSubject\DellRainInventorySystem\DellRainInventorySystem\obj\Debug\DellRainInventorySystem.pdb
