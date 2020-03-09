@@ -27,6 +27,7 @@ namespace DellRainInventorySystem
         {
             bg1.BackColor = Color.FromArgb(26,95,149);
             bg2.BackColor = Color.FromArgb(46, 187, 163);
+            bgTools.BackColor = Color.FromArgb(115, 187, 163);
             lbReports.BackColor = Color.FromArgb(46, 187, 163);
             lbInventory.BackColor = Color.FromArgb(26, 95, 149);
         }
@@ -39,6 +40,7 @@ namespace DellRainInventorySystem
             bg2.FlatAppearance.BorderSize = 0;
             bg1.FlatAppearance.BorderSize = 0;
             bg2.FlatAppearance.BorderSize = 0;
+            bgTools.FlatAppearance.BorderSize = 0;
         }
 
         private void btnYourAccount_MouseHover(object sender, EventArgs e) => btnYourAccount.ForeColor = Color.White;
@@ -60,5 +62,11 @@ namespace DellRainInventorySystem
         private void Inventory_MouseHover(object sender, EventArgs e) => lbInventory.Show();
 
         private void Inventory_MouseLeave(object sender, EventArgs e) => lbInventory.Hide();
+
+        private void btnYourAccount_Click(object sender, EventArgs e)
+        {
+            YourAccount account = new YourAccount();
+            account.Show();
+        }
     }
 }

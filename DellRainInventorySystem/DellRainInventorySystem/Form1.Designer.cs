@@ -127,9 +127,11 @@
             // 
             // pbStoreLogo
             // 
+            this.pbStoreLogo.Image = global::DellRainInventorySystem.Properties.Resources.store;
             this.pbStoreLogo.Location = new System.Drawing.Point(28, 46);
             this.pbStoreLogo.Name = "pbStoreLogo";
             this.pbStoreLogo.Size = new System.Drawing.Size(354, 353);
+            this.pbStoreLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pbStoreLogo.TabIndex = 1;
             this.pbStoreLogo.TabStop = false;
             // 

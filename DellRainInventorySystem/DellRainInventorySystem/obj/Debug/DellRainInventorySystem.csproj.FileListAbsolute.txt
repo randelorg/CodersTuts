@@ -8,3 +8,14 @@ E:\2ND YEAR - 2ND SEM\databaseSubject\DellRainInventorySystem\DellRainInventoryS
 E:\2ND YEAR - 2ND SEM\databaseSubject\DellRainInventorySystem\DellRainInventorySystem\obj\Debug\DellRainInventorySystem.csproj.GenerateResource.cache
 E:\2ND YEAR - 2ND SEM\databaseSubject\DellRainInventorySystem\DellRainInventorySystem\obj\Debug\DellRainInventorySystem.exe
 E:\2ND YEAR - 2ND SEM\databaseSubject\DellRainInventorySystem\DellRainInventorySystem\obj\Debug\DellRainInventorySystem.pdb
+D:\dev 2nd year_2nd sem\CodersTuts\DellRainInventorySystem\DellRainInventorySystem\bin\Debug\DellRainInventorySystem.exe.config
+D:\dev 2nd year_2nd sem\CodersTuts\DellRainInventorySystem\DellRainInventorySystem\bin\Debug\DellRainInventorySystem.exe
+D:\dev 2nd year_2nd sem\CodersTuts\DellRainInventorySystem\DellRainInventorySystem\bin\Debug\DellRainInventorySystem.pdb
+D:\dev 2nd year_2nd sem\CodersTuts\DellRainInventorySystem\DellRainInventorySystem\obj\Debug\DellRainInventorySystem.csprojAssemblyReference.cache
+D:\dev 2nd year_2nd sem\CodersTuts\DellRainInventorySystem\DellRainInventorySystem\obj\Debug\DellRainInventorySystem.Form1.resources
+D:\dev 2nd year_2nd sem\CodersTuts\DellRainInventorySystem\DellRainInventorySystem\obj\Debug\DellRainInventorySystem.index.resources
+D:\dev 2nd year_2nd sem\CodersTuts\DellRainInventorySystem\DellRainInventorySystem\obj\Debug\DellRainInventorySystem.Properties.Resources.resources
+D:\dev 2nd year_2nd sem\CodersTuts\DellRainInventorySystem\DellRainInventorySystem\obj\Debug\DellRainInventorySystem.csproj.GenerateResource.cache
+D:\dev 2nd year_2nd sem\CodersTuts\DellRainInventorySystem\DellRainInventorySystem\obj\Debug\DellRainInventorySystem.exe
+D:\dev 2nd year_2nd sem\CodersTuts\DellRainInventorySystem\DellRainInventorySystem\obj\Debug\DellRainInventorySystem.pdb
+D:\dev 2nd year_2nd sem\CodersTuts\DellRainInventorySystem\DellRainInventorySystem\obj\Debug\DellRainInventorySystem.YourAccount.resources

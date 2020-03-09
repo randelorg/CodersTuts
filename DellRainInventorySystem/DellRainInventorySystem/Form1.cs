@@ -29,7 +29,6 @@ namespace DellRainInventorySystem
         {
             index Index = new index();
             Index.Show();
-            this.Hide();//hides the login form
         }
 
 
