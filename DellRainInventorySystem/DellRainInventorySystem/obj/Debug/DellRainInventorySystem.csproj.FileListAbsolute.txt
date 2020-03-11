@@ -19,3 +19,15 @@ D:\dev 2nd year_2nd sem\CodersTuts\DellRainInventorySystem\DellRainInventorySyst
 D:\dev 2nd year_2nd sem\CodersTuts\DellRainInventorySystem\DellRainInventorySystem\obj\Debug\DellRainInventorySystem.exe
 D:\dev 2nd year_2nd sem\CodersTuts\DellRainInventorySystem\DellRainInventorySystem\obj\Debug\DellRainInventorySystem.pdb
 D:\dev 2nd year_2nd sem\CodersTuts\DellRainInventorySystem\DellRainInventorySystem\obj\Debug\DellRainInventorySystem.YourAccount.resources
+E:\2ND YEAR - 2ND SEM\CodersTuts\DellRainInventorySystem\DellRainInventorySystem\obj\Debug\DellRainInventorySystem.csprojAssemblyReference.cache
+E:\2ND YEAR - 2ND SEM\CodersTuts\DellRainInventorySystem\DellRainInventorySystem\obj\Debug\DellRainInventorySystem.Form1.resources
+E:\2ND YEAR - 2ND SEM\CodersTuts\DellRainInventorySystem\DellRainInventorySystem\obj\Debug\DellRainInventorySystem.index.resources
+E:\2ND YEAR - 2ND SEM\CodersTuts\DellRainInventorySystem\DellRainInventorySystem\obj\Debug\DellRainInventorySystem.Properties.Resources.resources
+E:\2ND YEAR - 2ND SEM\CodersTuts\DellRainInventorySystem\DellRainInventorySystem\obj\Debug\DellRainInventorySystem.YourAccount.resources
+E:\2ND YEAR - 2ND SEM\CodersTuts\DellRainInventorySystem\DellRainInventorySystem\obj\Debug\DellRainInventorySystem.csproj.GenerateResource.cache
+E:\2ND YEAR - 2ND SEM\CodersTuts\DellRainInventorySystem\DellRainInventorySystem\obj\Debug\DellRainInventorySystem.exe
+E:\2ND YEAR - 2ND SEM\CodersTuts\DellRainInventorySystem\DellRainInventorySystem\obj\Debug\DellRainInventorySystem.pdb
+E:\2ND YEAR - 2ND SEM\CodersTuts\DellRainInventorySystem\DellRainInventorySystem\bin\Debug\DellRainInventorySystem.exe.config
+E:\2ND YEAR - 2ND SEM\CodersTuts\DellRainInventorySystem\DellRainInventorySystem\bin\Debug\DellRainInventorySystem.exe
+E:\2ND YEAR - 2ND SEM\CodersTuts\DellRainInventorySystem\DellRainInventorySystem\bin\Debug\DellRainInventorySystem.pdb
+E:\2ND YEAR - 2ND SEM\CodersTuts\DellRainInventorySystem\DellRainInventorySystem\obj\Debug\DellRainInventorySystem.CreateAccount.resources

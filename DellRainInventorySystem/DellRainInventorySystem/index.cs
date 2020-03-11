@@ -68,5 +68,11 @@ namespace DellRainInventorySystem
             YourAccount account = new YourAccount();
             account.Show();
         }
+
+        private void btnCreateAccount_Click(object sender, EventArgs e)
+        {
+            CreateAccount createAccount = new CreateAccount();
+            createAccount.Show();
+        }
     }
 }

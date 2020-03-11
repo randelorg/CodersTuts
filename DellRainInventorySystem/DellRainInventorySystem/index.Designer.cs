@@ -45,7 +45,6 @@
             this.SalesReports = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.UserIcon = new System.Windows.Forms.PictureBox();
-            this.closeButton = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.groupDasboard.SuspendLayout();
             this.TopNav.SuspendLayout();
@@ -54,7 +53,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.SalesReports)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.UserIcon)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.closeButton)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
@@ -86,7 +84,6 @@
             this.TopNav.Controls.Add(this.lbUsername);
             this.TopNav.Controls.Add(this.btnCreateAccount);
             this.TopNav.Controls.Add(this.btnYourAccount);
-            this.TopNav.Controls.Add(this.closeButton);
             this.TopNav.Location = new System.Drawing.Point(-1, -1);
             this.TopNav.Name = "TopNav";
             this.TopNav.Size = new System.Drawing.Size(1271, 59);
@@ -98,7 +95,7 @@
             this.lbUsername.AutoSize = true;
             this.lbUsername.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
             this.lbUsername.ForeColor = System.Drawing.Color.White;
-            this.lbUsername.Location = new System.Drawing.Point(1073, 27);
+            this.lbUsername.Location = new System.Drawing.Point(1072, 27);
             this.lbUsername.Name = "lbUsername";
             this.lbUsername.Size = new System.Drawing.Size(77, 17);
             this.lbUsername.TabIndex = 7;
@@ -115,6 +112,7 @@
             this.btnCreateAccount.TabIndex = 6;
             this.btnCreateAccount.Text = "Create Account";
             this.btnCreateAccount.UseVisualStyleBackColor = true;
+            this.btnCreateAccount.Click += new System.EventHandler(this.btnCreateAccount_Click);
             this.btnCreateAccount.MouseLeave += new System.EventHandler(this.btnCreateAccount_MouseLeave);
             this.btnCreateAccount.MouseHover += new System.EventHandler(this.btnCreateAccount_MouseHover);
             // 
@@ -150,7 +148,7 @@
             // 
             this.bg1.Enabled = false;
             this.bg1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bg1.Location = new System.Drawing.Point(1075, 125);
+            this.bg1.Location = new System.Drawing.Point(1075, 159);
             this.bg1.Name = "bg1";
             this.bg1.Size = new System.Drawing.Size(182, 208);
             this.bg1.TabIndex = 12;
@@ -160,7 +158,7 @@
             // 
             this.bg2.Enabled = false;
             this.bg2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bg2.Location = new System.Drawing.Point(1075, 332);
+            this.bg2.Location = new System.Drawing.Point(1075, 366);
             this.bg2.Name = "bg2";
             this.bg2.Size = new System.Drawing.Size(182, 208);
             this.bg2.TabIndex = 12;
@@ -170,7 +168,8 @@
             // 
             this.lbReports.AutoSize = true;
             this.lbReports.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbReports.Location = new System.Drawing.Point(1129, 500);
+            this.lbReports.ForeColor = System.Drawing.Color.White;
+            this.lbReports.Location = new System.Drawing.Point(1129, 534);
             this.lbReports.Name = "lbReports";
             this.lbReports.Size = new System.Drawing.Size(80, 14);
             this.lbReports.TabIndex = 15;
@@ -181,7 +180,8 @@
             // 
             this.lbInventory.AutoSize = true;
             this.lbInventory.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbInventory.Location = new System.Drawing.Point(1138, 280);
+            this.lbInventory.ForeColor = System.Drawing.Color.White;
+            this.lbInventory.Location = new System.Drawing.Point(1138, 314);
             this.lbInventory.Name = "lbInventory";
             this.lbInventory.Size = new System.Drawing.Size(60, 14);
             this.lbInventory.TabIndex = 16;
@@ -192,7 +192,8 @@
             // 
             this.bgTools.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bgTools.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bgTools.Location = new System.Drawing.Point(1075, 95);
+            this.bgTools.ForeColor = System.Drawing.Color.White;
+            this.bgTools.Location = new System.Drawing.Point(1075, 129);
             this.bgTools.Name = "bgTools";
             this.bgTools.Size = new System.Drawing.Size(182, 30);
             this.bgTools.TabIndex = 17;
@@ -202,7 +203,7 @@
             // pictureTools
             // 
             this.pictureTools.Image = global::DellRainInventorySystem.Properties.Resources.Tools;
-            this.pictureTools.Location = new System.Drawing.Point(1075, 95);
+            this.pictureTools.Location = new System.Drawing.Point(1075, 129);
             this.pictureTools.Name = "pictureTools";
             this.pictureTools.Size = new System.Drawing.Size(30, 30);
             this.pictureTools.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -212,7 +213,7 @@
             // Inventory
             // 
             this.Inventory.Image = global::DellRainInventorySystem.Properties.Resources.inventory2;
-            this.Inventory.Location = new System.Drawing.Point(1110, 166);
+            this.Inventory.Location = new System.Drawing.Point(1110, 200);
             this.Inventory.Name = "Inventory";
             this.Inventory.Size = new System.Drawing.Size(114, 123);
             this.Inventory.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -224,7 +225,7 @@
             // SalesReports
             // 
             this.SalesReports.Image = global::DellRainInventorySystem.Properties.Resources.Sales;
-            this.SalesReports.Location = new System.Drawing.Point(1110, 374);
+            this.SalesReports.Location = new System.Drawing.Point(1110, 408);
             this.SalesReports.Name = "SalesReports";
             this.SalesReports.Size = new System.Drawing.Size(114, 123);
             this.SalesReports.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -246,25 +247,12 @@
             // UserIcon
             // 
             this.UserIcon.Image = global::DellRainInventorySystem.Properties.Resources.User;
-            this.UserIcon.Location = new System.Drawing.Point(1031, 19);
+            this.UserIcon.Location = new System.Drawing.Point(1030, 19);
             this.UserIcon.Name = "UserIcon";
             this.UserIcon.Size = new System.Drawing.Size(30, 30);
             this.UserIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.UserIcon.TabIndex = 8;
             this.UserIcon.TabStop = false;
-            // 
-            // closeButton
-            // 
-            this.closeButton.Image = global::DellRainInventorySystem.Properties.Resources.close1;
-            this.closeButton.Location = new System.Drawing.Point(1228, 19);
-            this.closeButton.Name = "closeButton";
-            this.closeButton.Size = new System.Drawing.Size(30, 30);
-            this.closeButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.closeButton.TabIndex = 4;
-            this.closeButton.TabStop = false;
-            this.closeButton.Click += new System.EventHandler(this.closeButton_Click);
-            this.closeButton.MouseLeave += new System.EventHandler(this.closeButton_MouseLeave);
-            this.closeButton.MouseHover += new System.EventHandler(this.closeButton_MouseHover);
             // 
             // pictureBox2
             // 
@@ -292,7 +280,7 @@
             this.Controls.Add(this.lbLogout);
             this.Controls.Add(this.TopNav);
             this.Controls.Add(this.groupDasboard);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "index";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Welcome";
@@ -305,7 +293,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.SalesReports)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.UserIcon)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.closeButton)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -316,7 +303,6 @@
         private System.Windows.Forms.GroupBox groupDasboard;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.PictureBox closeButton;
         private System.Windows.Forms.GroupBox TopNav;
         private System.Windows.Forms.Button btnCreateAccount;
         private System.Windows.Forms.Button btnYourAccount;

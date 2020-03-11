@@ -95,6 +95,7 @@
             // 
             // btnLogin
             // 
+            this.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLogin.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLogin.Location = new System.Drawing.Point(56, 252);
             this.btnLogin.Name = "btnLogin";
@@ -108,11 +109,11 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Times New Roman", 30F, System.Drawing.FontStyle.Bold);
-            this.label1.Location = new System.Drawing.Point(34, 46);
+            this.label1.Location = new System.Drawing.Point(70, 33);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(275, 45);
+            this.label1.Size = new System.Drawing.Size(211, 45);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Member Login";
+            this.label1.Text = "Staff Login";
             // 
             // pictureBox1
             // 
@@ -143,7 +144,7 @@
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.pbStoreLogo);
             this.Controls.Add(this.groupBox1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "User login";
