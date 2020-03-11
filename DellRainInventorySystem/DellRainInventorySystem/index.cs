@@ -20,7 +20,6 @@ namespace DellRainInventorySystem
             removeBorder();
         }
 
-
         private void closeButton_Click(object sender, EventArgs e) => this.Close();
 
         private void bgColor()
@@ -44,23 +43,14 @@ namespace DellRainInventorySystem
         }
 
         private void btnYourAccount_MouseHover(object sender, EventArgs e) => btnYourAccount.ForeColor = Color.White;
-
         private void btnYourAccount_MouseLeave(object sender, EventArgs e) => btnYourAccount.ForeColor = Color.Gray;
-
         private void btnCreateAccount_MouseHover(object sender, EventArgs e) => btnCreateAccount.ForeColor = Color.White;
-
         private void btnCreateAccount_MouseLeave(object sender, EventArgs e) => btnCreateAccount.ForeColor = Color.Gray;
-
         private void closeButton_MouseHover(object sender, EventArgs e) => lbLogout.Show();
-
         private void closeButton_MouseLeave(object sender, EventArgs e) => lbLogout.Hide();
-
         private void SalesReport_MouseHover(object sender, EventArgs e) => lbReports.Show();
-
         private void SalesReports_MouseLeave(object sender, EventArgs e) => lbReports.Hide();
-
         private void Inventory_MouseHover(object sender, EventArgs e) => lbInventory.Show();
-
         private void Inventory_MouseLeave(object sender, EventArgs e) => lbInventory.Hide();
 
         private void btnYourAccount_Click(object sender, EventArgs e)
@@ -73,6 +63,12 @@ namespace DellRainInventorySystem
         {
             CreateAccount createAccount = new CreateAccount();
             createAccount.Show();
+        }
+
+        private void Inventory_Click(object sender, EventArgs e)
+        {
+            InventoryWindow inventoryWindow = new InventoryWindow();
+            inventoryWindow.Show();
         }
     }
 }

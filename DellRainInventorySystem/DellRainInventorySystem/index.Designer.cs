@@ -43,6 +43,7 @@
             this.pictureTools = new System.Windows.Forms.PictureBox();
             this.Inventory = new System.Windows.Forms.PictureBox();
             this.SalesReports = new System.Windows.Forms.PictureBox();
+            this.closeButton = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.UserIcon = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
@@ -51,6 +52,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureTools)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Inventory)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.SalesReports)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.closeButton)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.UserIcon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -79,6 +81,7 @@
             // TopNav
             // 
             this.TopNav.BackColor = System.Drawing.Color.Black;
+            this.TopNav.Controls.Add(this.closeButton);
             this.TopNav.Controls.Add(this.pictureBox1);
             this.TopNav.Controls.Add(this.UserIcon);
             this.TopNav.Controls.Add(this.lbUsername);
@@ -219,6 +222,7 @@
             this.Inventory.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.Inventory.TabIndex = 14;
             this.Inventory.TabStop = false;
+            this.Inventory.Click += new System.EventHandler(this.Inventory_Click);
             this.Inventory.MouseLeave += new System.EventHandler(this.Inventory_MouseLeave);
             this.Inventory.MouseHover += new System.EventHandler(this.Inventory_MouseHover);
             // 
@@ -233,6 +237,18 @@
             this.SalesReports.TabStop = false;
             this.SalesReports.MouseLeave += new System.EventHandler(this.SalesReports_MouseLeave);
             this.SalesReports.MouseHover += new System.EventHandler(this.SalesReport_MouseHover);
+            // 
+            // closeButton
+            // 
+            this.closeButton.Image = global::DellRainInventorySystem.Properties.Resources.power;
+            this.closeButton.Location = new System.Drawing.Point(1218, 19);
+            this.closeButton.Name = "closeButton";
+            this.closeButton.Size = new System.Drawing.Size(30, 30);
+            this.closeButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.closeButton.TabIndex = 35;
+            this.closeButton.TabStop = false;
+            this.closeButton.MouseLeave += new System.EventHandler(this.closeButton_MouseLeave);
+            this.closeButton.MouseHover += new System.EventHandler(this.closeButton_MouseHover);
             // 
             // pictureBox1
             // 
@@ -291,6 +307,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureTools)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Inventory)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.SalesReports)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.closeButton)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.UserIcon)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
@@ -318,5 +335,6 @@
         private System.Windows.Forms.Label lbInventory;
         private System.Windows.Forms.PictureBox pictureTools;
         private System.Windows.Forms.Button bgTools;
+        private System.Windows.Forms.PictureBox closeButton;
     }
 }
