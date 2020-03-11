@@ -16,5 +16,7 @@ namespace DellRainInventorySystem
         {
             InitializeComponent();
         }
+
+        private void pictureBack_Click(object sender, EventArgs e) => this.Close();
     }
 }

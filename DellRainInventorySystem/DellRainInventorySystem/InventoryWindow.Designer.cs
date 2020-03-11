@@ -176,12 +176,13 @@
             // AddProduct
             // 
             this.AddProduct.Image = global::DellRainInventorySystem.Properties.Resources.addProduct;
-            this.AddProduct.Location = new System.Drawing.Point(64, 92);
+            this.AddProduct.Location = new System.Drawing.Point(64, 101);
             this.AddProduct.Name = "AddProduct";
-            this.AddProduct.Size = new System.Drawing.Size(176, 48);
+            this.AddProduct.Size = new System.Drawing.Size(176, 39);
             this.AddProduct.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.AddProduct.TabIndex = 40;
             this.AddProduct.TabStop = false;
+            this.AddProduct.Click += new System.EventHandler(this.AddProduct_Click);
             // 
             // closeButton
             // 
@@ -208,6 +209,7 @@
             this.Controls.Add(this.dataGridView1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "InventoryWindow";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "InventoryWindow";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Search)).EndInit();

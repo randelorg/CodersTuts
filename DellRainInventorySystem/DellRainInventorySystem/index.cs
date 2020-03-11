@@ -70,5 +70,7 @@ namespace DellRainInventorySystem
             InventoryWindow inventoryWindow = new InventoryWindow();
             inventoryWindow.Show();
         }
+
+        private void closeButton_Click_1(object sender, EventArgs e) => this.Close();
     }
 }

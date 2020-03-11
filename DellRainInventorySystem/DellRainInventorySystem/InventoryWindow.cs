@@ -18,5 +18,11 @@ namespace DellRainInventorySystem
         }
 
         private void pictureBack_Click(object sender, EventArgs e) => this.Close();
+
+        private void AddProduct_Click(object sender, EventArgs e)
+        {
+            AddProductWindow addProductWindow = new AddProductWindow();
+            addProductWindow.Show();
+        }
     }
 }
