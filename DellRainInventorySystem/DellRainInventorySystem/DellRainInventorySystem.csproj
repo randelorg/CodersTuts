@@ -52,6 +52,11 @@
     <Compile Include="AddProductWindow.Designer.cs">
       <DependentUpon>AddProductWindow.cs</DependentUpon>
     </Compile>
+    <Compile Include="Classes\Admin.cs" />
+    <Compile Include="Classes\Person.cs" />
+    <Compile Include="Classes\Product.cs" />
+    <Compile Include="Classes\Staff.cs" />
+    <Compile Include="Classes\Supplier.cs" />
     <Compile Include="CreateAccount.cs">
       <SubType>Form</SubType>
     </Compile>
