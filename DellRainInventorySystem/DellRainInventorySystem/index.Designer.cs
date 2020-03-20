@@ -1,6 +1,6 @@
 ﻿namespace DellRainInventorySystem
 {
-    partial class index
+    partial class Index
     {
         /// <summary>
         /// Required designer variable.
@@ -495,7 +495,7 @@
             this.Controls.Add(this.TopNav);
             this.Controls.Add(this.groupDasboard);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
-            this.Name = "index";
+            this.Name = "Index";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Welcome";
             this.groupDasboard.ResumeLayout(false);

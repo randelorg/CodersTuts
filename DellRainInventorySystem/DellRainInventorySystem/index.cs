@@ -1,28 +1,22 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace DellRainInventorySystem
 {
-    public partial class index : Form
+    public partial class Index : Form
     {
-        public index()
+        public Index()
         {
             InitializeComponent();
             lbUsername.Text = "Randel P. Reyes";
-            bgColor();
-            removeBorder();
+            BgColor();
+            RemoveBorder();
         }
 
         private void closeButton_Click(object sender, EventArgs e) => this.Close();
 
-        private void bgColor()
+        private void BgColor()
         {
             bg1.BackColor = Color.FromArgb(26,95,149);
             bg2.BackColor = Color.FromArgb(46, 187, 163);
@@ -31,7 +25,7 @@ namespace DellRainInventorySystem
             lbInventory.BackColor = Color.FromArgb(26, 95, 149);
         }
 
-        private void removeBorder()
+        private void RemoveBorder()
         {
             btnCreateAccount.FlatAppearance.BorderSize = 0;
             btnYourAccount.FlatAppearance.BorderSize = 0;
