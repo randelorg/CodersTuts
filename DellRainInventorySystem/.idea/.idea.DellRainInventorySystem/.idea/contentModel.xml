@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ContentModelStore">
+    <e p="C:\Users\Randel Reyes\.Rider2019.3\config\consoles\db" t="IncludeRecursive" />
+    <e p="C:\Users\Randel Reyes\.Rider2019.3\config\extensions" t="IncludeRecursive" />
+    <e p="C:\Users\Randel Reyes\.Rider2019.3\system\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\Randel Reyes\.Rider2019.3\system\resharper-host\local\Transient\ReSharperHost\v193\SolutionCaches\_DellRainInventorySystem.-1702696500.00" t="ExcludeRecursive" />
+    <e p="E:\2ND YEAR - 2ND SEM\CodersTuts\DellRainInventorySystem" t="IncludeFlat">
+      <e p="DellRainInventorySystem" t="IncludeRecursive">
+        <e p="AddProductWindow.cs" t="Include" />
+        <e p="AddProductWindow.Designer.cs" t="Include" />
+        <e p="AddProductWindow.resx" t="Include" />
+        <e p="App.config" t="Include" />
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="Classes" t="Include">
+          <e p="Admin.cs" t="Include" />
+          <e p="Person.cs" t="Include" />
+          <e p="Product.cs" t="Include" />
+          <e p="Staff.cs" t="Include" />
+          <e p="Supplier.cs" t="Include" />
+        </e>
+        <e p="CreateAccount.cs" t="Include" />
+        <e p="CreateAccount.Designer.cs" t="Include" />
+        <e p="CreateAccount.resx" t="Include" />
+        <e p="DellRainInventorySystem.csproj" t="IncludeRecursive" />
+        <e p="Form1.cs" t="Include" />
+        <e p="Form1.Designer.cs" t="Include" />
+        <e p="Form1.resx" t="Include" />
+        <e p="index.cs" t="Include" />
+        <e p="index.Designer.cs" t="Include" />
+        <e p="index.resx" t="Include" />
+        <e p="InventoryWindow.cs" t="Include" />
+        <e p="InventoryWindow.Designer.cs" t="Include" />
+        <e p="InventoryWindow.resx" t="Include" />
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="Program.cs" t="Include" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+          <e p="Resources.Designer.cs" t="Include" />
+          <e p="Resources.resx" t="Include" />
+          <e p="Settings.Designer.cs" t="Include" />
+          <e p="Settings.settings" t="Include" />
+        </e>
+        <e p="Resources" t="Include">
+          <e p="AccountUserIcon.png" t="Include" />
+          <e p="add.png" t="Include" />
+          <e p="addProduct.png" t="Include" />
+          <e p="Back.png" t="Include" />
+          <e p="close1.png" t="Include" />
+          <e p="CreateAccountIcon.png" t="Include" />
+          <e p="dashboardHome.png" t="Include" />
+          <e p="Eye.png" t="Include" />
+          <e p="generatePassword.png" t="Include" />
+          <e p="inventory2.png" t="Include" />
+          <e p="Password.png" t="Include" />
+          <e p="power.png" t="Include" />
+          <e p="ProfileUser.png" t="Include" />
+          <e p="Sales.png" t="Include" />
+          <e p="Search.png" t="Include" />
+          <e p="store.png" t="Include" />
+          <e p="Tools.png" t="Include" />
+          <e p="update.png" t="Include" />
+          <e p="User.png" t="Include" />
+        </e>
+        <e p="YourAccount.cs" t="Include" />
+        <e p="YourAccount.Designer.cs" t="Include" />
+        <e p="YourAccount.resx" t="Include" />
+      </e>
+      <e p="DellRainInventorySystem.sln" t="IncludeFlat" />
+      <e p="packages" t="ExcludeRecursive" />
+    </e>
+  </component>
+</project>
