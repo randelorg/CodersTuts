@@ -1,15 +1,19 @@
 ﻿using System;
+using System.Diagnostics.Eventing.Reader;
 using System.Drawing;
 using System.Windows.Forms;
+using DellRainInventorySystem.Classes;
 
 namespace DellRainInventorySystem
 {
     public partial class Index : Form
     {
+        private Inventory clInventory = new Inventory();
+        
         public Index()
         {
             InitializeComponent();
-            lbUsername.Text = @"Randel P. Reyes";
+            lbUsername.Text = clInventory.SessUsername;
             BgColor();
             RemoveBorder();
         }
@@ -63,6 +67,13 @@ namespace DellRainInventorySystem
             inventoryWindow.Show();
         }
 
-        private void closeButton_Click_1(object sender, EventArgs e) => this.Close();
+        private void closeButton_Click_1(object sender, EventArgs e)
+        {
+            var login = new Form1();
+            login.Hide();
+            this.Hide();
+            login.ShowDialog();
+            this.Close();
+        }
     }
 }

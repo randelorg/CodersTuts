@@ -12,8 +12,18 @@
             this._firstname = firstname;
             this._lastname = lastname;
         }
+        
+        public string Firstname
+        {
+            get => _firstname;
+            set => _firstname = value;
+        }
 
-        public string Firstname { get; set; }
-        public string Lastname { get; set; }
+        public string Lastname
+        {
+            get => _lastname;
+            set => _lastname = value;
+        }
+        
     }
 }

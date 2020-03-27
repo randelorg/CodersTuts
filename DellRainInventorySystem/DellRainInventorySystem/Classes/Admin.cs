@@ -24,11 +24,30 @@
             _password = password;
             _accType = accType;
         }
-
-        public string Username { get; set; }
-        public string Contact { get; set; }
-        public string Password { get; set; }
-        public string AccType { get; set; }
         
+        public string Username
+        {
+            get => _username;
+            set => _username = value;
+        }
+
+        public string Contact
+        {
+            get => _contact;
+            set => _contact = value;
+        }
+
+        public string Password
+        {
+            get => _password;
+            set => _password = value;
+        }
+
+        public string AccType
+        {
+            get => _accType;
+            set => _accType = value;
+        }
+
     }
 }

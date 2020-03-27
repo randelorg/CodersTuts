@@ -16,11 +16,35 @@
             _sold = sold;
             this._price = price;
         }
+        
+        public string ProdName
+        {
+            get => _prodName;
+            set => _prodName = value;
+        }
 
-        public string ProdName { get; set; }
-        public string ProdType { get; set; }
-        public int Qty { get; set; }
-        public int Sold { get; set; }
-        public float Price { get; set; }
+        public string ProdType
+        {
+            get => _prodType;
+            set => _prodType = value;
+        }
+
+        public int Qty
+        {
+            get => _qty;
+            set => _qty = value;
+        }
+
+        public int Sold
+        {
+            get => _sold;
+            set => _sold = value;
+        }
+
+        public float Price
+        {
+            get => _price;
+            set => _price = value;
+        }
     }
 }

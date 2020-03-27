@@ -7,16 +7,17 @@ namespace DellRainInventorySystem.SQL
 {
     public class Connect
     {
+        private readonly SqlConnection connectionString = new SqlConnection(@"");
+        public SqlConnection ConnectionString => connectionString;
+        
         protected internal void Conn()
         {
             Console.WriteLine(@"Trying to connect");
             try
             {
-                String connectionString = @"Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=InventoryDB;Data Source=RANDEL-PC";
-                
                 // Connect to SQL
                 Console.Write(@"Connecting to SQL Server ... ");
-                using (var connection = new SqlConnection(connectionString))
+                using (var connection = new SqlConnection())
                 {
                     connection.Open();
                     Debug.WriteLine(@"Done, connected");

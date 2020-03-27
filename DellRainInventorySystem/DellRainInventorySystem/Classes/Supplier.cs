@@ -12,8 +12,18 @@
             _companyName = companyName;
             _contact = contact;
         }
+        
+        public string CompanyName
+        {
+            get => _companyName;
+            set => _companyName = value;
+        }
 
-        public string CompanyName { get; set; }
-        public string Contact { get; set; }
+        public string Contact
+        {
+            get => _contact;
+            set => _contact = value;
+        }
+
     }
 }

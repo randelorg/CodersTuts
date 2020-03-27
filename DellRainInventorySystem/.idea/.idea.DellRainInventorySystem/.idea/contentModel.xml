@@ -25,15 +25,15 @@
         <e p="CreateAccount.Designer.cs" t="Include" />
         <e p="CreateAccount.resx" t="Include" />
         <e p="DellRainInventorySystem.csproj" t="IncludeRecursive" />
+        <e p="Form1.cs" t="Include" />
+        <e p="Form1.Designer.cs" t="Include" />
+        <e p="Form1.resx" t="Include" />
         <e p="index.cs" t="Include" />
         <e p="index.Designer.cs" t="Include" />
         <e p="index.resx" t="Include" />
         <e p="InventoryWindow.cs" t="Include" />
         <e p="InventoryWindow.Designer.cs" t="Include" />
         <e p="InventoryWindow.resx" t="Include" />
-        <e p="Login.cs" t="Include" />
-        <e p="Login.Designer.cs" t="Include" />
-        <e p="Login.resx" t="Include" />
         <e p="obj" t="ExcludeRecursive" />
         <e p="Program.cs" t="Include" />
         <e p="Properties" t="Include">
