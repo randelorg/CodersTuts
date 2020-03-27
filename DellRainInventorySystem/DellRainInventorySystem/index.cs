@@ -9,12 +9,10 @@ namespace DellRainInventorySystem
         public Index()
         {
             InitializeComponent();
-            lbUsername.Text = "Randel P. Reyes";
+            lbUsername.Text = @"Randel P. Reyes";
             BgColor();
             RemoveBorder();
         }
-
-        private void closeButton_Click(object sender, EventArgs e) => this.Close();
 
         private void BgColor()
         {
@@ -49,19 +47,19 @@ namespace DellRainInventorySystem
 
         private void btnYourAccount_Click(object sender, EventArgs e)
         {
-            YourAccount account = new YourAccount();
+            var account = new YourAccount();
             account.Show();
         }
 
         private void btnCreateAccount_Click(object sender, EventArgs e)
         {
-            CreateAccount createAccount = new CreateAccount();
+            var createAccount = new CreateAccount();
             createAccount.Show();
         }
 
         private void Inventory_Click(object sender, EventArgs e)
         {
-            InventoryWindow inventoryWindow = new InventoryWindow();
+            var inventoryWindow = new InventoryWindow();
             inventoryWindow.Show();
         }
 

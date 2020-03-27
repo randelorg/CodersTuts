@@ -161,7 +161,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular,
                 System.Drawing.GraphicsUnit.Point, ((byte) (0)));
-            this.label1.Location = new System.Drawing.Point(35, 461);
+            this.label1.Location = new System.Drawing.Point(35, 462);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(101, 14);
             this.label1.TabIndex = 40;
@@ -180,7 +180,7 @@
             // lbGenPass
             // 
             this.lbGenPass.AutoSize = true;
-            this.lbGenPass.Location = new System.Drawing.Point(340, 513);
+            this.lbGenPass.Location = new System.Drawing.Point(339, 513);
             this.lbGenPass.Name = "lbGenPass";
             this.lbGenPass.Size = new System.Drawing.Size(107, 15);
             this.lbGenPass.TabIndex = 43;
@@ -202,7 +202,7 @@
             // showPassword
             // 
             this.showPassword.Image = global::DellRainInventorySystem.Properties.Resources.Eye;
-            this.showPassword.Location = new System.Drawing.Point(368, 482);
+            this.showPassword.Location = new System.Drawing.Point(367, 482);
             this.showPassword.Name = "showPassword";
             this.showPassword.Size = new System.Drawing.Size(23, 23);
             this.showPassword.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -257,7 +257,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular,
                 System.Drawing.GraphicsUnit.Point, ((byte) (0)));
-            this.label4.Location = new System.Drawing.Point(32, 400);
+            this.label4.Location = new System.Drawing.Point(31, 400);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(61, 14);
             this.label4.TabIndex = 47;
