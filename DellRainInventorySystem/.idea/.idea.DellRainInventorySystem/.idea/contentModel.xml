@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ContentModelStore">
-    <e p="C:\Users\asus\.Rider2019.3\config\consoles\db" t="IncludeRecursive" />
-    <e p="C:\Users\asus\.Rider2019.3\config\extensions" t="IncludeRecursive" />
-    <e p="C:\Users\asus\.Rider2019.3\system\extResources" t="IncludeRecursive" />
-    <e p="C:\Users\asus\.Rider2019.3\system\resharper-host\local\Transient\ReSharperHost\v193\SolutionCaches\_DellRainInventorySystem.82692750.00" t="ExcludeRecursive" />
-    <e p="D:\dev 2nd year_2nd sem\CodersTuts\DellRainInventorySystem" t="IncludeFlat">
+    <e p="C:\Users\Randel Reyes\.Rider2019.3\config\consoles\db" t="IncludeRecursive" />
+    <e p="C:\Users\Randel Reyes\.Rider2019.3\config\extensions" t="IncludeRecursive" />
+    <e p="C:\Users\Randel Reyes\.Rider2019.3\system\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\Randel Reyes\.Rider2019.3\system\resharper-host\local\Transient\ReSharperHost\v193\SolutionCaches\_DellRainInventorySystem.-1702696500.00" t="ExcludeRecursive" />
+    <e p="E:\2ND YEAR - 2ND SEM\CodersTuts\DellRainInventorySystem" t="IncludeFlat">
       <e p="DellRainInventorySystem" t="IncludeRecursive">
         <e p="AddProductWindow.cs" t="Include" />
         <e p="AddProductWindow.Designer.cs" t="Include" />

@@ -1,6 +1,7 @@
 using System;
 using System.Data.SqlClient;
 using System.Diagnostics;
+using System.Windows.Forms;
 
 namespace DellRainInventorySystem.SQL
 {
@@ -11,15 +12,11 @@ namespace DellRainInventorySystem.SQL
             Console.WriteLine(@"Trying to connect");
             try
             {
-                SqlConnectionStringBuilder builder = new SqlConnectionStringBuilder();
-                builder.DataSource = "RANDELLAPPY";   // update me
-                builder.UserID = "randel";              // update me
-                builder.Password = "";      // update me
-                builder.InitialCatalog = "InventoryDB";
-
+                String connectionString = @"Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=InventoryDB;Data Source=RANDEL-PC";
+                
                 // Connect to SQL
                 Console.Write(@"Connecting to SQL Server ... ");
-                using (var connection = new SqlConnection(builder.ConnectionString))
+                using (var connection = new SqlConnection(connectionString))
                 {
                     connection.Open();
                     Debug.WriteLine(@"Done, connected");
@@ -28,6 +25,7 @@ namespace DellRainInventorySystem.SQL
             catch (SqlException e)
             {
                 Debug.WriteLine(@"Cannot connect to the database");
+                MessageBox.Show(@"Cannot connect to the database", @"Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 Debug.WriteLine(e.ToString());
             }
 
