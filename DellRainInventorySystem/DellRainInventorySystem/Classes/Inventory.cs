@@ -1,11 +1,17 @@
 using System;
-using System.Collections.Generic;
-using System.Diagnostics.Eventing.Reader;
+using System.Data.SqlClient;
+using System.Diagnostics;
+using DellRainInventorySystem.Interfaces;
 
 namespace DellRainInventorySystem.Classes
 {
-    public class Inventory : InventoryUtils
+    public class Inventory : InventoryUtils, IInventory
     {
+        //sql attr
+        private SqlConnection con = new SqlConnection(
+            "Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=InventoryDB;Data Source=RANDELLAPPY");
+        private SqlCommand cmd;
+        
         //identifies the user to the index window
         //serves the session 
         private static string sess_username;
@@ -27,6 +33,26 @@ namespace DellRainInventorySystem.Classes
         {
             sess_username = username;
             sess_accType = accType;
+        }
+
+        public void AddProduct()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void AddAccount()
+        {
+            
+        }
+
+        public void AddSupplier()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void AddLocation()
+        {
+            throw new NotImplementedException();
         }
     }
 }

@@ -7,5 +7,11 @@
       <jdbc-driver>com.microsoft.sqlserver.jdbc.SQLServerDriver</jdbc-driver>
       <jdbc-url>jdbc:sqlserver://RANDEL-PC:1433</jdbc-url>
     </data-source>
+    <data-source source="LOCAL" name="@RANDELLAPPY" uuid="24744439-45e5-4472-b534-24e0da249a01">
+      <driver-ref>sqlserver.ms</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>com.microsoft.sqlserver.jdbc.SQLServerDriver</jdbc-driver>
+      <jdbc-url>jdbc:sqlserver://RANDELLAPPY:1433</jdbc-url>
+    </data-source>
   </component>
 </project>

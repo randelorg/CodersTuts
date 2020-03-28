@@ -52,19 +52,19 @@ namespace DellRainInventorySystem
         private void btnYourAccount_Click(object sender, EventArgs e)
         {
             var account = new YourAccount();
-            account.Show();
+            account.ShowDialog();
         }
 
         private void btnCreateAccount_Click(object sender, EventArgs e)
         {
             var createAccount = new CreateAccount();
-            createAccount.Show();
+            createAccount.ShowDialog();
         }
 
         private void Inventory_Click(object sender, EventArgs e)
         {
             var inventoryWindow = new InventoryWindow();
-            inventoryWindow.Show();
+            inventoryWindow.ShowDialog();
         }
 
         private void closeButton_Click_1(object sender, EventArgs e)

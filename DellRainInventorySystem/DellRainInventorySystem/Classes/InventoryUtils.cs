@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 
 namespace DellRainInventorySystem.Classes
@@ -8,5 +9,7 @@ namespace DellRainInventorySystem.Classes
         protected internal static LinkedList<Staff> LtStaff = new LinkedList<Staff>();
         protected internal static LinkedList<Product> LtProducts = new LinkedList<Product>();
         protected internal static LinkedList<Supplier> LtSupplier = new LinkedList<Supplier>();
+        
+        protected static ArrayList TextCredentials = new ArrayList();
     }
 }

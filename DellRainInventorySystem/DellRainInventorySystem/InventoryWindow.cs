@@ -15,7 +15,7 @@ namespace DellRainInventorySystem
         private void AddProduct_Click(object sender, EventArgs e)
         {
             AddProductWindow addProductWindow = new AddProductWindow();
-            addProductWindow.Show();
+            addProductWindow.ShowDialog();
         }
     }
 }

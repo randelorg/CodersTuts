@@ -3,7 +3,6 @@ using System.Data.SqlClient;
 using System.Diagnostics;
 using System.Windows.Forms;
 using DellRainInventorySystem.Classes;
-using DellRainInventorySystem.SQL;
 
 namespace DellRainInventorySystem
 {
@@ -19,7 +18,7 @@ namespace DellRainInventorySystem
             InitializeComponent();
             //connection string
             con = new SqlConnection(
-                "Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=InventoryDB;Data Source=RANDEL-PC");
+                "Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=InventoryDB;Data Source=RANDELLAPPY");
         }
         
         //will close the login window
@@ -50,13 +49,15 @@ namespace DellRainInventorySystem
                     this.Close();
                 }
                 else
-                    MessageBox.Show(@"wrong credentials", @"Invalid", MessageBoxButtons.OK);
+                    MessageBox.Show(@"Username or password is incorrect", @"Invalid", 
+                        MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
 
             catch (SqlException a)
             {
                 Debug.WriteLine(a.ToString());
-                MessageBox.Show(@"Cannot connect to the database", @"Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(@"Cannot connect to the database", @"Error", 
+                                MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             
             finally{ con.Close();}
