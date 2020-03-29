@@ -18,7 +18,7 @@ namespace DellRainInventorySystem
             InitializeComponent();
             //connection string
             con = new SqlConnection(
-                "Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=InventoryDB;Data Source=RANDELLAPPY");
+                "Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=InventoryDB;Data Source=RANDEL-PC");
         }
         
         //will close the login window

@@ -45,26 +45,31 @@
             this.pictureBack = new System.Windows.Forms.PictureBox();
             this.AddProduct = new System.Windows.Forms.PictureBox();
             this.closeButton = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize) (this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize) (this.Search)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize) (this.pictureBack)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize) (this.AddProduct)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize) (this.closeButton)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Search)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBack)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.AddProduct)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.closeButton)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView1
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode =
-                System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[]
-            {
-                this.col_ProductName, this.col_ProductType, this.col_QuantityLeft, this.col_Price, this.col_ShelfLife,
-                this.col_Location, this.col_Unit, this.col_SuppName, this.col_SuppContact, this.col_UpdateProduct
-            });
-            this.dataGridView1.Location = new System.Drawing.Point(75, 168);
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.col_ProductName,
+            this.col_ProductType,
+            this.col_QuantityLeft,
+            this.col_Price,
+            this.col_ShelfLife,
+            this.col_Location,
+            this.col_Unit,
+            this.col_SuppName,
+            this.col_SuppContact,
+            this.col_UpdateProduct});
+            this.dataGridView1.Location = new System.Drawing.Point(60, 121);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(1217, 606);
+            this.dataGridView1.Size = new System.Drawing.Size(1043, 525);
             this.dataGridView1.TabIndex = 0;
             // 
             // col_ProductName
@@ -132,9 +137,8 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Bold,
-                System.Drawing.GraphicsUnit.Point, ((byte) (0)));
-            this.label1.Location = new System.Drawing.Point(54, 17);
+            this.label1.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(46, 15);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(115, 25);
             this.label1.TabIndex = 37;
@@ -142,19 +146,18 @@
             // 
             // tbSearchProduct
             // 
-            this.tbSearchProduct.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Regular,
-                System.Drawing.GraphicsUnit.Point, ((byte) (0)));
-            this.tbSearchProduct.Location = new System.Drawing.Point(1028, 123);
+            this.tbSearchProduct.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbSearchProduct.Location = new System.Drawing.Point(877, 82);
             this.tbSearchProduct.Name = "tbSearchProduct";
-            this.tbSearchProduct.Size = new System.Drawing.Size(263, 33);
+            this.tbSearchProduct.Size = new System.Drawing.Size(226, 33);
             this.tbSearchProduct.TabIndex = 38;
             // 
             // Search
             // 
             this.Search.Image = global::DellRainInventorySystem.Properties.Resources.Search;
-            this.Search.Location = new System.Drawing.Point(986, 126);
+            this.Search.Location = new System.Drawing.Point(841, 84);
             this.Search.Name = "Search";
-            this.Search.Size = new System.Drawing.Size(38, 38);
+            this.Search.Size = new System.Drawing.Size(33, 33);
             this.Search.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.Search.TabIndex = 42;
             this.Search.TabStop = false;
@@ -162,9 +165,9 @@
             // pictureBack
             // 
             this.pictureBack.Image = global::DellRainInventorySystem.Properties.Resources.Back;
-            this.pictureBack.Location = new System.Drawing.Point(1310, 14);
+            this.pictureBack.Location = new System.Drawing.Point(1123, 12);
             this.pictureBack.Name = "pictureBack";
-            this.pictureBack.Size = new System.Drawing.Size(35, 35);
+            this.pictureBack.Size = new System.Drawing.Size(30, 30);
             this.pictureBack.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBack.TabIndex = 41;
             this.pictureBack.TabStop = false;
@@ -173,9 +176,9 @@
             // AddProduct
             // 
             this.AddProduct.Image = global::DellRainInventorySystem.Properties.Resources.addProduct;
-            this.AddProduct.Location = new System.Drawing.Point(75, 117);
+            this.AddProduct.Location = new System.Drawing.Point(60, 76);
             this.AddProduct.Name = "AddProduct";
-            this.AddProduct.Size = new System.Drawing.Size(205, 45);
+            this.AddProduct.Size = new System.Drawing.Size(176, 39);
             this.AddProduct.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.AddProduct.TabIndex = 40;
             this.AddProduct.TabStop = false;
@@ -184,19 +187,19 @@
             // closeButton
             // 
             this.closeButton.Image = global::DellRainInventorySystem.Properties.Resources.inventory2;
-            this.closeButton.Location = new System.Drawing.Point(14, 14);
+            this.closeButton.Location = new System.Drawing.Point(12, 12);
             this.closeButton.Name = "closeButton";
-            this.closeButton.Size = new System.Drawing.Size(35, 35);
+            this.closeButton.Size = new System.Drawing.Size(30, 30);
             this.closeButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.closeButton.TabIndex = 36;
             this.closeButton.TabStop = false;
             // 
             // InventoryWindow
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1359, 759);
+            this.ClientSize = new System.Drawing.Size(1165, 669);
             this.Controls.Add(this.Search);
             this.Controls.Add(this.pictureBack);
             this.Controls.Add(this.AddProduct);
@@ -208,13 +211,14 @@
             this.Name = "InventoryWindow";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "InventoryWindow";
-            ((System.ComponentModel.ISupportInitialize) (this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize) (this.Search)).EndInit();
-            ((System.ComponentModel.ISupportInitialize) (this.pictureBack)).EndInit();
-            ((System.ComponentModel.ISupportInitialize) (this.AddProduct)).EndInit();
-            ((System.ComponentModel.ISupportInitialize) (this.closeButton)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Search)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBack)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.AddProduct)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.closeButton)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
+
         }
 
         #endregion
