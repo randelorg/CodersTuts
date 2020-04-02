@@ -210,7 +210,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "InventoryWindow";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "InventoryWindow";
+            this.Text = "Inventory";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Search)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBack)).EndInit();
