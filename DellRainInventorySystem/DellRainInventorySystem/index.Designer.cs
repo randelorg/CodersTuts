@@ -46,6 +46,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.TopNav = new System.Windows.Forms.GroupBox();
+            this.btnListAccounts = new System.Windows.Forms.Button();
             this.closeButton = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.UserIcon = new System.Windows.Forms.PictureBox();
@@ -268,6 +269,7 @@
             // TopNav
             // 
             this.TopNav.BackColor = System.Drawing.Color.Black;
+            this.TopNav.Controls.Add(this.btnListAccounts);
             this.TopNav.Controls.Add(this.closeButton);
             this.TopNav.Controls.Add(this.pictureBox1);
             this.TopNav.Controls.Add(this.UserIcon);
@@ -279,6 +281,20 @@
             this.TopNav.Size = new System.Drawing.Size(1271, 59);
             this.TopNav.TabIndex = 10;
             this.TopNav.TabStop = false;
+            // 
+            // btnListAccounts
+            // 
+            this.btnListAccounts.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnListAccounts.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnListAccounts.ForeColor = System.Drawing.Color.Gray;
+            this.btnListAccounts.Location = new System.Drawing.Point(465, 15);
+            this.btnListAccounts.Name = "btnListAccounts";
+            this.btnListAccounts.Size = new System.Drawing.Size(134, 36);
+            this.btnListAccounts.TabIndex = 36;
+            this.btnListAccounts.Text = "Manage Accounts";
+            this.btnListAccounts.UseVisualStyleBackColor = true;
+            this.btnListAccounts.MouseLeave += new System.EventHandler(this.btnListAccounts_MouseLeave);
+            this.btnListAccounts.MouseHover += new System.EventHandler(this.btnListAccounts_MouseHover);
             // 
             // closeButton
             // 
@@ -306,7 +322,7 @@
             // UserIcon
             // 
             this.UserIcon.Image = global::DellRainInventorySystem.Properties.Resources.User;
-            this.UserIcon.Location = new System.Drawing.Point(1030, 19);
+            this.UserIcon.Location = new System.Drawing.Point(970, 19);
             this.UserIcon.Name = "UserIcon";
             this.UserIcon.Size = new System.Drawing.Size(30, 30);
             this.UserIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -318,7 +334,7 @@
             this.lbUsername.AutoSize = true;
             this.lbUsername.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
             this.lbUsername.ForeColor = System.Drawing.Color.White;
-            this.lbUsername.Location = new System.Drawing.Point(1072, 27);
+            this.lbUsername.Location = new System.Drawing.Point(1012, 27);
             this.lbUsername.Name = "lbUsername";
             this.lbUsername.Size = new System.Drawing.Size(77, 17);
             this.lbUsername.TabIndex = 7;
@@ -329,7 +345,7 @@
             this.btnCreateAccount.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCreateAccount.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCreateAccount.ForeColor = System.Drawing.Color.Gray;
-            this.btnCreateAccount.Location = new System.Drawing.Point(420, 17);
+            this.btnCreateAccount.Location = new System.Drawing.Point(322, 15);
             this.btnCreateAccount.Name = "btnCreateAccount";
             this.btnCreateAccount.Size = new System.Drawing.Size(134, 36);
             this.btnCreateAccount.TabIndex = 6;
@@ -344,7 +360,7 @@
             this.btnYourAccount.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnYourAccount.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnYourAccount.ForeColor = System.Drawing.Color.Gray;
-            this.btnYourAccount.Location = new System.Drawing.Point(280, 17);
+            this.btnYourAccount.Location = new System.Drawing.Point(182, 15);
             this.btnYourAccount.Name = "btnYourAccount";
             this.btnYourAccount.Size = new System.Drawing.Size(134, 36);
             this.btnYourAccount.TabIndex = 5;
@@ -413,6 +429,7 @@
             // 
             // bgTools
             // 
+            this.bgTools.Enabled = false;
             this.bgTools.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bgTools.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bgTools.ForeColor = System.Drawing.Color.White;
@@ -456,6 +473,7 @@
             this.SalesReports.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.SalesReports.TabIndex = 13;
             this.SalesReports.TabStop = false;
+            this.SalesReports.Click += new System.EventHandler(this.SalesReports_Click);
             this.SalesReports.MouseLeave += new System.EventHandler(this.SalesReports_MouseLeave);
             this.SalesReports.MouseHover += new System.EventHandler(this.SalesReport_MouseHover);
             // 
@@ -479,7 +497,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "Index";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Welcome";
+            this.Text = "Dashboard";
             this.groupDasboard.ResumeLayout(false);
             this.groupDasboard.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
@@ -530,5 +548,6 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Button btnListAccounts;
     }
 }

@@ -1,6 +1,6 @@
 ﻿namespace DellRainInventorySystem.Classes
 {
-    public class Staff : Name
+    public class Staff : Person
     {
         
         private string _username;
@@ -16,7 +16,7 @@
             _accType = accType;
         }
 
-        protected Staff(string firstname, string lastname, string username, string contact, string password, string accType) : base(firstname, lastname)
+        public Staff(string firstname, string lastname, string gender,string username, string contact, string password, string accType) : base(firstname, lastname, gender)
         {
             _username = username;
             _contact = contact;

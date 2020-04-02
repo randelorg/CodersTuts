@@ -8,14 +8,28 @@ namespace DellRainInventorySystem
 {
     public partial class Index : Form
     {
-        private Inventory clInventory = new Inventory();
+        private Inventory home = new Inventory();
+        private Form1 Login = new Form1();
         
         public Index()
         {
             InitializeComponent();
-            lbUsername.Text = clInventory.SessUsername;
-            BgColor();
+            lbUsername.Text = home.SessUsername; //display the username of the login user
+            DetermineAccountType();
+            BgColor(); 
             RemoveBorder();
+        }
+
+        private void DetermineAccountType()
+        {
+            switch (home.SessAccType)
+            {
+                case "staff":
+                    btnListAccounts.Hide();
+                    btnCreateAccount.Hide(); 
+                    break;
+            }
+            
         }
 
         private void BgColor()
@@ -31,6 +45,7 @@ namespace DellRainInventorySystem
         {
             btnCreateAccount.FlatAppearance.BorderSize = 0;
             btnYourAccount.FlatAppearance.BorderSize = 0;
+            btnListAccounts.FlatAppearance.BorderSize = 0;
             bg1.FlatAppearance.BorderSize = 0;
             bg2.FlatAppearance.BorderSize = 0;
             bg1.FlatAppearance.BorderSize = 0;
@@ -38,10 +53,13 @@ namespace DellRainInventorySystem
             bgTools.FlatAppearance.BorderSize = 0;
         }
 
+        //mouse events
         private void btnYourAccount_MouseHover(object sender, EventArgs e) => btnYourAccount.ForeColor = Color.White;
         private void btnYourAccount_MouseLeave(object sender, EventArgs e) => btnYourAccount.ForeColor = Color.Gray;
         private void btnCreateAccount_MouseHover(object sender, EventArgs e) => btnCreateAccount.ForeColor = Color.White;
         private void btnCreateAccount_MouseLeave(object sender, EventArgs e) => btnCreateAccount.ForeColor = Color.Gray;
+        private void btnListAccounts_MouseHover(object sender, EventArgs e) => btnListAccounts.ForeColor = Color.White;
+        private void btnListAccounts_MouseLeave(object sender, EventArgs e) => btnListAccounts.ForeColor = Color.Gray;
         private void closeButton_MouseHover(object sender, EventArgs e) => lbLogout.Show();
         private void closeButton_MouseLeave(object sender, EventArgs e) => lbLogout.Hide();
         private void SalesReport_MouseHover(object sender, EventArgs e) => lbReports.Show();
@@ -49,6 +67,7 @@ namespace DellRainInventorySystem
         private void Inventory_MouseHover(object sender, EventArgs e) => lbInventory.Show();
         private void Inventory_MouseLeave(object sender, EventArgs e) => lbInventory.Hide();
 
+        //click events
         private void btnYourAccount_Click(object sender, EventArgs e)
         {
             var account = new YourAccount();
@@ -75,5 +94,12 @@ namespace DellRainInventorySystem
             login.ShowDialog();
             this.Close();
         }
+
+        private void SalesReports_Click(object sender, EventArgs e)
+        {
+            var reports = new Reports();
+            reports.ShowDialog();
+        }
+
     }
 }

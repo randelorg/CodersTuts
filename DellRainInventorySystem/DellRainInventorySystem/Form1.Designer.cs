@@ -76,11 +76,11 @@
             // 
             // tbPassword
             // 
-            this.tbPassword.Font = new System.Drawing.Font("Times New Roman", 18F);
+            this.tbPassword.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbPassword.ForeColor = System.Drawing.Color.Black;
             this.tbPassword.Location = new System.Drawing.Point(55, 192);
             this.tbPassword.Name = "tbPassword";
-            this.tbPassword.PasswordChar = '*';
+            this.tbPassword.PasswordChar = '.';
             this.tbPassword.Size = new System.Drawing.Size(241, 35);
             this.tbPassword.TabIndex = 3;
             // 
@@ -148,7 +148,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "User login";
+            this.Text = "Dellrain\'s Mini Store";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

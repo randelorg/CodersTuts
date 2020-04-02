@@ -3,7 +3,7 @@ namespace DellRainInventorySystem.Interfaces
     public interface IInventory
     {
         void AddProduct();
-        void AddAccount();
+        int AddAccount();
         void AddSupplier();
         void AddLocation();
     }
