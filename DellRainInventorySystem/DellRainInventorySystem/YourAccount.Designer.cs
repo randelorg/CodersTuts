@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(YourAccount));
             this.label = new System.Windows.Forms.Label();
             this.lbProfile = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -252,9 +253,10 @@
             this.Controls.Add(this.pictureBack);
             this.ForeColor = System.Drawing.Color.Black;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "YourAccount";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "YourAccount";
+            this.Text = "Profile";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBack)).EndInit();
             this.ResumeLayout(false);

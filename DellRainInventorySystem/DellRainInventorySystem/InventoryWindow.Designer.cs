@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(InventoryWindow));
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.col_ProductName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_ProductType = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -208,6 +209,7 @@
             this.Controls.Add(this.closeButton);
             this.Controls.Add(this.dataGridView1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "InventoryWindow";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Inventory";
