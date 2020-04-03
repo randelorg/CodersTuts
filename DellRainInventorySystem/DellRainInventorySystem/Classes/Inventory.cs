@@ -10,7 +10,7 @@ namespace DellRainInventorySystem.Classes
     {
         //sql attr
         private SqlConnection con = new SqlConnection(
-            "Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=InventoryDB;Data Source=RANDELLAPPY");
+            "Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=InventoryDB;Data Source=RANDEL-PC");
         private SqlCommand cmd;
         private SqlDataReader _reader;
         
