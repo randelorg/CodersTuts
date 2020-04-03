@@ -204,6 +204,7 @@
             this.showPassword.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.showPassword.TabIndex = 45;
             this.showPassword.TabStop = false;
+            this.showPassword.MouseClick += new System.Windows.Forms.MouseEventHandler(this.showPassword_MouseClick);
             // 
             // GenPass
             // 
