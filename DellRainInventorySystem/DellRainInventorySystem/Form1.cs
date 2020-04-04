@@ -50,17 +50,15 @@ namespace DellRainInventorySystem
 
                 if (_reader.Read())
                 {
-                    //select the row of the current username
-                    cmd.CommandText = "SELECT * FROM Inventory.Account WHERE usernmae = @username";
-                    cmd.Parameters.AddWithValue("@username", tbUsername.Text);
-
-                    //stores the full name of the user and account type in the session holder
+                    /*stores the full name of the user and account type in the session holder
+                    sets the session for the current user*/
                     inventory.Session(_reader["firstname"].ToString() + " " + _reader["lastname"].ToString(),
-                        _reader["accType"].ToString().ToLower()); //sets the session
+                        _reader["accType"].ToString().ToLower()); 
                     Inventory.Firstname = _reader["firstname"].ToString();
                     Inventory.Lastname = _reader["Lastname"].ToString();
 
-                    ShowDashboard();//open the dashboard window
+                    //open the dashboard window
+                    ShowDashboard();
                 }
                 else
                     MessageBox.Show(@"Username or password is incorrect", @"Invalid", 

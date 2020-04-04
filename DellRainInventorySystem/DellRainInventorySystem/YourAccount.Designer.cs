@@ -186,6 +186,7 @@
             this.tbOldPassword.PasswordChar = '.';
             this.tbOldPassword.Size = new System.Drawing.Size(300, 30);
             this.tbOldPassword.TabIndex = 29;
+            this.tbOldPassword.TextChanged += new System.EventHandler(this.tbOldPassword_TextChanged);
             // 
             // tbConfirmNewPassword
             // 
@@ -195,6 +196,7 @@
             this.tbConfirmNewPassword.PasswordChar = '.';
             this.tbConfirmNewPassword.Size = new System.Drawing.Size(300, 30);
             this.tbConfirmNewPassword.TabIndex = 30;
+            this.tbConfirmNewPassword.TextChanged += new System.EventHandler(this.tbConfirmNewPassword_TextChanged);
             // 
             // btnChangePassword
             // 
@@ -206,6 +208,7 @@
             this.btnChangePassword.TabIndex = 31;
             this.btnChangePassword.Text = "Change";
             this.btnChangePassword.UseVisualStyleBackColor = true;
+            this.btnChangePassword.Click += new System.EventHandler(this.btnChangePassword_Click);
             // 
             // pictureBox1
             // 

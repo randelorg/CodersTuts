@@ -63,7 +63,7 @@ namespace DellRainInventorySystem.Classes
                 }
 
                 _reader = cmd.ExecuteReader();
-
+                _reader.Close();
                 return 0;
             }
 
@@ -91,9 +91,39 @@ namespace DellRainInventorySystem.Classes
             throw new NotImplementedException();
         }
 
-        public int ChangePassword()
+        public int ChangePassword(string old, string newPass)
         {
-            throw new NotImplementedException();
+            try
+            {
+                cmd = new SqlCommand();
+                con.Open();
+                cmd.Connection = con;
+                cmd.CommandText = "SELECT AccountId FROM Inventory.Account WHERE firstname = @fname";
+                cmd.Parameters.AddWithValue("fname", Inventory.Firstname);
+                _reader = cmd.ExecuteReader();
+
+                if (_reader.Read())
+                {
+                    cmd.CommandText = "UPDATE Inventory.Account SET password = @newpword WHERE AccountId = @id";
+                    cmd.Parameters.AddWithValue("@id", int.Parse(_reader["AccountId"].ToString()));
+                    cmd.Parameters.AddWithValue("@newpword", newPass);
+
+                    /*close the previous reader and execute the 
+                    latest query which is the update query*/
+                    _reader.Close();
+                    cmd.ExecuteNonQuery();
+                }
+
+                return 0;
+            }
+            catch (SqlException)
+            {
+                return 1;
+            }
+            finally
+            {
+                con.Close();
+            }
         }
     }
 }
