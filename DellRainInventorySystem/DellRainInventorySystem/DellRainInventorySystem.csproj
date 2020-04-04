@@ -52,12 +52,11 @@
     <Compile Include="AddProductWindow.Designer.cs">
       <DependentUpon>AddProductWindow.cs</DependentUpon>
     </Compile>
-    <Compile Include="Classes\Admin.cs" />
+    <Compile Include="Classes\User.cs" />
     <Compile Include="Classes\Inventory.cs" />
     <Compile Include="Classes\InventoryUtils.cs" />
     <Compile Include="Classes\Person.cs" />
     <Compile Include="Classes\Product.cs" />
-    <Compile Include="Classes\Staff.cs" />
     <Compile Include="Classes\Supplier.cs" />
     <Compile Include="CreateAccount.cs">
       <SubType>Form</SubType>
@@ -92,7 +91,6 @@
     <Compile Include="Reports.Designer.cs">
       <DependentUpon>Reports.cs</DependentUpon>
     </Compile>
-    <Compile Include="SQL\Connect.cs" />
     <Compile Include="YourAccount.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -200,5 +198,6 @@
   <ItemGroup>
     <None Include="Resources\update.png" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

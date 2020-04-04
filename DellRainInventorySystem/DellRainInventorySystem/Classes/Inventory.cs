@@ -43,7 +43,6 @@ namespace DellRainInventorySystem.Classes
         {
             try
             {
-                
                 cmd = new SqlCommand();
                 con.Open();
                 cmd.Connection = con;
@@ -51,25 +50,26 @@ namespace DellRainInventorySystem.Classes
                 cmd.CommandText = "INSERT INTO Inventory.Account (firstname, lastname, gender, contactNumber, username, password, accType)" +
                                   "VALUES (@fname, @lname, @gender, @number, @username, @password, @accType)";
 
-                foreach (var staff in LtStaff)
+                if (LtuUsers.Count > 0)
                 {
-                    cmd.Parameters.AddWithValue("@fname", staff.Firstname);
-                    cmd.Parameters.AddWithValue("@lname", staff.Lastname);
-                    cmd.Parameters.AddWithValue("@gender", staff.Gender);
-                    cmd.Parameters.AddWithValue("@number", staff.Contact);
-                    cmd.Parameters.AddWithValue("@username", staff.Username);
-                    cmd.Parameters.AddWithValue("@password", staff.Password);
-                    cmd.Parameters.AddWithValue("accType", staff.AccType);
+                    var user = LtuUsers.Last.Value; //get the last added value in the link-list
+                    cmd.Parameters.AddWithValue("@fname", user.Firstname);
+                    cmd.Parameters.AddWithValue("@lname", user.Lastname);
+                    cmd.Parameters.AddWithValue("@gender", user.Gender);
+                    cmd.Parameters.AddWithValue("@number", user.Contact);
+                    cmd.Parameters.AddWithValue("@username", user.Username);
+                    cmd.Parameters.AddWithValue("@password", user.Password);
+                    cmd.Parameters.AddWithValue("accType", user.AccType);
                 }
 
                 _reader = cmd.ExecuteReader();
 
-                LtStaff.Clear();
                 return 0;
             }
 
             catch (SqlException e)
             {
+                Console.WriteLine(e.ToString());
                 return 1;
             }
 
@@ -91,5 +91,9 @@ namespace DellRainInventorySystem.Classes
             throw new NotImplementedException();
         }
 
+        public int ChangePassword()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

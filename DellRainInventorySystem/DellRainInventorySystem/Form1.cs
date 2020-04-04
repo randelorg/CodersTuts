@@ -68,9 +68,7 @@ namespace DellRainInventorySystem
             }
 
             catch (SqlException a)
-            {   //connection string for my pc
-                con = new SqlConnection(
-                    "Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=InventoryDB;Data Source=RANDEL-PC");
+            {   
                 Debug.WriteLine(a.ToString());
                 MessageBox.Show(@"Cannot connect to the database", @"Error", 
                                 MessageBoxButtons.OK, MessageBoxIcon.Error);

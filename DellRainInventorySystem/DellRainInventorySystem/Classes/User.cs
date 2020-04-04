@@ -1,15 +1,15 @@
 ﻿namespace DellRainInventorySystem.Classes
 {
-    public class Admin : Person
+    public class User : Person
     {
         private string _username;
         private string _contact;
         private string _password;
         private string _accType;
         
-        protected Admin(){}
+        protected User(){}
         
-        protected Admin(string username, string contact, string password, string accType)
+        public User(string username, string contact, string password, string accType)
         {
             _username = username;
             _contact = contact;
@@ -17,7 +17,7 @@
             _accType = accType;
         }
 
-        protected Admin(string firstname, string lastname, string gender, string username, string contact, string password, string accType) : base(firstname, lastname, gender)
+        public User(string firstname, string lastname, string gender, string username, string contact, string password, string accType) : base(firstname, lastname, gender)
         {
             _username = username;
             _contact = contact;

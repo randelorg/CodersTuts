@@ -1,3 +1,5 @@
+using System.Runtime.CompilerServices;
+
 namespace DellRainInventorySystem.Interfaces
 {
     public interface IInventory
@@ -6,5 +8,6 @@ namespace DellRainInventorySystem.Interfaces
         int AddAccount();
         void AddSupplier();
         void AddLocation();
+        int ChangePassword();
     }
 }

@@ -27,11 +27,12 @@ namespace DellRainInventorySystem
 
         private void btnSaveAccount_Click(object sender, EventArgs e)
         {
-            if (!CheckEmptyFields()) { 
-                InventoryUtils.LtStaff.AddLast(new Staff(tbFirstName.Text, tbLastName.Text,
-                        cbGender.SelectedItem.ToString(), tbUsername.Text,
-                        tbNumber.Text, tbDefaultPassword.Text, cbPosition.SelectedItem.ToString()));
-
+            if (!CheckEmptyFields()) 
+            {
+              
+                InventoryUtils.LtuUsers.AddLast(new User(tbFirstName.Text, tbLastName.Text, cbGender.SelectedItem.ToString(), tbUsername.Text,
+                    tbNumber.Text, tbDefaultPassword.Text, cbPosition.SelectedItem.ToString()));
+                
                 //invoke inventory add account method
                 _classifier = inventory.AddAccount();
 
@@ -46,6 +47,8 @@ namespace DellRainInventorySystem
                             , MessageBoxIcon.Error);
                         break;
                 }
+
+                cleanForm(this); //clear all text-fields
             }
             else
             {
@@ -74,9 +77,13 @@ namespace DellRainInventorySystem
             return false;
         }
 
-        private void ClearFields()
+        private void cleanForm(Control ctrl)
         {
-            //clear the fields here
+            foreach (Control c in ctrl.Controls)
+            {
+                if (c is TextBox) ((TextBox)c).Text = string.Empty;
+                cleanForm(c);
+            }
         }
 
         
