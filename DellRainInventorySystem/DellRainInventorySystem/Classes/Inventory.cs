@@ -2,6 +2,7 @@ using System;
 using System.Data.SqlClient;
 using System.Diagnostics;
 using System.Linq;
+using System.Runtime.InteropServices;
 using DellRainInventorySystem.Interfaces;
 
 namespace DellRainInventorySystem.Classes
@@ -72,23 +73,78 @@ namespace DellRainInventorySystem.Classes
                 Console.WriteLine(e.ToString());
                 return 1;
             }
-
             finally{con.Close();}
         }
 
-        public void AddProduct()
+        public int AddProduct()
         {
-            throw new NotImplementedException();
-        }
+            try
+            {
+                var suppId = 0; //for supplier ID
+                var LocationId = 0; //for Location ID
+                var Supplier = false;
+                var Location = false;
+                var product = LtProducts.Last.Value;
 
-        public void AddSupplier()
-        {
-            throw new NotImplementedException();
-        }
+                cmd = new SqlCommand();
+                con.Open();
+                cmd.Connection = con;
 
-        public void AddLocation()
-        {
-            throw new NotImplementedException();
+                cmd.CommandText = "SELECT * FROM Inventory.Location WHERE name = @locName";
+                cmd.Parameters.AddWithValue("@locName", product.Location);
+                _reader = cmd.ExecuteReader();
+
+                if (_reader.Read()) //if location is already existing
+                {
+                    Location = true;
+                    LocationId = int.Parse(_reader["locaId"].ToString());
+                    _reader.Close();//close first query
+                }
+                else //if location is new add to the DB
+                {
+                    _reader.Close();
+
+                    //adding row to the Location table
+                    cmd.CommandText = "INSERT INTO Inventory.Location (name) " +
+                                      "VALUES (@location)";
+                    cmd.Parameters.AddWithValue("@location", product.Location);
+                    _reader = cmd.ExecuteReader();
+                    _reader.Close();//close second query
+                }
+
+
+                cmd.CommandText = "SELECT * FROM Inventory.Supplier WHERE suppName = @name";
+                cmd.Parameters.AddWithValue("@name", product.CompanyName);
+                _reader = cmd.ExecuteReader();
+
+                if (_reader.Read()) //if the supplier is already existing
+                {
+                    Supplier = true;
+                    suppId = int.Parse(_reader["suppId"].ToString());
+                    _reader.Close();//close third query
+                }
+                else //if the supplier is new add to the DB
+                {
+                    _reader.Close();
+
+                    //adding row to the Supplier table
+                    cmd.CommandText = "INSERT INTO Inventory.Supplier (suppName, ContactNumber) " +
+                                      "VALUES (@suppName,@suppNum)";
+                    cmd.Parameters.AddWithValue("@suppName", product.CompanyName);
+                    cmd.Parameters.AddWithValue("@suppNum", product.Contact);
+                    _reader = cmd.ExecuteReader();
+                    _reader.Close();//close forth query
+                }
+
+
+                return 0;
+            }
+            catch (SqlException e)
+            {
+                Console.WriteLine(e.ToString());
+                return 1;
+            }
+            finally { con.Close(); }
         }
 
         public int ChangePassword(string old, string newPass)

@@ -128,6 +128,7 @@
             // 
             // cbGender
             // 
+            this.cbGender.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbGender.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cbGender.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbGender.FormattingEnabled = true;
@@ -138,10 +139,10 @@
             this.cbGender.Name = "cbGender";
             this.cbGender.Size = new System.Drawing.Size(350, 27);
             this.cbGender.TabIndex = 38;
-            this.cbGender.Text = "Select gender";
             // 
             // cbPosition
             // 
+            this.cbPosition.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbPosition.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cbPosition.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbPosition.FormattingEnabled = true;
@@ -152,7 +153,6 @@
             this.cbPosition.Name = "cbPosition";
             this.cbPosition.Size = new System.Drawing.Size(350, 27);
             this.cbPosition.TabIndex = 39;
-            this.cbPosition.Text = "Select position";
             // 
             // label1
             // 

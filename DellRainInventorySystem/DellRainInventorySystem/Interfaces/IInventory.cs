@@ -4,10 +4,8 @@ namespace DellRainInventorySystem.Interfaces
 {
     public interface IInventory
     {
-        void AddProduct();
+        int AddProduct();
         int AddAccount();
-        void AddSupplier();
-        void AddLocation();
         int ChangePassword(string old, string newPass);
     }
 }

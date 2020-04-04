@@ -1,13 +1,31 @@
 ﻿namespace DellRainInventorySystem.Classes
 {
-    public class Product
+    public class Product : Supplier
     {
         private string _prodName;
         private string _prodType;
+        private string _prodLocation;
+        private string _shelfLife;
         private int _qty;
         private int _sold;
         private float _price;
         
+        //empty 
+        public Product() { }
+
+        //for creation
+        public Product(string prodName, string prodType, int qty, float price, string prodLocation, string life,
+            string suppName, string suppContact) : base(suppName, suppContact)
+        {
+            _prodName = prodName;
+            _prodType = prodType;
+            _qty = qty;
+            this._price = price;
+            _prodLocation = prodLocation;
+            _shelfLife = life;
+        }
+
+        //for updating
         public Product(string prodName, string prodType, int qty, int sold, float price)
         {
             _prodName = prodName;
@@ -45,6 +63,12 @@
         {
             get => _price;
             set => _price = value;
+        }
+
+        public string Location
+        {
+            get => _prodLocation;
+            set => _prodLocation = value;
         }
     }
 }

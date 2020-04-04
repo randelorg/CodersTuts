@@ -48,7 +48,7 @@ namespace DellRainInventorySystem
                         break;
                 }
 
-                cleanForm(this); //clear all text-fields
+                CleanForm(this); //clear all text-fields
             }
             else
             {
@@ -77,12 +77,12 @@ namespace DellRainInventorySystem
             return false;
         }
 
-        private void cleanForm(Control ctrl)
+        private void CleanForm(Control ctrl)
         {
             foreach (Control c in ctrl.Controls)
             {
                 if (c is TextBox) ((TextBox)c).Text = string.Empty;
-                cleanForm(c);
+                CleanForm(c);
             }
         }
 

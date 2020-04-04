@@ -37,30 +37,28 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.tbName = new System.Windows.Forms.TextBox();
+            this.tbPrice = new System.Windows.Forms.TextBox();
+            this.tbLocation = new System.Windows.Forms.TextBox();
+            this.prodQty = new System.Windows.Forms.NumericUpDown();
+            this.tbSuppName = new System.Windows.Forms.TextBox();
+            this.tbSuppContact = new System.Windows.Forms.TextBox();
             this.pictureBack = new System.Windows.Forms.PictureBox();
             this.cbListOfSupplier = new System.Windows.Forms.ComboBox();
             this.label13 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnImage = new System.Windows.Forms.Button();
             this.label14 = new System.Windows.Forms.Label();
-            this.cbExistingProductLocation = new System.Windows.Forms.ComboBox();
+            this.cbProductLocation = new System.Windows.Forms.ComboBox();
             this.cbProductType = new System.Windows.Forms.ComboBox();
             this.btnSaveProduct = new System.Windows.Forms.Button();
-            this.DD_Date = new System.Windows.Forms.DateTimePicker();
+            this.ShelfLife = new System.Windows.Forms.DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.closeButton)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.prodQty)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBack)).BeginInit();
             this.SuspendLayout();
             // 
@@ -128,7 +126,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(47, 543);
+            this.label5.Location = new System.Drawing.Point(46, 489);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(91, 13);
             this.label5.TabIndex = 44;
@@ -138,21 +136,11 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(44, 370);
+            this.label6.Location = new System.Drawing.Point(43, 316);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(87, 13);
             this.label6.TabIndex = 45;
             this.label6.Text = "Product Location";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(43, 316);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(66, 13);
-            this.label7.TabIndex = 46;
-            this.label7.Text = "Product Unit";
             // 
             // label8
             // 
@@ -178,7 +166,7 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(44, 478);
+            this.label10.Location = new System.Drawing.Point(43, 424);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(77, 13);
             this.label10.TabIndex = 49;
@@ -204,69 +192,62 @@
             this.label12.TabIndex = 51;
             this.label12.Text = "Supplier Details";
             // 
-            // textBox1
+            // tbName
             // 
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox1.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(47, 100);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(449, 30);
-            this.textBox1.TabIndex = 52;
+            this.tbName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tbName.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbName.Location = new System.Drawing.Point(47, 100);
+            this.tbName.Name = "tbName";
+            this.tbName.Size = new System.Drawing.Size(449, 30);
+            this.tbName.TabIndex = 52;
             // 
-            // textBox4
+            // tbPrice
             // 
-            this.textBox4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox4.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox4.Location = new System.Drawing.Point(47, 272);
-            this.textBox4.MaxLength = 6;
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(449, 30);
-            this.textBox4.TabIndex = 55;
+            this.tbPrice.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tbPrice.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbPrice.Location = new System.Drawing.Point(47, 272);
+            this.tbPrice.MaxLength = 6;
+            this.tbPrice.Name = "tbPrice";
+            this.tbPrice.Size = new System.Drawing.Size(449, 30);
+            this.tbPrice.TabIndex = 55;
             // 
-            // textBox6
+            // tbLocation
             // 
-            this.textBox6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox6.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox6.Location = new System.Drawing.Point(45, 386);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(449, 30);
-            this.textBox6.TabIndex = 57;
+            this.tbLocation.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tbLocation.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbLocation.Location = new System.Drawing.Point(45, 384);
+            this.tbLocation.Name = "tbLocation";
+            this.tbLocation.Size = new System.Drawing.Size(449, 30);
+            this.tbLocation.TabIndex = 57;
+            this.tbLocation.TextChanged += new System.EventHandler(this.tbLocation_TextChanged);
             // 
-            // textBox7
+            // prodQty
             // 
-            this.textBox7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox7.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox7.Location = new System.Drawing.Point(46, 332);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(449, 30);
-            this.textBox7.TabIndex = 58;
+            this.prodQty.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.prodQty.Location = new System.Drawing.Point(47, 214);
+            this.prodQty.Name = "prodQty";
+            this.prodQty.Size = new System.Drawing.Size(449, 30);
+            this.prodQty.TabIndex = 60;
             // 
-            // numericUpDown1
+            // tbSuppName
             // 
-            this.numericUpDown1.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.numericUpDown1.Location = new System.Drawing.Point(47, 214);
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(449, 30);
-            this.numericUpDown1.TabIndex = 60;
+            this.tbSuppName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tbSuppName.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbSuppName.Location = new System.Drawing.Point(521, 145);
+            this.tbSuppName.Name = "tbSuppName";
+            this.tbSuppName.Size = new System.Drawing.Size(449, 30);
+            this.tbSuppName.TabIndex = 62;
+            this.tbSuppName.TextChanged += new System.EventHandler(this.tbSuppName_TextChanged);
             // 
-            // textBox3
+            // tbSuppContact
             // 
-            this.textBox3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox3.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(518, 98);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(449, 30);
-            this.textBox3.TabIndex = 62;
-            // 
-            // textBox5
-            // 
-            this.textBox5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox5.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox5.Location = new System.Drawing.Point(518, 219);
-            this.textBox5.MaxLength = 11;
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(449, 30);
-            this.textBox5.TabIndex = 63;
+            this.tbSuppContact.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tbSuppContact.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbSuppContact.Location = new System.Drawing.Point(518, 219);
+            this.tbSuppContact.MaxLength = 11;
+            this.tbSuppContact.Name = "tbSuppContact";
+            this.tbSuppContact.Size = new System.Drawing.Size(449, 30);
+            this.tbSuppContact.TabIndex = 63;
             // 
             // pictureBack
             // 
@@ -281,13 +262,16 @@
             // 
             // cbListOfSupplier
             // 
+            this.cbListOfSupplier.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbListOfSupplier.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbListOfSupplier.FormattingEnabled = true;
-            this.cbListOfSupplier.Location = new System.Drawing.Point(518, 145);
+            this.cbListOfSupplier.Items.AddRange(new object[] {
+            "Oishi"});
+            this.cbListOfSupplier.Location = new System.Drawing.Point(520, 98);
             this.cbListOfSupplier.Name = "cbListOfSupplier";
             this.cbListOfSupplier.Size = new System.Drawing.Size(449, 31);
             this.cbListOfSupplier.TabIndex = 65;
-            this.cbListOfSupplier.Text = "Choose exisiting supplier";
+            this.cbListOfSupplier.SelectedIndexChanged += new System.EventHandler(this.cbListOfSupplier_SelectedIndexChanged);
             // 
             // label13
             // 
@@ -299,36 +283,37 @@
             this.label13.TabIndex = 66;
             this.label13.Text = "or";
             // 
-            // button1
+            // btnImage
             // 
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(50, 497);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(446, 30);
-            this.button1.TabIndex = 67;
-            this.button1.Text = "Choose Image";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnImage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnImage.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnImage.Location = new System.Drawing.Point(48, 443);
+            this.btnImage.Name = "btnImage";
+            this.btnImage.Size = new System.Drawing.Size(446, 30);
+            this.btnImage.TabIndex = 67;
+            this.btnImage.Text = "Choose Image";
+            this.btnImage.UseVisualStyleBackColor = true;
             // 
             // label14
             // 
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Tahoma", 8F);
-            this.label14.Location = new System.Drawing.Point(48, 420);
+            this.label14.Location = new System.Drawing.Point(48, 368);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(17, 13);
             this.label14.TabIndex = 69;
             this.label14.Text = "or";
             // 
-            // cbExistingProductLocation
+            // cbProductLocation
             // 
-            this.cbExistingProductLocation.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbExistingProductLocation.FormattingEnabled = true;
-            this.cbExistingProductLocation.Location = new System.Drawing.Point(44, 436);
-            this.cbExistingProductLocation.Name = "cbExistingProductLocation";
-            this.cbExistingProductLocation.Size = new System.Drawing.Size(449, 31);
-            this.cbExistingProductLocation.TabIndex = 68;
-            this.cbExistingProductLocation.Text = "Choose exisiting location";
+            this.cbProductLocation.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbProductLocation.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbProductLocation.FormattingEnabled = true;
+            this.cbProductLocation.Location = new System.Drawing.Point(45, 332);
+            this.cbProductLocation.Name = "cbProductLocation";
+            this.cbProductLocation.Size = new System.Drawing.Size(449, 31);
+            this.cbProductLocation.TabIndex = 68;
+            this.cbProductLocation.SelectedIndexChanged += new System.EventHandler(this.cbProductLocation_SelectedIndexChanged);
             // 
             // cbProductType
             // 
@@ -353,43 +338,42 @@
             this.btnSaveProduct.TabIndex = 71;
             this.btnSaveProduct.Text = "Save";
             this.btnSaveProduct.UseVisualStyleBackColor = true;
+            this.btnSaveProduct.Click += new System.EventHandler(this.btnSaveProduct_Click);
             // 
-            // DD_Date
+            // ShelfLife
             // 
-            this.DD_Date.CalendarFont = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DD_Date.Location = new System.Drawing.Point(50, 565);
-            this.DD_Date.Name = "DD_Date";
-            this.DD_Date.Size = new System.Drawing.Size(255, 20);
-            this.DD_Date.TabIndex = 72;
+            this.ShelfLife.CalendarFont = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ShelfLife.Location = new System.Drawing.Point(49, 511);
+            this.ShelfLife.Name = "ShelfLife";
+            this.ShelfLife.Size = new System.Drawing.Size(255, 20);
+            this.ShelfLife.TabIndex = 72;
             // 
             // AddProductWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(988, 609);
-            this.Controls.Add(this.DD_Date);
+            this.ClientSize = new System.Drawing.Size(988, 551);
+            this.Controls.Add(this.ShelfLife);
             this.Controls.Add(this.btnSaveProduct);
             this.Controls.Add(this.cbProductType);
             this.Controls.Add(this.label14);
-            this.Controls.Add(this.cbExistingProductLocation);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.cbProductLocation);
+            this.Controls.Add(this.btnImage);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.cbListOfSupplier);
             this.Controls.Add(this.pictureBack);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.numericUpDown1);
-            this.Controls.Add(this.textBox7);
-            this.Controls.Add(this.textBox6);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.tbSuppContact);
+            this.Controls.Add(this.tbSuppName);
+            this.Controls.Add(this.prodQty);
+            this.Controls.Add(this.tbLocation);
+            this.Controls.Add(this.tbPrice);
+            this.Controls.Add(this.tbName);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
@@ -404,7 +388,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Add Product";
             ((System.ComponentModel.ISupportInitialize)(this.closeButton)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.prodQty)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBack)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -421,27 +405,25 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox tbName;
+        private System.Windows.Forms.TextBox tbPrice;
+        private System.Windows.Forms.TextBox tbLocation;
+        private System.Windows.Forms.NumericUpDown prodQty;
+        private System.Windows.Forms.TextBox tbSuppName;
+        private System.Windows.Forms.TextBox tbSuppContact;
         private System.Windows.Forms.PictureBox pictureBack;
         private System.Windows.Forms.ComboBox cbListOfSupplier;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnImage;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.ComboBox cbExistingProductLocation;
+        private System.Windows.Forms.ComboBox cbProductLocation;
         private System.Windows.Forms.ComboBox cbProductType;
         private System.Windows.Forms.Button btnSaveProduct;
-        private System.Windows.Forms.DateTimePicker DD_Date;
+        private System.Windows.Forms.DateTimePicker ShelfLife;
     }
 }
