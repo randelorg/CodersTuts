@@ -17,5 +17,12 @@ namespace DellRainInventorySystem
             AddProductWindow addProductWindow = new AddProductWindow();
             addProductWindow.ShowDialog();
         }
+
+        private void InventoryWindow_Load(object sender, EventArgs e)
+        {
+            // TODO: This line of code loads data into the 'inventoryDBDataSet.Product' table. You can move, or remove it, as needed.
+            this.productTableAdapter.Fill(this.inventoryDBDataSet.Product);
+
+        }
     }
 }

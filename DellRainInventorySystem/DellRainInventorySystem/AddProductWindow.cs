@@ -1,7 +1,6 @@
 ﻿using DellRainInventorySystem.Classes;
 using System;
 using System.Drawing;
-using System.IO;
 using System.Windows.Forms;
 
 namespace DellRainInventorySystem
@@ -10,7 +9,7 @@ namespace DellRainInventorySystem
     {
         private Inventory inventory = new Inventory();
         private string[] fields = new string[8];
-        private Bitmap Image;
+        private Bitmap _image;
 
         public AddProductWindow()
         {
@@ -32,7 +31,7 @@ namespace DellRainInventorySystem
             if (!CheckEmptyFields())
             {
                 InventoryUtils.LtProducts.AddLast(new Product(fields[0], fields[1], int.Parse(fields[2]), float.Parse(fields[3]), fields[4], fields[5],
-                                                    fields[6], fields[7], Image));
+                                                    fields[6], fields[7], _image));
 
                 ErrorMessage(inventory.AddProduct()); //add the whole product
 
@@ -143,7 +142,7 @@ namespace DellRainInventorySystem
             {
                 Console.WriteLine(@"WOW");
                 //filename of the selected image
-                Image = new Bitmap(openFileDialog1.FileName);
+                _image = new Bitmap(openFileDialog1.FileName);
                 btnImage.Text = @"Selected image " + openFileDialog1.SafeFileName;
             }
             Console.WriteLine(result); // <-- For debugging 
