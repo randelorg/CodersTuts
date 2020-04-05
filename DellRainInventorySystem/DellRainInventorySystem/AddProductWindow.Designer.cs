@@ -57,6 +57,7 @@
             this.cbProductType = new System.Windows.Forms.ComboBox();
             this.btnSaveProduct = new System.Windows.Forms.Button();
             this.ShelfLife = new System.Windows.Forms.DateTimePicker();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             ((System.ComponentModel.ISupportInitialize)(this.closeButton)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.prodQty)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBack)).BeginInit();
@@ -293,6 +294,7 @@
             this.btnImage.TabIndex = 67;
             this.btnImage.Text = "Choose Image";
             this.btnImage.UseVisualStyleBackColor = true;
+            this.btnImage.Click += new System.EventHandler(this.btnImage_Click);
             // 
             // label14
             // 
@@ -348,6 +350,14 @@
             this.ShelfLife.Name = "ShelfLife";
             this.ShelfLife.Size = new System.Drawing.Size(450, 30);
             this.ShelfLife.TabIndex = 72;
+            // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.DefaultExt = "jpg";
+            this.openFileDialog1.FileName = "openFileDialog1";
+            this.openFileDialog1.Filter = "Image Files|*.jpg;*.jpeg;*.png";
+            this.openFileDialog1.InitialDirectory = "C:\\";
+            this.openFileDialog1.Title = "Browse Product Image";
             // 
             // AddProductWindow
             // 
@@ -426,5 +436,6 @@
         private System.Windows.Forms.ComboBox cbProductType;
         private System.Windows.Forms.Button btnSaveProduct;
         private System.Windows.Forms.DateTimePicker ShelfLife;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
     }
 }

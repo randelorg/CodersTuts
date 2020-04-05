@@ -1,6 +1,9 @@
 using DellRainInventorySystem.Interfaces;
 using System;
 using System.Data.SqlClient;
+using System.Drawing;
+using System.Drawing.Imaging;
+using System.IO;
 using System.Windows.Forms;
 
 namespace DellRainInventorySystem.Classes
@@ -168,8 +171,8 @@ namespace DellRainInventorySystem.Classes
                 cmd.Connection = con;
 
                 cmd.CommandText =
-                    "INSERT INTO Inventory.Product (Supplier, prodName, prodType, prodQty, prodPrice, Location, prodShelfLife)" +
-                    "VALUES (@supplier, @name, @type, @qty, @price, @location, @life)";
+                    "INSERT INTO Inventory.Product (Supplier, prodName, prodType, prodQty, prodPrice, Location, prodShelfLife, prodImage)" +
+                    "VALUES (@supplier, @name, @type, @qty, @price, @location, @life, @image)";
 
                 if (LtProducts.Count > 0)
                 {
@@ -181,6 +184,7 @@ namespace DellRainInventorySystem.Classes
                     cmd.Parameters.AddWithValue("@price", product.Price);
                     cmd.Parameters.AddWithValue("@location", LocationId);
                     cmd.Parameters.AddWithValue("@life", product.Shelflife);
+                    cmd.Parameters.AddWithValue("@image", ImageToBase64(product.ProdImage, ImageFormat.Jpeg));
                 }
 
                 _reader = cmd.ExecuteReader();
@@ -283,6 +287,36 @@ namespace DellRainInventorySystem.Classes
                         , MessageBoxIcon.Error);
                     break;
             }
+        }
+
+        //convert image to byte the save to database
+        private string ImageToBase64(Image image,
+            System.Drawing.Imaging.ImageFormat format)
+        {
+            using (var ms = new MemoryStream())
+            {
+                // Convert Image to byte[]
+                image.Save(ms, format);
+                var imageBytes = ms.ToArray();
+
+                // Convert byte[] to Base64 String
+                var base64String = Convert.ToBase64String(imageBytes);
+                return base64String;
+            }
+        }
+
+        //retrieve image from the database
+        private Image Base64ToImage(string base64String)
+        {
+            // Convert Base64 String to byte[]
+            var imageBytes = Convert.FromBase64String(base64String);
+            var ms = new MemoryStream(imageBytes, 0,
+                imageBytes.Length);
+
+            // Convert byte[] to Image
+            ms.Write(imageBytes, 0, imageBytes.Length);
+            var image = Image.FromStream(ms, true);
+            return image;
         }
     }
 }

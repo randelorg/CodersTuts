@@ -1,4 +1,6 @@
-﻿namespace DellRainInventorySystem.Classes
+﻿using System.Drawing;
+
+namespace DellRainInventorySystem.Classes
 {
     public class Product : Supplier
     {
@@ -9,13 +11,14 @@
         private int _qty;
         private int _sold;
         private float _price;
+        private Bitmap _image;
         
         //empty 
         public Product() { }
 
         //for creation
         public Product(string prodName, string prodType, int qty, float price, string prodLocation, string life,
-            string suppName, string suppContact) : base(suppName, suppContact)
+            string suppName, string suppContact, Bitmap image) : base(suppName, suppContact)
         {
             _prodName = prodName;
             _prodType = prodType;
@@ -23,6 +26,7 @@
             this._price = price;
             _prodLocation = prodLocation;
             _shelfLife = life;
+            _image = image;
         }
 
         //for updating
@@ -75,6 +79,12 @@
         {
             get => _shelfLife;
             set => _shelfLife = value;
+        }
+
+        public Bitmap ProdImage
+        {
+            get => _image;
+            set => _image = value;
         }
     }
 }

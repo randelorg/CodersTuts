@@ -1,5 +1,7 @@
 ﻿using DellRainInventorySystem.Classes;
 using System;
+using System.Drawing;
+using System.IO;
 using System.Windows.Forms;
 
 namespace DellRainInventorySystem
@@ -8,6 +10,7 @@ namespace DellRainInventorySystem
     {
         private Inventory inventory = new Inventory();
         private string[] fields = new string[8];
+        private Bitmap Image;
 
         public AddProductWindow()
         {
@@ -29,7 +32,7 @@ namespace DellRainInventorySystem
             if (!CheckEmptyFields())
             {
                 InventoryUtils.LtProducts.AddLast(new Product(fields[0], fields[1], int.Parse(fields[2]), float.Parse(fields[3]), fields[4], fields[5],
-                                                    fields[6], fields[7]));
+                                                    fields[6], fields[7], Image));
 
                 ErrorMessage(inventory.AddProduct()); //add the whole product
 
@@ -73,6 +76,9 @@ namespace DellRainInventorySystem
             }
 
             fields[7] = tbSuppContact.Text; //supplier contact
+
+            if (!btnImage.Text.Contains(@"Selected image"))
+                return true;
 
             for (var i = 0; i < 8; i++)
             {
@@ -128,6 +134,19 @@ namespace DellRainInventorySystem
                         , MessageBoxIcon.Error);
                     break;
             }
+        }
+
+        private void btnImage_Click(object sender, EventArgs e)
+        {
+            DialogResult result = openFileDialog1.ShowDialog();
+            if (result == DialogResult.OK) // Test result.
+            {
+                Console.WriteLine(@"WOW");
+                //filename of the selected image
+                Image = new Bitmap(openFileDialog1.FileName);
+                btnImage.Text = @"Selected image " + openFileDialog1.SafeFileName;
+            }
+            Console.WriteLine(result); // <-- For debugging 
         }
     }
 }
