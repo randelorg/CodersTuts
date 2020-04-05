@@ -25,8 +25,8 @@ namespace DellRainInventorySystem
 
         private void PrepFieldsValue()
         {
-            tbFirstName.Text = Inventory.Firstname;
-            tbLastName.Text = Inventory.Lastname;
+            tbFirstName.Text = InventoryUtils.Firstname;
+            tbLastName.Text = InventoryUtils.Lastname;
             tbPosition.Text = inventory.SessAccType.ToUpper();
             btnChangePassword.Enabled = false;
         }

@@ -54,8 +54,8 @@ namespace DellRainInventorySystem
                     sets the session for the current user*/
                     inventory.Session(_reader["firstname"].ToString() + " " + _reader["lastname"].ToString(),
                         _reader["accType"].ToString().ToLower()); 
-                    Inventory.Firstname = _reader["firstname"].ToString();
-                    Inventory.Lastname = _reader["Lastname"].ToString();
+                    InventoryUtils.Firstname = _reader["firstname"].ToString();
+                    InventoryUtils.Lastname = _reader["Lastname"].ToString();
 
                     //open the dashboard window
                     ShowDashboard();
