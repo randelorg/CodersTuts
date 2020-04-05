@@ -7,6 +7,5 @@ namespace DellRainInventorySystem.Classes
     {
         protected internal static LinkedList<User> LtuUsers = new LinkedList<User>();
         protected internal static LinkedList<Product> LtProducts = new LinkedList<Product>();
-        protected internal static LinkedList<Supplier> LtSupplier = new LinkedList<Supplier>();
     }
 }

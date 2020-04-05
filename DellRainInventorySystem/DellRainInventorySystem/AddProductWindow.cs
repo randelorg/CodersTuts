@@ -1,6 +1,6 @@
-﻿using System;
+﻿using DellRainInventorySystem.Classes;
+using System;
 using System.Windows.Forms;
-using DellRainInventorySystem.Classes;
 
 namespace DellRainInventorySystem
 {
@@ -12,30 +12,25 @@ namespace DellRainInventorySystem
         public AddProductWindow()
         {
             InitializeComponent();
+            PrepList();
         }
 
-        
+        private void PrepList()
+        {
+
+        }
+
         private void pictureBack_Click(object sender, EventArgs e) => this.Close();
 
         private void btnSaveProduct_Click(object sender, EventArgs e)
         {
+
             if (!CheckEmptyFields())
             {
                 InventoryUtils.LtProducts.AddLast(new Product(fields[0], fields[1], int.Parse(fields[2]), float.Parse(fields[3]), fields[4], fields[5],
                                                     fields[6], fields[7]));
 
-                var classiffier = inventory.AddProduct();
-                switch (classiffier)
-                {
-                    case 0:
-                        MessageBox.Show(@"Account successfully added", @"Added", MessageBoxButtons.OK
-                            , MessageBoxIcon.Information);
-                        break;
-                    case 1:
-                        MessageBox.Show(@"Could not save account", @"DB Error", MessageBoxButtons.OK
-                            , MessageBoxIcon.Error);
-                        break;
-                }
+                ErrorMessage(inventory.AddProduct()); //add the whole product
 
                 CleanForm(this);
             }
@@ -47,7 +42,7 @@ namespace DellRainInventorySystem
 
         private bool CheckEmptyFields()
         {
-            
+
             fields[0] = tbName.Text; //product name
             if (cbProductType.SelectedItem != null)                   //product
                 fields[1] = cbProductType.SelectedItem.ToString();    //  type
@@ -57,18 +52,24 @@ namespace DellRainInventorySystem
 
             if (!string.IsNullOrEmpty(tbLocation.Text))     //product location
                 fields[4] = tbLocation.Text;
-            else { 
-                if(cbProductLocation.SelectedItem != null) 
+            else
+            {
+                if (cbProductLocation.SelectedItem != null)
                     fields[4] = cbProductLocation.SelectedItem.ToString();
             }
 
             fields[5] = ShelfLife.Text;     //product shelf life in date
 
-            if (!string.IsNullOrEmpty(tbSuppName.Text))     //supplier name
-                fields[6] = tbLocation.Text;
-            else { 
+            if (!string.IsNullOrEmpty(tbSuppName.Text))
+            {   //supplier name
+                fields[6] = tbSuppName.Text;
+                Console.WriteLine(@"1st {0}", fields[6]);
+            }
+            else
+            {
                 if (cbListOfSupplier.SelectedItem != null)
                     fields[6] = cbListOfSupplier.SelectedItem.ToString();
+                Console.WriteLine(@"2nd {0}", fields[6]);
             }
 
             fields[7] = tbSuppContact.Text; //supplier contact
@@ -112,6 +113,21 @@ namespace DellRainInventorySystem
         {
             if (cbProductLocation.SelectedIndex >= 0)
                 tbLocation.Enabled = false;
+        }
+
+        private void ErrorMessage(int i)
+        {
+            switch (i)
+            {
+                case 0:
+                    MessageBox.Show(@"Product successfully added", @"Product Added", MessageBoxButtons.OK
+                        , MessageBoxIcon.Information);
+                    break;
+                case 1:
+                    MessageBox.Show(@"Could not save product", @"DB Error", MessageBoxButtons.OK
+                        , MessageBoxIcon.Error);
+                    break;
+            }
         }
     }
 }

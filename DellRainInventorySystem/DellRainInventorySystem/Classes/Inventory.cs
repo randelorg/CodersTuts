@@ -3,6 +3,7 @@ using System.Data.SqlClient;
 using System.Diagnostics;
 using System.Linq;
 using System.Runtime.InteropServices;
+using System.Windows.Forms;
 using DellRainInventorySystem.Interfaces;
 
 namespace DellRainInventorySystem.Classes
@@ -14,7 +15,9 @@ namespace DellRainInventorySystem.Classes
             "Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=InventoryDB;Data Source=RANDEL-PC");
         private SqlCommand cmd;
         private SqlDataReader _reader;
-        
+        private int suppId = 0; //for supplier ID
+        private int LocationId = 0; //for Location ID
+
         //identifies the user to the index window
         //serves the session 
         private static string sess_username;
@@ -38,6 +41,159 @@ namespace DellRainInventorySystem.Classes
         {
             sess_username = username;
             sess_accType = accType;
+        }
+
+        public int AddLocation()
+        {
+            try
+            {
+                var product = LtProducts.Last.Value; //last product added in the linked list
+
+                cmd = new SqlCommand();
+                con.Open();
+                cmd.Connection = con;
+
+                //location table
+                cmd.CommandText = "SELECT * FROM Inventory.Location WHERE name = @locName";
+                cmd.Parameters.AddWithValue("@locName", product.Location);
+                _reader = cmd.ExecuteReader();
+
+                if (_reader.Read()) //if location is already existing
+                {
+                    LocationId = int.Parse(_reader["locaId"].ToString());
+                    _reader.Close();//close first query
+                }
+                else //if location is new add to the DB
+                {
+                    _reader.Close();
+
+                    //adding row to the Location table
+                    cmd.CommandText = "INSERT INTO Inventory.Location (name) " +
+                                      "VALUES (@newlocation)";
+                    cmd.Parameters.AddWithValue("@newlocation", product.Location);
+                    _reader = cmd.ExecuteReader();
+                    _reader.Close();//close second query
+
+                    //purpose of getting the primary key of the new added location
+                    cmd.CommandText = "SELECT * FROM Inventory.Location WHERE name = @locationName";
+                    cmd.Parameters.AddWithValue("@locationName", product.Location);
+                    _reader = cmd.ExecuteReader();
+
+                    //store the supplier id to the suppId var
+                    if (_reader.Read())
+                        LocationId = int.Parse(_reader["locaId"].ToString());
+
+                    _reader.Close();//close third query
+                }
+
+                _reader.Close();//close third query
+                return 0; //if adding is succesful
+
+            }
+            catch (SqlException e)
+            {
+                Console.WriteLine(e.ToString());
+                return 1; //if there are db errors
+            }
+            finally { con.Close(); }
+        }
+
+        public int AddSupplier()
+        {
+            try
+            {
+                var product = LtProducts.Last.Value; //last product added in the linked list
+
+                cmd = new SqlCommand();
+                con.Open();
+                cmd.Connection = con;
+
+                //supplier table
+                cmd.CommandText = "SELECT * FROM Inventory.Supplier WHERE suppName = @name";
+                cmd.Parameters.AddWithValue("@name", product.CompanyName);
+                _reader = cmd.ExecuteReader();
+
+                Console.WriteLine(product.CompanyName);
+
+                if (_reader.Read()) //if the supplier is already existing
+                {
+                    //store the supplier id to the suppId var
+                    suppId = int.Parse(_reader["suppId"].ToString());
+                }
+                else //if the supplier is new add to the DB
+                {
+                    _reader.Close();
+
+                    //adding row to the Supplier table
+                    cmd.CommandText = "INSERT INTO Inventory.Supplier (suppName, ContactNumber) " +
+                                      "VALUES (@newSuppName,@newSuppNum)";
+                    cmd.Parameters.AddWithValue("@newSuppName", product.CompanyName);
+                    cmd.Parameters.AddWithValue("@newSuppNum", product.Contact);
+                    _reader = cmd.ExecuteReader();
+                    _reader.Close();//close forth query
+
+                    //purpose of getting the primary key of the new added supplier
+                    cmd.CommandText = "SELECT * FROM Inventory.Supplier WHERE suppName = @Suppliername";
+                    cmd.Parameters.AddWithValue("@Suppliername", product.CompanyName);
+                    _reader = cmd.ExecuteReader();
+
+                    //store the supplier id to the suppId var
+                    if (_reader.Read())
+                        suppId = int.Parse(_reader["suppId"].ToString());
+
+                    _reader.Close();//close third query
+                }
+
+                _reader.Close();//close third query
+                return 0; //if adding the supplier is successful
+
+            }
+            catch (SqlException e)
+            {
+                Console.WriteLine(e.ToString());
+                return 2;  //if there are db errors
+            }
+            finally { con.Close(); }
+        }
+
+        public int AddProduct()
+        {
+            ErrorMessage(AddLocation());
+            ErrorMessage(AddSupplier());
+            Console.WriteLine(@"Location id {0}", LocationId);
+            Console.WriteLine(@"Supplier id {0}", suppId);
+
+
+            try
+            {
+                var product = LtProducts.Last.Value; //last product added in the linked list
+
+                cmd = new SqlCommand();
+                con.Open();
+                cmd.Connection = con;
+
+                cmd.CommandText =
+                    "INSERT INTO Inventory.Product (Supplier, prodName, prodType, prodQty, prodPrice, Location, prodShelfLife)" +
+                    "VALUES (@supplier, @name, @type, @qty, @price, @location, @life)";
+
+                cmd.Parameters.AddWithValue("@supplier", suppId);
+                cmd.Parameters.AddWithValue("@name", product.ProdName);
+                cmd.Parameters.AddWithValue("@type", product.ProdType);
+                cmd.Parameters.AddWithValue("@qty", product.Qty);
+                cmd.Parameters.AddWithValue("@price", product.Price);
+                cmd.Parameters.AddWithValue("@location", LocationId);
+                cmd.Parameters.AddWithValue("@life", product.Shelflife);
+
+                _reader = cmd.ExecuteReader();
+                _reader.Close();
+                return 0;
+            }
+            catch (SqlException)
+            {
+                return 1;
+            }
+
+            finally{con.Close();}
         }
 
         public int AddAccount()
@@ -73,79 +229,10 @@ namespace DellRainInventorySystem.Classes
                 Console.WriteLine(e.ToString());
                 return 1;
             }
-            finally{con.Close();}
-        }
 
-        public int AddProduct()
-        {
-            try
-            {
-                var suppId = 0; //for supplier ID
-                var LocationId = 0; //for Location ID
-                var Supplier = false;
-                var Location = false;
-                var product = LtProducts.Last.Value;
-
-                cmd = new SqlCommand();
-                con.Open();
-                cmd.Connection = con;
-
-                cmd.CommandText = "SELECT * FROM Inventory.Location WHERE name = @locName";
-                cmd.Parameters.AddWithValue("@locName", product.Location);
-                _reader = cmd.ExecuteReader();
-
-                if (_reader.Read()) //if location is already existing
-                {
-                    Location = true;
-                    LocationId = int.Parse(_reader["locaId"].ToString());
-                    _reader.Close();//close first query
-                }
-                else //if location is new add to the DB
-                {
-                    _reader.Close();
-
-                    //adding row to the Location table
-                    cmd.CommandText = "INSERT INTO Inventory.Location (name) " +
-                                      "VALUES (@location)";
-                    cmd.Parameters.AddWithValue("@location", product.Location);
-                    _reader = cmd.ExecuteReader();
-                    _reader.Close();//close second query
-                }
-
-
-                cmd.CommandText = "SELECT * FROM Inventory.Supplier WHERE suppName = @name";
-                cmd.Parameters.AddWithValue("@name", product.CompanyName);
-                _reader = cmd.ExecuteReader();
-
-                if (_reader.Read()) //if the supplier is already existing
-                {
-                    Supplier = true;
-                    suppId = int.Parse(_reader["suppId"].ToString());
-                    _reader.Close();//close third query
-                }
-                else //if the supplier is new add to the DB
-                {
-                    _reader.Close();
-
-                    //adding row to the Supplier table
-                    cmd.CommandText = "INSERT INTO Inventory.Supplier (suppName, ContactNumber) " +
-                                      "VALUES (@suppName,@suppNum)";
-                    cmd.Parameters.AddWithValue("@suppName", product.CompanyName);
-                    cmd.Parameters.AddWithValue("@suppNum", product.Contact);
-                    _reader = cmd.ExecuteReader();
-                    _reader.Close();//close forth query
-                }
-
-
-                return 0;
-            }
-            catch (SqlException e)
-            {
-                Console.WriteLine(e.ToString());
-                return 1;
-            }
             finally { con.Close(); }
         }
+
 
         public int ChangePassword(string old, string newPass)
         {
@@ -179,6 +266,22 @@ namespace DellRainInventorySystem.Classes
             finally
             {
                 con.Close();
+            }
+        }
+
+        private void ErrorMessage(int i)
+        {
+            // 1 for adding location and 2 for adding supplier error
+            switch (i)
+            {
+                case 1:
+                    MessageBox.Show(@"Could not save product location", @"DB Error", MessageBoxButtons.OK
+                        , MessageBoxIcon.Error);
+                    break;
+                case 2:
+                    MessageBox.Show(@"Could not save product supplier", @"DB Error", MessageBoxButtons.OK
+                        , MessageBoxIcon.Error);
+                    break;
             }
         }
     }

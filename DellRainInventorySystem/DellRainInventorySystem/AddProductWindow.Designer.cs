@@ -156,7 +156,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(518, 203);
+            this.label9.Location = new System.Drawing.Point(520, 203);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(86, 13);
             this.label9.TabIndex = 48;
@@ -243,7 +243,7 @@
             // 
             this.tbSuppContact.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tbSuppContact.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbSuppContact.Location = new System.Drawing.Point(518, 219);
+            this.tbSuppContact.Location = new System.Drawing.Point(520, 219);
             this.tbSuppContact.MaxLength = 11;
             this.tbSuppContact.Name = "tbSuppContact";
             this.tbSuppContact.Size = new System.Drawing.Size(449, 30);
@@ -279,9 +279,9 @@
             this.label13.Font = new System.Drawing.Font("Tahoma", 8F);
             this.label13.Location = new System.Drawing.Point(519, 129);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(17, 13);
+            this.label13.Size = new System.Drawing.Size(61, 13);
             this.label13.TabIndex = 66;
-            this.label13.Text = "or";
+            this.label13.Text = "or add new";
             // 
             // btnImage
             // 
@@ -298,11 +298,11 @@
             // 
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Tahoma", 8F);
-            this.label14.Location = new System.Drawing.Point(48, 368);
+            this.label14.Location = new System.Drawing.Point(45, 366);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(17, 13);
+            this.label14.Size = new System.Drawing.Size(61, 13);
             this.label14.TabIndex = 69;
-            this.label14.Text = "or";
+            this.label14.Text = "or add new";
             // 
             // cbProductLocation
             // 
@@ -317,6 +317,7 @@
             // 
             // cbProductType
             // 
+            this.cbProductType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbProductType.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbProductType.FormattingEnabled = true;
             this.cbProductType.Items.AddRange(new object[] {
@@ -326,7 +327,6 @@
             this.cbProductType.Name = "cbProductType";
             this.cbProductType.Size = new System.Drawing.Size(449, 31);
             this.cbProductType.TabIndex = 70;
-            this.cbProductType.Text = "Choose product type";
             // 
             // btnSaveProduct
             // 

@@ -70,5 +70,11 @@
             get => _prodLocation;
             set => _prodLocation = value;
         }
+
+        public string Shelflife
+        {
+            get => _shelfLife;
+            set => _shelfLife = value;
+        }
     }
 }
