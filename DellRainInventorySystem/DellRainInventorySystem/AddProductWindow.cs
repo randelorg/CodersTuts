@@ -17,7 +17,8 @@ namespace DellRainInventorySystem
 
         private void PrepList()
         {
-
+            ShelfLife.CustomFormat = @"dd-MMM-yyyy";
+            ShelfLife.Format = DateTimePickerFormat.Custom;
         }
 
         private void pictureBack_Click(object sender, EventArgs e) => this.Close();
@@ -59,17 +60,16 @@ namespace DellRainInventorySystem
             }
 
             fields[5] = ShelfLife.Text;     //product shelf life in date
+            Console.WriteLine(@"Date {0}", fields[5]);
 
             if (!string.IsNullOrEmpty(tbSuppName.Text))
             {   //supplier name
                 fields[6] = tbSuppName.Text;
-                Console.WriteLine(@"1st {0}", fields[6]);
             }
             else
             {
                 if (cbListOfSupplier.SelectedItem != null)
                     fields[6] = cbListOfSupplier.SelectedItem.ToString();
-                Console.WriteLine(@"2nd {0}", fields[6]);
             }
 
             fields[7] = tbSuppContact.Text; //supplier contact

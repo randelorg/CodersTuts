@@ -1,18 +1,16 @@
+using DellRainInventorySystem.Interfaces;
 using System;
 using System.Data.SqlClient;
-using System.Diagnostics;
-using System.Linq;
-using System.Runtime.InteropServices;
 using System.Windows.Forms;
-using DellRainInventorySystem.Interfaces;
 
 namespace DellRainInventorySystem.Classes
 {
     public class Inventory : InventoryUtils, IInventory
     {
         //sql attr
-        private SqlConnection con = new SqlConnection(
+        private readonly SqlConnection con = new SqlConnection(
             "Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=InventoryDB;Data Source=RANDEL-PC");
+
         private SqlCommand cmd;
         private SqlDataReader _reader;
         private int suppId = 0; //for supplier ID
@@ -24,7 +22,7 @@ namespace DellRainInventorySystem.Classes
         private static string sess_accType;
         public static string Firstname { get; set; }
         public static string Lastname { get; set; }
-        
+
         public string SessUsername
         {
             get => sess_username;
@@ -163,11 +161,8 @@ namespace DellRainInventorySystem.Classes
             Console.WriteLine(@"Location id {0}", LocationId);
             Console.WriteLine(@"Supplier id {0}", suppId);
 
-
             try
             {
-                var product = LtProducts.Last.Value; //last product added in the linked list
-
                 cmd = new SqlCommand();
                 con.Open();
                 cmd.Connection = con;
@@ -176,24 +171,29 @@ namespace DellRainInventorySystem.Classes
                     "INSERT INTO Inventory.Product (Supplier, prodName, prodType, prodQty, prodPrice, Location, prodShelfLife)" +
                     "VALUES (@supplier, @name, @type, @qty, @price, @location, @life)";
 
-                cmd.Parameters.AddWithValue("@supplier", suppId);
-                cmd.Parameters.AddWithValue("@name", product.ProdName);
-                cmd.Parameters.AddWithValue("@type", product.ProdType);
-                cmd.Parameters.AddWithValue("@qty", product.Qty);
-                cmd.Parameters.AddWithValue("@price", product.Price);
-                cmd.Parameters.AddWithValue("@location", LocationId);
-                cmd.Parameters.AddWithValue("@life", product.Shelflife);
+                if (LtProducts.Count > 0)
+                {
+                    var product = LtProducts.Last.Value; //last product added in the linked list
+                    cmd.Parameters.AddWithValue("@supplier", suppId);
+                    cmd.Parameters.AddWithValue("@name", product.ProdName);
+                    cmd.Parameters.AddWithValue("@type", product.ProdType);
+                    cmd.Parameters.AddWithValue("@qty", product.Qty);
+                    cmd.Parameters.AddWithValue("@price", product.Price);
+                    cmd.Parameters.AddWithValue("@location", LocationId);
+                    cmd.Parameters.AddWithValue("@life", product.Shelflife);
+                }
 
                 _reader = cmd.ExecuteReader();
                 _reader.Close();
                 return 0;
             }
-            catch (SqlException)
+            catch (SqlException e)
             {
+                Console.WriteLine(e.ToString());
                 return 1;
             }
 
-            finally{con.Close();}
+            finally { con.Close(); }
         }
 
         public int AddAccount()

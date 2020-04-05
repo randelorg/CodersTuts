@@ -126,7 +126,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(46, 489);
+            this.label5.Location = new System.Drawing.Point(526, 82);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(91, 13);
             this.label5.TabIndex = 44;
@@ -146,7 +146,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(518, 82);
+            this.label8.Location = new System.Drawing.Point(527, 193);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(75, 13);
             this.label8.TabIndex = 47;
@@ -156,7 +156,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(520, 203);
+            this.label9.Location = new System.Drawing.Point(529, 293);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(86, 13);
             this.label9.TabIndex = 48;
@@ -186,7 +186,7 @@
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(516, 57);
+            this.label12.Location = new System.Drawing.Point(525, 168);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(138, 19);
             this.label12.TabIndex = 51;
@@ -233,7 +233,7 @@
             // 
             this.tbSuppName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tbSuppName.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbSuppName.Location = new System.Drawing.Point(521, 145);
+            this.tbSuppName.Location = new System.Drawing.Point(530, 256);
             this.tbSuppName.Name = "tbSuppName";
             this.tbSuppName.Size = new System.Drawing.Size(449, 30);
             this.tbSuppName.TabIndex = 62;
@@ -243,7 +243,7 @@
             // 
             this.tbSuppContact.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tbSuppContact.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbSuppContact.Location = new System.Drawing.Point(520, 219);
+            this.tbSuppContact.Location = new System.Drawing.Point(529, 309);
             this.tbSuppContact.MaxLength = 11;
             this.tbSuppContact.Name = "tbSuppContact";
             this.tbSuppContact.Size = new System.Drawing.Size(449, 30);
@@ -267,7 +267,7 @@
             this.cbListOfSupplier.FormattingEnabled = true;
             this.cbListOfSupplier.Items.AddRange(new object[] {
             "Oishi"});
-            this.cbListOfSupplier.Location = new System.Drawing.Point(520, 98);
+            this.cbListOfSupplier.Location = new System.Drawing.Point(529, 209);
             this.cbListOfSupplier.Name = "cbListOfSupplier";
             this.cbListOfSupplier.Size = new System.Drawing.Size(449, 31);
             this.cbListOfSupplier.TabIndex = 65;
@@ -277,7 +277,7 @@
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Tahoma", 8F);
-            this.label13.Location = new System.Drawing.Point(519, 129);
+            this.label13.Location = new System.Drawing.Point(528, 240);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(61, 13);
             this.label13.TabIndex = 66;
@@ -332,7 +332,7 @@
             // 
             this.btnSaveProduct.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSaveProduct.Font = new System.Drawing.Font("Tahoma", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSaveProduct.Location = new System.Drawing.Point(626, 288);
+            this.btnSaveProduct.Location = new System.Drawing.Point(623, 380);
             this.btnSaveProduct.Name = "btnSaveProduct";
             this.btnSaveProduct.Size = new System.Drawing.Size(245, 57);
             this.btnSaveProduct.TabIndex = 71;
@@ -342,10 +342,11 @@
             // 
             // ShelfLife
             // 
-            this.ShelfLife.CalendarFont = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ShelfLife.Location = new System.Drawing.Point(49, 511);
+            this.ShelfLife.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ShelfLife.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.ShelfLife.Location = new System.Drawing.Point(527, 101);
             this.ShelfLife.Name = "ShelfLife";
-            this.ShelfLife.Size = new System.Drawing.Size(255, 20);
+            this.ShelfLife.Size = new System.Drawing.Size(450, 30);
             this.ShelfLife.TabIndex = 72;
             // 
             // AddProductWindow
@@ -353,7 +354,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(988, 551);
+            this.ClientSize = new System.Drawing.Size(988, 507);
             this.Controls.Add(this.ShelfLife);
             this.Controls.Add(this.btnSaveProduct);
             this.Controls.Add(this.cbProductType);
