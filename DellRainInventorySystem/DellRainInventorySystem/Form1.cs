@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Configuration;
 using System.Data.SqlClient;
 using System.Diagnostics;
 using System.Windows.Forms;
@@ -8,17 +9,19 @@ namespace DellRainInventorySystem
 {
     public partial class Form1 : Form
     {
+        //connection string
+        private static readonly string mainConn = ConfigurationManager.ConnectionStrings["MyConnection"].ConnectionString;
+        private SqlConnection con = new SqlConnection(mainConn);
+
         private Inventory inventory = new Inventory();
         private SqlDataReader _reader;
-        private SqlConnection con;
+        
         private SqlCommand cmd;
 
         public Form1()
         {
             InitializeComponent();
-            //connection string
-            con = new SqlConnection(
-                "Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=InventoryDB;Data Source=RANDEL-PC");
+            
         }
         
         //will close the login window

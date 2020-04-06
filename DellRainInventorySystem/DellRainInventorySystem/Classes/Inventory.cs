@@ -1,5 +1,6 @@
 using DellRainInventorySystem.Interfaces;
 using System;
+using System.Configuration;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.Drawing.Imaging;
@@ -10,9 +11,9 @@ namespace DellRainInventorySystem.Classes
 {
     public class Inventory : InventoryUtils, IInventory
     {
-        //sql attr
-        private readonly SqlConnection con = new SqlConnection(
-            "Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=InventoryDB;Data Source=RANDEL-PC");
+        //connection string
+        private static readonly string mainConn = ConfigurationManager.ConnectionStrings["MyConnection"].ConnectionString;
+        private SqlConnection con = new SqlConnection(mainConn);
 
         private SqlCommand cmd;
         private SqlDataReader _reader;
@@ -210,6 +211,16 @@ namespace DellRainInventorySystem.Classes
             }
 
             finally { con.Close(); }
+        }
+
+        public int FindExistingLocation()
+        {
+            return 1;
+        }
+
+        public int FindExistingSupplier()
+        {
+            return 1;
         }
 
 

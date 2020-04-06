@@ -9,6 +9,8 @@ namespace DellRainInventorySystem.Interfaces
         int AddSupplier();
         int AddLocation();
         int AddAccount();
+        int FindExistingLocation();
+        int FindExistingSupplier();
         int ChangePassword(string old, string newPass);
     }
 }

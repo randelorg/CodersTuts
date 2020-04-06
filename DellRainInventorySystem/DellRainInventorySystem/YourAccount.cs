@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Configuration;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.Security.Cryptography;
@@ -9,9 +10,11 @@ namespace DellRainInventorySystem
 {
     public partial class YourAccount : Form
     {
+        //connection string
+        private static readonly string mainConn = ConfigurationManager.ConnectionStrings["MyConnection"].ConnectionString;
+        private SqlConnection con = new SqlConnection(mainConn);
+
         private Inventory inventory = new Inventory();
-        private SqlConnection con = new SqlConnection(
-            "Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=InventoryDB;Data Source=RANDEL-PC");
         private SqlCommand cmd;
         private SqlDataReader _reader;
         private string password;
@@ -90,6 +93,7 @@ namespace DellRainInventorySystem
                 case 0:
                     MessageBox.Show(@"Password is changed", @"Success", MessageBoxButtons.OK,
                         MessageBoxIcon.Information);
+                    CleanForm(this);
                     break;
                 case 1:
                     MessageBox.Show(@"Connection Error", @"Error", MessageBoxButtons.OK,
@@ -101,6 +105,15 @@ namespace DellRainInventorySystem
         private void tbConfirmNewPassword_TextChanged(object sender, EventArgs e)
         {
             tbConfirmNewPassword.BackColor = tbConfirmNewPassword.Text.Equals(tbNewPassword.Text) ? Color.Green : Color.Red;
+        }
+
+        private void CleanForm(Control ctrl)
+        {
+            foreach (Control c in ctrl.Controls)
+            {
+                if (c is TextBox) ((TextBox)c).Text = string.Empty;
+                CleanForm(c);
+            }
         }
 
     }

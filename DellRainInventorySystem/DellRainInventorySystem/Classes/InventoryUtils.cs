@@ -7,6 +7,8 @@ namespace DellRainInventorySystem.Classes
     {
         protected internal static LinkedList<User> LtuUsers = new LinkedList<User>();
         protected internal static LinkedList<Product> LtProducts = new LinkedList<Product>();
+        protected internal static LinkedList<string> ExistingSuppliers = new LinkedList<string>();
+        protected internal static LinkedList<string> ExistingLocation = new LinkedList<string>();
 
         //identifies the user to the index window
         //serves the session 

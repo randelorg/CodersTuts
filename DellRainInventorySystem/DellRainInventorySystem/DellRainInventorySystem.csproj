@@ -34,6 +34,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -77,11 +78,6 @@
       <DependentUpon>index.cs</DependentUpon>
     </Compile>
     <Compile Include="Interfaces\IInventory.cs" />
-    <Compile Include="InventoryDBDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>InventoryDBDataSet.xsd</DependentUpon>
-    </Compile>
     <Compile Include="InventoryWindow.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -133,17 +129,6 @@
     <EmbeddedResource Include="YourAccount.resx">
       <DependentUpon>YourAccount.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="InventoryDBDataSet.xsc">
-      <DependentUpon>InventoryDBDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="InventoryDBDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>InventoryDBDataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="InventoryDBDataSet.xss">
-      <DependentUpon>InventoryDBDataSet.xsd</DependentUpon>
-    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
