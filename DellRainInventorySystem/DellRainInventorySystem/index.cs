@@ -101,5 +101,10 @@ namespace DellRainInventorySystem
             reports.ShowDialog();
         }
 
+        private void btnListAccounts_Click(object sender, EventArgs e)
+        {
+            var manageAccounts = new ManageAccounts();
+            manageAccounts.ShowDialog();
+        }
     }
 }

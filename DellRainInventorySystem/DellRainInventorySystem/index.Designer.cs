@@ -294,6 +294,7 @@
             this.btnListAccounts.TabIndex = 36;
             this.btnListAccounts.Text = "Manage Accounts";
             this.btnListAccounts.UseVisualStyleBackColor = true;
+            this.btnListAccounts.Click += new System.EventHandler(this.btnListAccounts_Click);
             this.btnListAccounts.MouseLeave += new System.EventHandler(this.btnListAccounts_MouseLeave);
             this.btnListAccounts.MouseHover += new System.EventHandler(this.btnListAccounts_MouseHover);
             // 

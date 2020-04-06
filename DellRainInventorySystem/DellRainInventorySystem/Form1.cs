@@ -21,7 +21,7 @@ namespace DellRainInventorySystem
         public Form1()
         {
             InitializeComponent();
-            
+            ClearLinkList();//clear all the linklist available
         }
         
         //will close the login window
@@ -76,6 +76,14 @@ namespace DellRainInventorySystem
             }
             
             finally{ con.Close();}
+        }
+
+        private void ClearLinkList()
+        {
+            InventoryUtils.LtuUsers.Clear();
+            InventoryUtils.LtProducts.Clear();
+            InventoryUtils.ExistingLocation.Clear();
+            InventoryUtils.ExistingSuppliers.Clear();
         }
 
     }
