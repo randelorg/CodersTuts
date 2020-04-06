@@ -4,14 +4,14 @@ using System.Data.SqlClient;
 using System.Diagnostics;
 using System.Windows.Forms;
 using DellRainInventorySystem.Classes;
+using DellRainInventorySystem.ConnectDB;
 
 namespace DellRainInventorySystem
 {
     public partial class Form1 : Form
     {
         //connection string
-        private static readonly string mainConn = ConfigurationManager.ConnectionStrings["MyConnection"].ConnectionString;
-        private SqlConnection con = new SqlConnection(mainConn);
+        private SqlConnection con = new SqlConnection(Connect.MainConn);
 
         private Inventory inventory = new Inventory();
         private SqlDataReader _reader;

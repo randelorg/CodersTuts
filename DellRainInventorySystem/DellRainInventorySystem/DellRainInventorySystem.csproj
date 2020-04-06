@@ -59,6 +59,7 @@
     <Compile Include="Classes\Person.cs" />
     <Compile Include="Classes\Product.cs" />
     <Compile Include="Classes\Supplier.cs" />
+    <Compile Include="ConnectDB\Connect.cs" />
     <Compile Include="CreateAccount.cs">
       <SubType>Form</SubType>
     </Compile>

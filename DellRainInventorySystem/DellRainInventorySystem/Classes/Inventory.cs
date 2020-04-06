@@ -1,19 +1,18 @@
 using DellRainInventorySystem.Interfaces;
 using System;
-using System.Configuration;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.Drawing.Imaging;
 using System.IO;
 using System.Windows.Forms;
+using DellRainInventorySystem.ConnectDB;
 
 namespace DellRainInventorySystem.Classes
 {
     public class Inventory : InventoryUtils, IInventory
     {
         //connection string
-        private static readonly string mainConn = ConfigurationManager.ConnectionStrings["MyConnection"].ConnectionString;
-        private SqlConnection con = new SqlConnection(mainConn);
+        private SqlConnection con = new SqlConnection(Connect.MainConn);
 
         private SqlCommand cmd;
         private SqlDataReader _reader;

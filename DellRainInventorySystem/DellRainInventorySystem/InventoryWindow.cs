@@ -3,14 +3,14 @@ using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 using System.Windows.Forms;
+using DellRainInventorySystem.ConnectDB;
 
 namespace DellRainInventorySystem
 {
     public partial class InventoryWindow : Form
     {
         //connection string
-        private static readonly string mainConn = ConfigurationManager.ConnectionStrings["MyConnection"].ConnectionString;
-        private SqlConnection con = new SqlConnection(mainConn);
+        private SqlConnection con = new SqlConnection(Connect.MainConn);
 
         public InventoryWindow()
         {
