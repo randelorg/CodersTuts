@@ -56,7 +56,7 @@ namespace DellRainInventorySystem
                     /*stores the full name of the user and account type in the session holder
                     sets the session for the current user*/
                     inventory.Session(_reader["firstname"].ToString() + " " + _reader["lastname"].ToString(),
-                        _reader["accType"].ToString().ToLower()); 
+                        _reader["accType"].ToString().ToUpper()); 
                     InventoryUtils.Firstname = _reader["firstname"].ToString();
                     InventoryUtils.Lastname = _reader["Lastname"].ToString();
 

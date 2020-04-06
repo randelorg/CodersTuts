@@ -63,11 +63,11 @@ namespace DellRainInventorySystem
             var fields = new string[7];
             fields[0] = tbFirstName.Text;
             fields[1] = tbLastName.Text;
-            if(cbGender.SelectedItem != null) fields[2] = cbGender.SelectedItem.ToString();
+            if(cbGender.SelectedItem != null) fields[2] = cbGender.SelectedItem.ToString().ToUpper();
             fields[3] = tbUsername.Text;
             fields[4] = tbNumber.Text;
             fields[5] = tbDefaultPassword.Text;
-            if(cbPosition.SelectedItem != null) fields[6] = cbPosition.SelectedItem.ToString();
+            if(cbPosition.SelectedItem != null) fields[6] = cbPosition.SelectedItem.ToString().ToUpper();
             for (var i = 0; i < 7; i++)
             {
                 if (string.IsNullOrEmpty(fields[i]))

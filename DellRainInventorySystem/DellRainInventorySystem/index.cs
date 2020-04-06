@@ -22,9 +22,11 @@ namespace DellRainInventorySystem
 
         private void DetermineAccountType()
         {
+            const string staffAccType = "STAFF";
+
             switch (home.SessAccType)
             {
-                case "staff":
+                case staffAccType:
                     btnListAccounts.Hide();
                     btnCreateAccount.Hide(); 
                     break;
