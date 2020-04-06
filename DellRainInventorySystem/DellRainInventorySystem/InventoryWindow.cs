@@ -29,17 +29,20 @@ namespace DellRainInventorySystem
         {
             try
             {
+                
+                var cmd = new SqlCommand();
                 con.Open();
-                var sqlQuery =
+                cmd.Connection = con;
+
+                cmd.CommandText =
                     "SELECT product.prodName, product.prodType, product.prodQty ,product.prodPrice, location.name, supplier.suppName" +
                     "FROM Inventory.Product AS product INNER JOIN Inventory.Supplier AS supplier ON product.Supplier = supplier.suppId" +
                     "INNER JOIN Inventory.Location AS location ON location.locaId = product.Location";
-                var sqlcom = new SqlCommand(sqlQuery, con);
-                var sdr = new SqlDataAdapter(sqlcom);
+                var sdr = new SqlDataAdapter(cmd);
 
-                var dt = new DataTable();
-                sdr.Fill(dt);
-                dataView.DataSource = dt;
+                var record = new DataTable();
+                sdr.Fill(record);
+                dataView.DataSource = record;
             }
 
             catch (SqlException a)
