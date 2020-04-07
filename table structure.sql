@@ -3,13 +3,13 @@ create table Account
     AccountId     int identity
         constraint Account_pk
             primary key nonclustered,
-    firstname     varchar(25)  not null,
-    lastname      varchar(25)  not null,
-    gender        varchar(6)   not null,
-    contactNumber varchar(22)  not null,
-    username      varchar(25)  not null,
-    password      varchar(100) not null,
-    accType       varchar(10)  not null
+    firstname     varchar(25) not null,
+    lastname      varchar(25) not null,
+    gender        varchar(6),
+    contactNumber varchar(22) not null,
+    username      varchar(25) not null,
+    password      varchar(50) not null,
+    accType       varchar(10) not null
 )
 go
 
@@ -47,22 +47,23 @@ go
 
 create table Product
 (
-    productId int identity
+    productId     int identity
         constraint Product_pk
             primary key nonclustered,
-    Supplier  int
-        constraint Supplier___fk
+    Supplier      int
+        constraint Supplier__fk
             references Supplier,
-    prodName  varchar(25)   not null,
-    prodType  varchar(15)   not null,
-    prodQty   int           not null,
-    prodSold  int           not null,
-    prodPrice decimal(9, 2) not null,
-    Location  int
+    prodName      varchar(25)   not null,
+    prodType      varchar(15)   not null,
+    prodQty       int           not null,
+    prodSold      int,
+    prodPrice     decimal(9, 2) not null,
+    Location      int
         constraint Location__fk
             references Location,
-    sales     decimal(9, 2),
-    prodImage varbinary(max)
+    prodShelfLife date          not null,
+    sales         decimal(9, 2),
+    prodImage     nvarchar(max)
 )
 go
 
