@@ -74,7 +74,10 @@ namespace DellRainInventorySystem
                     fields[6] = cbListOfSupplier.SelectedItem.ToString();
             }
 
-            fields[7] = tbSuppContact.Text; //supplier contact
+            if (tbSuppContact.Enabled)
+                fields[7] = tbSuppContact.Text; //supplier contact
+            else
+                fields[7] = @"09";
 
             if (!btnImage.Text.Contains(@"Selected image"))
                 return true;
