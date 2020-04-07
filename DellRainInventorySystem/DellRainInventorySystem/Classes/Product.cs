@@ -11,14 +11,14 @@ namespace DellRainInventorySystem.Classes
         private int _qty;
         private int _sold;
         private float _price;
-        private Bitmap _image;
+        private Image _image;
         
         //empty 
         public Product() { }
 
         //for creation
         public Product(string prodName, string prodType, int qty, float price, string prodLocation, string life,
-            string suppName, string suppContact, Bitmap image) : base(suppName, suppContact)
+            string suppName, string suppContact, Image image) : base(suppName, suppContact)
         {
             _prodName = prodName;
             _prodType = prodType;
@@ -81,7 +81,7 @@ namespace DellRainInventorySystem.Classes
             set => _shelfLife = value;
         }
 
-        public Bitmap ProdImage
+        public Image ProdImage
         {
             get => _image;
             set => _image = value;

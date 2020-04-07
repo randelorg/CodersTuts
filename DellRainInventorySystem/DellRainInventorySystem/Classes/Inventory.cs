@@ -16,6 +16,7 @@ namespace DellRainInventorySystem.Classes
 
         private SqlCommand cmd;
         private SqlDataReader _reader;
+
         private int suppId = 0; //for supplier ID
         private int LocationId = 0; //for Location ID
 
@@ -159,7 +160,7 @@ namespace DellRainInventorySystem.Classes
                     cmd.Parameters.AddWithValue("@price", product.Price);
                     cmd.Parameters.AddWithValue("@location", LocationId);
                     cmd.Parameters.AddWithValue("@life", product.Shelflife);
-                    cmd.Parameters.AddWithValue("@image", ImageToBase64(product.ProdImage, ImageFormat.Jpeg));
+                    cmd.Parameters.AddWithValue("@image", ImageToBase64(product.ProdImage, ImageFormat.Png));
                 }
 
                 _reader = cmd.ExecuteReader();
@@ -220,6 +221,43 @@ namespace DellRainInventorySystem.Classes
         public int FindExistingSupplier()
         {
             return 1;
+        }
+
+        public int DetermineProductInThresholdLevel()
+        {
+            if (Images.Count > 0)
+                Images.Clear();
+
+            try 
+            {
+                cmd = new SqlCommand();
+                con.Open();
+                cmd.Connection = con;
+                cmd.CommandText = "SELECT prodImage FROM Inventory.Product WHERE prodQty <= @CRIT";
+                cmd.Parameters.AddWithValue("@CRIT", CriticalLevel);
+                _reader = cmd.ExecuteReader();
+
+
+                while (_reader.Read())
+                {
+                    if (string.IsNullOrEmpty(_reader["prodImage"].ToString())) continue;
+
+                    if (_reader.HasRows) {
+                        Images.AddFirst(Base64ToImage(_reader["prodImage"].ToString()));
+                    }
+                }
+
+                Console.WriteLine(@"Row count {0}", Images.Count);
+
+                return 0;
+            }
+            catch(SqlException e) {
+                Console.WriteLine(e.ToString());
+                return 1;
+            }
+
+            finally{con.Close();}
+
         }
 
 

@@ -8,13 +8,13 @@ namespace DellRainInventorySystem
 {
     public partial class Index : Form
     {
-        private Inventory home = new Inventory();
+        private Inventory inventory = new Inventory();
         private Form1 Login = new Form1();
         
         public Index()
         {
             InitializeComponent();
-            lbUsername.Text = home.SessUsername; //display the username of the login user
+            lbUsername.Text = inventory.SessUsername; //display the username of the login user
             DetermineAccountType();
             BgColor(); 
             RemoveBorder();
@@ -24,7 +24,7 @@ namespace DellRainInventorySystem
         {
             const string staffAccType = "STAFF";
 
-            switch (home.SessAccType)
+            switch (inventory.SessAccType)
             {
                 case staffAccType:
                     btnListAccounts.Hide();
@@ -107,6 +107,30 @@ namespace DellRainInventorySystem
         {
             var manageAccounts = new ManageAccounts();
             manageAccounts.ShowDialog();
+        }
+
+        private void Index_Load(object sender, EventArgs e)
+        {
+            DangerProductsView.SmallImageList = imageList1;
+
+            var i = inventory.DetermineProductInThresholdLevel();
+
+            foreach (var t in InventoryUtils.Images)
+            {
+                imageList1.Images.Add(t);
+            }
+
+            //clear list view if it does have a content 
+            //to prevent image duplication
+            if(DangerProductsView.Items.Count > 0) 
+                DangerProductsView.Items.Clear();
+
+            for (var j = 0; j < imageList1.Images.Count; j++)
+            {
+                var item = new ListViewItem();
+                item.ImageIndex = j;
+                DangerProductsView.Items.Add(item);
+            }
         }
     }
 }

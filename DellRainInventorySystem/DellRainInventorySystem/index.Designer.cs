@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Index));
             this.groupDasboard = new System.Windows.Forms.GroupBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
@@ -36,14 +37,14 @@
             this.label9 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.listView2 = new System.Windows.Forms.ListView();
+            this.TopProductsView = new System.Windows.Forms.ListView();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.listView1 = new System.Windows.Forms.ListView();
+            this.DangerProductsView = new System.Windows.Forms.ListView();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.TopNav = new System.Windows.Forms.GroupBox();
@@ -63,6 +64,7 @@
             this.pictureTools = new System.Windows.Forms.PictureBox();
             this.Inventory = new System.Windows.Forms.PictureBox();
             this.SalesReports = new System.Windows.Forms.PictureBox();
+            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.groupDasboard.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.TopNav.SuspendLayout();
@@ -83,14 +85,14 @@
             this.groupDasboard.Controls.Add(this.label9);
             this.groupDasboard.Controls.Add(this.label7);
             this.groupDasboard.Controls.Add(this.label6);
-            this.groupDasboard.Controls.Add(this.listView2);
+            this.groupDasboard.Controls.Add(this.TopProductsView);
             this.groupDasboard.Controls.Add(this.textBox2);
             this.groupDasboard.Controls.Add(this.textBox1);
             this.groupDasboard.Controls.Add(this.label5);
             this.groupDasboard.Controls.Add(this.label4);
             this.groupDasboard.Controls.Add(this.label3);
             this.groupDasboard.Controls.Add(this.label2);
-            this.groupDasboard.Controls.Add(this.listView1);
+            this.groupDasboard.Controls.Add(this.DangerProductsView);
             this.groupDasboard.Controls.Add(this.label1);
             this.groupDasboard.Controls.Add(this.pictureBox2);
             this.groupDasboard.Location = new System.Drawing.Point(34, 64);
@@ -163,15 +165,15 @@
             this.label6.TabIndex = 20;
             this.label6.Text = "Top Selling Products";
             // 
-            // listView2
+            // TopProductsView
             // 
-            this.listView2.HideSelection = false;
-            this.listView2.Location = new System.Drawing.Point(102, 97);
-            this.listView2.Name = "listView2";
-            this.listView2.Size = new System.Drawing.Size(840, 113);
-            this.listView2.TabIndex = 19;
-            this.listView2.UseCompatibleStateImageBehavior = false;
-            this.listView2.View = System.Windows.Forms.View.SmallIcon;
+            this.TopProductsView.HideSelection = false;
+            this.TopProductsView.Location = new System.Drawing.Point(102, 97);
+            this.TopProductsView.Name = "TopProductsView";
+            this.TopProductsView.Size = new System.Drawing.Size(840, 113);
+            this.TopProductsView.TabIndex = 19;
+            this.TopProductsView.UseCompatibleStateImageBehavior = false;
+            this.TopProductsView.View = System.Windows.Forms.View.SmallIcon;
             // 
             // textBox2
             // 
@@ -237,15 +239,18 @@
             this.label2.TabIndex = 13;
             this.label2.Text = "Danger Stock";
             // 
-            // listView1
+            // DangerProductsView
             // 
-            this.listView1.HideSelection = false;
-            this.listView1.Location = new System.Drawing.Point(102, 259);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(840, 113);
-            this.listView1.TabIndex = 12;
-            this.listView1.UseCompatibleStateImageBehavior = false;
-            this.listView1.View = System.Windows.Forms.View.SmallIcon;
+            this.DangerProductsView.HideSelection = false;
+            this.DangerProductsView.LargeImageList = this.imageList1;
+            this.DangerProductsView.Location = new System.Drawing.Point(102, 259);
+            this.DangerProductsView.Name = "DangerProductsView";
+            this.DangerProductsView.Size = new System.Drawing.Size(840, 113);
+            this.DangerProductsView.Sorting = System.Windows.Forms.SortOrder.Ascending;
+            this.DangerProductsView.StateImageList = this.imageList1;
+            this.DangerProductsView.TabIndex = 12;
+            this.DangerProductsView.TileSize = new System.Drawing.Size(500, 500);
+            this.DangerProductsView.UseCompatibleStateImageBehavior = false;
             // 
             // label1
             // 
@@ -479,6 +484,12 @@
             this.SalesReports.MouseLeave += new System.EventHandler(this.SalesReports_MouseLeave);
             this.SalesReports.MouseHover += new System.EventHandler(this.SalesReport_MouseHover);
             // 
+            // imageList1
+            // 
+            this.imageList1.ColorDepth = System.Windows.Forms.ColorDepth.Depth16Bit;
+            this.imageList1.ImageSize = new System.Drawing.Size(100, 100);
+            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
+            // 
             // Index
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -501,6 +512,7 @@
             this.Name = "Index";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Dashboard";
+            this.Load += new System.EventHandler(this.Index_Load);
             this.groupDasboard.ResumeLayout(false);
             this.groupDasboard.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
@@ -537,7 +549,7 @@
         private System.Windows.Forms.PictureBox pictureTools;
         private System.Windows.Forms.Button bgTools;
         private System.Windows.Forms.PictureBox closeButton;
-        private System.Windows.Forms.ListView listView1;
+        private System.Windows.Forms.ListView DangerProductsView;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox textBox2;
@@ -545,12 +557,13 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.ListView listView2;
+        private System.Windows.Forms.ListView TopProductsView;
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button btnListAccounts;
+        private System.Windows.Forms.ImageList imageList1;
     }
 }

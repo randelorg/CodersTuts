@@ -9,7 +9,7 @@ namespace DellRainInventorySystem
     {
         private Inventory inventory = new Inventory();
         private string[] fields = new string[8];
-        private Bitmap _image;
+        private Image _image;
 
         public AddProductWindow()
         {
