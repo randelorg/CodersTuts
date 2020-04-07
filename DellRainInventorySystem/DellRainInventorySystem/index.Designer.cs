@@ -45,6 +45,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.DangerProductsView = new System.Windows.Forms.ListView();
+            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.TopNav = new System.Windows.Forms.GroupBox();
@@ -64,7 +65,6 @@
             this.pictureTools = new System.Windows.Forms.PictureBox();
             this.Inventory = new System.Windows.Forms.PictureBox();
             this.SalesReports = new System.Windows.Forms.PictureBox();
-            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.groupDasboard.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.TopNav.SuspendLayout();
@@ -251,6 +251,12 @@
             this.DangerProductsView.TabIndex = 12;
             this.DangerProductsView.TileSize = new System.Drawing.Size(500, 500);
             this.DangerProductsView.UseCompatibleStateImageBehavior = false;
+            // 
+            // imageList1
+            // 
+            this.imageList1.ColorDepth = System.Windows.Forms.ColorDepth.Depth16Bit;
+            this.imageList1.ImageSize = new System.Drawing.Size(100, 100);
+            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
             // 
             // label1
             // 
@@ -483,12 +489,6 @@
             this.SalesReports.Click += new System.EventHandler(this.SalesReports_Click);
             this.SalesReports.MouseLeave += new System.EventHandler(this.SalesReports_MouseLeave);
             this.SalesReports.MouseHover += new System.EventHandler(this.SalesReport_MouseHover);
-            // 
-            // imageList1
-            // 
-            this.imageList1.ColorDepth = System.Windows.Forms.ColorDepth.Depth16Bit;
-            this.imageList1.ImageSize = new System.Drawing.Size(100, 100);
-            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
             // 
             // Index
             // 

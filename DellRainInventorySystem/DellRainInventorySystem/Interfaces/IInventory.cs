@@ -10,8 +10,8 @@ namespace DellRainInventorySystem.Interfaces
         int AddLocation();
         int AddAccount();
         int ChangePassword(string old, string newPass);
-        int FindExistingLocation();
-        int FindExistingSupplier();
-        int DetermineProductInThresholdLevel();
+        bool FindExistingLocation();
+        bool FindExistingSupplier();
+        bool DetermineProductInThresholdLevel();
     }
 }

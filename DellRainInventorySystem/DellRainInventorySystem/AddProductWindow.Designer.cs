@@ -266,8 +266,6 @@
             this.cbListOfSupplier.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbListOfSupplier.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbListOfSupplier.FormattingEnabled = true;
-            this.cbListOfSupplier.Items.AddRange(new object[] {
-            "Oishi"});
             this.cbListOfSupplier.Location = new System.Drawing.Point(527, 204);
             this.cbListOfSupplier.Name = "cbListOfSupplier";
             this.cbListOfSupplier.Size = new System.Drawing.Size(449, 31);
@@ -398,6 +396,7 @@
             this.Name = "AddProductWindow";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Add Product";
+            this.Load += new System.EventHandler(this.AddProductWindow_Load);
             ((System.ComponentModel.ISupportInitialize)(this.closeButton)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.prodQty)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBack)).EndInit();

@@ -110,8 +110,10 @@ namespace DellRainInventorySystem
 
         private void cbListOfSupplier_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (cbListOfSupplier.SelectedIndex >= 0)
+            if (cbListOfSupplier.SelectedIndex >= 0) { 
                 tbSuppName.Enabled = false;
+                tbSuppContact.Enabled = false;
+            }
         }
 
         private void cbProductLocation_SelectedIndexChanged(object sender, EventArgs e)
@@ -146,6 +148,36 @@ namespace DellRainInventorySystem
                 btnImage.Text = @"Selected image " + openFileDialog1.SafeFileName;
             }
             Console.WriteLine(result); // <-- For debugging 
+        }
+
+        private void AddProductWindow_Load(object sender, EventArgs e)
+        {
+            LoadSuppliers(); //add the existing suppliers in the combo box
+            LoadLocations(); //add the existing lcoations in the combo box
+        }
+
+        private void LoadSuppliers()
+        {
+            if (inventory.FindExistingSupplier())
+                MessageBox.Show(@"There is a problem connecting to the database,\ Can't display Suppliers", @"Connection Error",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            foreach (var suppliername in InventoryUtils.ExistingSuppliers)
+            {
+                cbListOfSupplier.Items.Add(suppliername);
+            }
+        }
+
+        private void LoadLocations()
+        {
+            if(inventory.FindExistingLocation())
+                MessageBox.Show(@"There is a problem connecting to the database,\ Can't display Locations", @"Connection Error",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            foreach (var locationname in InventoryUtils.ExistingLocation)
+            {
+                cbProductLocation.Items.Add(locationname);
+            }
         }
     }
 }

@@ -213,17 +213,73 @@ namespace DellRainInventorySystem.Classes
             finally { con.Close(); }
         }
 
-        public int FindExistingLocation()
+        public bool FindExistingLocation()
         {
-            return 1;
+            if (ExistingLocation.Count > 0)
+                ExistingLocation.Clear();
+
+            try
+            {
+                cmd = new SqlCommand();
+                con.Open();
+                cmd.Connection = con;
+                cmd.CommandText = "SELECT name FROM Inventory.Location";
+                _reader = cmd.ExecuteReader();
+
+                while (_reader.Read())
+                {
+                    if (_reader.HasRows)
+                    {
+                        ExistingLocation.AddFirst(_reader["name"].ToString());
+                    }
+                }
+
+                Console.WriteLine(@"Row count {0}", ExistingLocation.Count);
+                return false;
+            }
+            catch (SqlException e)
+            {
+                Console.WriteLine(e.ToString());
+                return true;
+            }
+
+            finally { con.Close(); }
         }
 
-        public int FindExistingSupplier()
+        public bool FindExistingSupplier()
         {
-            return 1;
+            if(ExistingSuppliers.Count > 0)
+                ExistingSuppliers.Clear();
+
+            try
+            {
+                cmd = new SqlCommand();
+                con.Open();
+                cmd.Connection = con;
+                cmd.CommandText = "SELECT suppName FROM Inventory.Supplier";
+                _reader = cmd.ExecuteReader();
+
+                while (_reader.Read())
+                {
+                    if (_reader.HasRows)
+                    {
+                        ExistingSuppliers.AddFirst(_reader["suppName"].ToString());
+                    }
+                }
+
+                Console.WriteLine(@"Row count {0}", ExistingSuppliers.Count);
+                return false;
+            }
+            catch (SqlException e)
+            {
+                Console.WriteLine(e.ToString());
+                return true;
+            }
+
+            finally { con.Close(); }
         }
 
-        public int DetermineProductInThresholdLevel()
+        public bool DetermineProductInThresholdLevel()
         {
             if (Images.Count > 0)
                 Images.Clear();
@@ -248,12 +304,11 @@ namespace DellRainInventorySystem.Classes
                 }
 
                 Console.WriteLine(@"Row count {0}", Images.Count);
-
-                return 0;
+                return false;
             }
             catch(SqlException e) {
                 Console.WriteLine(e.ToString());
-                return 1;
+                return true;
             }
 
             finally{con.Close();}

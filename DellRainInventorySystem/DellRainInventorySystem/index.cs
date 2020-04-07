@@ -111,9 +111,9 @@ namespace DellRainInventorySystem
 
         private void Index_Load(object sender, EventArgs e)
         {
-            DangerProductsView.SmallImageList = imageList1;
-
-            var i = inventory.DetermineProductInThresholdLevel();
+            if(inventory.DetermineProductInThresholdLevel()) //if returns false Database connection error
+                MessageBox.Show(@"There is a problem connecting to the database,\ Can't display Danger stock list", @"Connection Error",
+                    MessageBoxButtons.OK,MessageBoxIcon.Error);
 
             foreach (var t in InventoryUtils.Images)
             {
