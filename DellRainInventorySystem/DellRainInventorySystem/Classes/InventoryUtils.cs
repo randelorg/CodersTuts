@@ -21,6 +21,11 @@ namespace DellRainInventorySystem.Classes
         //constant top selling products count
         protected const int TopSellingCount = 10;
 
+        //for referencing the supplier id and location id
+        //in the DB table
+        protected int SuppId { get; set; } = 0;
+        protected int LocationId { get; set; } = 0;
+
         //identifies the user to the index window
         //serves the session 
         private static string sess_username;

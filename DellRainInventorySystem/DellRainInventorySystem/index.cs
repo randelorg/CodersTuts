@@ -53,6 +53,8 @@ namespace DellRainInventorySystem
             bg1.FlatAppearance.BorderSize = 0;
             bg2.FlatAppearance.BorderSize = 0;
             bgTools.FlatAppearance.BorderSize = 0;
+            TopSellingView.BorderStyle = BorderStyle.None;
+            DangerProductsView.BorderStyle = BorderStyle.None;
         }
 
         //mouse events

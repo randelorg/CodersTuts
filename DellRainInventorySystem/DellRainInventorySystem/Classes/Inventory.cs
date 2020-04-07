@@ -17,9 +17,6 @@ namespace DellRainInventorySystem.Classes
         private SqlCommand cmd;
         private SqlDataReader _reader;
 
-        private int suppId = 0; //for supplier ID
-        private int LocationId = 0; //for Location ID
-
         public int AddLocation()
         {
             try
@@ -95,7 +92,7 @@ namespace DellRainInventorySystem.Classes
                 if (_reader.Read()) //if the supplier is already existing
                 {
                     //store the supplier id to the suppId var
-                    suppId = int.Parse(_reader["suppId"].ToString());
+                    SuppId = int.Parse(_reader["suppId"].ToString());
                 }
                 else //if the supplier is new add to the DB
                 {
@@ -116,7 +113,7 @@ namespace DellRainInventorySystem.Classes
 
                     //store the supplier id to the suppId var
                     if (_reader.Read())
-                        suppId = int.Parse(_reader["suppId"].ToString());
+                        SuppId = int.Parse(_reader["suppId"].ToString());
 
                     _reader.Close();//close third query
                 }
@@ -138,7 +135,7 @@ namespace DellRainInventorySystem.Classes
             ErrorMessage(AddLocation());
             ErrorMessage(AddSupplier());
             Console.WriteLine(@"Location id {0}", LocationId);
-            Console.WriteLine(@"Supplier id {0}", suppId);
+            Console.WriteLine(@"Supplier id {0}", SuppId);
 
             try
             {
@@ -153,7 +150,7 @@ namespace DellRainInventorySystem.Classes
                 if (LtProducts.Count > 0)
                 {
                     var product = LtProducts.Last.Value; //last product added in the linked list
-                    cmd.Parameters.AddWithValue("@supplier", suppId);
+                    cmd.Parameters.AddWithValue("@supplier", SuppId);
                     cmd.Parameters.AddWithValue("@name", product.ProdName);
                     cmd.Parameters.AddWithValue("@type", product.ProdType);
                     cmd.Parameters.AddWithValue("@qty", product.Qty);
@@ -303,7 +300,7 @@ namespace DellRainInventorySystem.Classes
                     }
                 }
 
-                Console.WriteLine(@"Top selling Row count {0}", TopSelling.Count);
+                // Console.WriteLine(@"Top selling Row count {0}", TopSelling.Count);
                 return false;
             }
             catch (SqlException e)
