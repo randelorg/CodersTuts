@@ -161,7 +161,7 @@ namespace DellRainInventorySystem
 
         private void LoadSuppliers()
         {
-            if (inventory.FindExistingSupplier())
+            if (inventory.GetExistingSupplier())
                 MessageBox.Show(@"There is a problem connecting to the database,\ Can't display Suppliers", @"Connection Error",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
 
@@ -173,7 +173,7 @@ namespace DellRainInventorySystem
 
         private void LoadLocations()
         {
-            if(inventory.FindExistingLocation())
+            if(inventory.GetExistingLocation())
                 MessageBox.Show(@"There is a problem connecting to the database,\ Can't display Locations", @"Connection Error",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
 

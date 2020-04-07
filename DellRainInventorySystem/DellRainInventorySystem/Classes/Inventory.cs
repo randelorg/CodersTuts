@@ -213,7 +213,7 @@ namespace DellRainInventorySystem.Classes
             finally { con.Close(); }
         }
 
-        public bool FindExistingLocation()
+        public bool GetExistingLocation()
         {
             if (ExistingLocation.Count > 0)
                 ExistingLocation.Clear();
@@ -246,7 +246,7 @@ namespace DellRainInventorySystem.Classes
             finally { con.Close(); }
         }
 
-        public bool FindExistingSupplier()
+        public bool GetExistingSupplier()
         {
             if(ExistingSuppliers.Count > 0)
                 ExistingSuppliers.Clear();
@@ -279,10 +279,46 @@ namespace DellRainInventorySystem.Classes
             finally { con.Close(); }
         }
 
+        public bool DetermineTopSellingProducts()
+        {
+            if (TopSelling.Count > 0)
+                TopSelling.Clear();
+
+            try
+            {
+                cmd = new SqlCommand();
+                con.Open();
+                cmd.Connection = con;
+                cmd.CommandText = "SELECT prodImage FROM Inventory.Product WHERE prodSold >= @TOP";
+                cmd.Parameters.AddWithValue("@TOP", TopSellingCount);
+                _reader = cmd.ExecuteReader();
+
+                while (_reader.Read())
+                {
+                    if (string.IsNullOrEmpty(_reader["prodImage"].ToString())) continue;
+
+                    if (_reader.HasRows)
+                    {
+                        TopSelling.AddFirst(Base64ToImage(_reader["prodImage"].ToString()));
+                    }
+                }
+
+                Console.WriteLine(@"Top selling Row count {0}", TopSelling.Count);
+                return false;
+            }
+            catch (SqlException e)
+            {
+                Console.WriteLine(e.ToString());
+                return true;
+            }
+
+            finally { con.Close(); }
+        }
+
         public bool DetermineProductInThresholdLevel()
         {
-            if (Images.Count > 0)
-                Images.Clear();
+            if (LowOnStock.Count > 0)
+                LowOnStock.Clear();
 
             try 
             {
@@ -299,11 +335,11 @@ namespace DellRainInventorySystem.Classes
                     if (string.IsNullOrEmpty(_reader["prodImage"].ToString())) continue;
 
                     if (_reader.HasRows) {
-                        Images.AddFirst(Base64ToImage(_reader["prodImage"].ToString()));
+                        LowOnStock.AddFirst(Base64ToImage(_reader["prodImage"].ToString()));
                     }
                 }
 
-                Console.WriteLine(@"Row count {0}", Images.Count);
+                //Console.WriteLine(@"Threshodl level Row count {0}", LowOnStock.Count);
                 return false;
             }
             catch(SqlException e) {
@@ -369,7 +405,7 @@ namespace DellRainInventorySystem.Classes
 
         //convert image to byte the save to database
         private string ImageToBase64(Image image,
-            System.Drawing.Imaging.ImageFormat format)
+            ImageFormat format)
         {
             using (var ms = new MemoryStream())
             {

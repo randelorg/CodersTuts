@@ -133,9 +133,29 @@ namespace DellRainInventorySystem.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Danger {
+            get {
+                object obj = ResourceManager.GetObject("Danger", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap dashboardHome {
             get {
                 object obj = ResourceManager.GetObject("dashboardHome", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Document {
+            get {
+                object obj = ResourceManager.GetObject("Document", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -273,6 +293,16 @@ namespace DellRainInventorySystem.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Scale {
+            get {
+                object obj = ResourceManager.GetObject("Scale", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Search {
             get {
                 object obj = ResourceManager.GetObject("Search", resourceCulture);
@@ -306,6 +336,16 @@ namespace DellRainInventorySystem.Properties {
         internal static System.Drawing.Bitmap Tools {
             get {
                 object obj = ResourceManager.GetObject("Tools", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Top {
+            get {
+                object obj = ResourceManager.GetObject("Top", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

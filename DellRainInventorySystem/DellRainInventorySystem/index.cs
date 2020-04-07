@@ -111,18 +111,36 @@ namespace DellRainInventorySystem
 
         private void Index_Load(object sender, EventArgs e)
         {
-            if(inventory.DetermineProductInThresholdLevel()) //if returns false Database connection error
-                MessageBox.Show(@"There is a problem connecting to the database,\ Can't display Danger stock list", @"Connection Error",
-                    MessageBoxButtons.OK,MessageBoxIcon.Error);
+            //for low stock products
+            if (inventory.DetermineProductInThresholdLevel()) //if returns true Database connection error
+                ErrorMessage();
+            else
+                LoadThresholdProducts();
 
-            foreach (var t in InventoryUtils.Images)
+            //for top selling products
+            if(inventory.DetermineTopSellingProducts())
+                ErrorMessage();
+            else
+                LoadTopSellingProducts();
+
+        }
+
+        private void ErrorMessage()
+        {
+            MessageBox.Show(@"There is a problem connecting to the database", @"Connection Error",
+                MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+
+        private void LoadThresholdProducts()
+        {
+            foreach (var t in InventoryUtils.LowOnStock)
             {
                 imageList1.Images.Add(t);
             }
 
             //clear list view if it does have a content 
             //to prevent image duplication
-            if(DangerProductsView.Items.Count > 0) 
+            if (DangerProductsView.Items.Count > 0)
                 DangerProductsView.Items.Clear();
 
             for (var j = 0; j < imageList1.Images.Count; j++)
@@ -130,6 +148,26 @@ namespace DellRainInventorySystem
                 var item = new ListViewItem();
                 item.ImageIndex = j;
                 DangerProductsView.Items.Add(item);
+            }
+        }
+
+        private void LoadTopSellingProducts()
+        {
+            foreach (var t in InventoryUtils.TopSelling)
+            {
+                imageList2.Images.Add(t);
+            }
+
+            //clear list view if it does have a content 
+            //to prevent image duplication
+            if (TopSellingView.Items.Count > 0)
+                TopSellingView.Items.Clear();
+
+            for (var j = 0; j < imageList2.Images.Count; j++)
+            {
+                var item = new ListViewItem();
+                item.ImageIndex = j;
+                TopSellingView.Items.Add(item);
             }
         }
     }

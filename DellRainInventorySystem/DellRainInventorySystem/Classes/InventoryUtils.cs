@@ -8,12 +8,18 @@ namespace DellRainInventorySystem.Classes
     {
         protected internal static LinkedList<User> LtuUsers = new LinkedList<User>();
         protected internal static LinkedList<Product> LtProducts = new LinkedList<Product>();
-        protected internal static LinkedList<Image> Images = new LinkedList<Image>();
+
+        protected internal static LinkedList<Image> TopSelling = new LinkedList<Image>();
+        protected internal static LinkedList<Image> LowOnStock = new LinkedList<Image>();
+
         protected internal static LinkedList<string> ExistingSuppliers = new LinkedList<string>();
         protected internal static LinkedList<string> ExistingLocation = new LinkedList<string>();
 
-        //protected constant critical threshold level
+        //constant critical product threshold level
         protected const int CriticalLevel = 5;
+
+        //constant top selling products count
+        protected const int TopSellingCount = 10;
 
         //identifies the user to the index window
         //serves the session 
