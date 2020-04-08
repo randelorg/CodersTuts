@@ -1,6 +1,6 @@
 ﻿namespace DellRainInventorySystem
 {
-    partial class Index
+    sealed partial class Index
     {
         /// <summary>
         /// Required designer variable.
@@ -31,6 +31,8 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Index));
             this.groupDasboard = new System.Windows.Forms.GroupBox();
+            this.pictureBox10 = new System.Windows.Forms.PictureBox();
+            this.pictureBox9 = new System.Windows.Forms.PictureBox();
             this.pictureBox8 = new System.Windows.Forms.PictureBox();
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
@@ -73,6 +75,8 @@
             this.Inventory = new System.Windows.Forms.PictureBox();
             this.SalesReports = new System.Windows.Forms.PictureBox();
             this.groupDasboard.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
@@ -92,6 +96,8 @@
             // groupDasboard
             // 
             this.groupDasboard.BackColor = System.Drawing.Color.White;
+            this.groupDasboard.Controls.Add(this.pictureBox10);
+            this.groupDasboard.Controls.Add(this.pictureBox9);
             this.groupDasboard.Controls.Add(this.pictureBox8);
             this.groupDasboard.Controls.Add(this.pictureBox7);
             this.groupDasboard.Controls.Add(this.pictureBox6);
@@ -119,6 +125,26 @@
             this.groupDasboard.Size = new System.Drawing.Size(1035, 579);
             this.groupDasboard.TabIndex = 9;
             this.groupDasboard.TabStop = false;
+            // 
+            // pictureBox10
+            // 
+            this.pictureBox10.Image = global::DellRainInventorySystem.Properties.Resources.Philippine;
+            this.pictureBox10.Location = new System.Drawing.Point(569, 524);
+            this.pictureBox10.Name = "pictureBox10";
+            this.pictureBox10.Size = new System.Drawing.Size(20, 20);
+            this.pictureBox10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox10.TabIndex = 33;
+            this.pictureBox10.TabStop = false;
+            // 
+            // pictureBox9
+            // 
+            this.pictureBox9.Image = global::DellRainInventorySystem.Properties.Resources.Philippine;
+            this.pictureBox9.Location = new System.Drawing.Point(569, 466);
+            this.pictureBox9.Name = "pictureBox9";
+            this.pictureBox9.Size = new System.Drawing.Size(20, 20);
+            this.pictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox9.TabIndex = 32;
+            this.pictureBox9.TabStop = false;
             // 
             // pictureBox8
             // 
@@ -182,6 +208,7 @@
             // 
             // DangerProductsView
             // 
+            this.DangerProductsView.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
             this.DangerProductsView.HideSelection = false;
             this.DangerProductsView.LargeImageList = this.imageList1;
             this.DangerProductsView.Location = new System.Drawing.Point(63, 261);
@@ -203,11 +230,13 @@
             this.tbWeekSales.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.tbWeekSales.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbWeekSales.ForeColor = System.Drawing.Color.Black;
-            this.tbWeekSales.Location = new System.Drawing.Point(569, 524);
+            this.tbWeekSales.Location = new System.Drawing.Point(594, 522);
             this.tbWeekSales.MaxLength = 10;
             this.tbWeekSales.Name = "tbWeekSales";
-            this.tbWeekSales.Size = new System.Drawing.Size(399, 23);
+            this.tbWeekSales.ReadOnly = true;
+            this.tbWeekSales.Size = new System.Drawing.Size(356, 23);
             this.tbWeekSales.TabIndex = 25;
+            this.tbWeekSales.Text = "100.00";
             // 
             // tbDaySales
             // 
@@ -215,11 +244,13 @@
             this.tbDaySales.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.tbDaySales.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbDaySales.ForeColor = System.Drawing.Color.Black;
-            this.tbDaySales.Location = new System.Drawing.Point(569, 466);
+            this.tbDaySales.Location = new System.Drawing.Point(594, 464);
             this.tbDaySales.MaxLength = 10;
             this.tbDaySales.Name = "tbDaySales";
-            this.tbDaySales.Size = new System.Drawing.Size(399, 23);
+            this.tbDaySales.ReadOnly = true;
+            this.tbDaySales.Size = new System.Drawing.Size(356, 23);
             this.tbDaySales.TabIndex = 24;
+            this.tbDaySales.Text = "100.00";
             // 
             // label8
             // 
@@ -263,6 +294,7 @@
             // 
             // TopSellingView
             // 
+            this.TopSellingView.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
             this.TopSellingView.HideSelection = false;
             this.TopSellingView.LargeImageList = this.imageList2;
             this.TopSellingView.Location = new System.Drawing.Point(66, 89);
@@ -282,27 +314,29 @@
             // 
             this.tbAppliancesTotalQty.BackColor = System.Drawing.Color.White;
             this.tbAppliancesTotalQty.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.tbAppliancesTotalQty.Enabled = false;
             this.tbAppliancesTotalQty.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbAppliancesTotalQty.ForeColor = System.Drawing.Color.Black;
-            this.tbAppliancesTotalQty.Location = new System.Drawing.Point(88, 525);
+            this.tbAppliancesTotalQty.Location = new System.Drawing.Point(88, 523);
             this.tbAppliancesTotalQty.MaxLength = 10;
             this.tbAppliancesTotalQty.Name = "tbAppliancesTotalQty";
+            this.tbAppliancesTotalQty.ReadOnly = true;
             this.tbAppliancesTotalQty.Size = new System.Drawing.Size(356, 23);
             this.tbAppliancesTotalQty.TabIndex = 18;
+            this.tbAppliancesTotalQty.Text = "1";
             // 
             // tbGroceriesTotalQty
             // 
             this.tbGroceriesTotalQty.BackColor = System.Drawing.Color.White;
             this.tbGroceriesTotalQty.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.tbGroceriesTotalQty.Enabled = false;
             this.tbGroceriesTotalQty.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbGroceriesTotalQty.ForeColor = System.Drawing.Color.Black;
-            this.tbGroceriesTotalQty.Location = new System.Drawing.Point(88, 467);
+            this.tbGroceriesTotalQty.Location = new System.Drawing.Point(88, 466);
             this.tbGroceriesTotalQty.MaxLength = 10;
             this.tbGroceriesTotalQty.Name = "tbGroceriesTotalQty";
+            this.tbGroceriesTotalQty.ReadOnly = true;
             this.tbGroceriesTotalQty.Size = new System.Drawing.Size(356, 23);
             this.tbGroceriesTotalQty.TabIndex = 17;
+            this.tbGroceriesTotalQty.Text = "1";
             // 
             // label5
             // 
@@ -601,6 +635,8 @@
             this.Load += new System.EventHandler(this.Index_Load);
             this.groupDasboard.ResumeLayout(false);
             this.groupDasboard.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
@@ -664,5 +700,7 @@
         private System.Windows.Forms.PictureBox pictureBox6;
         private System.Windows.Forms.PictureBox pictureBox8;
         private System.Windows.Forms.PictureBox pictureBox7;
+        private System.Windows.Forms.PictureBox pictureBox9;
+        private System.Windows.Forms.PictureBox pictureBox10;
     }
 }

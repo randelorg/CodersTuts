@@ -28,7 +28,7 @@ namespace DellRainInventorySystem
 
         private void btnSaveProduct_Click(object sender, EventArgs e)
         {
-
+            
             if (!CheckEmptyFields())
             {
                 InventoryUtils.LtProducts.AddLast(new Product(fields[0], fields[1], int.Parse(fields[2]), float.Parse(fields[3]), fields[4], fields[5],
@@ -157,7 +157,7 @@ namespace DellRainInventorySystem
         private void AddProductWindow_Load(object sender, EventArgs e)
         {
             LoadSuppliers(); //add the existing suppliers in the combo box
-            LoadLocations(); //add the existing lcoations in the combo box
+            LoadLocations(); //add the existing locations in the combo box
         }
 
         private void LoadSuppliers()

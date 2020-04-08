@@ -15,6 +15,7 @@ namespace DellRainInventorySystem
         {
             InitializeComponent();
             lbUsername.Text = inventory.SessUsername; //display the username of the login user
+
             DetermineAccountType();
             BgColor(); 
             RemoveBorder();

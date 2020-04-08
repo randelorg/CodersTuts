@@ -22,8 +22,8 @@ namespace DellRainInventorySystem.Classes.Utility
 
         //for referencing the supplier id and location id
         //in the DB table
-        protected int SuppId { get; set; } = 0;
-        protected int LocationId { get; set; } = 0;
+        protected int SuppId { get; set; }
+        protected int LocationId { get; set; }
 
         protected const string Type1 = "Appliance";
         protected const string Type2 = "Grocery";
