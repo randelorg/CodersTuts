@@ -105,6 +105,12 @@
     <Compile Include="Reports.Designer.cs">
       <DependentUpon>Reports.cs</DependentUpon>
     </Compile>
+    <Compile Include="SplashScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SplashScreen.Designer.cs">
+      <DependentUpon>SplashScreen.cs</DependentUpon>
+    </Compile>
     <Compile Include="YourAccount.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -141,6 +147,9 @@
     </Compile>
     <EmbeddedResource Include="Reports.resx">
       <DependentUpon>Reports.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SplashScreen.resx">
+      <DependentUpon>SplashScreen.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="YourAccount.resx">
       <DependentUpon>YourAccount.cs</DependentUpon>
@@ -252,6 +261,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Philippine.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\NewAdd.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Reload.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

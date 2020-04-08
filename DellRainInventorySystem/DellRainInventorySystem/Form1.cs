@@ -12,18 +12,17 @@ namespace DellRainInventorySystem
     {
         //connection string
         private SqlConnection con = new SqlConnection(Connect.MainConn);
+        private SqlDataReader _reader;
+        private SqlCommand cmd;
 
         private Inventory inventory = new Inventory();
-        private SqlDataReader _reader;
-        
-        private SqlCommand cmd;
 
         public Form1()
         {
             InitializeComponent();
-            ClearLinkList();//clear all the linklist available
+            ClearLinkList();//clear all the link-list available
         }
-        
+
         //will close the login window
         private void pictureBox1_Click(object sender, EventArgs e) => this.Close();
 
@@ -35,7 +34,7 @@ namespace DellRainInventorySystem
             dashboard.ShowDialog();
             this.Close();
         }
-        
+
         private void btnLogin_Click(object sender, EventArgs e)
         {
             //sql query
@@ -60,7 +59,6 @@ namespace DellRainInventorySystem
                     InventoryUtils.Firstname = _reader["firstname"].ToString();
                     InventoryUtils.Lastname = _reader["Lastname"].ToString();
 
-                    //open the dashboard window
                     ShowDashboard();
                 }
                 else
@@ -86,5 +84,10 @@ namespace DellRainInventorySystem
             InventoryUtils.ExistingSuppliers.Clear();
         }
 
+        private void Exit(object sender, EventArgs e)
+        {
+            var tt = new ToolTip();
+            tt.SetToolTip(pictureBox1,"Exit");
+        }
     }
 }

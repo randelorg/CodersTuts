@@ -230,6 +230,7 @@
             this.pictureBack.TabIndex = 15;
             this.pictureBack.TabStop = false;
             this.pictureBack.Click += new System.EventHandler(this.pictureBack_Click);
+            this.pictureBack.MouseHover += new System.EventHandler(this.Back);
             // 
             // YourAccount
             // 

@@ -67,7 +67,7 @@
             // 
             this.lbAdddProduct.AutoSize = true;
             this.lbAdddProduct.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbAdddProduct.Location = new System.Drawing.Point(46, 15);
+            this.lbAdddProduct.Location = new System.Drawing.Point(55, 20);
             this.lbAdddProduct.Name = "lbAdddProduct";
             this.lbAdddProduct.Size = new System.Drawing.Size(140, 25);
             this.lbAdddProduct.TabIndex = 39;
@@ -75,10 +75,10 @@
             // 
             // closeButton
             // 
-            this.closeButton.Image = global::DellRainInventorySystem.Properties.Resources.add;
+            this.closeButton.Image = global::DellRainInventorySystem.Properties.Resources.NewAdd;
             this.closeButton.Location = new System.Drawing.Point(12, 12);
             this.closeButton.Name = "closeButton";
-            this.closeButton.Size = new System.Drawing.Size(30, 30);
+            this.closeButton.Size = new System.Drawing.Size(40, 40);
             this.closeButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.closeButton.TabIndex = 38;
             this.closeButton.TabStop = false;
@@ -260,6 +260,7 @@
             this.pictureBack.TabIndex = 64;
             this.pictureBack.TabStop = false;
             this.pictureBack.Click += new System.EventHandler(this.pictureBack_Click);
+            this.pictureBack.MouseHover += new System.EventHandler(this.Back);
             // 
             // cbListOfSupplier
             // 

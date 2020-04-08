@@ -183,5 +183,11 @@ namespace DellRainInventorySystem
                 cbProductLocation.Items.Add(locationname);
             }
         }
+
+        private void Back(object sender, EventArgs e)
+        {
+            var tt = new ToolTip();
+            tt.SetToolTip(pictureBack,"Go back");
+        }
     }
 }

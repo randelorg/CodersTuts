@@ -65,15 +65,13 @@
             this.lbUsername = new System.Windows.Forms.Label();
             this.btnCreateAccount = new System.Windows.Forms.Button();
             this.btnYourAccount = new System.Windows.Forms.Button();
-            this.lbLogout = new System.Windows.Forms.Label();
             this.bg1 = new System.Windows.Forms.Button();
             this.bg2 = new System.Windows.Forms.Button();
-            this.lbReports = new System.Windows.Forms.Label();
-            this.lbInventory = new System.Windows.Forms.Label();
             this.bgTools = new System.Windows.Forms.Button();
             this.pictureTools = new System.Windows.Forms.PictureBox();
             this.Inventory = new System.Windows.Forms.PictureBox();
             this.SalesReports = new System.Windows.Forms.PictureBox();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.groupDasboard.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
@@ -439,7 +437,6 @@
             this.closeButton.TabIndex = 35;
             this.closeButton.TabStop = false;
             this.closeButton.Click += new System.EventHandler(this.closeButton_Click_1);
-            this.closeButton.MouseLeave += new System.EventHandler(this.closeButton_MouseLeave);
             this.closeButton.MouseHover += new System.EventHandler(this.closeButton_MouseHover);
             // 
             // pictureBox1
@@ -503,19 +500,6 @@
             this.btnYourAccount.MouseLeave += new System.EventHandler(this.btnYourAccount_MouseLeave);
             this.btnYourAccount.MouseHover += new System.EventHandler(this.btnYourAccount_MouseHover);
             // 
-            // lbLogout
-            // 
-            this.lbLogout.AutoSize = true;
-            this.lbLogout.BackColor = System.Drawing.Color.Transparent;
-            this.lbLogout.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbLogout.ForeColor = System.Drawing.Color.Black;
-            this.lbLogout.Location = new System.Drawing.Point(1205, 64);
-            this.lbLogout.Name = "lbLogout";
-            this.lbLogout.Size = new System.Drawing.Size(52, 14);
-            this.lbLogout.TabIndex = 10;
-            this.lbLogout.Text = "Logout";
-            this.lbLogout.Visible = false;
-            // 
             // bg1
             // 
             this.bg1.Enabled = false;
@@ -535,30 +519,6 @@
             this.bg2.Size = new System.Drawing.Size(182, 208);
             this.bg2.TabIndex = 12;
             this.bg2.UseVisualStyleBackColor = true;
-            // 
-            // lbReports
-            // 
-            this.lbReports.AutoSize = true;
-            this.lbReports.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbReports.ForeColor = System.Drawing.Color.White;
-            this.lbReports.Location = new System.Drawing.Point(1129, 477);
-            this.lbReports.Name = "lbReports";
-            this.lbReports.Size = new System.Drawing.Size(80, 14);
-            this.lbReports.TabIndex = 15;
-            this.lbReports.Text = "Sales Reports";
-            this.lbReports.Visible = false;
-            // 
-            // lbInventory
-            // 
-            this.lbInventory.AutoSize = true;
-            this.lbInventory.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbInventory.ForeColor = System.Drawing.Color.White;
-            this.lbInventory.Location = new System.Drawing.Point(1138, 257);
-            this.lbInventory.Name = "lbInventory";
-            this.lbInventory.Size = new System.Drawing.Size(60, 14);
-            this.lbInventory.TabIndex = 16;
-            this.lbInventory.Text = "Inventory";
-            this.lbInventory.Visible = false;
             // 
             // bgTools
             // 
@@ -594,7 +554,6 @@
             this.Inventory.TabIndex = 14;
             this.Inventory.TabStop = false;
             this.Inventory.Click += new System.EventHandler(this.Inventory_Click);
-            this.Inventory.MouseLeave += new System.EventHandler(this.Inventory_MouseLeave);
             this.Inventory.MouseHover += new System.EventHandler(this.Inventory_MouseHover);
             // 
             // SalesReports
@@ -607,8 +566,12 @@
             this.SalesReports.TabIndex = 13;
             this.SalesReports.TabStop = false;
             this.SalesReports.Click += new System.EventHandler(this.SalesReports_Click);
-            this.SalesReports.MouseLeave += new System.EventHandler(this.SalesReports_MouseLeave);
             this.SalesReports.MouseHover += new System.EventHandler(this.SalesReport_MouseHover);
+            // 
+            // timer1
+            // 
+            this.timer1.Interval = 500;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // Index
             // 
@@ -616,11 +579,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1270, 658);
-            this.Controls.Add(this.lbLogout);
             this.Controls.Add(this.pictureTools);
             this.Controls.Add(this.bgTools);
-            this.Controls.Add(this.lbInventory);
-            this.Controls.Add(this.lbReports);
             this.Controls.Add(this.Inventory);
             this.Controls.Add(this.SalesReports);
             this.Controls.Add(this.bg2);
@@ -653,7 +613,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.Inventory)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.SalesReports)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -667,13 +626,10 @@
         private System.Windows.Forms.Label lbUsername;
         private System.Windows.Forms.PictureBox UserIcon;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Label lbLogout;
         private System.Windows.Forms.Button bg1;
         private System.Windows.Forms.Button bg2;
         private System.Windows.Forms.PictureBox SalesReports;
         private System.Windows.Forms.PictureBox Inventory;
-        private System.Windows.Forms.Label lbReports;
-        private System.Windows.Forms.Label lbInventory;
         private System.Windows.Forms.PictureBox pictureTools;
         private System.Windows.Forms.Button bgTools;
         private System.Windows.Forms.PictureBox closeButton;
@@ -702,5 +658,6 @@
         private System.Windows.Forms.PictureBox pictureBox7;
         private System.Windows.Forms.PictureBox pictureBox9;
         private System.Windows.Forms.PictureBox pictureBox10;
+        private System.Windows.Forms.Timer timer1;
     }
 }

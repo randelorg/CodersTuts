@@ -11,6 +11,7 @@ namespace DellRainInventorySystem
     {
         //connection string
         private SqlConnection con = new SqlConnection(Connect.MainConn);
+        ToolTip tt = new ToolTip();
 
         public InventoryWindow()
         {
@@ -51,6 +52,26 @@ namespace DellRainInventorySystem
             }
 
             finally{ con.Close(); }
+        }
+
+        private void UpdateProduct_MouseHover(object sender, EventArgs e)
+        {
+            tt.SetToolTip(UpdateProduct, "Update product");
+        }
+
+        private void AddProduct_MouseHover(object sender, EventArgs e)
+        {
+            tt.SetToolTip(AddProduct, "Add product");
+        }
+
+        private void pictureBack_MouseHover(object sender, EventArgs e)
+        {
+            tt.SetToolTip(pictureBack, "Go back");
+        }
+
+        private void Search_MouseHover(object sender, EventArgs e)
+        {
+            tt.SetToolTip(Search, "Search product");
         }
     }
 }

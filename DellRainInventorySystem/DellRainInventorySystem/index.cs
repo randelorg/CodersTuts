@@ -1,8 +1,11 @@
 ﻿using System;
 using System.Drawing;
+using System.Runtime.CompilerServices;
+using System.Threading;
 using System.Windows.Forms;
 using DellRainInventorySystem.Classes;
 using DellRainInventorySystem.Classes.Utility;
+using Timer = System.Threading.Timer;
 
 namespace DellRainInventorySystem
 {
@@ -10,15 +13,32 @@ namespace DellRainInventorySystem
     {
         private Inventory inventory = new Inventory();
         private Form1 Login = new Form1();
-        
+        private ToolTip tt = new ToolTip();
+
         public Index()
         {
             InitializeComponent();
-            lbUsername.Text = inventory.SessUsername; //display the username of the login user
+            ViewSplash();
+            //display the username of the login user
+            lbUsername.Text = inventory.SessUsername; 
 
             DetermineAccountType();
             BgColor(); 
             RemoveBorder();
+            timer1.Start();
+        }
+
+        private void ViewSplash()
+        {
+            Thread t = new Thread(new ThreadStart(splash));
+            t.Start();
+            Thread.Sleep(1000);
+            t.Abort();
+        }
+
+        private void splash()
+        {
+            Application.Run(new SplashScreen());
         }
 
         private void DetermineAccountType()
@@ -40,8 +60,6 @@ namespace DellRainInventorySystem
             bg1.BackColor = Color.FromArgb(26,95,149);
             bg2.BackColor = Color.FromArgb(46, 187, 163);
             bgTools.BackColor = Color.FromArgb(115, 187, 163);
-            lbReports.BackColor = Color.FromArgb(46, 187, 163);
-            lbInventory.BackColor = Color.FromArgb(26, 95, 149);
         }
 
         private void RemoveBorder()
@@ -65,12 +83,18 @@ namespace DellRainInventorySystem
         private void btnCreateAccount_MouseLeave(object sender, EventArgs e) => btnCreateAccount.ForeColor = Color.Gray;
         private void btnListAccounts_MouseHover(object sender, EventArgs e) => btnListAccounts.ForeColor = Color.White;
         private void btnListAccounts_MouseLeave(object sender, EventArgs e) => btnListAccounts.ForeColor = Color.Gray;
-        private void closeButton_MouseHover(object sender, EventArgs e) => lbLogout.Show();
-        private void closeButton_MouseLeave(object sender, EventArgs e) => lbLogout.Hide();
-        private void SalesReport_MouseHover(object sender, EventArgs e) => lbReports.Show();
-        private void SalesReports_MouseLeave(object sender, EventArgs e) => lbReports.Hide();
-        private void Inventory_MouseHover(object sender, EventArgs e) => lbInventory.Show();
-        private void Inventory_MouseLeave(object sender, EventArgs e) => lbInventory.Hide();
+        private void closeButton_MouseHover(object sender, EventArgs e)
+        {
+            tt.SetToolTip(closeButton, "Logout");
+        }
+        private void SalesReport_MouseHover(object sender, EventArgs e)
+        {
+            tt.SetToolTip(SalesReports, "Generate Reports");
+        }
+        private void Inventory_MouseHover(object sender, EventArgs e)
+        {
+            tt.SetToolTip(Inventory, "Add or update a product");
+        }
 
         //click events
         private void btnYourAccount_Click(object sender, EventArgs e)
@@ -163,7 +187,8 @@ namespace DellRainInventorySystem
         {
             foreach (var t in InventoryUtils.TopSelling)
             {
-                imageList2.Images.Add(t);
+                if(imageList2.Images.Contains(t))
+                    imageList2.Images.Add(t);
             }
 
             //clear list view if it does have a content 
@@ -195,6 +220,11 @@ namespace DellRainInventorySystem
                 tbAppliancesTotalQty.Text = productQty.ToString();
             else
                 ErrorMessage();
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            Index_Load(sender,e);
         }
     }
 }

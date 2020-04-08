@@ -283,6 +283,16 @@ namespace DellRainInventorySystem.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap NewAdd {
+            get {
+                object obj = ResourceManager.GetObject("NewAdd", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Password {
             get {
                 object obj = ResourceManager.GetObject("Password", resourceCulture);
@@ -316,6 +326,16 @@ namespace DellRainInventorySystem.Properties {
         internal static System.Drawing.Bitmap ProfileUser {
             get {
                 object obj = ResourceManager.GetObject("ProfileUser", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Reload {
+            get {
+                object obj = ResourceManager.GetObject("Reload", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
