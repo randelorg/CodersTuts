@@ -17,23 +17,20 @@ namespace DellRainInventorySystem
 
         public Index()
         {
+            Thread t = new Thread(new ThreadStart(splash));
+            t.Start();
+            Thread.Sleep(1000);
+
             InitializeComponent();
-            ViewSplash();
             //display the username of the login user
             lbUsername.Text = inventory.SessUsername; 
 
             DetermineAccountType();
             BgColor(); 
             RemoveBorder();
-            timer1.Start();
-        }
 
-        private void ViewSplash()
-        {
-            Thread t = new Thread(new ThreadStart(splash));
-            t.Start();
-            Thread.Sleep(1000);
-            t.Abort();
+            try { t.Abort(); }
+            catch (ThreadAbortException e) { e.ToString(); }
         }
 
         private void splash()
@@ -94,6 +91,10 @@ namespace DellRainInventorySystem
         private void Inventory_MouseHover(object sender, EventArgs e)
         {
             tt.SetToolTip(Inventory, "Add or update a product");
+        }
+        private void Reload_MouseHover(object sender, EventArgs e)
+        {
+            tt.SetToolTip(Reload, "Reload");
         }
 
         //click events
@@ -165,6 +166,9 @@ namespace DellRainInventorySystem
 
         private void LoadThresholdProducts()
         {
+            if(imageList1.Images.Count > 0)
+                imageList1.Images.Clear();
+
             foreach (var t in InventoryUtils.LowOnStock)
             {
                 imageList1.Images.Add(t);
@@ -185,10 +189,12 @@ namespace DellRainInventorySystem
 
         private void LoadTopSellingProducts()
         {
+            if (imageList2.Images.Count > 0)
+                imageList2.Images.Clear();
+
             foreach (var t in InventoryUtils.TopSelling)
             {
-                if(imageList2.Images.Contains(t))
-                    imageList2.Images.Add(t);
+                imageList2.Images.Add(t);
             }
 
             //clear list view if it does have a content 
@@ -222,9 +228,6 @@ namespace DellRainInventorySystem
                 ErrorMessage();
         }
 
-        private void timer1_Tick(object sender, EventArgs e)
-        {
-            Index_Load(sender,e);
-        }
+        private void Reload_Click(object sender, EventArgs e) => Index_Load(sender, e);
     }
 }

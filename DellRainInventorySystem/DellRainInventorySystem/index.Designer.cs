@@ -71,7 +71,7 @@
             this.pictureTools = new System.Windows.Forms.PictureBox();
             this.Inventory = new System.Windows.Forms.PictureBox();
             this.SalesReports = new System.Windows.Forms.PictureBox();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.Reload = new System.Windows.Forms.PictureBox();
             this.groupDasboard.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
@@ -89,11 +89,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureTools)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Inventory)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.SalesReports)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Reload)).BeginInit();
             this.SuspendLayout();
             // 
             // groupDasboard
             // 
             this.groupDasboard.BackColor = System.Drawing.Color.White;
+            this.groupDasboard.Controls.Add(this.Reload);
             this.groupDasboard.Controls.Add(this.pictureBox10);
             this.groupDasboard.Controls.Add(this.pictureBox9);
             this.groupDasboard.Controls.Add(this.pictureBox8);
@@ -430,7 +432,7 @@
             // closeButton
             // 
             this.closeButton.Image = global::DellRainInventorySystem.Properties.Resources.power;
-            this.closeButton.Location = new System.Drawing.Point(1218, 19);
+            this.closeButton.Location = new System.Drawing.Point(1226, 19);
             this.closeButton.Name = "closeButton";
             this.closeButton.Size = new System.Drawing.Size(30, 30);
             this.closeButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -452,7 +454,7 @@
             // UserIcon
             // 
             this.UserIcon.Image = global::DellRainInventorySystem.Properties.Resources.User;
-            this.UserIcon.Location = new System.Drawing.Point(970, 19);
+            this.UserIcon.Location = new System.Drawing.Point(1002, 18);
             this.UserIcon.Name = "UserIcon";
             this.UserIcon.Size = new System.Drawing.Size(30, 30);
             this.UserIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -464,7 +466,7 @@
             this.lbUsername.AutoSize = true;
             this.lbUsername.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
             this.lbUsername.ForeColor = System.Drawing.Color.White;
-            this.lbUsername.Location = new System.Drawing.Point(1012, 27);
+            this.lbUsername.Location = new System.Drawing.Point(1037, 26);
             this.lbUsername.Name = "lbUsername";
             this.lbUsername.Size = new System.Drawing.Size(77, 17);
             this.lbUsername.TabIndex = 7;
@@ -568,10 +570,17 @@
             this.SalesReports.Click += new System.EventHandler(this.SalesReports_Click);
             this.SalesReports.MouseHover += new System.EventHandler(this.SalesReport_MouseHover);
             // 
-            // timer1
+            // Reload
             // 
-            this.timer1.Interval = 500;
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            this.Reload.Image = global::DellRainInventorySystem.Properties.Resources.update;
+            this.Reload.Location = new System.Drawing.Point(998, 11);
+            this.Reload.Name = "Reload";
+            this.Reload.Size = new System.Drawing.Size(30, 30);
+            this.Reload.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.Reload.TabIndex = 18;
+            this.Reload.TabStop = false;
+            this.Reload.Click += new System.EventHandler(this.Reload_Click);
+            this.Reload.MouseHover += new System.EventHandler(this.Reload_MouseHover);
             // 
             // Index
             // 
@@ -612,6 +621,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureTools)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Inventory)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.SalesReports)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Reload)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -658,6 +668,6 @@
         private System.Windows.Forms.PictureBox pictureBox7;
         private System.Windows.Forms.PictureBox pictureBox9;
         private System.Windows.Forms.PictureBox pictureBox10;
-        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.PictureBox Reload;
     }
 }

@@ -78,7 +78,7 @@
             // 
             // UpdateProduct
             // 
-            this.UpdateProduct.Image = global::DellRainInventorySystem.Properties.Resources.Reload;
+            this.UpdateProduct.Image = global::DellRainInventorySystem.Properties.Resources.Pencil;
             this.UpdateProduct.Location = new System.Drawing.Point(844, 60);
             this.UpdateProduct.Name = "UpdateProduct";
             this.UpdateProduct.Size = new System.Drawing.Size(40, 40);
@@ -89,7 +89,7 @@
             // 
             // Search
             // 
-            this.Search.Image = global::DellRainInventorySystem.Properties.Resources.Search;
+            this.Search.Image = global::DellRainInventorySystem.Properties.Resources.NewSearch;
             this.Search.Location = new System.Drawing.Point(899, 60);
             this.Search.Name = "Search";
             this.Search.Size = new System.Drawing.Size(40, 40);
@@ -113,7 +113,7 @@
             // AddProduct
             // 
             this.AddProduct.Image = global::DellRainInventorySystem.Properties.Resources.NewAdd;
-            this.AddProduct.Location = new System.Drawing.Point(798, 60);
+            this.AddProduct.Location = new System.Drawing.Point(791, 60);
             this.AddProduct.Name = "AddProduct";
             this.AddProduct.Size = new System.Drawing.Size(40, 40);
             this.AddProduct.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
