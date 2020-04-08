@@ -55,7 +55,7 @@
     </Compile>
     <Compile Include="Classes\User.cs" />
     <Compile Include="Classes\Inventory.cs" />
-    <Compile Include="Classes\InventoryUtils.cs" />
+    <Compile Include="Classes\Utility\InventoryUtils.cs" />
     <Compile Include="Classes\Person.cs" />
     <Compile Include="Classes\Product.cs" />
     <Compile Include="Classes\Supplier.cs" />
@@ -78,6 +78,7 @@
     <Compile Include="index.Designer.cs">
       <DependentUpon>index.cs</DependentUpon>
     </Compile>
+    <Compile Include="Interfaces\IAccount.cs" />
     <Compile Include="Interfaces\IInventory.cs" />
     <Compile Include="InventoryDBDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -237,5 +238,12 @@
   <ItemGroup>
     <None Include="Resources\Scale.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\grocery.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Fridge.png" />
+  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

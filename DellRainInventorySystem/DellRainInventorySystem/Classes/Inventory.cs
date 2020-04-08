@@ -5,11 +5,12 @@ using System.Drawing;
 using System.Drawing.Imaging;
 using System.IO;
 using System.Windows.Forms;
+using DellRainInventorySystem.Classes.Utility;
 using DellRainInventorySystem.ConnectDB;
 
 namespace DellRainInventorySystem.Classes
 {
-    public class Inventory : InventoryUtils, IInventory
+    public class Inventory : InventoryUtils, IInventory, IAccount
     {
         //connection string
         private SqlConnection con = new SqlConnection(Connect.MainConn);
@@ -348,6 +349,47 @@ namespace DellRainInventorySystem.Classes
 
         }
 
+        public int CountGroceriesProductsQty()
+        {
+            try
+            {
+                cmd = new SqlCommand();
+                con.Open();
+                cmd.Connection = con;
+                cmd.CommandText = "SELECT SUM(prodQty) FROM Inventory.Product WHERE prodType = @type";
+                cmd.Parameters.AddWithValue("@type", Type2);
+
+                return Convert.ToInt32(cmd.ExecuteScalar());
+            }
+            catch (SqlException e)
+            {
+                Console.WriteLine(e.ToString());
+                return -1;
+            }
+
+            finally { con.Close(); }
+        }
+
+        public int CountApplianceProductsQty()
+        {
+            try
+            {
+                cmd = new SqlCommand();
+                con.Open();
+                cmd.Connection = con;
+                cmd.CommandText = "SELECT SUM(prodQty) FROM Inventory.Product WHERE prodType = @type";
+                cmd.Parameters.AddWithValue("@type", Type1);
+
+                return Convert.ToInt32(cmd.ExecuteScalar());
+            }
+            catch (SqlException e)
+            {
+                Console.WriteLine(e.ToString());
+                return -1;
+            }
+
+            finally { con.Close(); }
+        }
 
         public int ChangePassword(string old, string newPass)
         {
@@ -363,7 +405,7 @@ namespace DellRainInventorySystem.Classes
                 if (_reader.Read())
                 {
                     cmd.CommandText = "UPDATE Inventory.Account SET password = @newpword WHERE AccountId = @id";
-                    cmd.Parameters.AddWithValue("@id", int.Parse(_reader["AccountId"].ToString()));
+                    cmd.Parameters.AddWithValue("@id", Convert.ToInt32(_reader["AccountId"]));
                     cmd.Parameters.AddWithValue("@newpword", newPass);
 
                     /*close the previous reader and execute the 

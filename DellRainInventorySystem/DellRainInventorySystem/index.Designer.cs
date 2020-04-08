@@ -31,6 +31,8 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Index));
             this.groupDasboard = new System.Windows.Forms.GroupBox();
+            this.pictureBox8 = new System.Windows.Forms.PictureBox();
+            this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
@@ -45,8 +47,8 @@
             this.label6 = new System.Windows.Forms.Label();
             this.TopSellingView = new System.Windows.Forms.ListView();
             this.imageList2 = new System.Windows.Forms.ImageList(this.components);
-            this.tbAppliancesTotal = new System.Windows.Forms.TextBox();
-            this.tbGroceriesTotal = new System.Windows.Forms.TextBox();
+            this.tbAppliancesTotalQty = new System.Windows.Forms.TextBox();
+            this.tbGroceriesTotalQty = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -71,6 +73,8 @@
             this.Inventory = new System.Windows.Forms.PictureBox();
             this.SalesReports = new System.Windows.Forms.PictureBox();
             this.groupDasboard.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
@@ -88,6 +92,8 @@
             // groupDasboard
             // 
             this.groupDasboard.BackColor = System.Drawing.Color.White;
+            this.groupDasboard.Controls.Add(this.pictureBox8);
+            this.groupDasboard.Controls.Add(this.pictureBox7);
             this.groupDasboard.Controls.Add(this.pictureBox6);
             this.groupDasboard.Controls.Add(this.pictureBox5);
             this.groupDasboard.Controls.Add(this.pictureBox4);
@@ -100,8 +106,8 @@
             this.groupDasboard.Controls.Add(this.label7);
             this.groupDasboard.Controls.Add(this.label6);
             this.groupDasboard.Controls.Add(this.TopSellingView);
-            this.groupDasboard.Controls.Add(this.tbAppliancesTotal);
-            this.groupDasboard.Controls.Add(this.tbGroceriesTotal);
+            this.groupDasboard.Controls.Add(this.tbAppliancesTotalQty);
+            this.groupDasboard.Controls.Add(this.tbGroceriesTotalQty);
             this.groupDasboard.Controls.Add(this.label5);
             this.groupDasboard.Controls.Add(this.label4);
             this.groupDasboard.Controls.Add(this.label3);
@@ -113,6 +119,26 @@
             this.groupDasboard.Size = new System.Drawing.Size(1035, 579);
             this.groupDasboard.TabIndex = 9;
             this.groupDasboard.TabStop = false;
+            // 
+            // pictureBox8
+            // 
+            this.pictureBox8.Image = global::DellRainInventorySystem.Properties.Resources.Fridge;
+            this.pictureBox8.Location = new System.Drawing.Point(64, 524);
+            this.pictureBox8.Name = "pictureBox8";
+            this.pictureBox8.Size = new System.Drawing.Size(20, 20);
+            this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox8.TabIndex = 31;
+            this.pictureBox8.TabStop = false;
+            // 
+            // pictureBox7
+            // 
+            this.pictureBox7.Image = global::DellRainInventorySystem.Properties.Resources.grocery;
+            this.pictureBox7.Location = new System.Drawing.Point(64, 466);
+            this.pictureBox7.Name = "pictureBox7";
+            this.pictureBox7.Size = new System.Drawing.Size(20, 20);
+            this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox7.TabIndex = 30;
+            this.pictureBox7.TabStop = false;
             // 
             // pictureBox6
             // 
@@ -252,29 +278,31 @@
             this.imageList2.ImageSize = new System.Drawing.Size(120, 120);
             this.imageList2.TransparentColor = System.Drawing.Color.Transparent;
             // 
-            // tbAppliancesTotal
+            // tbAppliancesTotalQty
             // 
-            this.tbAppliancesTotal.BackColor = System.Drawing.Color.White;
-            this.tbAppliancesTotal.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.tbAppliancesTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbAppliancesTotal.ForeColor = System.Drawing.Color.Black;
-            this.tbAppliancesTotal.Location = new System.Drawing.Point(63, 525);
-            this.tbAppliancesTotal.MaxLength = 10;
-            this.tbAppliancesTotal.Name = "tbAppliancesTotal";
-            this.tbAppliancesTotal.Size = new System.Drawing.Size(399, 23);
-            this.tbAppliancesTotal.TabIndex = 18;
+            this.tbAppliancesTotalQty.BackColor = System.Drawing.Color.White;
+            this.tbAppliancesTotalQty.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.tbAppliancesTotalQty.Enabled = false;
+            this.tbAppliancesTotalQty.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbAppliancesTotalQty.ForeColor = System.Drawing.Color.Black;
+            this.tbAppliancesTotalQty.Location = new System.Drawing.Point(88, 525);
+            this.tbAppliancesTotalQty.MaxLength = 10;
+            this.tbAppliancesTotalQty.Name = "tbAppliancesTotalQty";
+            this.tbAppliancesTotalQty.Size = new System.Drawing.Size(356, 23);
+            this.tbAppliancesTotalQty.TabIndex = 18;
             // 
-            // tbGroceriesTotal
+            // tbGroceriesTotalQty
             // 
-            this.tbGroceriesTotal.BackColor = System.Drawing.Color.White;
-            this.tbGroceriesTotal.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.tbGroceriesTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbGroceriesTotal.ForeColor = System.Drawing.Color.Black;
-            this.tbGroceriesTotal.Location = new System.Drawing.Point(63, 467);
-            this.tbGroceriesTotal.MaxLength = 10;
-            this.tbGroceriesTotal.Name = "tbGroceriesTotal";
-            this.tbGroceriesTotal.Size = new System.Drawing.Size(399, 23);
-            this.tbGroceriesTotal.TabIndex = 17;
+            this.tbGroceriesTotalQty.BackColor = System.Drawing.Color.White;
+            this.tbGroceriesTotalQty.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.tbGroceriesTotalQty.Enabled = false;
+            this.tbGroceriesTotalQty.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbGroceriesTotalQty.ForeColor = System.Drawing.Color.Black;
+            this.tbGroceriesTotalQty.Location = new System.Drawing.Point(88, 467);
+            this.tbGroceriesTotalQty.MaxLength = 10;
+            this.tbGroceriesTotalQty.Name = "tbGroceriesTotalQty";
+            this.tbGroceriesTotalQty.Size = new System.Drawing.Size(356, 23);
+            this.tbGroceriesTotalQty.TabIndex = 17;
             // 
             // label5
             // 
@@ -282,9 +310,9 @@
             this.label5.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(60, 506);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(69, 16);
+            this.label5.Size = new System.Drawing.Size(118, 16);
             this.label5.TabIndex = 16;
-            this.label5.Text = "Appliances";
+            this.label5.Text = "Appliances in Stock";
             // 
             // label4
             // 
@@ -292,9 +320,9 @@
             this.label4.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(60, 447);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(62, 16);
+            this.label4.Size = new System.Drawing.Size(111, 16);
             this.label4.TabIndex = 15;
-            this.label4.Text = "Groceries";
+            this.label4.Text = "Groceries in Stock";
             // 
             // label3
             // 
@@ -458,7 +486,7 @@
             // 
             this.bg1.Enabled = false;
             this.bg1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bg1.Location = new System.Drawing.Point(1075, 122);
+            this.bg1.Location = new System.Drawing.Point(1075, 102);
             this.bg1.Name = "bg1";
             this.bg1.Size = new System.Drawing.Size(182, 208);
             this.bg1.TabIndex = 12;
@@ -468,7 +496,7 @@
             // 
             this.bg2.Enabled = false;
             this.bg2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bg2.Location = new System.Drawing.Point(1075, 329);
+            this.bg2.Location = new System.Drawing.Point(1075, 309);
             this.bg2.Name = "bg2";
             this.bg2.Size = new System.Drawing.Size(182, 208);
             this.bg2.TabIndex = 12;
@@ -479,7 +507,7 @@
             this.lbReports.AutoSize = true;
             this.lbReports.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbReports.ForeColor = System.Drawing.Color.White;
-            this.lbReports.Location = new System.Drawing.Point(1129, 497);
+            this.lbReports.Location = new System.Drawing.Point(1129, 477);
             this.lbReports.Name = "lbReports";
             this.lbReports.Size = new System.Drawing.Size(80, 14);
             this.lbReports.TabIndex = 15;
@@ -491,7 +519,7 @@
             this.lbInventory.AutoSize = true;
             this.lbInventory.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbInventory.ForeColor = System.Drawing.Color.White;
-            this.lbInventory.Location = new System.Drawing.Point(1138, 277);
+            this.lbInventory.Location = new System.Drawing.Point(1138, 257);
             this.lbInventory.Name = "lbInventory";
             this.lbInventory.Size = new System.Drawing.Size(60, 14);
             this.lbInventory.TabIndex = 16;
@@ -504,7 +532,7 @@
             this.bgTools.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bgTools.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bgTools.ForeColor = System.Drawing.Color.White;
-            this.bgTools.Location = new System.Drawing.Point(1075, 90);
+            this.bgTools.Location = new System.Drawing.Point(1075, 70);
             this.bgTools.Name = "bgTools";
             this.bgTools.Size = new System.Drawing.Size(182, 30);
             this.bgTools.TabIndex = 17;
@@ -514,7 +542,7 @@
             // pictureTools
             // 
             this.pictureTools.Image = global::DellRainInventorySystem.Properties.Resources.Tools;
-            this.pictureTools.Location = new System.Drawing.Point(1075, 90);
+            this.pictureTools.Location = new System.Drawing.Point(1075, 70);
             this.pictureTools.Name = "pictureTools";
             this.pictureTools.Size = new System.Drawing.Size(30, 30);
             this.pictureTools.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -525,7 +553,7 @@
             // 
             this.Inventory.BackColor = System.Drawing.Color.White;
             this.Inventory.Image = global::DellRainInventorySystem.Properties.Resources.inventory2;
-            this.Inventory.Location = new System.Drawing.Point(1110, 163);
+            this.Inventory.Location = new System.Drawing.Point(1110, 143);
             this.Inventory.Name = "Inventory";
             this.Inventory.Size = new System.Drawing.Size(114, 123);
             this.Inventory.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -538,7 +566,7 @@
             // SalesReports
             // 
             this.SalesReports.Image = global::DellRainInventorySystem.Properties.Resources.Sales;
-            this.SalesReports.Location = new System.Drawing.Point(1110, 371);
+            this.SalesReports.Location = new System.Drawing.Point(1110, 351);
             this.SalesReports.Name = "SalesReports";
             this.SalesReports.Size = new System.Drawing.Size(114, 123);
             this.SalesReports.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -554,6 +582,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1270, 658);
+            this.Controls.Add(this.lbLogout);
             this.Controls.Add(this.pictureTools);
             this.Controls.Add(this.bgTools);
             this.Controls.Add(this.lbInventory);
@@ -562,7 +591,6 @@
             this.Controls.Add(this.SalesReports);
             this.Controls.Add(this.bg2);
             this.Controls.Add(this.bg1);
-            this.Controls.Add(this.lbLogout);
             this.Controls.Add(this.TopNav);
             this.Controls.Add(this.groupDasboard);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
@@ -573,6 +601,8 @@
             this.Load += new System.EventHandler(this.Index_Load);
             this.groupDasboard.ResumeLayout(false);
             this.groupDasboard.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
@@ -613,8 +643,8 @@
         private System.Windows.Forms.PictureBox closeButton;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox tbAppliancesTotal;
-        private System.Windows.Forms.TextBox tbGroceriesTotal;
+        private System.Windows.Forms.TextBox tbAppliancesTotalQty;
+        private System.Windows.Forms.TextBox tbGroceriesTotalQty;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label6;
@@ -632,5 +662,7 @@
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.PictureBox pictureBox5;
         private System.Windows.Forms.PictureBox pictureBox6;
+        private System.Windows.Forms.PictureBox pictureBox8;
+        private System.Windows.Forms.PictureBox pictureBox7;
     }
 }

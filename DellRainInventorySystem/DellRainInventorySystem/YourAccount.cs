@@ -5,6 +5,7 @@ using System.Drawing;
 using System.Security.Cryptography;
 using System.Windows.Forms;
 using DellRainInventorySystem.Classes;
+using DellRainInventorySystem.Classes.Utility;
 
 namespace DellRainInventorySystem
 {

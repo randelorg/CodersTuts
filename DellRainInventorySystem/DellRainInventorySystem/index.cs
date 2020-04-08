@@ -1,8 +1,8 @@
 ﻿using System;
-using System.Diagnostics.Eventing.Reader;
 using System.Drawing;
 using System.Windows.Forms;
 using DellRainInventorySystem.Classes;
+using DellRainInventorySystem.Classes.Utility;
 
 namespace DellRainInventorySystem
 {
@@ -125,6 +125,11 @@ namespace DellRainInventorySystem
             else
                 LoadTopSellingProducts();
 
+            //for the total qty of groceries
+            LoadGroceryQty();
+
+            //for the total qty of appliances
+            LoadProductQty();
         }
 
         private void ErrorMessage()
@@ -171,6 +176,24 @@ namespace DellRainInventorySystem
                 item.ImageIndex = j;
                 TopSellingView.Items.Add(item);
             }
+        }
+
+        private void LoadGroceryQty()
+        {
+            var groceryQty = inventory.CountGroceriesProductsQty();
+            if (groceryQty > 0)
+                tbGroceriesTotalQty.Text = groceryQty.ToString();
+            else
+                ErrorMessage();
+        }
+
+        private void LoadProductQty()
+        {
+            var productQty = inventory.CountApplianceProductsQty();
+            if (productQty > 0)
+                tbAppliancesTotalQty.Text = productQty.ToString();
+            else
+                ErrorMessage();
         }
     }
 }

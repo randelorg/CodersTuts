@@ -4,6 +4,7 @@ using System.Data.SqlClient;
 using System.Diagnostics;
 using System.Windows.Forms;
 using DellRainInventorySystem.Classes;
+using DellRainInventorySystem.Classes.Utility;
 using DellRainInventorySystem.ConnectDB;
 
 namespace DellRainInventorySystem

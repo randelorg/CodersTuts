@@ -2,6 +2,7 @@
 using System;
 using System.Drawing;
 using System.Windows.Forms;
+using DellRainInventorySystem.Classes.Utility;
 
 namespace DellRainInventorySystem
 {
@@ -145,8 +146,8 @@ namespace DellRainInventorySystem
             DialogResult result = openFileDialog1.ShowDialog();
             if (result == DialogResult.OK) // Test result.
             {
-                Console.WriteLine(@"WOW");
-                //filename of the selected image
+                // Console.WriteLine(@"WOW");
+                // filename of the selected image
                 _image = new Bitmap(openFileDialog1.FileName);
                 btnImage.Text = @"Selected image " + openFileDialog1.SafeFileName;
             }

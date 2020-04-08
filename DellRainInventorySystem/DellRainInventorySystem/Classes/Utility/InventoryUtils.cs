@@ -1,8 +1,7 @@
-using System.Collections;
 using System.Collections.Generic;
 using System.Drawing;
 
-namespace DellRainInventorySystem.Classes
+namespace DellRainInventorySystem.Classes.Utility
 {
     public class InventoryUtils
     {
@@ -25,6 +24,9 @@ namespace DellRainInventorySystem.Classes
         //in the DB table
         protected int SuppId { get; set; } = 0;
         protected int LocationId { get; set; } = 0;
+
+        protected const string Type1 = "Appliance";
+        protected const string Type2 = "Grocery";
 
         //identifies the user to the index window
         //serves the session 
