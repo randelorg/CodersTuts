@@ -1,23 +1,99 @@
-using DellRainInventorySystem.Interfaces;
 using System;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.Drawing.Imaging;
 using System.IO;
-using System.Linq;
 using System.Windows.Forms;
 using DellRainInventorySystem.Classes.Utility;
 using DellRainInventorySystem.ConnectDB;
+using DellRainInventorySystem.Interfaces;
 
 namespace DellRainInventorySystem.Classes
 {
     public class Inventory : InventoryUtils, IInventory, IAccount
     {
-        //connection string
-        private SqlConnection con = new SqlConnection(Connect.MainConn);
+        private SqlDataReader _reader;
 
         private SqlCommand cmd;
-        private SqlDataReader _reader;
+
+        //connection string
+        private readonly SqlConnection con = new SqlConnection(Connect.MainConn);
+
+        public int AddAccount()
+        {
+            try
+            {
+                cmd = new SqlCommand();
+                con.Open();
+                cmd.Connection = con;
+
+                cmd.CommandText =
+                    "INSERT INTO Inventory.Account (firstname, lastname, gender, contactNumber, username, password, accType)" +
+                    "VALUES (@fname, @lname, @gender, @number, @username, @password, @accType)";
+
+                if (LtuUsers.Count > 0)
+                {
+                    var user = LtuUsers.Last.Value; //get the last added value in the link-list
+                    cmd.Parameters.AddWithValue("@fname", user.Firstname);
+                    cmd.Parameters.AddWithValue("@lname", user.Lastname);
+                    cmd.Parameters.AddWithValue("@gender", user.Gender);
+                    cmd.Parameters.AddWithValue("@number", user.Contact);
+                    cmd.Parameters.AddWithValue("@username", user.Username);
+                    cmd.Parameters.AddWithValue("@password", user.Password);
+                    cmd.Parameters.AddWithValue("accType", user.AccType);
+                }
+
+                _reader = cmd.ExecuteReader();
+                _reader.Close();
+                return 0;
+            }
+
+            catch (SqlException e)
+            {
+                Console.WriteLine(e.ToString());
+                return 1;
+            }
+
+            finally
+            {
+                con.Close();
+            }
+        }
+
+        public int ChangePassword(string old, string newPass)
+        {
+            try
+            {
+                cmd = new SqlCommand();
+                con.Open();
+                cmd.Connection = con;
+                cmd.CommandText = "SELECT AccountId FROM Inventory.Account WHERE firstname = @fname";
+                cmd.Parameters.AddWithValue("fname", Firstname);
+                _reader = cmd.ExecuteReader();
+
+                if (_reader.Read())
+                {
+                    cmd.CommandText = "UPDATE Inventory.Account SET password = @newpword WHERE AccountId = @id";
+                    cmd.Parameters.AddWithValue("@id", Convert.ToInt32(_reader["AccountId"]));
+                    cmd.Parameters.AddWithValue("@newpword", newPass);
+
+                    /*close the previous reader and execute the 
+                    latest query which is the update query*/
+                    _reader.Close();
+                    cmd.ExecuteNonQuery();
+                }
+
+                return 0;
+            }
+            catch (SqlException)
+            {
+                return 1;
+            }
+            finally
+            {
+                con.Close();
+            }
+        }
 
         public int AddLocation()
         {
@@ -37,7 +113,7 @@ namespace DellRainInventorySystem.Classes
                 if (_reader.Read()) //if location is already existing
                 {
                     LocationId = int.Parse(_reader["locaId"].ToString());
-                    _reader.Close();//close first query
+                    _reader.Close(); //close first query
                 }
                 else //if location is new add to the DB
                 {
@@ -48,7 +124,7 @@ namespace DellRainInventorySystem.Classes
                                       "VALUES (@newlocation)";
                     cmd.Parameters.AddWithValue("@newlocation", product.Location);
                     _reader = cmd.ExecuteReader();
-                    _reader.Close();//close second query
+                    _reader.Close(); //close second query
 
                     //purpose of getting the primary key of the new added location
                     cmd.CommandText = "SELECT * FROM Inventory.Location WHERE name = @locationName";
@@ -59,19 +135,21 @@ namespace DellRainInventorySystem.Classes
                     if (_reader.Read())
                         LocationId = int.Parse(_reader["locaId"].ToString());
 
-                    _reader.Close();//close third query
+                    _reader.Close(); //close third query
                 }
 
-                _reader.Close();//close third query
+                _reader.Close(); //close third query
                 return 0; //if adding is succesful
-
             }
             catch (SqlException e)
             {
                 Console.WriteLine(e.ToString());
                 return 1; //if there are db errors
             }
-            finally { con.Close(); }
+            finally
+            {
+                con.Close();
+            }
         }
 
         public int AddSupplier()
@@ -106,7 +184,7 @@ namespace DellRainInventorySystem.Classes
                     cmd.Parameters.AddWithValue("@newSuppName", product.CompanyName);
                     cmd.Parameters.AddWithValue("@newSuppNum", product.Contact);
                     _reader = cmd.ExecuteReader();
-                    _reader.Close();//close forth query
+                    _reader.Close(); //close forth query
 
                     //purpose of getting the primary key of the new added supplier
                     cmd.CommandText = "SELECT * FROM Inventory.Supplier WHERE suppName = @Suppliername";
@@ -117,19 +195,21 @@ namespace DellRainInventorySystem.Classes
                     if (_reader.Read())
                         SuppId = int.Parse(_reader["suppId"].ToString());
 
-                    _reader.Close();//close third query
+                    _reader.Close(); //close third query
                 }
 
-                _reader.Close();//close third query
+                _reader.Close(); //close third query
                 return 0; //if adding the supplier is successful
-
             }
             catch (SqlException e)
             {
                 Console.WriteLine(e.ToString());
-                return 2;  //if there are db errors
+                return 2; //if there are db errors
             }
-            finally { con.Close(); }
+            finally
+            {
+                con.Close();
+            }
         }
 
         public int AddProduct()
@@ -172,44 +252,10 @@ namespace DellRainInventorySystem.Classes
                 return 1;
             }
 
-            finally { con.Close(); }
-        }
-
-        public int AddAccount()
-        {
-            try
+            finally
             {
-                cmd = new SqlCommand();
-                con.Open();
-                cmd.Connection = con;
-
-                cmd.CommandText = "INSERT INTO Inventory.Account (firstname, lastname, gender, contactNumber, username, password, accType)" +
-                                  "VALUES (@fname, @lname, @gender, @number, @username, @password, @accType)";
-
-                if (LtuUsers.Count > 0)
-                {
-                    var user = LtuUsers.Last.Value; //get the last added value in the link-list
-                    cmd.Parameters.AddWithValue("@fname", user.Firstname);
-                    cmd.Parameters.AddWithValue("@lname", user.Lastname);
-                    cmd.Parameters.AddWithValue("@gender", user.Gender);
-                    cmd.Parameters.AddWithValue("@number", user.Contact);
-                    cmd.Parameters.AddWithValue("@username", user.Username);
-                    cmd.Parameters.AddWithValue("@password", user.Password);
-                    cmd.Parameters.AddWithValue("accType", user.AccType);
-                }
-
-                _reader = cmd.ExecuteReader();
-                _reader.Close();
-                return 0;
+                con.Close();
             }
-
-            catch (SqlException e)
-            {
-                Console.WriteLine(e.ToString());
-                return 1;
-            }
-
-            finally { con.Close(); }
         }
 
         public bool GetExistingLocation()
@@ -226,12 +272,8 @@ namespace DellRainInventorySystem.Classes
                 _reader = cmd.ExecuteReader();
 
                 while (_reader.Read())
-                {
                     if (_reader.HasRows)
-                    {
                         ExistingLocation.AddFirst(_reader["name"].ToString());
-                    }
-                }
 
                 Console.WriteLine(@"Row count {0}", ExistingLocation.Count);
                 return false;
@@ -242,12 +284,15 @@ namespace DellRainInventorySystem.Classes
                 return true;
             }
 
-            finally { con.Close(); }
+            finally
+            {
+                con.Close();
+            }
         }
 
         public bool GetExistingSupplier()
         {
-            if(ExistingSuppliers.Count > 0)
+            if (ExistingSuppliers.Count > 0)
                 ExistingSuppliers.Clear();
 
             try
@@ -259,12 +304,8 @@ namespace DellRainInventorySystem.Classes
                 _reader = cmd.ExecuteReader();
 
                 while (_reader.Read())
-                {
                     if (_reader.HasRows)
-                    {
                         ExistingSuppliers.AddFirst(_reader["suppName"].ToString());
-                    }
-                }
 
                 Console.WriteLine(@"Row count {0}", ExistingSuppliers.Count);
                 return false;
@@ -275,7 +316,10 @@ namespace DellRainInventorySystem.Classes
                 return true;
             }
 
-            finally { con.Close(); }
+            finally
+            {
+                con.Close();
+            }
         }
 
         public bool DetermineTopSellingProducts()
@@ -296,10 +340,7 @@ namespace DellRainInventorySystem.Classes
                 {
                     if (string.IsNullOrEmpty(_reader["prodImage"].ToString())) continue;
 
-                    if (_reader.HasRows)
-                    {
-                        TopSelling.AddFirst(Base64ToImage(_reader["prodImage"].ToString()));
-                    }
+                    if (_reader.HasRows) TopSelling.AddFirst(Base64ToImage(_reader["prodImage"].ToString()));
                 }
 
                 // Console.WriteLine(@"Top selling Row count {0}", TopSelling.Count);
@@ -311,7 +352,10 @@ namespace DellRainInventorySystem.Classes
                 return true;
             }
 
-            finally { con.Close(); }
+            finally
+            {
+                con.Close();
+            }
         }
 
         public bool DetermineProductInThresholdLevel()
@@ -319,7 +363,7 @@ namespace DellRainInventorySystem.Classes
             if (LowOnStock.Count > 0)
                 LowOnStock.Clear();
 
-            try 
+            try
             {
                 cmd = new SqlCommand();
                 con.Open();
@@ -333,21 +377,22 @@ namespace DellRainInventorySystem.Classes
                 {
                     if (string.IsNullOrEmpty(_reader["prodImage"].ToString())) continue;
 
-                    if (_reader.HasRows) {
-                        LowOnStock.AddFirst(Base64ToImage(_reader["prodImage"].ToString()));
-                    }
+                    if (_reader.HasRows) LowOnStock.AddFirst(Base64ToImage(_reader["prodImage"].ToString()));
                 }
 
-                //Console.WriteLine(@"Threshodl level Row count {0}", LowOnStock.Count);
+                //Console.WriteLine(@"Threshold level Row count {0}", LowOnStock.Count);
                 return false;
             }
-            catch(SqlException e) {
+            catch (SqlException e)
+            {
                 Console.WriteLine(e.ToString());
                 return true;
             }
 
-            finally{con.Close();}
-
+            finally
+            {
+                con.Close();
+            }
         }
 
         public int CountGroceriesProductsQty()
@@ -368,7 +413,10 @@ namespace DellRainInventorySystem.Classes
                 return -1;
             }
 
-            finally { con.Close(); }
+            finally
+            {
+                con.Close();
+            }
         }
 
         public int CountApplianceProductsQty()
@@ -389,38 +437,6 @@ namespace DellRainInventorySystem.Classes
                 return -1;
             }
 
-            finally { con.Close(); }
-        }
-
-        public int ChangePassword(string old, string newPass)
-        {
-            try
-            {
-                cmd = new SqlCommand();
-                con.Open();
-                cmd.Connection = con;
-                cmd.CommandText = "SELECT AccountId FROM Inventory.Account WHERE firstname = @fname";
-                cmd.Parameters.AddWithValue("fname", Inventory.Firstname);
-                _reader = cmd.ExecuteReader();
-
-                if (_reader.Read())
-                {
-                    cmd.CommandText = "UPDATE Inventory.Account SET password = @newpword WHERE AccountId = @id";
-                    cmd.Parameters.AddWithValue("@id", Convert.ToInt32(_reader["AccountId"]));
-                    cmd.Parameters.AddWithValue("@newpword", newPass);
-
-                    /*close the previous reader and execute the 
-                    latest query which is the update query*/
-                    _reader.Close();
-                    cmd.ExecuteNonQuery();
-                }
-
-                return 0;
-            }
-            catch (SqlException)
-            {
-                return 1;
-            }
             finally
             {
                 con.Close();

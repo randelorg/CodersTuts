@@ -34,16 +34,17 @@
             this.label1 = new System.Windows.Forms.Label();
             this.tbSearchProduct = new System.Windows.Forms.TextBox();
             this.UpdateProduct = new System.Windows.Forms.PictureBox();
-            this.Search = new System.Windows.Forms.PictureBox();
             this.pictureBack = new System.Windows.Forms.PictureBox();
             this.AddProduct = new System.Windows.Forms.PictureBox();
             this.closeButton = new System.Windows.Forms.PictureBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.Refresh = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.UpdateProduct)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Search)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBack)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.AddProduct)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.closeButton)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Refresh)).BeginInit();
             this.SuspendLayout();
             // 
             // dataView
@@ -71,7 +72,7 @@
             // tbSearchProduct
             // 
             this.tbSearchProduct.Font = new System.Drawing.Font("Tahoma", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbSearchProduct.Location = new System.Drawing.Point(942, 63);
+            this.tbSearchProduct.Location = new System.Drawing.Point(896, 63);
             this.tbSearchProduct.Name = "tbSearchProduct";
             this.tbSearchProduct.Size = new System.Drawing.Size(226, 36);
             this.tbSearchProduct.TabIndex = 38;
@@ -79,24 +80,13 @@
             // UpdateProduct
             // 
             this.UpdateProduct.Image = global::DellRainInventorySystem.Properties.Resources.Pencil;
-            this.UpdateProduct.Location = new System.Drawing.Point(844, 60);
+            this.UpdateProduct.Location = new System.Drawing.Point(741, 60);
             this.UpdateProduct.Name = "UpdateProduct";
             this.UpdateProduct.Size = new System.Drawing.Size(40, 40);
             this.UpdateProduct.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.UpdateProduct.TabIndex = 43;
             this.UpdateProduct.TabStop = false;
             this.UpdateProduct.MouseHover += new System.EventHandler(this.UpdateProduct_MouseHover);
-            // 
-            // Search
-            // 
-            this.Search.Image = global::DellRainInventorySystem.Properties.Resources.NewSearch;
-            this.Search.Location = new System.Drawing.Point(899, 60);
-            this.Search.Name = "Search";
-            this.Search.Size = new System.Drawing.Size(40, 40);
-            this.Search.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.Search.TabIndex = 42;
-            this.Search.TabStop = false;
-            this.Search.MouseHover += new System.EventHandler(this.Search_MouseHover);
             // 
             // pictureBack
             // 
@@ -113,7 +103,7 @@
             // AddProduct
             // 
             this.AddProduct.Image = global::DellRainInventorySystem.Properties.Resources.NewAdd;
-            this.AddProduct.Location = new System.Drawing.Point(791, 60);
+            this.AddProduct.Location = new System.Drawing.Point(688, 60);
             this.AddProduct.Name = "AddProduct";
             this.AddProduct.Size = new System.Drawing.Size(40, 40);
             this.AddProduct.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -132,14 +122,36 @@
             this.closeButton.TabIndex = 36;
             this.closeButton.TabStop = false;
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(817, 69);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(75, 23);
+            this.label2.TabIndex = 44;
+            this.label2.Text = "Search:";
+            // 
+            // Refresh
+            // 
+            this.Refresh.Image = global::DellRainInventorySystem.Properties.Resources.update;
+            this.Refresh.Location = new System.Drawing.Point(1125, 59);
+            this.Refresh.Name = "Refresh";
+            this.Refresh.Size = new System.Drawing.Size(40, 40);
+            this.Refresh.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.Refresh.TabIndex = 45;
+            this.Refresh.TabStop = false;
+            this.Refresh.MouseHover += new System.EventHandler(this.Refresh_MouseHover);
+            // 
             // InventoryWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1189, 656);
+            this.Controls.Add(this.Refresh);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.UpdateProduct);
-            this.Controls.Add(this.Search);
             this.Controls.Add(this.pictureBack);
             this.Controls.Add(this.AddProduct);
             this.Controls.Add(this.tbSearchProduct);
@@ -154,10 +166,10 @@
             this.Load += new System.EventHandler(this.InventoryWindow_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.UpdateProduct)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Search)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBack)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.AddProduct)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.closeButton)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Refresh)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -171,7 +183,8 @@
         private System.Windows.Forms.TextBox tbSearchProduct;
         private System.Windows.Forms.PictureBox AddProduct;
         private System.Windows.Forms.PictureBox pictureBack;
-        private System.Windows.Forms.PictureBox Search;
         private System.Windows.Forms.PictureBox UpdateProduct;
+        private System.Windows.Forms.Label label2;
+        public System.Windows.Forms.PictureBox Refresh;
     }
 }

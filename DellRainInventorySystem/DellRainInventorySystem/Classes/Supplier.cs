@@ -2,28 +2,18 @@
 {
     public class Supplier
     {
-        private string _companyName;
-        private string _contact;
-        
-        protected Supplier(){}
-        
-        public Supplier(string companyName, string contact)
+        protected Supplier()
         {
-            _companyName = companyName;
-            _contact = contact;
-        }
-        
-        public string CompanyName
-        {
-            get => _companyName;
-            set => _companyName = value;
         }
 
-        public string Contact
+        protected Supplier(string companyName, string contact)
         {
-            get => _contact;
-            set => _contact = value;
+            CompanyName = companyName;
+            Contact = contact;
         }
 
+        public string CompanyName { get; set; }
+
+        public string Contact { get; set; }
     }
 }

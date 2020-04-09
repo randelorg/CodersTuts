@@ -2,7 +2,7 @@
 
 namespace DellRainInventorySystem.ConnectDB
 {
-    class Connect
+    internal class Connect
     {
         public static string MainConn { get; } =
             ConfigurationManager.ConnectionStrings["MyConnection"].ConnectionString;

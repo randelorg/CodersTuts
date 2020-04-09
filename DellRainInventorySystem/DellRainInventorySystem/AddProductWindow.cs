@@ -15,17 +15,15 @@ namespace DellRainInventorySystem
         public AddProductWindow()
         {
             InitializeComponent();
-            PrepList();
+            PrepDate();
         }
 
-        private void PrepList()
+        private void PrepDate()
         {
             ShelfLife.CustomFormat = @"dd-MMM-yyyy";
             ShelfLife.Format = DateTimePickerFormat.Custom;
         }
-
         private void pictureBack_Click(object sender, EventArgs e) => this.Close();
-
         private void btnSaveProduct_Click(object sender, EventArgs e)
         {
             
@@ -114,10 +112,9 @@ namespace DellRainInventorySystem
 
         private void cbListOfSupplier_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (cbListOfSupplier.SelectedIndex >= 0) { 
-                tbSuppName.Enabled = false;
-                tbSuppContact.Enabled = false;
-            }
+            if (cbListOfSupplier.SelectedIndex < 0) return;
+            tbSuppName.Enabled = false;
+            tbSuppContact.Enabled = false;
         }
 
         private void cbProductLocation_SelectedIndexChanged(object sender, EventArgs e)

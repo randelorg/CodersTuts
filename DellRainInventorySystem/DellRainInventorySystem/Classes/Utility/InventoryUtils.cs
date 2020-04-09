@@ -5,6 +5,15 @@ namespace DellRainInventorySystem.Classes.Utility
 {
     public class InventoryUtils
     {
+        //constant critical product threshold level
+        protected const int CriticalLevel = 5;
+
+        //constant top selling products count
+        protected const int TopSellingCount = 10;
+
+        protected const string Type1 = "Appliance";
+        protected const string Type2 = "Grocery";
+
         protected internal static LinkedList<User> LtuUsers = new LinkedList<User>();
         protected internal static LinkedList<Product> LtProducts = new LinkedList<Product>();
 
@@ -14,24 +23,15 @@ namespace DellRainInventorySystem.Classes.Utility
         protected internal static LinkedList<string> ExistingSuppliers = new LinkedList<string>();
         protected internal static LinkedList<string> ExistingLocation = new LinkedList<string>();
 
-        //constant critical product threshold level
-        protected const int CriticalLevel = 5;
-
-        //constant top selling products count
-        protected const int TopSellingCount = 10;
+        //identifies the user to the index window
+        //serves the session 
+        private static string sess_username;
+        private static string sess_accType;
 
         //for referencing the supplier id and location id
         //in the DB table
         protected int SuppId { get; set; }
         protected int LocationId { get; set; }
-
-        protected const string Type1 = "Appliance";
-        protected const string Type2 = "Grocery";
-
-        //identifies the user to the index window
-        //serves the session 
-        private static string sess_username;
-        private static string sess_accType;
         public static string Firstname { get; set; }
         public static string Lastname { get; set; }
 

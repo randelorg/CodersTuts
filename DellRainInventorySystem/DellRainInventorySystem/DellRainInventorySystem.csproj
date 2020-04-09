@@ -33,6 +33,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Inetlab.SMPP, Version=2.8.0.1979, Culture=neutral, PublicKeyToken=f4ef11ed003c8441, processorArchitecture=MSIL">
+      <HintPath>..\packages\Inetlab.SMPP.2.8.0\lib\net452\Inetlab.SMPP.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
@@ -105,6 +108,7 @@
     <Compile Include="Reports.Designer.cs">
       <DependentUpon>Reports.cs</DependentUpon>
     </Compile>
+    <Compile Include="SMS\SendMessage.cs" />
     <Compile Include="SplashScreen.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -165,6 +169,7 @@
     <None Include="InventoryDBDataSet.xss">
       <DependentUpon>InventoryDBDataSet.xsd</DependentUpon>
     </None>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -274,5 +279,6 @@
   <ItemGroup>
     <None Include="Resources\NewSearch.png" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

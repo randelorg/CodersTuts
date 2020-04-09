@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Index));
             this.groupDasboard = new System.Windows.Forms.GroupBox();
+            this.Reload = new System.Windows.Forms.PictureBox();
             this.pictureBox10 = new System.Windows.Forms.PictureBox();
             this.pictureBox9 = new System.Windows.Forms.PictureBox();
             this.pictureBox8 = new System.Windows.Forms.PictureBox();
@@ -71,8 +72,8 @@
             this.pictureTools = new System.Windows.Forms.PictureBox();
             this.Inventory = new System.Windows.Forms.PictureBox();
             this.SalesReports = new System.Windows.Forms.PictureBox();
-            this.Reload = new System.Windows.Forms.PictureBox();
             this.groupDasboard.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Reload)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
@@ -89,7 +90,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureTools)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Inventory)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.SalesReports)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Reload)).BeginInit();
             this.SuspendLayout();
             // 
             // groupDasboard
@@ -125,6 +125,18 @@
             this.groupDasboard.Size = new System.Drawing.Size(1035, 579);
             this.groupDasboard.TabIndex = 9;
             this.groupDasboard.TabStop = false;
+            // 
+            // Reload
+            // 
+            this.Reload.Image = global::DellRainInventorySystem.Properties.Resources.update;
+            this.Reload.Location = new System.Drawing.Point(998, 11);
+            this.Reload.Name = "Reload";
+            this.Reload.Size = new System.Drawing.Size(30, 30);
+            this.Reload.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.Reload.TabIndex = 18;
+            this.Reload.TabStop = false;
+            this.Reload.Click += new System.EventHandler(this.Reload_Click);
+            this.Reload.MouseHover += new System.EventHandler(this.Reload_MouseHover);
             // 
             // pictureBox10
             // 
@@ -570,18 +582,6 @@
             this.SalesReports.Click += new System.EventHandler(this.SalesReports_Click);
             this.SalesReports.MouseHover += new System.EventHandler(this.SalesReport_MouseHover);
             // 
-            // Reload
-            // 
-            this.Reload.Image = global::DellRainInventorySystem.Properties.Resources.update;
-            this.Reload.Location = new System.Drawing.Point(998, 11);
-            this.Reload.Name = "Reload";
-            this.Reload.Size = new System.Drawing.Size(30, 30);
-            this.Reload.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.Reload.TabIndex = 18;
-            this.Reload.TabStop = false;
-            this.Reload.Click += new System.EventHandler(this.Reload_Click);
-            this.Reload.MouseHover += new System.EventHandler(this.Reload_MouseHover);
-            // 
             // Index
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -604,6 +604,7 @@
             this.Load += new System.EventHandler(this.Index_Load);
             this.groupDasboard.ResumeLayout(false);
             this.groupDasboard.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Reload)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
@@ -621,7 +622,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureTools)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Inventory)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.SalesReports)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Reload)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -668,6 +668,6 @@
         private System.Windows.Forms.PictureBox pictureBox7;
         private System.Windows.Forms.PictureBox pictureBox9;
         private System.Windows.Forms.PictureBox pictureBox10;
-        private System.Windows.Forms.PictureBox Reload;
+        public System.Windows.Forms.PictureBox Reload;
     }
 }

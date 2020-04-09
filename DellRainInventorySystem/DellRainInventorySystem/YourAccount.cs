@@ -2,7 +2,6 @@
 using System.Configuration;
 using System.Data.SqlClient;
 using System.Drawing;
-using System.Security.Cryptography;
 using System.Windows.Forms;
 using DellRainInventorySystem.Classes;
 using DellRainInventorySystem.Classes.Utility;
@@ -12,12 +11,14 @@ namespace DellRainInventorySystem
     public partial class YourAccount : Form
     {
         //connection string
-        private static readonly string mainConn = ConfigurationManager.ConnectionStrings["MyConnection"].ConnectionString;
-        private SqlConnection con = new SqlConnection(mainConn);
+        private static readonly string mainConn =
+            ConfigurationManager.ConnectionStrings["MyConnection"].ConnectionString;
 
-        private Inventory inventory = new Inventory();
-        private SqlCommand cmd;
         private SqlDataReader _reader;
+        private SqlCommand cmd;
+        private readonly SqlConnection con = new SqlConnection(mainConn);
+
+        private readonly Inventory inventory = new Inventory();
         private string password;
 
         public YourAccount()
@@ -34,7 +35,7 @@ namespace DellRainInventorySystem
             tbPosition.Text = inventory.SessAccType.ToUpper();
             btnChangePassword.Enabled = false;
         }
-       
+
 
         private void tbOldPassword_TextChanged(object sender, EventArgs e)
         {
@@ -60,15 +61,12 @@ namespace DellRainInventorySystem
 
                 cmd.CommandText =
                     "SELECT * FROM Inventory.Account WHERE firstname = @fname AND lastname = @lname";
-                cmd.Parameters.AddWithValue("@fname", Inventory.Firstname);
-                cmd.Parameters.AddWithValue("@lname", Inventory.Lastname);
+                cmd.Parameters.AddWithValue("@fname", InventoryUtils.Firstname);
+                cmd.Parameters.AddWithValue("@lname", InventoryUtils.Lastname);
 
                 _reader = cmd.ExecuteReader();
 
-                if (_reader.Read())
-                {
-                    password = _reader["password"].ToString();
-                }
+                if (_reader.Read()) password = _reader["password"].ToString();
             }
             catch (SqlException)
             {
@@ -79,14 +77,14 @@ namespace DellRainInventorySystem
         private void pictureBack_Click(object sender, EventArgs e)
         {
             password = string.Empty;
-            this.Close();
+            Close();
         }
 
         private void btnChangePassword_Click(object sender, EventArgs e)
         {
-            int classifier = -1;
+            var classifier = -1;
 
-            if(!string.IsNullOrEmpty(tbConfirmNewPassword.Text))
+            if (!string.IsNullOrEmpty(tbConfirmNewPassword.Text))
                 classifier = inventory.ChangePassword(password, tbConfirmNewPassword.Text);
 
             switch (classifier)
@@ -105,14 +103,15 @@ namespace DellRainInventorySystem
 
         private void tbConfirmNewPassword_TextChanged(object sender, EventArgs e)
         {
-            tbConfirmNewPassword.BackColor = tbConfirmNewPassword.Text.Equals(tbNewPassword.Text) ? Color.Green : Color.Red;
+            tbConfirmNewPassword.BackColor =
+                tbConfirmNewPassword.Text.Equals(tbNewPassword.Text) ? Color.Green : Color.Red;
         }
 
         private void CleanForm(Control ctrl)
         {
             foreach (Control c in ctrl.Controls)
             {
-                if (c is TextBox) ((TextBox)c).Text = string.Empty;
+                if (c is TextBox) ((TextBox) c).Text = string.Empty;
                 CleanForm(c);
             }
         }
@@ -120,7 +119,7 @@ namespace DellRainInventorySystem
         private void Back(object sender, EventArgs e)
         {
             var tt = new ToolTip();
-            tt.SetToolTip(pictureBack,"Go back");
+            tt.SetToolTip(pictureBack, "Go back");
         }
     }
 }

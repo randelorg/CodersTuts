@@ -2,52 +2,33 @@
 {
     public class User : Person
     {
-        private string _username;
-        private string _contact;
-        private string _password;
-        private string _accType;
-        
-        protected User(){}
-        
+        protected User()
+        {
+        }
+
         public User(string username, string contact, string password, string accType)
         {
-            _username = username;
-            _contact = contact;
-            _password = password;
-            _accType = accType;
+            Username = username;
+            Contact = contact;
+            Password = password;
+            AccType = accType;
         }
 
-        public User(string firstname, string lastname, string gender, string username, string contact, string password, string accType) : base(firstname, lastname, gender)
+        public User(string firstname, string lastname, string gender, string username, string contact, string password,
+            string accType) : base(firstname, lastname, gender)
         {
-            _username = username;
-            _contact = contact;
-            _password = password;
-            _accType = accType;
-        }
-        
-        public string Username
-        {
-            get => _username;
-            set => _username = value;
+            Username = username;
+            Contact = contact;
+            Password = password;
+            AccType = accType;
         }
 
-        public string Contact
-        {
-            get => _contact;
-            set => _contact = value;
-        }
+        public string Username { get; set; }
 
-        public string Password
-        {
-            get => _password;
-            set => _password = value;
-        }
+        public string Contact { get; set; }
 
-        public string AccType
-        {
-            get => _accType;
-            set => _accType = value;
-        }
+        public string Password { get; set; }
 
+        public string AccType { get; set; }
     }
 }

@@ -1,36 +1,40 @@
 ﻿using System;
 using System.Drawing;
-using System.Runtime.CompilerServices;
 using System.Threading;
 using System.Windows.Forms;
 using DellRainInventorySystem.Classes;
 using DellRainInventorySystem.Classes.Utility;
-using Timer = System.Threading.Timer;
 
 namespace DellRainInventorySystem
 {
     public partial class Index : Form
     {
-        private Inventory inventory = new Inventory();
+        private readonly Inventory inventory = new Inventory();
         private Form1 Login = new Form1();
-        private ToolTip tt = new ToolTip();
+        private readonly ToolTip tt = new ToolTip();
 
         public Index()
         {
-            Thread t = new Thread(new ThreadStart(splash));
+            var t = new Thread(splash);
             t.Start();
             Thread.Sleep(1000);
 
             InitializeComponent();
             //display the username of the login user
-            lbUsername.Text = inventory.SessUsername; 
+            lbUsername.Text = inventory.SessUsername;
 
             DetermineAccountType();
-            BgColor(); 
+            BgColor();
             RemoveBorder();
 
-            try { t.Abort(); }
-            catch (ThreadAbortException e) { e.ToString(); }
+            try
+            {
+                t.Abort();
+            }
+            catch (ThreadAbortException e)
+            {
+                e.ToString();
+            }
         }
 
         private void splash()
@@ -46,15 +50,14 @@ namespace DellRainInventorySystem
             {
                 case staffAccType:
                     btnListAccounts.Hide();
-                    btnCreateAccount.Hide(); 
+                    btnCreateAccount.Hide();
                     break;
             }
-            
         }
 
         private void BgColor()
         {
-            bg1.BackColor = Color.FromArgb(26,95,149);
+            bg1.BackColor = Color.FromArgb(26, 95, 149);
             bg2.BackColor = Color.FromArgb(46, 187, 163);
             bgTools.BackColor = Color.FromArgb(115, 187, 163);
         }
@@ -74,27 +77,54 @@ namespace DellRainInventorySystem
         }
 
         //mouse events
-        private void btnYourAccount_MouseHover(object sender, EventArgs e) => btnYourAccount.ForeColor = Color.White;
-        private void btnYourAccount_MouseLeave(object sender, EventArgs e) => btnYourAccount.ForeColor = Color.Gray;
-        private void btnCreateAccount_MouseHover(object sender, EventArgs e) => btnCreateAccount.ForeColor = Color.White;
-        private void btnCreateAccount_MouseLeave(object sender, EventArgs e) => btnCreateAccount.ForeColor = Color.Gray;
-        private void btnListAccounts_MouseHover(object sender, EventArgs e) => btnListAccounts.ForeColor = Color.White;
-        private void btnListAccounts_MouseLeave(object sender, EventArgs e) => btnListAccounts.ForeColor = Color.Gray;
+        private void btnYourAccount_MouseHover(object sender, EventArgs e)
+        {
+            btnYourAccount.ForeColor = Color.White;
+        }
+
+        private void btnYourAccount_MouseLeave(object sender, EventArgs e)
+        {
+            btnYourAccount.ForeColor = Color.Gray;
+        }
+
+        private void btnCreateAccount_MouseHover(object sender, EventArgs e)
+        {
+            btnCreateAccount.ForeColor = Color.White;
+        }
+
+        private void btnCreateAccount_MouseLeave(object sender, EventArgs e)
+        {
+            btnCreateAccount.ForeColor = Color.Gray;
+        }
+
+        private void btnListAccounts_MouseHover(object sender, EventArgs e)
+        {
+            btnListAccounts.ForeColor = Color.White;
+        }
+
+        private void btnListAccounts_MouseLeave(object sender, EventArgs e)
+        {
+            btnListAccounts.ForeColor = Color.Gray;
+        }
+
         private void closeButton_MouseHover(object sender, EventArgs e)
         {
             tt.SetToolTip(closeButton, "Logout");
         }
+
         private void SalesReport_MouseHover(object sender, EventArgs e)
         {
             tt.SetToolTip(SalesReports, "Generate Reports");
         }
+
         private void Inventory_MouseHover(object sender, EventArgs e)
         {
             tt.SetToolTip(Inventory, "Add or update a product");
         }
+
         private void Reload_MouseHover(object sender, EventArgs e)
         {
-            tt.SetToolTip(Reload, "Reload");
+            tt.SetToolTip(Reload, "Refresh");
         }
 
         //click events
@@ -120,9 +150,9 @@ namespace DellRainInventorySystem
         {
             var login = new Form1();
             login.Hide();
-            this.Hide();
+            Hide();
             login.ShowDialog();
-            this.Close();
+            Close();
         }
 
         private void SalesReports_Click(object sender, EventArgs e)
@@ -146,7 +176,7 @@ namespace DellRainInventorySystem
                 LoadThresholdProducts();
 
             //for top selling products
-            if(inventory.DetermineTopSellingProducts())
+            if (inventory.DetermineTopSellingProducts())
                 ErrorMessage();
             else
                 LoadTopSellingProducts();
@@ -166,13 +196,10 @@ namespace DellRainInventorySystem
 
         private void LoadThresholdProducts()
         {
-            if(imageList1.Images.Count > 0)
+            if (imageList1.Images.Count > 0)
                 imageList1.Images.Clear();
 
-            foreach (var t in InventoryUtils.LowOnStock)
-            {
-                imageList1.Images.Add(t);
-            }
+            foreach (var t in InventoryUtils.LowOnStock) imageList1.Images.Add(t);
 
             //clear list view if it does have a content 
             //to prevent image duplication
@@ -192,10 +219,7 @@ namespace DellRainInventorySystem
             if (imageList2.Images.Count > 0)
                 imageList2.Images.Clear();
 
-            foreach (var t in InventoryUtils.TopSelling)
-            {
-                imageList2.Images.Add(t);
-            }
+            foreach (var t in InventoryUtils.TopSelling) imageList2.Images.Add(t);
 
             //clear list view if it does have a content 
             //to prevent image duplication
@@ -228,6 +252,9 @@ namespace DellRainInventorySystem
                 ErrorMessage();
         }
 
-        private void Reload_Click(object sender, EventArgs e) => Index_Load(sender, e);
+        public void Reload_Click(object sender, EventArgs e)
+        {
+            Index_Load(sender, e);
+        }
     }
 }

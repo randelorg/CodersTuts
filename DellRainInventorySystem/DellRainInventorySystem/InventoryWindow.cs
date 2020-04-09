@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 using System.Windows.Forms;
@@ -10,15 +9,18 @@ namespace DellRainInventorySystem
     public partial class InventoryWindow : Form
     {
         //connection string
-        private SqlConnection con = new SqlConnection(Connect.MainConn);
-        ToolTip tt = new ToolTip();
+        private readonly SqlConnection con = new SqlConnection(Connect.MainConn);
+        private readonly ToolTip tt = new ToolTip();
 
         public InventoryWindow()
         {
             InitializeComponent();
         }
 
-        private void pictureBack_Click(object sender, EventArgs e) => this.Close();
+        private void pictureBack_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
 
         private void AddProduct_Click(object sender, EventArgs e)
         {
@@ -30,7 +32,6 @@ namespace DellRainInventorySystem
         {
             try
             {
-                
                 var cmd = new SqlCommand();
                 con.Open();
                 cmd.Connection = con;
@@ -51,7 +52,10 @@ namespace DellRainInventorySystem
                 Console.WriteLine(a.ToString());
             }
 
-            finally{ con.Close(); }
+            finally
+            {
+                con.Close();
+            }
         }
 
         private void UpdateProduct_MouseHover(object sender, EventArgs e)
@@ -69,9 +73,9 @@ namespace DellRainInventorySystem
             tt.SetToolTip(pictureBack, "Go back");
         }
 
-        private void Search_MouseHover(object sender, EventArgs e)
+        private void Refresh_MouseHover(object sender, EventArgs e)
         {
-            tt.SetToolTip(Search, "Search product");
+            tt.SetToolTip(Refresh, "Refresh table");
         }
     }
 }

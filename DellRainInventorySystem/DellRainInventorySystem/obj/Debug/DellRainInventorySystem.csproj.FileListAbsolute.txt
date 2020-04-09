@@ -42,3 +42,6 @@ D:\dev 2nd year_2nd sem\CodersTuts\DellRainInventorySystem\DellRainInventorySyst
 E:\2ND YEAR - 2ND SEM\CodersTuts\DellRainInventorySystem\DellRainInventorySystem\obj\Debug\DellRainInventorySystem.Reports.resources
 E:\2ND YEAR - 2ND SEM\CodersTuts\DellRainInventorySystem\DellRainInventorySystem\obj\Debug\DellRainInventorySystem.ManageAccounts.resources
 E:\2ND YEAR - 2ND SEM\CodersTuts\DellRainInventorySystem\DellRainInventorySystem\obj\Debug\DellRainInventorySystem.SplashScreen.resources
+E:\2ND YEAR - 2ND SEM\CodersTuts\DellRainInventorySystem\DellRainInventorySystem\bin\Debug\Inetlab.SMPP.dll
+E:\2ND YEAR - 2ND SEM\CodersTuts\DellRainInventorySystem\DellRainInventorySystem\bin\Debug\Inetlab.SMPP.xml
+E:\2ND YEAR - 2ND SEM\CodersTuts\DellRainInventorySystem\DellRainInventorySystem\obj\Debug\DellRainInventorySystem.csproj.CopyComplete
