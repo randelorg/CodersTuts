@@ -30,6 +30,11 @@ namespace DellRainInventorySystem
 
         private void InventoryWindow_Load(object sender, EventArgs e)
         {
+            LoadEverything();
+        }
+
+        private void LoadEverything() //load all the query result in the join
+        {
             try
             {
                 var binder = new BindingSource();
@@ -78,6 +83,16 @@ namespace DellRainInventorySystem
         private void Refresh_MouseHover(object sender, EventArgs e)
         {
             tt.SetToolTip(Refresh, "Refresh table");
+        }
+
+        private void tbSearchProduct_MouseHover(object sender, EventArgs e)
+        {
+            tt.SetToolTip(tbSearchProduct, "Search by Name, Location, Supplier, or Expiration Date");
+        }
+
+        private void Refresh_Click(object sender, EventArgs e)
+        {
+            LoadEverything();
         }
     }
 }

@@ -37,7 +37,6 @@
             this.pictureBack = new System.Windows.Forms.PictureBox();
             this.AddProduct = new System.Windows.Forms.PictureBox();
             this.closeButton = new System.Windows.Forms.PictureBox();
-            this.label2 = new System.Windows.Forms.Label();
             this.Refresh = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.UpdateProduct)).BeginInit();
@@ -72,17 +71,18 @@
             // tbSearchProduct
             // 
             this.tbSearchProduct.Font = new System.Drawing.Font("Tahoma", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbSearchProduct.Location = new System.Drawing.Point(545, 66);
+            this.tbSearchProduct.Location = new System.Drawing.Point(539, 63);
             this.tbSearchProduct.Name = "tbSearchProduct";
             this.tbSearchProduct.Size = new System.Drawing.Size(226, 36);
             this.tbSearchProduct.TabIndex = 38;
+            this.tbSearchProduct.MouseHover += new System.EventHandler(this.tbSearchProduct_MouseHover);
             // 
             // UpdateProduct
             // 
             this.UpdateProduct.Image = global::DellRainInventorySystem.Properties.Resources.Pencil;
-            this.UpdateProduct.Location = new System.Drawing.Point(408, 61);
+            this.UpdateProduct.Location = new System.Drawing.Point(489, 61);
             this.UpdateProduct.Name = "UpdateProduct";
-            this.UpdateProduct.Size = new System.Drawing.Size(40, 40);
+            this.UpdateProduct.Size = new System.Drawing.Size(36, 36);
             this.UpdateProduct.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.UpdateProduct.TabIndex = 43;
             this.UpdateProduct.TabStop = false;
@@ -103,9 +103,9 @@
             // AddProduct
             // 
             this.AddProduct.Image = global::DellRainInventorySystem.Properties.Resources.NewAdd;
-            this.AddProduct.Location = new System.Drawing.Point(355, 61);
+            this.AddProduct.Location = new System.Drawing.Point(436, 61);
             this.AddProduct.Name = "AddProduct";
-            this.AddProduct.Size = new System.Drawing.Size(40, 40);
+            this.AddProduct.Size = new System.Drawing.Size(36, 36);
             this.AddProduct.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.AddProduct.TabIndex = 40;
             this.AddProduct.TabStop = false;
@@ -122,25 +122,16 @@
             this.closeButton.TabIndex = 36;
             this.closeButton.TabStop = false;
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(466, 72);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(75, 23);
-            this.label2.TabIndex = 44;
-            this.label2.Text = "Search:";
-            // 
             // Refresh
             // 
             this.Refresh.Image = global::DellRainInventorySystem.Properties.Resources.update;
             this.Refresh.Location = new System.Drawing.Point(774, 62);
             this.Refresh.Name = "Refresh";
-            this.Refresh.Size = new System.Drawing.Size(40, 40);
+            this.Refresh.Size = new System.Drawing.Size(36, 36);
             this.Refresh.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.Refresh.TabIndex = 45;
             this.Refresh.TabStop = false;
+            this.Refresh.Click += new System.EventHandler(this.Refresh_Click);
             this.Refresh.MouseHover += new System.EventHandler(this.Refresh_MouseHover);
             // 
             // InventoryWindow
@@ -150,7 +141,6 @@
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(836, 656);
             this.Controls.Add(this.Refresh);
-            this.Controls.Add(this.label2);
             this.Controls.Add(this.UpdateProduct);
             this.Controls.Add(this.pictureBack);
             this.Controls.Add(this.AddProduct);
@@ -184,7 +174,6 @@
         private System.Windows.Forms.PictureBox AddProduct;
         private System.Windows.Forms.PictureBox pictureBack;
         private System.Windows.Forms.PictureBox UpdateProduct;
-        private System.Windows.Forms.Label label2;
         public System.Windows.Forms.PictureBox Refresh;
     }
 }
