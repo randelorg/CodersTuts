@@ -5,7 +5,6 @@ using System.Windows.Forms;
 using DellRainInventorySystem.Classes;
 using DellRainInventorySystem.Classes.Utility;
 using DellRainInventorySystem.ConnectDB;
-using DellRainInventorySystem.SMS;
 
 namespace DellRainInventorySystem
 {
@@ -19,7 +18,6 @@ namespace DellRainInventorySystem
         private readonly SqlConnection con = new SqlConnection(Connect.MainConn);
 
         private readonly Inventory inventory = new Inventory();
-        private SendMessage send = new SendMessage();
 
         public Form1()
         {
