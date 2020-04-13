@@ -56,7 +56,7 @@
             this.dataView.Location = new System.Drawing.Point(24, 102);
             this.dataView.Name = "dataView";
             this.dataView.ReadOnly = true;
-            this.dataView.Size = new System.Drawing.Size(1144, 534);
+            this.dataView.Size = new System.Drawing.Size(793, 534);
             this.dataView.TabIndex = 0;
             // 
             // label1
@@ -72,7 +72,7 @@
             // tbSearchProduct
             // 
             this.tbSearchProduct.Font = new System.Drawing.Font("Tahoma", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbSearchProduct.Location = new System.Drawing.Point(896, 63);
+            this.tbSearchProduct.Location = new System.Drawing.Point(545, 66);
             this.tbSearchProduct.Name = "tbSearchProduct";
             this.tbSearchProduct.Size = new System.Drawing.Size(226, 36);
             this.tbSearchProduct.TabIndex = 38;
@@ -80,7 +80,7 @@
             // UpdateProduct
             // 
             this.UpdateProduct.Image = global::DellRainInventorySystem.Properties.Resources.Pencil;
-            this.UpdateProduct.Location = new System.Drawing.Point(741, 60);
+            this.UpdateProduct.Location = new System.Drawing.Point(408, 61);
             this.UpdateProduct.Name = "UpdateProduct";
             this.UpdateProduct.Size = new System.Drawing.Size(40, 40);
             this.UpdateProduct.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -91,7 +91,7 @@
             // pictureBack
             // 
             this.pictureBack.Image = global::DellRainInventorySystem.Properties.Resources.Back;
-            this.pictureBack.Location = new System.Drawing.Point(1138, 12);
+            this.pictureBack.Location = new System.Drawing.Point(787, 15);
             this.pictureBack.Name = "pictureBack";
             this.pictureBack.Size = new System.Drawing.Size(30, 30);
             this.pictureBack.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -103,7 +103,7 @@
             // AddProduct
             // 
             this.AddProduct.Image = global::DellRainInventorySystem.Properties.Resources.NewAdd;
-            this.AddProduct.Location = new System.Drawing.Point(688, 60);
+            this.AddProduct.Location = new System.Drawing.Point(355, 61);
             this.AddProduct.Name = "AddProduct";
             this.AddProduct.Size = new System.Drawing.Size(40, 40);
             this.AddProduct.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -126,7 +126,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(817, 69);
+            this.label2.Location = new System.Drawing.Point(466, 72);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(75, 23);
             this.label2.TabIndex = 44;
@@ -135,7 +135,7 @@
             // Refresh
             // 
             this.Refresh.Image = global::DellRainInventorySystem.Properties.Resources.update;
-            this.Refresh.Location = new System.Drawing.Point(1125, 59);
+            this.Refresh.Location = new System.Drawing.Point(774, 62);
             this.Refresh.Name = "Refresh";
             this.Refresh.Size = new System.Drawing.Size(40, 40);
             this.Refresh.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -148,7 +148,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1189, 656);
+            this.ClientSize = new System.Drawing.Size(836, 656);
             this.Controls.Add(this.Refresh);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.UpdateProduct);
