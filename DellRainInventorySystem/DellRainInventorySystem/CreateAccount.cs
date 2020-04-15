@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Drawing;
 using System.Linq;
+using System.Text.RegularExpressions;
 using System.Windows.Forms;
 using DellRainInventorySystem.Classes;
 using DellRainInventorySystem.Classes.Utility;
@@ -87,7 +89,9 @@ namespace DellRainInventorySystem
 
         private void tbFirstName_TextChanged(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(tbFirstName.Text)) return;
+            if (string.IsNullOrEmpty(tbFirstName.Text))
+                tbUsername.Text = string.Empty;
+
             var user = string.Concat(UpperCaseFirstChar(tbFirstName.Text.Trim()), tbLastName.Text.Trim());
             tbUsername.Text = user;
         }
@@ -95,6 +99,8 @@ namespace DellRainInventorySystem
         private void tbLastName_TextChanged(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(tbLastName.Text)) return;
+                // tbUsername.Text = string.Empty;
+            
             var user = string.Concat(tbFirstName.Text.Trim(), UpperCaseFirstChar(tbLastName.Text.Trim()));
             tbUsername.Text = user;
         }
@@ -112,6 +118,29 @@ namespace DellRainInventorySystem
         private void showPassword_MouseUp(object sender, MouseEventArgs e)
         {
             tbDefaultPassword.UseSystemPasswordChar = true;
+        }
+
+        private void tbNumber_TextChanged(object sender, EventArgs e)
+        {
+            tbNumber.BackColor = !IsValidMobileNumber(tbNumber.Text) ? Color.Red : Color.Green;
+        }
+
+        protected internal bool IsValidMobileNumber(string inputMobileNumber)
+        {
+            //accepts 11 digits not accepting 
+            // '+' sign is not accepting this in the regex
+            string strRegex = @"(^[0-9]{11}$)|(^\+[0-9]{2}\s+[0-9] 
+                {2}[0-9]{8}$)|(^[0-9]{3}-[0-9]{4}-[0-9]{4}$)";
+
+            Regex re = new Regex(strRegex);
+
+            // The IsMatch method is used to validate 
+            // a string or to ensure that a string 
+            // conforms to a particular pattern. 
+            if (re.IsMatch(inputMobileNumber))
+                return true;
+            else
+                return false;
         }
     }
 }

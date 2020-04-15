@@ -187,5 +187,11 @@ namespace DellRainInventorySystem
             var tt = new ToolTip();
             tt.SetToolTip(pictureBack,"Go back");
         }
+
+        private void tbSuppContact_TextChanged(object sender, EventArgs e)
+        {
+            var create = new CreateAccount();
+            tbSuppContact.BackColor = !create.IsValidMobileNumber(tbSuppContact.Text) ? Color.Red : Color.Green;
+        }
     }
 }

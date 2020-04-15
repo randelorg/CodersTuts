@@ -5,18 +5,17 @@ using System.Drawing;
 using System.Windows.Forms;
 using DellRainInventorySystem.Classes;
 using DellRainInventorySystem.Classes.Utility;
+using DellRainInventorySystem.ConnectDB;
 
 namespace DellRainInventorySystem
 {
     public partial class YourAccount : Form
     {
         //connection string
-        private static readonly string mainConn =
-            ConfigurationManager.ConnectionStrings["MyConnection"].ConnectionString;
 
         private SqlDataReader _reader;
         private SqlCommand cmd;
-        private readonly SqlConnection con = new SqlConnection(mainConn);
+        private readonly SqlConnection con = new SqlConnection(Connect.MainConn);
 
         private readonly Inventory inventory = new Inventory();
         private string password;

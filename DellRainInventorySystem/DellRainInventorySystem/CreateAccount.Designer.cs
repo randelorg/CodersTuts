@@ -234,6 +234,7 @@
             this.tbNumber.Name = "tbNumber";
             this.tbNumber.Size = new System.Drawing.Size(350, 27);
             this.tbNumber.TabIndex = 49;
+            this.tbNumber.TextChanged += new System.EventHandler(this.tbNumber_TextChanged);
             // 
             // label5
             // 

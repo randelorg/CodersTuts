@@ -16,6 +16,41 @@ namespace DellRainInventorySystem
             InitializeComponent();
         }
 
+        private void LoadEverything()
+        {
+            var binder = new BindingSource();
+            var cmd = new SqlCommand();
+
+            try
+            {
+                connection.Open();
+                cmd.Connection = connection;
+
+                cmd.CommandText = "SELECT * FROM Inventory.Account";
+
+                var adapter = new SqlDataAdapter(cmd);
+                var dataTable = new DataTable();
+                adapter.Fill(dataTable);
+
+                EmployeeList.DataSource = binder;
+                binder.DataSource = dataTable;
+            }
+            catch (SqlException a)
+            {
+                Console.WriteLine(a.ToString());
+                MessageBox.Show(@"Cant connect to DB", @"Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            catch (FormatException a)
+            {
+                Console.WriteLine(a.ToString());
+            }
+            finally
+            {
+                connection.Close();
+            }
+        }
+
         private void pictureBack_Click(object sender, EventArgs e)
         {
             Close();
@@ -23,8 +58,16 @@ namespace DellRainInventorySystem
 
         private void ManageAccounts_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'inventoryDBDataSet.Account' table. You can move, or remove it, as needed.
-            accountTableAdapter.Fill(inventoryDBDataSet.Account);
+            try
+            {
+                // TODO: This line of code loads data into the 'inventoryDBDataSet.Account' table. You can move, or remove it, as needed.
+                accountTableAdapter.Fill(inventoryDBDataSet.Account);
+            }
+            catch (SqlException ex)
+            {
+                LoadEverything();
+            }
+            
         }
 
         private void Back(object sender, EventArgs e)

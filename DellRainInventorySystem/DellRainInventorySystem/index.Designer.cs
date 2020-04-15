@@ -53,6 +53,7 @@
             this.lbUsername = new System.Windows.Forms.Label();
             this.btnCreateAccount = new System.Windows.Forms.Button();
             this.btnYourAccount = new System.Windows.Forms.Button();
+            this.SoldProducts = new System.Windows.Forms.PictureBox();
             this.UpdateProduct = new System.Windows.Forms.PictureBox();
             this.AddProduct = new System.Windows.Forms.PictureBox();
             this.Stock = new System.Windows.Forms.PictureBox();
@@ -72,6 +73,7 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.groupDasboard.SuspendLayout();
             this.TopNav.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.SoldProducts)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.UpdateProduct)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.AddProduct)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Stock)).BeginInit();
@@ -379,6 +381,17 @@
             this.btnYourAccount.MouseLeave += new System.EventHandler(this.btnYourAccount_MouseLeave);
             this.btnYourAccount.MouseHover += new System.EventHandler(this.btnYourAccount_MouseHover);
             // 
+            // SoldProducts
+            // 
+            this.SoldProducts.Image = global::DellRainInventorySystem.Properties.Resources.Sold;
+            this.SoldProducts.Location = new System.Drawing.Point(10, 380);
+            this.SoldProducts.Name = "SoldProducts";
+            this.SoldProducts.Size = new System.Drawing.Size(50, 50);
+            this.SoldProducts.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.SoldProducts.TabIndex = 43;
+            this.SoldProducts.TabStop = false;
+            this.SoldProducts.MouseHover += new System.EventHandler(this.SoldProducts_MouseHover);
+            // 
             // UpdateProduct
             // 
             this.UpdateProduct.Image = global::DellRainInventorySystem.Properties.Resources.pencil__1_;
@@ -567,6 +580,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1190, 721);
+            this.Controls.Add(this.SoldProducts);
             this.Controls.Add(this.UpdateProduct);
             this.Controls.Add(this.AddProduct);
             this.Controls.Add(this.Stock);
@@ -583,6 +597,7 @@
             this.groupDasboard.PerformLayout();
             this.TopNav.ResumeLayout(false);
             this.TopNav.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.SoldProducts)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.UpdateProduct)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.AddProduct)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Stock)).EndInit();
@@ -645,5 +660,6 @@
         private System.Windows.Forms.PictureBox Stock;
         private System.Windows.Forms.PictureBox AddProduct;
         private System.Windows.Forms.PictureBox UpdateProduct;
+        private System.Windows.Forms.PictureBox SoldProducts;
     }
 }

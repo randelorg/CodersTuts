@@ -46,3 +46,9 @@ E:\2ND YEAR - 2ND SEM\CodersTuts\DellRainInventorySystem\DellRainInventorySystem
 E:\2ND YEAR - 2ND SEM\CodersTuts\DellRainInventorySystem\DellRainInventorySystem\bin\Debug\Inetlab.SMPP.xml
 E:\2ND YEAR - 2ND SEM\CodersTuts\DellRainInventorySystem\DellRainInventorySystem\obj\Debug\DellRainInventorySystem.csproj.CopyComplete
 E:\2ND YEAR - 2ND SEM\CodersTuts\DellRainInventorySystem\DellRainInventorySystem\obj\Debug\DellRainInventorySystem.UpdateProductcs.resources
+D:\dev 2nd year_2nd sem\CodersTuts\DellRainInventorySystem\DellRainInventorySystem\bin\Debug\Inetlab.SMPP.dll
+D:\dev 2nd year_2nd sem\CodersTuts\DellRainInventorySystem\DellRainInventorySystem\bin\Debug\Inetlab.SMPP.xml
+D:\dev 2nd year_2nd sem\CodersTuts\DellRainInventorySystem\DellRainInventorySystem\obj\Debug\DellRainInventorySystem.ManageAccounts.resources
+D:\dev 2nd year_2nd sem\CodersTuts\DellRainInventorySystem\DellRainInventorySystem\obj\Debug\DellRainInventorySystem.SplashScreen.resources
+D:\dev 2nd year_2nd sem\CodersTuts\DellRainInventorySystem\DellRainInventorySystem\obj\Debug\DellRainInventorySystem.UpdateProductcs.resources
+D:\dev 2nd year_2nd sem\CodersTuts\DellRainInventorySystem\DellRainInventorySystem\obj\Debug\DellRainInventorySystem.csproj.CopyComplete

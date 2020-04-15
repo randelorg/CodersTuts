@@ -223,6 +223,7 @@
             this.tbSuppContact.Name = "tbSuppContact";
             this.tbSuppContact.Size = new System.Drawing.Size(323, 30);
             this.tbSuppContact.TabIndex = 63;
+            this.tbSuppContact.TextChanged += new System.EventHandler(this.tbSuppContact_TextChanged);
             // 
             // cbListOfSupplier
             // 

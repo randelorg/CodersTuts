@@ -264,5 +264,10 @@ namespace DellRainInventorySystem
         {
             tt.SetToolTip(UpdateProduct, "Update Product");
         }
+
+        private void SoldProducts_MouseHover(object sender, EventArgs e)
+        {
+            tt.SetToolTip(SoldProducts, "Update Sold Products");
+        }
     }
 }
