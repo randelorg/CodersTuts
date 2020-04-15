@@ -31,20 +31,20 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ManageAccounts));
             this.EmployeeList = new System.Windows.Forms.DataGridView();
-            this.accountBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.inventoryDBDataSet = new DellRainInventorySystem.InventoryDBDataSet();
-            this.lbProfile = new System.Windows.Forms.Label();
-            this.accountTableAdapter = new DellRainInventorySystem.InventoryDBDataSetTableAdapters.AccountTableAdapter();
             this.firstnameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lastnameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.genderDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.contactNumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.usernameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.accTypeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.accountBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.inventoryDBDataSet = new DellRainInventorySystem.InventoryDBDataSet();
+            this.lbProfile = new System.Windows.Forms.Label();
+            this.accountTableAdapter = new DellRainInventorySystem.InventoryDBDataSetTableAdapters.AccountTableAdapter();
             this.tbSearchProduct = new System.Windows.Forms.TextBox();
             this.Refresh = new System.Windows.Forms.PictureBox();
             this.UpdateProduct = new System.Windows.Forms.PictureBox();
-            this.AddProduct = new System.Windows.Forms.PictureBox();
+            this.NewEmployee = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBack = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.EmployeeList)).BeginInit();
@@ -52,7 +52,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.inventoryDBDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Refresh)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.UpdateProduct)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.AddProduct)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.NewEmployee)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBack)).BeginInit();
             this.SuspendLayout();
@@ -78,30 +78,6 @@
             this.EmployeeList.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.EmployeeList.Size = new System.Drawing.Size(646, 394);
             this.EmployeeList.TabIndex = 0;
-            // 
-            // accountBindingSource
-            // 
-            this.accountBindingSource.DataMember = "Account";
-            this.accountBindingSource.DataSource = this.inventoryDBDataSet;
-            // 
-            // inventoryDBDataSet
-            // 
-            this.inventoryDBDataSet.DataSetName = "InventoryDBDataSet";
-            this.inventoryDBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // lbProfile
-            // 
-            this.lbProfile.AutoSize = true;
-            this.lbProfile.Font = new System.Drawing.Font("Tahoma", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbProfile.Location = new System.Drawing.Point(58, 24);
-            this.lbProfile.Name = "lbProfile";
-            this.lbProfile.Size = new System.Drawing.Size(159, 29);
-            this.lbProfile.TabIndex = 21;
-            this.lbProfile.Text = "Employee List";
-            // 
-            // accountTableAdapter
-            // 
-            this.accountTableAdapter.ClearBeforeFill = true;
             // 
             // firstnameDataGridViewTextBoxColumn
             // 
@@ -139,6 +115,30 @@
             this.accTypeDataGridViewTextBoxColumn.HeaderText = "Position";
             this.accTypeDataGridViewTextBoxColumn.Name = "accTypeDataGridViewTextBoxColumn";
             // 
+            // accountBindingSource
+            // 
+            this.accountBindingSource.DataMember = "Account";
+            this.accountBindingSource.DataSource = this.inventoryDBDataSet;
+            // 
+            // inventoryDBDataSet
+            // 
+            this.inventoryDBDataSet.DataSetName = "InventoryDBDataSet";
+            this.inventoryDBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // lbProfile
+            // 
+            this.lbProfile.AutoSize = true;
+            this.lbProfile.Font = new System.Drawing.Font("Tahoma", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbProfile.Location = new System.Drawing.Point(58, 24);
+            this.lbProfile.Name = "lbProfile";
+            this.lbProfile.Size = new System.Drawing.Size(159, 29);
+            this.lbProfile.TabIndex = 21;
+            this.lbProfile.Text = "Employee List";
+            // 
+            // accountTableAdapter
+            // 
+            this.accountTableAdapter.ClearBeforeFill = true;
+            // 
             // tbSearchProduct
             // 
             this.tbSearchProduct.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -146,6 +146,8 @@
             this.tbSearchProduct.Name = "tbSearchProduct";
             this.tbSearchProduct.Size = new System.Drawing.Size(226, 30);
             this.tbSearchProduct.TabIndex = 46;
+            this.tbSearchProduct.TextChanged += new System.EventHandler(this.tbSearchProduct_TextChanged);
+            this.tbSearchProduct.MouseHover += new System.EventHandler(this.tbSearchProduct_MouseHover);
             // 
             // Refresh
             // 
@@ -156,6 +158,7 @@
             this.Refresh.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.Refresh.TabIndex = 49;
             this.Refresh.TabStop = false;
+            this.Refresh.Click += new System.EventHandler(this.Refresh_Click);
             // 
             // UpdateProduct
             // 
@@ -167,15 +170,17 @@
             this.UpdateProduct.TabIndex = 48;
             this.UpdateProduct.TabStop = false;
             // 
-            // AddProduct
+            // NewEmployee
             // 
-            this.AddProduct.Image = global::DellRainInventorySystem.Properties.Resources.NewAdd;
-            this.AddProduct.Location = new System.Drawing.Point(282, 23);
-            this.AddProduct.Name = "AddProduct";
-            this.AddProduct.Size = new System.Drawing.Size(30, 30);
-            this.AddProduct.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.AddProduct.TabIndex = 47;
-            this.AddProduct.TabStop = false;
+            this.NewEmployee.Image = global::DellRainInventorySystem.Properties.Resources.NewAdd;
+            this.NewEmployee.Location = new System.Drawing.Point(282, 23);
+            this.NewEmployee.Name = "NewEmployee";
+            this.NewEmployee.Size = new System.Drawing.Size(30, 30);
+            this.NewEmployee.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.NewEmployee.TabIndex = 47;
+            this.NewEmployee.TabStop = false;
+            this.NewEmployee.Click += new System.EventHandler(this.NewEmployee_Click);
+            this.NewEmployee.MouseHover += new System.EventHandler(this.NewEmployee_MouseHover);
             // 
             // pictureBox1
             // 
@@ -207,7 +212,7 @@
             this.ClientSize = new System.Drawing.Size(690, 483);
             this.Controls.Add(this.Refresh);
             this.Controls.Add(this.UpdateProduct);
-            this.Controls.Add(this.AddProduct);
+            this.Controls.Add(this.NewEmployee);
             this.Controls.Add(this.tbSearchProduct);
             this.Controls.Add(this.lbProfile);
             this.Controls.Add(this.pictureBox1);
@@ -224,7 +229,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.inventoryDBDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Refresh)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.UpdateProduct)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.AddProduct)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.NewEmployee)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBack)).EndInit();
             this.ResumeLayout(false);
@@ -249,7 +254,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn accTypeDataGridViewTextBoxColumn;
         public System.Windows.Forms.PictureBox Refresh;
         private System.Windows.Forms.PictureBox UpdateProduct;
-        private System.Windows.Forms.PictureBox AddProduct;
+        private System.Windows.Forms.PictureBox NewEmployee;
         private System.Windows.Forms.TextBox tbSearchProduct;
     }
 }
