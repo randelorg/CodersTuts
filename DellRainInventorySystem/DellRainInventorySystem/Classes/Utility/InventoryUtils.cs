@@ -11,11 +11,15 @@ namespace DellRainInventorySystem.Classes.Utility
         //constant top selling products count
         protected const int TopSellingCount = 10;
 
+        //Primary key of product soon to be updated
+        protected internal static int UpdateProdId = 0;
+
         protected const string Type1 = "Appliance";
         protected const string Type2 = "Grocery";
 
         protected internal static LinkedList<User> LtuUsers = new LinkedList<User>();
         protected internal static LinkedList<Product> LtProducts = new LinkedList<Product>();
+        protected internal static LinkedList<Product> LtUpdateProduct = new LinkedList<Product>();
 
         protected internal static LinkedList<Image> TopSelling = new LinkedList<Image>();
         protected internal static LinkedList<Image> LowOnStock = new LinkedList<Image>();

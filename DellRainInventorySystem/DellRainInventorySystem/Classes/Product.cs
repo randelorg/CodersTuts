@@ -22,16 +22,29 @@ namespace DellRainInventorySystem.Classes
             ProdImage = image;
         }
 
-        //for updating
-        public Product(string prodName, string prodType, int qty, int sold, float price)
+        //for updating product except the qty
+        public Product(Image image, string prodName, float price,
+            string location, string life, string suppName, string suppContact) : base(suppName, suppContact)
         {
+            ProdImage = image;
             ProdName = prodName;
-            ProdType = prodType;
-            Qty = qty;
-            Sold = sold;
             Price = price;
+            Location = location;
+            Shelflife = life;
         }
 
+        //for updating THE product
+        public Product(Image image, string prodName, int qty, float price,
+            string location, string life, string suppName, string suppContact) : base(suppName, suppContact)
+        {
+            ProdImage = image;
+            ProdName = prodName;
+            Qty = qty;
+            Price = price;
+            Location = location;
+            Shelflife = life;
+        }
+        
         public string ProdName { get; set; }
 
         public string ProdType { get; set; }

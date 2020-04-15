@@ -269,5 +269,11 @@ namespace DellRainInventorySystem
         {
             tt.SetToolTip(SoldProducts, "Update Sold Products");
         }
+
+        private void UpdateProduct_Click(object sender, EventArgs e)
+        {
+            var updateProd = new UpdateProductcs();
+            updateProd.ShowDialog();
+        }
     }
 }

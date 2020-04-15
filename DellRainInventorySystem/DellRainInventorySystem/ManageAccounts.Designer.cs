@@ -160,7 +160,7 @@
             this.Refresh.TabStop = false;
             this.Refresh.Click += new System.EventHandler(this.Refresh_Click);
             // 
-            // UpdateProduct
+            // PrepareProductToUpdate
             // 
             this.UpdateProduct.Image = global::DellRainInventorySystem.Properties.Resources.Pencil;
             this.UpdateProduct.Location = new System.Drawing.Point(327, 23);

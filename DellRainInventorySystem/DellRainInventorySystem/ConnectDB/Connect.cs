@@ -5,6 +5,6 @@ namespace DellRainInventorySystem.ConnectDB
     internal class Connect
     {
         public static string MainConn { get; } =
-            ConfigurationManager.ConnectionStrings["Remote"].ConnectionString;
+            ConfigurationManager.ConnectionStrings["MyConnection"].ConnectionString;
     }
 }

@@ -152,6 +152,78 @@ namespace DellRainInventorySystem.Classes
             }
         }
 
+        public int PrepareProductToUpdate()
+        {
+            try
+            {
+                cmd = new SqlCommand();
+                con.Open();
+                cmd.Connection = con;
+                cmd.CommandText = "SELECT [product].prodImage ,[product].prodName ,[product].prodPrice, [product].prodShelfLife,[location].name,[supplier].suppName, [supplier].contactNumber FROM Inventory.Product AS product INNER JOIN Inventory.Supplier AS supplier ON [product].Supplier = [supplier].suppId INNER JOIN Inventory.Location AS location  ON [location].locaId = [product].Location WHERE [product].productId = @PRODUCT_ID";
+
+                cmd.Parameters.AddWithValue("@PRODUCT_ID", UpdateProdId);
+                _reader = cmd.ExecuteReader();
+
+                if (_reader.Read())
+                {
+                    LtUpdateProduct.AddLast(new Product(Base64ToImage(_reader["prodImage"].ToString()),
+                        _reader["prodName"].ToString(),
+                        float.Parse(_reader["prodPrice"].ToString()),
+                        _reader["name"].ToString(), _reader["prodShelfLife"].ToString(),
+                        _reader["suppName"].ToString(), _reader["contactNumber"].ToString()));
+                }
+
+                Console.WriteLine(@"ADDED");
+                return 0;
+            }
+            catch (SqlException e)
+            {
+                Console.WriteLine(e.ToString());
+                return 1;
+            }
+
+            finally
+            {
+                con.Close();
+            }
+        }
+
+        public int UpdateSelectedProduct()
+        {
+            try
+            {
+                cmd = new SqlCommand();
+                con.Open();
+                cmd.Connection = con;
+                cmd.CommandText = "SELECT [product].prodImage ,[product].prodName ,[product].prodPrice, [product].prodShelfLife,[location].name,[supplier].suppName, [supplier].contactNumber FROM Inventory.Product AS product INNER JOIN Inventory.Supplier AS supplier ON [product].Supplier = [supplier].suppId INNER JOIN Inventory.Location AS location  ON [location].locaId = [product].Location WHERE [product].productId = @PRODUCT_ID";
+
+                cmd.Parameters.AddWithValue("@PRODUCT_ID", UpdateProdId);
+                _reader = cmd.ExecuteReader();
+
+                if (_reader.Read())
+                {
+                    LtUpdateProduct.AddLast(new Product(Base64ToImage(_reader["prodImage"].ToString()),
+                        _reader["prodName"].ToString(),
+                        float.Parse(_reader["prodPrice"].ToString()),
+                        _reader["name"].ToString(), _reader["prodShelfLife"].ToString(),
+                        _reader["suppName"].ToString(), _reader["contactNumber"].ToString()));
+                }
+
+                Console.WriteLine(@"UPDATED");
+                return 0;
+            }
+            catch (SqlException e)
+            {
+                Console.WriteLine(e.ToString());
+                return 1;
+            }
+
+            finally
+            {
+                con.Close();
+            }
+        }
+
         public int AddSupplier()
         {
             try

@@ -5,6 +5,8 @@ namespace DellRainInventorySystem.Interfaces
         int AddProduct();
         int AddSupplier();
         int AddLocation();
+        int PrepareProductToUpdate();
+        int UpdateSelectedProduct();
         bool GetExistingLocation();
         bool GetExistingSupplier();
         bool DetermineTopSellingProducts();
