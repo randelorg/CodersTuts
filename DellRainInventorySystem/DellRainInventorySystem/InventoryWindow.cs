@@ -22,12 +22,6 @@ namespace DellRainInventorySystem
             Close();
         }
 
-        private void AddProduct_Click(object sender, EventArgs e)
-        {
-            var addProductWindow = new AddProductWindow();
-            addProductWindow.ShowDialog();
-        }
-
         private void InventoryWindow_Load(object sender, EventArgs e)
         {
             LoadEverything();
@@ -63,16 +57,6 @@ namespace DellRainInventorySystem
             {
                 con.Close();
             }
-        }
-
-        private void UpdateProduct_MouseHover(object sender, EventArgs e)
-        {
-            tt.SetToolTip(UpdateProduct, "Update product");
-        }
-
-        private void AddProduct_MouseHover(object sender, EventArgs e)
-        {
-            tt.SetToolTip(AddProduct, "Add product");
         }
 
         private void pictureBack_MouseHover(object sender, EventArgs e)

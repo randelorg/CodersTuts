@@ -146,7 +146,8 @@ namespace DellRainInventorySystem
                 // Console.WriteLine(@"WOW");
                 // filename of the selected image
                 _image = new Bitmap(openFileDialog1.FileName);
-                btnImage.Text = @"Selected image " + openFileDialog1.SafeFileName;
+                btnImage.Text = @"Selected image";
+                ProductPreview.ImageLocation = openFileDialog1.FileName;
             }
             Console.WriteLine(result); // <-- For debugging 
         }

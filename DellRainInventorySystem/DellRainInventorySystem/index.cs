@@ -24,7 +24,6 @@ namespace DellRainInventorySystem
             lbUsername.Text = inventory.SessUsername;
 
             DetermineAccountType();
-            BgColor();
             RemoveBorder();
 
             try
@@ -55,23 +54,11 @@ namespace DellRainInventorySystem
             }
         }
 
-        private void BgColor()
-        {
-            bg1.BackColor = Color.FromArgb(26, 95, 149);
-            bg2.BackColor = Color.FromArgb(46, 187, 163);
-            bgTools.BackColor = Color.FromArgb(115, 187, 163);
-        }
-
         private void RemoveBorder()
         {
             btnCreateAccount.FlatAppearance.BorderSize = 0;
             btnYourAccount.FlatAppearance.BorderSize = 0;
             btnListAccounts.FlatAppearance.BorderSize = 0;
-            bg1.FlatAppearance.BorderSize = 0;
-            bg2.FlatAppearance.BorderSize = 0;
-            bg1.FlatAppearance.BorderSize = 0;
-            bg2.FlatAppearance.BorderSize = 0;
-            bgTools.FlatAppearance.BorderSize = 0;
             TopSellingView.BorderStyle = BorderStyle.None;
             DangerProductsView.BorderStyle = BorderStyle.None;
         }
@@ -117,9 +104,9 @@ namespace DellRainInventorySystem
             tt.SetToolTip(SalesReports, "Generate Reports");
         }
 
-        private void Inventory_MouseHover(object sender, EventArgs e)
+        private void Stock_MouseHover(object sender, EventArgs e)
         {
-            tt.SetToolTip(Inventory, "Add or update a product");
+            tt.SetToolTip(Stock, "Stock");
         }
 
         private void Reload_MouseHover(object sender, EventArgs e)
@@ -140,7 +127,7 @@ namespace DellRainInventorySystem
             createAccount.ShowDialog();
         }
 
-        private void Inventory_Click(object sender, EventArgs e)
+        private void Stock_Click(object sender, EventArgs e)
         {
             var inventoryWindow = new InventoryWindow();
             inventoryWindow.ShowDialog();
@@ -252,9 +239,30 @@ namespace DellRainInventorySystem
                 ErrorMessage();
         }
 
-        public void Reload_Click(object sender, EventArgs e)
+        private void Reload_Click(object sender, EventArgs e)
         {
             Index_Load(sender, e);
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            Reload_Click(sender,e);
+        }
+
+        private void AddProduct_Click(object sender, EventArgs e)
+        {
+            var addProductWindow = new AddProductWindow();
+            addProductWindow.ShowDialog();
+        }
+
+        private void AddProduct_MouseHover(object sender, EventArgs e)
+        {
+            tt.SetToolTip(AddProduct, "New Product");
+        }
+
+        private void UpdateProduct_MouseHover(object sender, EventArgs e)
+        {
+            tt.SetToolTip(UpdateProduct, "Update Product");
         }
     }
 }

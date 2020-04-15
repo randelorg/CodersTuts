@@ -34,16 +34,13 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label = new System.Windows.Forms.Label();
-            this.lbProfile = new System.Windows.Forms.Label();
             this.lbGender = new System.Windows.Forms.Label();
             this.cbGender = new System.Windows.Forms.ComboBox();
             this.cbPosition = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.tbDefaultPassword = new System.Windows.Forms.TextBox();
-            this.lbGenPass = new System.Windows.Forms.Label();
             this.btnSaveAccount = new System.Windows.Forms.Button();
             this.showPassword = new System.Windows.Forms.PictureBox();
-            this.GenPass = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBack = new System.Windows.Forms.PictureBox();
             this.tbUsername = new System.Windows.Forms.TextBox();
@@ -51,7 +48,6 @@
             this.tbNumber = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.showPassword)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.GenPass)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBack)).BeginInit();
             this.SuspendLayout();
@@ -61,26 +57,28 @@
             this.tbLastName.BackColor = System.Drawing.Color.White;
             this.tbLastName.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbLastName.ForeColor = System.Drawing.Color.Black;
-            this.tbLastName.Location = new System.Drawing.Point(212, 176);
+            this.tbLastName.Location = new System.Drawing.Point(212, 126);
             this.tbLastName.Name = "tbLastName";
             this.tbLastName.Size = new System.Drawing.Size(172, 27);
             this.tbLastName.TabIndex = 32;
+            this.tbLastName.TextChanged += new System.EventHandler(this.tbLastName_TextChanged);
             // 
             // tbFirstName
             // 
             this.tbFirstName.BackColor = System.Drawing.Color.White;
             this.tbFirstName.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbFirstName.ForeColor = System.Drawing.Color.Black;
-            this.tbFirstName.Location = new System.Drawing.Point(32, 176);
+            this.tbFirstName.Location = new System.Drawing.Point(32, 126);
             this.tbFirstName.Name = "tbFirstName";
             this.tbFirstName.Size = new System.Drawing.Size(165, 27);
             this.tbFirstName.TabIndex = 31;
+            this.tbFirstName.TextChanged += new System.EventHandler(this.tbFirstName_TextChanged);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(31, 332);
+            this.label3.Location = new System.Drawing.Point(31, 282);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(49, 14);
             this.label3.TabIndex = 30;
@@ -90,7 +88,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(209, 158);
+            this.label2.Location = new System.Drawing.Point(209, 108);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(59, 14);
             this.label2.TabIndex = 29;
@@ -100,27 +98,17 @@
             // 
             this.label.AutoSize = true;
             this.label.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label.Location = new System.Drawing.Point(29, 159);
+            this.label.Location = new System.Drawing.Point(29, 109);
             this.label.Name = "label";
             this.label.Size = new System.Drawing.Size(59, 14);
             this.label.TabIndex = 28;
             this.label.Text = "Firstname";
             // 
-            // lbProfile
-            // 
-            this.lbProfile.AutoSize = true;
-            this.lbProfile.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbProfile.Location = new System.Drawing.Point(148, 28);
-            this.lbProfile.Name = "lbProfile";
-            this.lbProfile.Size = new System.Drawing.Size(116, 19);
-            this.lbProfile.TabIndex = 36;
-            this.lbProfile.Text = "Create Account";
-            // 
             // lbGender
             // 
             this.lbGender.AutoSize = true;
             this.lbGender.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbGender.Location = new System.Drawing.Point(29, 272);
+            this.lbGender.Location = new System.Drawing.Point(29, 222);
             this.lbGender.Name = "lbGender";
             this.lbGender.Size = new System.Drawing.Size(47, 14);
             this.lbGender.TabIndex = 37;
@@ -135,7 +123,7 @@
             this.cbGender.Items.AddRange(new object[] {
             "Male",
             "Female"});
-            this.cbGender.Location = new System.Drawing.Point(32, 289);
+            this.cbGender.Location = new System.Drawing.Point(32, 239);
             this.cbGender.Name = "cbGender";
             this.cbGender.Size = new System.Drawing.Size(350, 27);
             this.cbGender.TabIndex = 38;
@@ -149,7 +137,7 @@
             this.cbPosition.Items.AddRange(new object[] {
             "Admin",
             "Staff"});
-            this.cbPosition.Location = new System.Drawing.Point(32, 349);
+            this.cbPosition.Location = new System.Drawing.Point(32, 299);
             this.cbPosition.Name = "cbPosition";
             this.cbPosition.Size = new System.Drawing.Size(350, 27);
             this.cbPosition.TabIndex = 39;
@@ -158,7 +146,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(30, 437);
+            this.label1.Location = new System.Drawing.Point(30, 387);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(101, 14);
             this.label1.TabIndex = 40;
@@ -167,61 +155,40 @@
             // tbDefaultPassword
             // 
             this.tbDefaultPassword.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbDefaultPassword.Location = new System.Drawing.Point(31, 451);
+            this.tbDefaultPassword.Location = new System.Drawing.Point(31, 401);
             this.tbDefaultPassword.Name = "tbDefaultPassword";
-            this.tbDefaultPassword.PasswordChar = '.';
-            this.tbDefaultPassword.Size = new System.Drawing.Size(313, 26);
+            this.tbDefaultPassword.Size = new System.Drawing.Size(349, 26);
             this.tbDefaultPassword.TabIndex = 41;
-            // 
-            // lbGenPass
-            // 
-            this.lbGenPass.AutoSize = true;
-            this.lbGenPass.Location = new System.Drawing.Point(291, 482);
-            this.lbGenPass.Name = "lbGenPass";
-            this.lbGenPass.Size = new System.Drawing.Size(100, 13);
-            this.lbGenPass.TabIndex = 43;
-            this.lbGenPass.Text = "Generate Password";
-            this.lbGenPass.Visible = false;
+            this.tbDefaultPassword.UseSystemPasswordChar = true;
             // 
             // btnSaveAccount
             // 
             this.btnSaveAccount.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSaveAccount.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSaveAccount.Location = new System.Drawing.Point(117, 507);
+            this.btnSaveAccount.Location = new System.Drawing.Point(117, 449);
             this.btnSaveAccount.Name = "btnSaveAccount";
             this.btnSaveAccount.Size = new System.Drawing.Size(180, 43);
             this.btnSaveAccount.TabIndex = 44;
-            this.btnSaveAccount.Text = "Save Account";
+            this.btnSaveAccount.Text = "Done";
             this.btnSaveAccount.UseVisualStyleBackColor = true;
             this.btnSaveAccount.Click += new System.EventHandler(this.btnSaveAccount_Click);
             // 
             // showPassword
             // 
             this.showPassword.Image = global::DellRainInventorySystem.Properties.Resources.Eye;
-            this.showPassword.Location = new System.Drawing.Point(315, 455);
+            this.showPassword.Location = new System.Drawing.Point(352, 404);
             this.showPassword.Name = "showPassword";
             this.showPassword.Size = new System.Drawing.Size(20, 20);
             this.showPassword.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.showPassword.TabIndex = 45;
             this.showPassword.TabStop = false;
-            this.showPassword.MouseClick += new System.Windows.Forms.MouseEventHandler(this.showPassword_MouseClick);
-            // 
-            // GenPass
-            // 
-            this.GenPass.Image = global::DellRainInventorySystem.Properties.Resources.generatePassword;
-            this.GenPass.Location = new System.Drawing.Point(350, 449);
-            this.GenPass.Name = "GenPass";
-            this.GenPass.Size = new System.Drawing.Size(30, 30);
-            this.GenPass.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.GenPass.TabIndex = 42;
-            this.GenPass.TabStop = false;
-            this.GenPass.MouseLeave += new System.EventHandler(this.GenPass_MouseLeave);
-            this.GenPass.MouseHover += new System.EventHandler(this.GenPass_MouseHover);
+            this.showPassword.MouseDown += new System.Windows.Forms.MouseEventHandler(this.showPassword_MouseDown);
+            this.showPassword.MouseUp += new System.Windows.Forms.MouseEventHandler(this.showPassword_MouseUp);
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::DellRainInventorySystem.Properties.Resources.CreateAccountIcon;
-            this.pictureBox1.Location = new System.Drawing.Point(164, 50);
+            this.pictureBox1.Location = new System.Drawing.Point(165, 12);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(80, 80);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -243,7 +210,7 @@
             // tbUsername
             // 
             this.tbUsername.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbUsername.Location = new System.Drawing.Point(31, 398);
+            this.tbUsername.Location = new System.Drawing.Point(31, 348);
             this.tbUsername.Name = "tbUsername";
             this.tbUsername.Size = new System.Drawing.Size(349, 27);
             this.tbUsername.TabIndex = 46;
@@ -252,7 +219,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(27, 384);
+            this.label4.Location = new System.Drawing.Point(27, 334);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(61, 14);
             this.label4.TabIndex = 47;
@@ -263,7 +230,7 @@
             this.tbNumber.BackColor = System.Drawing.Color.White;
             this.tbNumber.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbNumber.ForeColor = System.Drawing.Color.Black;
-            this.tbNumber.Location = new System.Drawing.Point(34, 232);
+            this.tbNumber.Location = new System.Drawing.Point(34, 182);
             this.tbNumber.Name = "tbNumber";
             this.tbNumber.Size = new System.Drawing.Size(350, 27);
             this.tbNumber.TabIndex = 49;
@@ -272,7 +239,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(31, 215);
+            this.label5.Location = new System.Drawing.Point(31, 165);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(96, 14);
             this.label5.TabIndex = 48;
@@ -283,21 +250,18 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(408, 561);
+            this.ClientSize = new System.Drawing.Size(408, 524);
             this.Controls.Add(this.tbNumber);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.tbUsername);
             this.Controls.Add(this.showPassword);
             this.Controls.Add(this.btnSaveAccount);
-            this.Controls.Add(this.lbGenPass);
-            this.Controls.Add(this.GenPass);
             this.Controls.Add(this.tbDefaultPassword);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.cbPosition);
             this.Controls.Add(this.cbGender);
             this.Controls.Add(this.lbGender);
-            this.Controls.Add(this.lbProfile);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.pictureBack);
             this.Controls.Add(this.tbLastName);
@@ -309,9 +273,8 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "CreateAccount";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "CreateAccount";
+            this.Text = "New Account";
             ((System.ComponentModel.ISupportInitialize)(this.showPassword)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.GenPass)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBack)).EndInit();
             this.ResumeLayout(false);
@@ -327,14 +290,11 @@
         private System.Windows.Forms.Label label;
         private System.Windows.Forms.PictureBox pictureBack;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Label lbProfile;
         private System.Windows.Forms.Label lbGender;
         private System.Windows.Forms.ComboBox cbGender;
         private System.Windows.Forms.ComboBox cbPosition;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox tbDefaultPassword;
-        private System.Windows.Forms.PictureBox GenPass;
-        private System.Windows.Forms.Label lbGenPass;
         private System.Windows.Forms.Button btnSaveAccount;
         private System.Windows.Forms.PictureBox showPassword;
         private System.Windows.Forms.Label label4;

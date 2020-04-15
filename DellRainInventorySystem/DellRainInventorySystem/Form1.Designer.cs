@@ -77,28 +77,28 @@
             // 
             // tbPassword
             // 
-            this.tbPassword.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbPassword.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbPassword.ForeColor = System.Drawing.Color.Black;
             this.tbPassword.Location = new System.Drawing.Point(55, 192);
             this.tbPassword.Name = "tbPassword";
-            this.tbPassword.PasswordChar = '.';
-            this.tbPassword.Size = new System.Drawing.Size(241, 35);
+            this.tbPassword.Size = new System.Drawing.Size(241, 29);
             this.tbPassword.TabIndex = 3;
+            this.tbPassword.UseSystemPasswordChar = true;
             // 
             // tbUsername
             // 
-            this.tbUsername.Font = new System.Drawing.Font("Times New Roman", 18F);
+            this.tbUsername.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbUsername.ForeColor = System.Drawing.Color.Black;
             this.tbUsername.Location = new System.Drawing.Point(55, 133);
             this.tbUsername.Name = "tbUsername";
-            this.tbUsername.Size = new System.Drawing.Size(241, 35);
+            this.tbUsername.Size = new System.Drawing.Size(241, 29);
             this.tbUsername.TabIndex = 2;
             // 
             // btnLogin
             // 
             this.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLogin.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLogin.Location = new System.Drawing.Point(56, 252);
+            this.btnLogin.Location = new System.Drawing.Point(56, 249);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(240, 45);
             this.btnLogin.TabIndex = 1;

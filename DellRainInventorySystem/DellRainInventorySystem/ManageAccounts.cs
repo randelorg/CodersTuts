@@ -26,5 +26,7 @@ namespace DellRainInventorySystem
             var tt = new ToolTip();
             tt.SetToolTip(pictureBack, "Go back");
         }
+
+
     }
 }

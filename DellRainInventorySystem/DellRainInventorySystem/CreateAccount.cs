@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using System.Windows.Forms;
 using DellRainInventorySystem.Classes;
 using DellRainInventorySystem.Classes.Utility;
@@ -15,13 +16,7 @@ namespace DellRainInventorySystem
             InitializeComponent();
         }
 
-        private void GenPass_MouseHover(object sender, EventArgs e) => lbGenPass.Show();
-        private void GenPass_MouseLeave(object sender, EventArgs e) => lbGenPass.Hide();
         private void pictureBack_Click(object sender, EventArgs e) => this.Close();
-        private void showPassword_MouseClick(object sender, MouseEventArgs e)
-        {
-            tbDefaultPassword.PasswordChar = tbDefaultPassword.PasswordChar == '.' ? '\0' : '.';
-        }
 
         private void btnSaveAccount_Click(object sender, EventArgs e)
         {
@@ -88,6 +83,35 @@ namespace DellRainInventorySystem
         {
             var tt = new ToolTip();
             tt.SetToolTip(pictureBack,"Go back");
+        }
+
+        private void tbFirstName_TextChanged(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(tbFirstName.Text)) return;
+            var user = string.Concat(UpperCaseFirstChar(tbFirstName.Text.Trim()), tbLastName.Text.Trim());
+            tbUsername.Text = user;
+        }
+
+        private void tbLastName_TextChanged(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(tbLastName.Text)) return;
+            var user = string.Concat(tbFirstName.Text.Trim(), UpperCaseFirstChar(tbLastName.Text.Trim()));
+            tbUsername.Text = user;
+        }
+
+        private string UpperCaseFirstChar(string name)
+        {
+            return char.ToUpper(name[0]) + name.Substring(1);
+        }
+
+        private void showPassword_MouseDown(object sender, MouseEventArgs e)
+        {
+            tbDefaultPassword.UseSystemPasswordChar = false;
+        }
+
+        private void showPassword_MouseUp(object sender, MouseEventArgs e)
+        {
+            tbDefaultPassword.UseSystemPasswordChar = true;
         }
     }
 }

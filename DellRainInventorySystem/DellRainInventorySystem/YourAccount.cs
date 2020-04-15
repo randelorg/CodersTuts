@@ -92,7 +92,7 @@ namespace DellRainInventorySystem
                 case 0:
                     MessageBox.Show(@"Password is changed", @"Success", MessageBoxButtons.OK,
                         MessageBoxIcon.Information);
-                    CleanForm(this);
+                    CleanForm();
                     break;
                 case 1:
                     MessageBox.Show(@"Connection Error", @"Error", MessageBoxButtons.OK,
@@ -107,13 +107,11 @@ namespace DellRainInventorySystem
                 tbConfirmNewPassword.Text.Equals(tbNewPassword.Text) ? Color.Green : Color.Red;
         }
 
-        private void CleanForm(Control ctrl)
+        private void CleanForm()
         {
-            foreach (Control c in ctrl.Controls)
-            {
-                if (c is TextBox) ((TextBox) c).Text = string.Empty;
-                CleanForm(c);
-            }
+            tbOldPassword.Text = string.Empty;
+            tbNewPassword.Text = string.Empty;
+            tbConfirmNewPassword.Text = string.Empty;
         }
 
         private void Back(object sender, EventArgs e)
