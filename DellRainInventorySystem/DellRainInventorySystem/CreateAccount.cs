@@ -24,7 +24,7 @@ namespace DellRainInventorySystem
             {
               
                 InventoryUtils.LtuUsers.AddLast(new User(tbFirstName.Text, tbLastName.Text, cbGender.SelectedItem.ToString(), tbUsername.Text,
-                    tbNumber.Text, tbDefaultPassword.Text, cbPosition.SelectedItem.ToString()));
+                    tbNumber.Text, tbDefaultPassword.Text, cbPosition.SelectedItem.ToString().ToUpper()));
                 
                 //invoke inventory add account method
                 _classifier = inventory.AddAccount();

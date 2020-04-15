@@ -172,7 +172,7 @@
             // 
             // NewEmployee
             // 
-            this.NewEmployee.Image = global::DellRainInventorySystem.Properties.Resources.NewAdd;
+            this.NewEmployee.Image = global::DellRainInventorySystem.Properties.Resources.CreateAccountIcon;
             this.NewEmployee.Location = new System.Drawing.Point(282, 23);
             this.NewEmployee.Name = "NewEmployee";
             this.NewEmployee.Size = new System.Drawing.Size(30, 30);
