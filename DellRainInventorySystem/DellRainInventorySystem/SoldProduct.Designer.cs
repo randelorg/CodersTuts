@@ -66,6 +66,7 @@
             this.Refresh.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.Refresh.TabIndex = 129;
             this.Refresh.TabStop = false;
+            this.Refresh.Click += new System.EventHandler(this.Refresh_Click);
             this.Refresh.MouseHover += new System.EventHandler(this.Refresh_MouseHover);
             // 
             // tbSearch

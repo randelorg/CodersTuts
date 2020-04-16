@@ -31,6 +31,11 @@ namespace DellRainInventorySystem
             LoadSales();
         }
 
+        private void Refresh_Click(object sender, EventArgs e)
+        {
+            LoadSales();
+        }
+
         private void Refresh_MouseHover(object sender, EventArgs e)
         {
             tt.SetToolTip(Refresh, "Refresh");
@@ -164,5 +169,7 @@ namespace DellRainInventorySystem
 
             return false;
         }
+
+        
     }
 }
