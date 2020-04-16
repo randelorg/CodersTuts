@@ -88,8 +88,7 @@ namespace DellRainInventorySystem
                     connection.Open();
                     cmd.Connection = connection;
 
-                    cmd.CommandText =
-                        "SELECT * FROM Inventory.Account WHERE firstname LIKE @omni OR lastname LIKE @omni OR accType LIKE @omni OR gender LIKE @omni";
+                    cmd.CommandText = "SELECT * FROM Inventory.Account WHERE firstname LIKE @omni OR lastname LIKE @omni OR accType LIKE @omni OR gender LIKE @omni";
                     cmd.Parameters.AddWithValue("@omni", @"%" + tbSearchProduct.Text.Trim() + @"%");
 
                     var adapter = new SqlDataAdapter(cmd);

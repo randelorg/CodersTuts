@@ -275,5 +275,11 @@ namespace DellRainInventorySystem
             var updateProd = new UpdateProductcs();
             updateProd.ShowDialog();
         }
+
+        private void SoldProducts_Click(object sender, EventArgs e)
+        {
+            var soldWindow = new SoldProduct();
+            soldWindow.ShowDialog();
+        }
     }
 }

@@ -1,11 +1,14 @@
 ﻿using System;
 using System.Data;
 using System.Data.SqlClient;
+using System.Drawing;
 using System.Globalization;
 using System.Windows.Forms;
+using System.Windows.Forms.VisualStyles;
 using DellRainInventorySystem.Classes;
 using DellRainInventorySystem.Classes.Utility;
 using DellRainInventorySystem.ConnectDB;
+using DellRainInventorySystem.Properties;
 
 namespace DellRainInventorySystem
 {
@@ -14,6 +17,7 @@ namespace DellRainInventorySystem
         private readonly SqlConnection connection = new SqlConnection(Connect.MainConn);
         private readonly ToolTip tt = new ToolTip();
         private Inventory inventory = new Inventory();
+        private Image _image;
 
         public UpdateProductcs()
         {
@@ -98,7 +102,7 @@ namespace DellRainInventorySystem
                     cmd.Connection = connection;
 
                     cmd.CommandText =
-                        "SELECT productId, prodName, prodType FROM Inventory.Product WHERE prodName LIKE @omni OR prodType LIKE @omni";
+                        "SELECT productId, prodName, prodType, prodQty FROM Inventory.Product WHERE prodName LIKE @omni OR prodType LIKE @omni";
                     cmd.Parameters.AddWithValue("@omni", @"%" + tbSearch.Text.Trim() + @"%");
 
                     var adapter = new SqlDataAdapter(cmd);
@@ -116,12 +120,26 @@ namespace DellRainInventorySystem
 
                 catch (FormatException a)
                 {
-                    Console.WriteLine(a.ToString());
+                    Console.WriteLine(a.Message);
                 }
                 finally
                 {
                     connection.Close();
                 }
+        }
+
+        private void btnImage_Click_1(object sender, EventArgs e)
+        {
+            DialogResult result = openFileDialog1.ShowDialog();
+            if (result == DialogResult.OK) // Test result.
+            {
+                // Console.WriteLine(@"WOW");
+                // filename of the selected image
+                _image = new Bitmap(openFileDialog1.FileName);
+                btnImage.Text = @"Selected image";
+                ProductPreview.ImageLocation = openFileDialog1.FileName;
+            }
+            Console.WriteLine(result); // <-- For debugging 
         }
 
         private void ProductView_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
@@ -139,9 +157,9 @@ namespace DellRainInventorySystem
         {
             if (ErrorMsg(inventory.PrepareProductToUpdate()))
             {
-                if (InventoryUtils.LtUpdateProduct.Count > 0)
+                if (InventoryUtils.LtProducts.Count > 0)
                 {
-                    var product = InventoryUtils.LtUpdateProduct.Last.Value; //get the last added value in the link-list
+                    var product = InventoryUtils.LtProducts.Last.Value; //get the last added value in the link-list
                     ProductPreview.Image = product.ProdImage;
                     tbName.Text = product.ProdName;
                     tbPrice.Text = product.Price.ToString(CultureInfo.CurrentCulture);
@@ -155,21 +173,47 @@ namespace DellRainInventorySystem
 
         private void btnDone_Click(object sender, EventArgs e)
         {
-            if(!CheckEmptyFields(this))
+            //check if there are empty fields
+            if(CheckEmptyFields(this))
                 MessageBox.Show(@"Supply all fields", @"Empty fields",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
             else
             {
-                InventoryUtils.LtUpdateProduct.AddLast(new Product(ProductPreview.Image,
+                //add product to the last node of the linked list
+                InventoryUtils.LtProducts.AddLast(new Product(ProductPreview.Image,
                     tbName.Text, int.Parse(prodQty.Text),
                     float.Parse(tbPrice.Text),
                     tbLocation.Text, ShelfLife.Text,
                     tbSuppName.Text, tbSuppContact.Text));
 
-                if (ErrorMsg(inventory.UpdateSelectedProduct()))
-                {
+                //call add supplier to check or add supplier details
+                ErrorMessage(inventory.AddSupplier());
 
-                }
+                //call add location to check or add location details
+                ErrorMessage(inventory.AddLocation());
+
+                //if the there are no exception occur proceed
+                //if there are new uploaded image set it to the Image object
+                if (btnImage.Text.Contains("Selected image"))
+                        ProductPreview.Image = _image; //sets the image
+
+                //add product to the last node of the linked list
+                //and ready for updating the product
+                InventoryUtils.LtProducts.AddLast(new Product(ProductPreview.Image, tbName.Text,
+                    int.Parse(prodQty.Text),
+                    float.Parse(tbPrice.Text), ShelfLife.Text, tbSuppContact.Text));
+
+                //if exception occurs return and display err msg
+                //invoke the method from the inventory class
+                if(!ErrorMsg(inventory.UpdateSelectedProduct())) return;
+
+                //when product is successfully updated
+                MessageBox.Show(@"Product is updated", @"Updated",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                //lastly clean the form
+                CleanForm(this);
+                ProductView.ClearSelection();
             }
         }
 
@@ -188,6 +232,22 @@ namespace DellRainInventorySystem
             return false;
         }
 
+        private void ErrorMessage(int i)
+        {
+            // 1 for adding location and 2 for adding supplier error
+            switch (i)
+            {
+                case 1:
+                    MessageBox.Show(@"Could not save product location", @"DB Error", MessageBoxButtons.OK
+                        , MessageBoxIcon.Error);
+                    break;
+                case 2:
+                    MessageBox.Show(@"Could not save product supplier", @"DB Error", MessageBoxButtons.OK
+                        , MessageBoxIcon.Error);
+                    break;
+            }
+        }
+
         private bool CheckEmptyFields(Control ctrl)
         {
             foreach (Control c in ctrl.Controls)
@@ -195,13 +255,34 @@ namespace DellRainInventorySystem
                 {
                     if (string.IsNullOrEmpty(c.Text))
                     {
-                        return string.IsNullOrEmpty(prodQty.Text) || true;
+                        if(c.Name.Equals("tbSearch"))
+                            continue;
+                        return true;
                     }
 
                     CheckEmptyFields(c);
                 }
 
             return false;
+        }
+
+        private void CleanForm(Control ctrl)
+        {
+            var i = 0;
+
+            foreach (Control c in ctrl.Controls)
+            {
+                ++i;
+                if (i == 1)
+                {
+                    btnImage.Text = @"Upload New Image";
+                    ProductPreview.Image = Resources.Photo;
+                    prodQty.Value = 0;
+                }
+
+                if (ctrl is TextBox) ((TextBox)c).Text = string.Empty;
+                CleanForm(c);
+            }
         }
 
     }

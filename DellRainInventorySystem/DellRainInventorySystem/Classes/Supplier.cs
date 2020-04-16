@@ -12,6 +12,11 @@
             Contact = contact;
         }
 
+        protected Supplier(string suppContact)
+        {
+            Contact = suppContact;
+        }
+
         public string CompanyName { get; set; }
 
         public string Contact { get; set; }

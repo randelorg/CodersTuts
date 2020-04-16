@@ -12,12 +12,12 @@ namespace DellRainInventorySystem.Classes
 {
     public class Inventory : InventoryUtils, IInventory, IAccount
     {
+        //connection string
+        private readonly SqlConnection con = new SqlConnection(Connect.MainConn);
+
         private SqlDataReader _reader;
 
         private SqlCommand cmd;
-
-        //connection string
-        private readonly SqlConnection con = new SqlConnection(Connect.MainConn);
 
         public int AddAccount()
         {
@@ -113,6 +113,7 @@ namespace DellRainInventorySystem.Classes
                 if (_reader.Read()) //if location is already existing
                 {
                     LocationId = int.Parse(_reader["locaId"].ToString());
+                    Console.WriteLine(@"LOCATION UPDATE {0}", LocationId);
                     _reader.Close(); //close first query
                 }
                 else //if location is new add to the DB
@@ -139,7 +140,7 @@ namespace DellRainInventorySystem.Classes
                 }
 
                 _reader.Close(); //close third query
-                return 0; //if adding is succesful
+                return 0; //if adding is successful
             }
             catch (SqlException e)
             {
@@ -165,15 +166,12 @@ namespace DellRainInventorySystem.Classes
                 _reader = cmd.ExecuteReader();
 
                 if (_reader.Read())
-                {
-                    LtUpdateProduct.AddLast(new Product(Base64ToImage(_reader["prodImage"].ToString()),
+                    LtProducts.AddLast(new Product(Base64ToImage(_reader["prodImage"].ToString()),
                         _reader["prodName"].ToString(),
                         float.Parse(_reader["prodPrice"].ToString()),
                         _reader["name"].ToString(), _reader["prodShelfLife"].ToString(),
                         _reader["suppName"].ToString(), _reader["contactNumber"].ToString()));
-                }
 
-                Console.WriteLine(@"ADDED");
                 return 0;
             }
             catch (SqlException e)
@@ -190,26 +188,36 @@ namespace DellRainInventorySystem.Classes
 
         public int UpdateSelectedProduct()
         {
+            var product = LtProducts.Last.Value;
+
             try
             {
                 cmd = new SqlCommand();
                 con.Open();
                 cmd.Connection = con;
-                cmd.CommandText = "SELECT [product].prodImage ,[product].prodName ,[product].prodPrice, [product].prodShelfLife,[location].name,[supplier].suppName, [supplier].contactNumber FROM Inventory.Product AS product INNER JOIN Inventory.Supplier AS supplier ON [product].Supplier = [supplier].suppId INNER JOIN Inventory.Location AS location  ON [location].locaId = [product].Location WHERE [product].productId = @PRODUCT_ID";
+                cmd.CommandText = "UPDATE Inventory.Product SET prodImage = @image, prodName = @name, prodPrice = @price, prodQty += @addQty, prodShelfLife = @life, Supplier = @supplierId, Location = @locationId WHERE productId = @prodId";
 
-                cmd.Parameters.AddWithValue("@PRODUCT_ID", UpdateProdId);
-                _reader = cmd.ExecuteReader();
-
-                if (_reader.Read())
+                if (LtProducts.Count > 0)
                 {
-                    LtUpdateProduct.AddLast(new Product(Base64ToImage(_reader["prodImage"].ToString()),
-                        _reader["prodName"].ToString(),
-                        float.Parse(_reader["prodPrice"].ToString()),
-                        _reader["name"].ToString(), _reader["prodShelfLife"].ToString(),
-                        _reader["suppName"].ToString(), _reader["contactNumber"].ToString()));
+                    cmd.Parameters.AddWithValue("@image", ImageToBase64(product.ProdImage, ImageFormat.Png));
+                    cmd.Parameters.AddWithValue("@name", product.ProdName);
+                    cmd.Parameters.AddWithValue("@price", product.Price);
+                    cmd.Parameters.AddWithValue("@addQty", product.Qty);
+                    cmd.Parameters.AddWithValue("@life", product.Shelflife);
+                    cmd.Parameters.AddWithValue("@supplierId", SuppId);
+                    cmd.Parameters.AddWithValue("@locationId", LocationId);
+                    cmd.Parameters.AddWithValue("@prodId", UpdateProdId);
                 }
 
-                Console.WriteLine(@"UPDATED");
+                cmd.ExecuteNonQuery();
+
+                cmd.CommandText = "UPDATE Inventory.Supplier SET contactNumber = @number WHERE suppId = @id";
+
+                cmd.Parameters.AddWithValue("@id", SuppId);
+                cmd.Parameters.AddWithValue("@number", product.Contact);
+
+                cmd.ExecuteNonQuery();
+
                 return 0;
             }
             catch (SqlException e)
@@ -222,6 +230,81 @@ namespace DellRainInventorySystem.Classes
             {
                 con.Close();
             }
+        }
+
+        public int SoldProduct()
+        {
+            var price = 0.00;
+
+            try
+            {
+                cmd = new SqlCommand();
+                con.Open();
+                cmd.Connection = con;
+                cmd.CommandText = "SELECT prodPrice FROM Inventory.Product WHERE productId = @firstId";
+                cmd.Parameters.AddWithValue("@firstId", UpdateProdId);
+                _reader = cmd.ExecuteReader();
+
+                if (_reader.Read())
+                    price = float.Parse(_reader["prodPrice"].ToString());
+                
+                _reader.Close();
+
+                Console.WriteLine(@"Product price {0}", price);
+
+                cmd.CommandText = "INSERT INTO Inventory.Sales (product, qtySold, date, sales) VALUES(@product_FK, @sold, @date, @sale)";
+                cmd.Parameters.AddWithValue("@product_FK", UpdateProdId);
+                cmd.Parameters.AddWithValue("@sold", SoldNumber);
+                cmd.Parameters.AddWithValue("@date", DateTime.UtcNow.ToShortDateString());
+                cmd.Parameters.AddWithValue("@sale", SoldNumber * price);
+                cmd.ExecuteNonQuery();
+
+                cmd.CommandText = "UPDATE Inventory.Product SET prodSold += @total_sold WHERE productId = @product_PK";
+                cmd.Parameters.AddWithValue("@product_PK", UpdateProdId);
+                cmd.Parameters.AddWithValue("@total_sold", SoldNumber);
+                cmd.ExecuteNonQuery();
+
+                return 0;
+            }
+            catch (SqlException e)
+            {
+                Console.WriteLine(e.ToString());
+                return 1;
+            }
+
+            finally
+            {
+                con.Close();
+            }
+        }
+
+        public void LoadForSoldWindow()
+        {
+            try
+            {
+                cmd = new SqlCommand();
+                con.Open();
+                cmd.Connection = con;
+
+                //location table
+                cmd.CommandText = "SELECT prodImage FROM Inventory.Product WHERE productId = @Id";
+                cmd.Parameters.AddWithValue("@Id", UpdateProdId);
+                _reader = cmd.ExecuteReader();
+
+                if (_reader.Read())
+                {
+                    //add image to the last node 
+                    LtProducts.AddLast(new Product(Base64ToImage(_reader["prodImage"].ToString())));
+                }
+
+                _reader.Close();
+            }
+            catch (SqlException ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+
+            finally{con.Close();}
         }
 
         public int AddSupplier()
@@ -245,6 +328,7 @@ namespace DellRainInventorySystem.Classes
                 {
                     //store the supplier id to the suppId var
                     SuppId = int.Parse(_reader["suppId"].ToString());
+                    Console.WriteLine(@"SUPPLIER UPDATE {0}", SuppId);
                 }
                 else //if the supplier is new add to the DB
                 {
@@ -298,8 +382,7 @@ namespace DellRainInventorySystem.Classes
                 cmd.Connection = con;
 
                 cmd.CommandText =
-                    "INSERT INTO Inventory.Product (Supplier, prodName, prodType, prodQty, prodPrice, Location, prodShelfLife, prodImage)" +
-                    "VALUES (@supplier, @name, @type, @qty, @price, @location, @life, @image)";
+                    "INSERT INTO Inventory.Product (Supplier, prodName, prodType, prodQty, prodPrice, Location, prodShelfLife, prodImage) VALUES (@supplier, @name, @type, @qty, @price, @location, @life, @image)";
 
                 if (LtProducts.Count > 0)
                 {
@@ -550,14 +633,23 @@ namespace DellRainInventorySystem.Classes
         //retrieve image from the database
         private Image Base64ToImage(string base64String)
         {
-            // Convert Base64 String to byte[]
-            var imageBytes = Convert.FromBase64String(base64String);
-            var ms = new MemoryStream(imageBytes, 0,
-                imageBytes.Length);
+            Image image = null;
+            try
+            {
+                // Convert Base64 String to byte[]
+                var imageBytes = Convert.FromBase64String(base64String);
+                var ms = new MemoryStream(imageBytes, 0,
+                    imageBytes.Length);
 
-            // Convert byte[] to Image
-            ms.Write(imageBytes, 0, imageBytes.Length);
-            var image = Image.FromStream(ms, true);
+                // Convert byte[] to Image
+                ms.Write(imageBytes, 0, imageBytes.Length);
+                image = Image.FromStream(ms, true);
+            }
+            catch (ArgumentException ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+
             return image;
         }
     }

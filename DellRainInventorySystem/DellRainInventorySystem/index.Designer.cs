@@ -71,6 +71,7 @@
             this.AddProduct = new System.Windows.Forms.PictureBox();
             this.Stock = new System.Windows.Forms.PictureBox();
             this.SalesReports = new System.Windows.Forms.PictureBox();
+            this.label10 = new System.Windows.Forms.Label();
             this.groupDasboard.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Reload)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
@@ -516,21 +517,22 @@
             this.btnYourAccount.MouseLeave += new System.EventHandler(this.btnYourAccount_MouseLeave);
             this.btnYourAccount.MouseHover += new System.EventHandler(this.btnYourAccount_MouseHover);
             // 
-            // SoldProducts
+            // SoldProduct
             // 
             this.SoldProducts.Image = global::DellRainInventorySystem.Properties.Resources.Sold;
-            this.SoldProducts.Location = new System.Drawing.Point(10, 380);
+            this.SoldProducts.Location = new System.Drawing.Point(11, 339);
             this.SoldProducts.Name = "SoldProducts";
             this.SoldProducts.Size = new System.Drawing.Size(50, 50);
             this.SoldProducts.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.SoldProducts.TabIndex = 43;
             this.SoldProducts.TabStop = false;
+            this.SoldProducts.Click += new System.EventHandler(this.SoldProducts_Click);
             this.SoldProducts.MouseHover += new System.EventHandler(this.SoldProducts_MouseHover);
             // 
-            // PrepareProductToUpdate
+            // UpdateProduct
             // 
             this.UpdateProduct.Image = global::DellRainInventorySystem.Properties.Resources.pencil__1_;
-            this.UpdateProduct.Location = new System.Drawing.Point(11, 243);
+            this.UpdateProduct.Location = new System.Drawing.Point(11, 266);
             this.UpdateProduct.Name = "UpdateProduct";
             this.UpdateProduct.Size = new System.Drawing.Size(50, 50);
             this.UpdateProduct.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -542,7 +544,7 @@
             // AddProduct
             // 
             this.AddProduct.Image = global::DellRainInventorySystem.Properties.Resources.Add__1_;
-            this.AddProduct.Location = new System.Drawing.Point(11, 175);
+            this.AddProduct.Location = new System.Drawing.Point(11, 198);
             this.AddProduct.Name = "AddProduct";
             this.AddProduct.Size = new System.Drawing.Size(50, 50);
             this.AddProduct.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -554,7 +556,7 @@
             // Stock
             // 
             this.Stock.Image = global::DellRainInventorySystem.Properties.Resources.Product;
-            this.Stock.Location = new System.Drawing.Point(11, 111);
+            this.Stock.Location = new System.Drawing.Point(11, 134);
             this.Stock.Name = "Stock";
             this.Stock.Size = new System.Drawing.Size(50, 50);
             this.Stock.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -566,7 +568,7 @@
             // SalesReports
             // 
             this.SalesReports.Image = global::DellRainInventorySystem.Properties.Resources.Document1;
-            this.SalesReports.Location = new System.Drawing.Point(10, 312);
+            this.SalesReports.Location = new System.Drawing.Point(11, 410);
             this.SalesReports.Name = "SalesReports";
             this.SalesReports.Size = new System.Drawing.Size(50, 50);
             this.SalesReports.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -575,12 +577,23 @@
             this.SalesReports.Click += new System.EventHandler(this.SalesReports_Click);
             this.SalesReports.MouseHover += new System.EventHandler(this.SalesReport_MouseHover);
             // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold);
+            this.label10.Location = new System.Drawing.Point(4, 105);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(63, 19);
+            this.label10.TabIndex = 34;
+            this.label10.Text = "TOOLS";
+            // 
             // Index
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1190, 721);
+            this.Controls.Add(this.label10);
             this.Controls.Add(this.SoldProducts);
             this.Controls.Add(this.UpdateProduct);
             this.Controls.Add(this.AddProduct);
@@ -617,6 +630,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.Stock)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.SalesReports)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -662,5 +676,6 @@
         private System.Windows.Forms.PictureBox AddProduct;
         private System.Windows.Forms.PictureBox UpdateProduct;
         private System.Windows.Forms.PictureBox SoldProducts;
+        private System.Windows.Forms.Label label10;
     }
 }

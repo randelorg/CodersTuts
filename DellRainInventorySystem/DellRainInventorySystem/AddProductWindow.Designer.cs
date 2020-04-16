@@ -141,7 +141,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(421, 366);
+            this.label9.Location = new System.Drawing.Point(54, 471);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(86, 13);
             this.label9.TabIndex = 48;
@@ -161,7 +161,7 @@
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Tahoma", 16F, System.Drawing.FontStyle.Bold);
-            this.label12.Location = new System.Drawing.Point(45, 327);
+            this.label12.Location = new System.Drawing.Point(46, 327);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(246, 27);
             this.label12.TabIndex = 51;
@@ -218,7 +218,7 @@
             // 
             this.tbSuppContact.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tbSuppContact.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbSuppContact.Location = new System.Drawing.Point(421, 382);
+            this.tbSuppContact.Location = new System.Drawing.Point(54, 487);
             this.tbSuppContact.MaxLength = 11;
             this.tbSuppContact.Name = "tbSuppContact";
             this.tbSuppContact.Size = new System.Drawing.Size(323, 30);
@@ -295,10 +295,10 @@
             // btnSaveProduct
             // 
             this.btnSaveProduct.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSaveProduct.Font = new System.Drawing.Font("Tahoma", 16F);
-            this.btnSaveProduct.Location = new System.Drawing.Point(376, 492);
+            this.btnSaveProduct.Font = new System.Drawing.Font("Tahoma", 25F);
+            this.btnSaveProduct.Location = new System.Drawing.Point(588, 348);
             this.btnSaveProduct.Name = "btnSaveProduct";
-            this.btnSaveProduct.Size = new System.Drawing.Size(202, 48);
+            this.btnSaveProduct.Size = new System.Drawing.Size(216, 146);
             this.btnSaveProduct.TabIndex = 71;
             this.btnSaveProduct.Text = "Complete";
             this.btnSaveProduct.UseVisualStyleBackColor = true;

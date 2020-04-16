@@ -30,30 +30,30 @@
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(InventoryWindow));
-            this.dataView = new System.Windows.Forms.DataGridView();
+            this.StockView = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.tbSearchProduct = new System.Windows.Forms.TextBox();
             this.Refresh = new System.Windows.Forms.PictureBox();
             this.pictureBack = new System.Windows.Forms.PictureBox();
             this.closeButton = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.dataView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.StockView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Refresh)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBack)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.closeButton)).BeginInit();
             this.SuspendLayout();
             // 
-            // dataView
+            // StockView
             // 
-            this.dataView.AllowUserToAddRows = false;
+            this.StockView.AllowUserToAddRows = false;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.dataView.BackgroundColor = System.Drawing.Color.White;
-            this.dataView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataView.Location = new System.Drawing.Point(22, 56);
-            this.dataView.Name = "dataView";
-            this.dataView.ReadOnly = true;
-            this.dataView.Size = new System.Drawing.Size(975, 534);
-            this.dataView.TabIndex = 0;
+            this.StockView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.StockView.BackgroundColor = System.Drawing.Color.White;
+            this.StockView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.StockView.Location = new System.Drawing.Point(22, 56);
+            this.StockView.Name = "StockView";
+            this.StockView.ReadOnly = true;
+            this.StockView.Size = new System.Drawing.Size(975, 534);
+            this.StockView.TabIndex = 0;
             // 
             // label1
             // 
@@ -72,6 +72,7 @@
             this.tbSearchProduct.Name = "tbSearchProduct";
             this.tbSearchProduct.Size = new System.Drawing.Size(226, 30);
             this.tbSearchProduct.TabIndex = 38;
+            this.tbSearchProduct.TextChanged += new System.EventHandler(this.tbSearchProduct_TextChanged);
             this.tbSearchProduct.MouseHover += new System.EventHandler(this.tbSearchProduct_MouseHover);
             // 
             // Refresh
@@ -119,14 +120,14 @@
             this.Controls.Add(this.tbSearchProduct);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.closeButton);
-            this.Controls.Add(this.dataView);
+            this.Controls.Add(this.StockView);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "InventoryWindow";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Stock";
             this.Load += new System.EventHandler(this.InventoryWindow_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.StockView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Refresh)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBack)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.closeButton)).EndInit();
@@ -137,7 +138,7 @@
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataView;
+        private System.Windows.Forms.DataGridView StockView;
         private System.Windows.Forms.PictureBox closeButton;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox tbSearchProduct;

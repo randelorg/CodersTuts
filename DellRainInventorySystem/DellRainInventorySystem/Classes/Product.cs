@@ -33,7 +33,7 @@ namespace DellRainInventorySystem.Classes
             Shelflife = life;
         }
 
-        //for updating THE product
+        //for updating the product
         public Product(Image image, string prodName, int qty, float price,
             string location, string life, string suppName, string suppContact) : base(suppName, suppContact)
         {
@@ -44,7 +44,23 @@ namespace DellRainInventorySystem.Classes
             Location = location;
             Shelflife = life;
         }
-        
+
+        //for updating the product and adding qty to the product qt
+        public Product(Image image, string prodName, int qty, float price, string life, string suppContact) : base(suppContact)
+        {
+            ProdImage = image;
+            ProdName = prodName;
+            Qty = qty;
+            Price = price;
+            Shelflife = life;
+        }
+
+        //image only fod sold product window
+        public Product(Image image)
+        {
+            ProdImage = image;
+        }
+
         public string ProdName { get; set; }
 
         public string ProdType { get; set; }
