@@ -10,7 +10,7 @@ namespace DellRainInventorySystem.Classes
         }
 
         //for creation
-        public Product(string prodName, string prodType, int qty, float price, string prodLocation, string life,
+        public Product(string prodName, string prodType, int qty, double price, string prodLocation, string life,
             string suppName, string suppContact, Image image) : base(suppName, suppContact)
         {
             ProdName = prodName;
@@ -23,7 +23,7 @@ namespace DellRainInventorySystem.Classes
         }
 
         //for updating product except the qty
-        public Product(Image image, string prodName, float price,
+        public Product(Image image, string prodName, double price,
             string location, string life, string suppName, string suppContact) : base(suppName, suppContact)
         {
             ProdImage = image;
@@ -34,7 +34,7 @@ namespace DellRainInventorySystem.Classes
         }
 
         //for updating the product
-        public Product(Image image, string prodName, int qty, float price,
+        public Product(Image image, string prodName, int qty, double price,
             string location, string life, string suppName, string suppContact) : base(suppName, suppContact)
         {
             ProdImage = image;
@@ -46,7 +46,7 @@ namespace DellRainInventorySystem.Classes
         }
 
         //for updating the product and adding qty to the product qt
-        public Product(Image image, string prodName, int qty, float price, string life, string suppContact) : base(suppContact)
+        public Product(Image image, string prodName, int qty, double price, string life, string suppContact) : base(suppContact)
         {
             ProdImage = image;
             ProdName = prodName;
@@ -69,7 +69,7 @@ namespace DellRainInventorySystem.Classes
 
         public int Sold { get; set; }
 
-        public float Price { get; set; }
+        public double Price { get; set; }
 
         public string Location { get; set; }
 

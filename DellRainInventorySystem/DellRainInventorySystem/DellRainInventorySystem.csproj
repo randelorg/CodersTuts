@@ -120,6 +120,12 @@
     <Compile Include="SplashScreen.Designer.cs">
       <DependentUpon>SplashScreen.cs</DependentUpon>
     </Compile>
+    <Compile Include="SuccessWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SuccessWindow.Designer.cs">
+      <DependentUpon>SuccessWindow.cs</DependentUpon>
+    </Compile>
     <Compile Include="UpdateProductcs.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -168,6 +174,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="SplashScreen.resx">
       <DependentUpon>SplashScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SuccessWindow.resx">
+      <DependentUpon>SuccessWindow.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UpdateProductcs.resx">
       <DependentUpon>UpdateProductcs.cs</DependentUpon>
@@ -321,6 +330,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Sold.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\check.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

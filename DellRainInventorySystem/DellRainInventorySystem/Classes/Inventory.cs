@@ -168,7 +168,7 @@ namespace DellRainInventorySystem.Classes
                 if (_reader.Read())
                     LtProducts.AddLast(new Product(Base64ToImage(_reader["prodImage"].ToString()),
                         _reader["prodName"].ToString(),
-                        float.Parse(_reader["prodPrice"].ToString()),
+                        double.Parse(_reader["prodPrice"].ToString()),
                         _reader["name"].ToString(), _reader["prodShelfLife"].ToString(),
                         _reader["suppName"].ToString(), _reader["contactNumber"].ToString()));
 
@@ -246,7 +246,7 @@ namespace DellRainInventorySystem.Classes
                 _reader = cmd.ExecuteReader();
 
                 if (_reader.Read())
-                    price = float.Parse(_reader["prodPrice"].ToString());
+                    price = double.Parse(_reader["prodPrice"].ToString());
                 
                 _reader.Close();
 
@@ -264,12 +264,42 @@ namespace DellRainInventorySystem.Classes
                 cmd.Parameters.AddWithValue("@total_sold", SoldNumber);
                 cmd.ExecuteNonQuery();
 
+                cmd.CommandText = "UPDATE Inventory.Product SET prodQty -= @past_sold WHERE productId = @product_PK_PAST";
+                cmd.Parameters.AddWithValue("@product_PK_PAST", UpdateProdId);
+                cmd.Parameters.AddWithValue("@past_sold", SoldNumber);
+                cmd.ExecuteNonQuery();
+
                 return 0;
             }
             catch (SqlException e)
             {
                 Console.WriteLine(e.ToString());
                 return 1;
+            }
+
+            finally
+            {
+                con.Close();
+            }
+        }
+
+        public int ComputeDaySale()
+        {
+            try
+            {
+                cmd = new SqlCommand();
+                con.Open();
+                cmd.Connection = con;
+                cmd.CommandText = "select SUM(sales) from Inventory.Sales where date = @datetoday";
+                cmd.Parameters.AddWithValue("@datetoday", DateTime.UtcNow.ToShortDateString());
+
+                return Convert.ToInt32(cmd.ExecuteScalar());
+
+            }
+            catch (SqlException e)
+            {
+                Console.WriteLine(e.ToString());
+                return 0;
             }
 
             finally

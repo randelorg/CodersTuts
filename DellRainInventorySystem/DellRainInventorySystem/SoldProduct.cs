@@ -170,6 +170,9 @@ namespace DellRainInventorySystem
             return false;
         }
 
-        
+        private void pictureBack_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }

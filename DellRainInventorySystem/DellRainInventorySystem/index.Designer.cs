@@ -250,7 +250,7 @@
             this.tbWeekSales.ReadOnly = true;
             this.tbWeekSales.Size = new System.Drawing.Size(356, 23);
             this.tbWeekSales.TabIndex = 25;
-            this.tbWeekSales.Text = "100.00";
+            this.tbWeekSales.Text = "0.00";
             // 
             // tbDaySales
             // 
@@ -517,7 +517,7 @@
             this.btnYourAccount.MouseLeave += new System.EventHandler(this.btnYourAccount_MouseLeave);
             this.btnYourAccount.MouseHover += new System.EventHandler(this.btnYourAccount_MouseHover);
             // 
-            // SoldProduct
+            // SoldProducts
             // 
             this.SoldProducts.Image = global::DellRainInventorySystem.Properties.Resources.Sold;
             this.SoldProducts.Location = new System.Drawing.Point(11, 339);

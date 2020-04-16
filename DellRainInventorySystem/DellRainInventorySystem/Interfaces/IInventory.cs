@@ -8,6 +8,7 @@ namespace DellRainInventorySystem.Interfaces
         int PrepareProductToUpdate();
         int UpdateSelectedProduct();
         int SoldProduct();
+        int ComputeDaySale();
         void LoadForSoldWindow();
         bool GetExistingLocation();
         bool GetExistingSupplier();

@@ -135,12 +135,13 @@
             // pictureBack
             // 
             this.pictureBack.Image = global::DellRainInventorySystem.Properties.Resources.Back;
-            this.pictureBack.Location = new System.Drawing.Point(953, 28);
+            this.pictureBack.Location = new System.Drawing.Point(987, 25);
             this.pictureBack.Name = "pictureBack";
             this.pictureBack.Size = new System.Drawing.Size(30, 30);
             this.pictureBack.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBack.TabIndex = 122;
             this.pictureBack.TabStop = false;
+            this.pictureBack.Click += new System.EventHandler(this.pictureBack_Click);
             this.pictureBack.MouseHover += new System.EventHandler(this.pictureBack_MouseHover);
             // 
             // prodQty

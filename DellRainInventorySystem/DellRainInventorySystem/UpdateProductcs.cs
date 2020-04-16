@@ -162,7 +162,7 @@ namespace DellRainInventorySystem
                     var product = InventoryUtils.LtProducts.Last.Value; //get the last added value in the link-list
                     ProductPreview.Image = product.ProdImage;
                     tbName.Text = product.ProdName;
-                    tbPrice.Text = product.Price.ToString(CultureInfo.CurrentCulture);
+                    tbPrice.Text = product.Price.ToString("F", CultureInfo.InvariantCulture);
                     tbLocation.Text = product.Location;
                     ShelfLife.Text = product.Shelflife;
                     tbSuppName.Text = product.CompanyName;
@@ -182,7 +182,7 @@ namespace DellRainInventorySystem
                 //add product to the last node of the linked list
                 InventoryUtils.LtProducts.AddLast(new Product(ProductPreview.Image,
                     tbName.Text, int.Parse(prodQty.Text),
-                    float.Parse(tbPrice.Text),
+                    double.Parse(tbPrice.Text),
                     tbLocation.Text, ShelfLife.Text,
                     tbSuppName.Text, tbSuppContact.Text));
 
@@ -201,7 +201,7 @@ namespace DellRainInventorySystem
                 //and ready for updating the product
                 InventoryUtils.LtProducts.AddLast(new Product(ProductPreview.Image, tbName.Text,
                     int.Parse(prodQty.Text),
-                    float.Parse(tbPrice.Text), ShelfLife.Text, tbSuppContact.Text));
+                    double.Parse(tbPrice.Text), ShelfLife.Text, tbSuppContact.Text));
 
                 //if exception occurs return and display err msg
                 //invoke the method from the inventory class

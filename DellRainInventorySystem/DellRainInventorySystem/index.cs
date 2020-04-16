@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Drawing;
+using System.Globalization;
 using System.Threading;
 using System.Windows.Forms;
 using DellRainInventorySystem.Classes;
@@ -26,19 +27,19 @@ namespace DellRainInventorySystem
             DetermineAccountType();
             RemoveBorder();
 
-            try
-            {
-                t.Abort();
-            }
-            catch (ThreadAbortException e)
-            {
-                e.ToString();
-            }
+            t.Abort();
         }
 
         private void splash()
         {
-            Application.Run(new SplashScreen());
+            try
+            {
+                Application.Run(new SplashScreen());
+            }
+            catch (ThreadAbortException e)
+            {
+                Console.WriteLine(e.Message);
+            }
         }
 
         private void DetermineAccountType()
@@ -173,6 +174,11 @@ namespace DellRainInventorySystem
 
             //for the total qty of appliances
             LoadProductQty();
+
+            //shows the current sales for day and week
+            //invariant culture will display the round up result of the currency
+            //with two decimal places
+            tbDaySales.Text = inventory.ComputeDaySale().ToString("F", CultureInfo.InvariantCulture);
         }
 
         private void ErrorMessage()
