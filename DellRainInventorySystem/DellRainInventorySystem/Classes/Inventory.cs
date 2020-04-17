@@ -294,11 +294,16 @@ namespace DellRainInventorySystem.Classes
                 cmd.Parameters.AddWithValue("@datetoday", DateTime.UtcNow.ToShortDateString());
 
                 return Convert.ToInt32(cmd.ExecuteScalar());
-
             }
-            catch (SqlException e)
+            catch (SqlException ex)
             {
-                Console.WriteLine(e.ToString());
+                Console.WriteLine(ex.Message);
+                return 0;
+            }
+
+            catch (InvalidCastException ex)
+            {
+                Console.WriteLine(ex.Message);
                 return 0;
             }
 
