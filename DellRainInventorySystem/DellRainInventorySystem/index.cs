@@ -11,7 +11,6 @@ namespace DellRainInventorySystem
     public partial class Index : Form
     {
         private readonly Inventory inventory = new Inventory();
-        private Form1 Login = new Form1();
         private readonly ToolTip tt = new ToolTip();
 
         public Index()
@@ -230,7 +229,7 @@ namespace DellRainInventorySystem
         private void LoadGroceryQty()
         {
             var groceryQty = inventory.CountGroceriesProductsQty();
-            if (groceryQty > 0)
+            if (groceryQty >= 0)
                 tbGroceriesTotalQty.Text = groceryQty.ToString();
             else
                 ErrorMessage();
@@ -239,7 +238,7 @@ namespace DellRainInventorySystem
         private void LoadProductQty()
         {
             var productQty = inventory.CountApplianceProductsQty();
-            if (productQty > 0)
+            if (productQty >= 0)
                 tbAppliancesTotalQty.Text = productQty.ToString();
             else
                 ErrorMessage();
@@ -252,7 +251,7 @@ namespace DellRainInventorySystem
 
         private void pictureBox2_Click(object sender, EventArgs e)
         {
-            Reload_Click(sender,e);
+            Reload_Click(sender, e);
         }
 
         private void AddProduct_Click(object sender, EventArgs e)
@@ -288,5 +287,29 @@ namespace DellRainInventorySystem
             soldWindow.ShowDialog();
         }
 
+        private void label3_Click(object sender, EventArgs e)
+        {
+            Stock_Click(sender, e);
+        }
+
+        private void label7_Click(object sender, EventArgs e)
+        {
+            AddProduct_Click(sender, e);
+        }
+
+        private void label11_Click(object sender, EventArgs e)
+        {
+            UpdateProduct_Click(sender, e);
+        }
+
+        private void label12_Click(object sender, EventArgs e)
+        {
+            SoldProducts_Click(sender, e);
+        }
+
+        private void label13_Click(object sender, EventArgs e)
+        {
+            SalesReports_Click(sender, e);
+        }
     }
 }

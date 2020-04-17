@@ -478,6 +478,7 @@
             this.label3.Size = new System.Drawing.Size(43, 15);
             this.label3.TabIndex = 34;
             this.label3.Text = "Stocks";
+            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // label7
             // 
@@ -489,6 +490,7 @@
             this.label7.Size = new System.Drawing.Size(76, 15);
             this.label7.TabIndex = 44;
             this.label7.Text = "New product";
+            this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
             // label11
             // 
@@ -500,6 +502,7 @@
             this.label11.Size = new System.Drawing.Size(91, 15);
             this.label11.TabIndex = 45;
             this.label11.Text = "Update product";
+            this.label11.Click += new System.EventHandler(this.label11_Click);
             // 
             // label12
             // 
@@ -511,6 +514,7 @@
             this.label12.Size = new System.Drawing.Size(76, 15);
             this.label12.TabIndex = 46;
             this.label12.Text = "Sold product";
+            this.label12.Click += new System.EventHandler(this.label12_Click);
             // 
             // label13
             // 
@@ -522,6 +526,7 @@
             this.label13.Size = new System.Drawing.Size(49, 15);
             this.label13.TabIndex = 47;
             this.label13.Text = "Reports";
+            this.label13.Click += new System.EventHandler(this.label13_Click);
             // 
             // SoldProducts
             // 

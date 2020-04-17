@@ -2,7 +2,6 @@ using System;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.Drawing.Imaging;
-using System.Globalization;
 using System.IO;
 using System.Windows.Forms;
 using DellRainInventorySystem.Classes.Utility;
@@ -605,6 +604,12 @@ namespace DellRainInventorySystem.Classes
                 return -1;
             }
 
+            catch (InvalidCastException ex)
+            {
+                Console.WriteLine(ex.Message);
+                return 0;
+            }
+
             finally
             {
                 con.Close();
@@ -627,6 +632,12 @@ namespace DellRainInventorySystem.Classes
             {
                 Console.WriteLine(e.ToString());
                 return -1;
+            }
+
+            catch(InvalidCastException ex)
+            {
+                Console.WriteLine(ex.Message);
+                return 0;
             }
 
             finally
