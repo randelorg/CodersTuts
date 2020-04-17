@@ -2,6 +2,7 @@ using System;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.Drawing.Imaging;
+using System.Globalization;
 using System.IO;
 using System.Windows.Forms;
 using DellRainInventorySystem.Classes.Utility;
@@ -322,14 +323,15 @@ namespace DellRainInventorySystem.Classes
                 cmd.Connection = con;
 
                 //location table
-                cmd.CommandText = "SELECT prodImage FROM Inventory.Product WHERE productId = @Id";
+                cmd.CommandText = "SELECT * FROM Inventory.Product WHERE productId = @Id";
                 cmd.Parameters.AddWithValue("@Id", UpdateProdId);
                 _reader = cmd.ExecuteReader();
 
                 if (_reader.Read())
                 {
                     //add image to the last node 
-                    LtProducts.AddLast(new Product(Base64ToImage(_reader["prodImage"].ToString())));
+                    LtProducts.AddLast(new Product(Base64ToImage(_reader["prodImage"].ToString()),
+                        _reader["prodName"].ToString(), double.Parse(_reader["prodPrice"].ToString())));
                 }
 
                 _reader.Close();

@@ -31,6 +31,13 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Index));
             this.groupDasboard = new System.Windows.Forms.GroupBox();
+            this.Reload = new System.Windows.Forms.PictureBox();
+            this.pictureBox10 = new System.Windows.Forms.PictureBox();
+            this.pictureBox9 = new System.Windows.Forms.PictureBox();
+            this.pictureBox8 = new System.Windows.Forms.PictureBox();
+            this.pictureBox7 = new System.Windows.Forms.PictureBox();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.DangerProductsView = new System.Windows.Forms.ListView();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.tbWeekSales = new System.Windows.Forms.TextBox();
@@ -48,6 +55,9 @@
             this.label1 = new System.Windows.Forms.Label();
             this.TopNav = new System.Windows.Forms.GroupBox();
             this.btnListAccounts = new System.Windows.Forms.Button();
+            this.closeButton = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.UserIcon = new System.Windows.Forms.PictureBox();
             this.lbUsername = new System.Windows.Forms.Label();
             this.btnCreateAccount = new System.Windows.Forms.Button();
             this.btnYourAccount = new System.Windows.Forms.Button();
@@ -62,26 +72,7 @@
             this.AddProduct = new System.Windows.Forms.PictureBox();
             this.Stock = new System.Windows.Forms.PictureBox();
             this.SalesReports = new System.Windows.Forms.PictureBox();
-            this.closeButton = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.UserIcon = new System.Windows.Forms.PictureBox();
-            this.Reload = new System.Windows.Forms.PictureBox();
-            this.pictureBox10 = new System.Windows.Forms.PictureBox();
-            this.pictureBox9 = new System.Windows.Forms.PictureBox();
-            this.pictureBox8 = new System.Windows.Forms.PictureBox();
-            this.pictureBox7 = new System.Windows.Forms.PictureBox();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.groupDasboard.SuspendLayout();
-            this.TopNav.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.SoldProducts)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.UpdateProduct)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.AddProduct)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Stock)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.SalesReports)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.closeButton)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.UserIcon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Reload)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
@@ -89,6 +80,15 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            this.TopNav.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.closeButton)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.UserIcon)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SoldProducts)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.UpdateProduct)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.AddProduct)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Stock)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SalesReports)).BeginInit();
             this.SuspendLayout();
             // 
             // groupDasboard
@@ -119,6 +119,78 @@
             this.groupDasboard.Size = new System.Drawing.Size(1081, 586);
             this.groupDasboard.TabIndex = 9;
             this.groupDasboard.TabStop = false;
+            // 
+            // Reload
+            // 
+            this.Reload.Image = global::DellRainInventorySystem.Properties.Resources.reload1;
+            this.Reload.Location = new System.Drawing.Point(1046, 18);
+            this.Reload.Name = "Reload";
+            this.Reload.Size = new System.Drawing.Size(30, 30);
+            this.Reload.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.Reload.TabIndex = 18;
+            this.Reload.TabStop = false;
+            this.Reload.Click += new System.EventHandler(this.Reload_Click);
+            this.Reload.MouseHover += new System.EventHandler(this.Reload_MouseHover);
+            // 
+            // pictureBox10
+            // 
+            this.pictureBox10.Image = global::DellRainInventorySystem.Properties.Resources.Philippine;
+            this.pictureBox10.Location = new System.Drawing.Point(616, 506);
+            this.pictureBox10.Name = "pictureBox10";
+            this.pictureBox10.Size = new System.Drawing.Size(38, 38);
+            this.pictureBox10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox10.TabIndex = 33;
+            this.pictureBox10.TabStop = false;
+            // 
+            // pictureBox9
+            // 
+            this.pictureBox9.Image = global::DellRainInventorySystem.Properties.Resources.Philippine;
+            this.pictureBox9.Location = new System.Drawing.Point(616, 428);
+            this.pictureBox9.Name = "pictureBox9";
+            this.pictureBox9.Size = new System.Drawing.Size(38, 38);
+            this.pictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox9.TabIndex = 32;
+            this.pictureBox9.TabStop = false;
+            // 
+            // pictureBox8
+            // 
+            this.pictureBox8.Image = global::DellRainInventorySystem.Properties.Resources.Appliances;
+            this.pictureBox8.Location = new System.Drawing.Point(68, 506);
+            this.pictureBox8.Name = "pictureBox8";
+            this.pictureBox8.Size = new System.Drawing.Size(38, 38);
+            this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox8.TabIndex = 31;
+            this.pictureBox8.TabStop = false;
+            // 
+            // pictureBox7
+            // 
+            this.pictureBox7.Image = global::DellRainInventorySystem.Properties.Resources.Groceries;
+            this.pictureBox7.Location = new System.Drawing.Point(68, 427);
+            this.pictureBox7.Name = "pictureBox7";
+            this.pictureBox7.Size = new System.Drawing.Size(38, 38);
+            this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox7.TabIndex = 30;
+            this.pictureBox7.TabStop = false;
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.Image = global::DellRainInventorySystem.Properties.Resources.lowStock;
+            this.pictureBox4.Location = new System.Drawing.Point(46, 239);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(20, 20);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox4.TabIndex = 27;
+            this.pictureBox4.TabStop = false;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Image = global::DellRainInventorySystem.Properties.Resources.TopSelling;
+            this.pictureBox3.Location = new System.Drawing.Point(46, 67);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(20, 20);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox3.TabIndex = 18;
+            this.pictureBox3.TabStop = false;
             // 
             // DangerProductsView
             // 
@@ -313,6 +385,38 @@
             this.btnListAccounts.MouseLeave += new System.EventHandler(this.btnListAccounts_MouseLeave);
             this.btnListAccounts.MouseHover += new System.EventHandler(this.btnListAccounts_MouseHover);
             // 
+            // closeButton
+            // 
+            this.closeButton.Image = global::DellRainInventorySystem.Properties.Resources.Sign_out;
+            this.closeButton.Location = new System.Drawing.Point(1214, 17);
+            this.closeButton.Name = "closeButton";
+            this.closeButton.Size = new System.Drawing.Size(35, 35);
+            this.closeButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.closeButton.TabIndex = 35;
+            this.closeButton.TabStop = false;
+            this.closeButton.Click += new System.EventHandler(this.closeButton_Click_1);
+            this.closeButton.MouseHover += new System.EventHandler(this.closeButton_MouseHover);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::DellRainInventorySystem.Properties.Resources.store;
+            this.pictureBox1.Location = new System.Drawing.Point(11, 9);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(45, 45);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 9;
+            this.pictureBox1.TabStop = false;
+            // 
+            // UserIcon
+            // 
+            this.UserIcon.Image = ((System.Drawing.Image)(resources.GetObject("UserIcon.Image")));
+            this.UserIcon.Location = new System.Drawing.Point(998, 21);
+            this.UserIcon.Name = "UserIcon";
+            this.UserIcon.Size = new System.Drawing.Size(30, 30);
+            this.UserIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.UserIcon.TabIndex = 8;
+            this.UserIcon.TabStop = false;
+            // 
             // lbUsername
             // 
             this.lbUsername.AutoSize = true;
@@ -489,110 +593,6 @@
             this.SalesReports.Click += new System.EventHandler(this.SalesReports_Click);
             this.SalesReports.MouseHover += new System.EventHandler(this.SalesReport_MouseHover);
             // 
-            // closeButton
-            // 
-            this.closeButton.Image = global::DellRainInventorySystem.Properties.Resources.Sign_out;
-            this.closeButton.Location = new System.Drawing.Point(1214, 17);
-            this.closeButton.Name = "closeButton";
-            this.closeButton.Size = new System.Drawing.Size(35, 35);
-            this.closeButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.closeButton.TabIndex = 35;
-            this.closeButton.TabStop = false;
-            this.closeButton.Click += new System.EventHandler(this.closeButton_Click_1);
-            this.closeButton.MouseHover += new System.EventHandler(this.closeButton_MouseHover);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::DellRainInventorySystem.Properties.Resources.store;
-            this.pictureBox1.Location = new System.Drawing.Point(11, 9);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(45, 45);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 9;
-            this.pictureBox1.TabStop = false;
-            // 
-            // UserIcon
-            // 
-            this.UserIcon.Image = ((System.Drawing.Image)(resources.GetObject("UserIcon.Image")));
-            this.UserIcon.Location = new System.Drawing.Point(998, 21);
-            this.UserIcon.Name = "UserIcon";
-            this.UserIcon.Size = new System.Drawing.Size(30, 30);
-            this.UserIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.UserIcon.TabIndex = 8;
-            this.UserIcon.TabStop = false;
-            // 
-            // Reload
-            // 
-            this.Reload.Image = global::DellRainInventorySystem.Properties.Resources.reload1;
-            this.Reload.Location = new System.Drawing.Point(1046, 18);
-            this.Reload.Name = "Reload";
-            this.Reload.Size = new System.Drawing.Size(30, 30);
-            this.Reload.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.Reload.TabIndex = 18;
-            this.Reload.TabStop = false;
-            this.Reload.Click += new System.EventHandler(this.Reload_Click);
-            this.Reload.MouseHover += new System.EventHandler(this.Reload_MouseHover);
-            // 
-            // pictureBox10
-            // 
-            this.pictureBox10.Image = global::DellRainInventorySystem.Properties.Resources.Philippine;
-            this.pictureBox10.Location = new System.Drawing.Point(616, 506);
-            this.pictureBox10.Name = "pictureBox10";
-            this.pictureBox10.Size = new System.Drawing.Size(38, 38);
-            this.pictureBox10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox10.TabIndex = 33;
-            this.pictureBox10.TabStop = false;
-            // 
-            // pictureBox9
-            // 
-            this.pictureBox9.Image = global::DellRainInventorySystem.Properties.Resources.Philippine;
-            this.pictureBox9.Location = new System.Drawing.Point(616, 428);
-            this.pictureBox9.Name = "pictureBox9";
-            this.pictureBox9.Size = new System.Drawing.Size(38, 38);
-            this.pictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox9.TabIndex = 32;
-            this.pictureBox9.TabStop = false;
-            // 
-            // pictureBox8
-            // 
-            this.pictureBox8.Image = global::DellRainInventorySystem.Properties.Resources.Appliances;
-            this.pictureBox8.Location = new System.Drawing.Point(68, 506);
-            this.pictureBox8.Name = "pictureBox8";
-            this.pictureBox8.Size = new System.Drawing.Size(38, 38);
-            this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox8.TabIndex = 31;
-            this.pictureBox8.TabStop = false;
-            // 
-            // pictureBox7
-            // 
-            this.pictureBox7.Image = global::DellRainInventorySystem.Properties.Resources.Groceries;
-            this.pictureBox7.Location = new System.Drawing.Point(68, 427);
-            this.pictureBox7.Name = "pictureBox7";
-            this.pictureBox7.Size = new System.Drawing.Size(38, 38);
-            this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox7.TabIndex = 30;
-            this.pictureBox7.TabStop = false;
-            // 
-            // pictureBox4
-            // 
-            this.pictureBox4.Image = global::DellRainInventorySystem.Properties.Resources.lowStock;
-            this.pictureBox4.Location = new System.Drawing.Point(46, 239);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(20, 20);
-            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox4.TabIndex = 27;
-            this.pictureBox4.TabStop = false;
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Image = global::DellRainInventorySystem.Properties.Resources.TopSelling;
-            this.pictureBox3.Location = new System.Drawing.Point(46, 67);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(20, 20);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox3.TabIndex = 18;
-            this.pictureBox3.TabStop = false;
-            // 
             // Index
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -620,16 +620,6 @@
             this.Load += new System.EventHandler(this.Index_Load);
             this.groupDasboard.ResumeLayout(false);
             this.groupDasboard.PerformLayout();
-            this.TopNav.ResumeLayout(false);
-            this.TopNav.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.SoldProducts)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.UpdateProduct)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.AddProduct)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Stock)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.SalesReports)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.closeButton)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.UserIcon)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Reload)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
@@ -637,6 +627,16 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            this.TopNav.ResumeLayout(false);
+            this.TopNav.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.closeButton)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.UserIcon)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SoldProducts)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.UpdateProduct)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.AddProduct)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Stock)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SalesReports)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

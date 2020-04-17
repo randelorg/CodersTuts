@@ -32,27 +32,23 @@
             this.tbSearch = new System.Windows.Forms.TextBox();
             this.SoldView = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.ShelfLife = new System.Windows.Forms.DateTimePicker();
+            this.ProductPreview = new System.Windows.Forms.PictureBox();
             this.btnDone = new System.Windows.Forms.Button();
             this.prodQty = new System.Windows.Forms.NumericUpDown();
-            this.tbLocation = new System.Windows.Forms.TextBox();
             this.tbPrice = new System.Windows.Forms.TextBox();
             this.tbName = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.Refresh = new System.Windows.Forms.PictureBox();
-            this.ProductPreview = new System.Windows.Forms.PictureBox();
             this.pictureBack = new System.Windows.Forms.PictureBox();
             this.SoldPicture = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.SoldView)).BeginInit();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ProductPreview)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.prodQty)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Refresh)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ProductPreview)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBack)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.SoldPicture)).BeginInit();
             this.SuspendLayout();
@@ -89,20 +85,21 @@
             this.groupBox1.TabIndex = 125;
             this.groupBox1.TabStop = false;
             // 
-            // ShelfLife
+            // ProductPreview
             // 
-            this.ShelfLife.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ShelfLife.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.ShelfLife.Location = new System.Drawing.Point(659, 369);
-            this.ShelfLife.Name = "ShelfLife";
-            this.ShelfLife.Size = new System.Drawing.Size(326, 30);
-            this.ShelfLife.TabIndex = 124;
+            this.ProductPreview.Image = global::DellRainInventorySystem.Properties.Resources.AddImage1;
+            this.ProductPreview.Location = new System.Drawing.Point(29, 47);
+            this.ProductPreview.Name = "ProductPreview";
+            this.ProductPreview.Size = new System.Drawing.Size(160, 160);
+            this.ProductPreview.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.ProductPreview.TabIndex = 73;
+            this.ProductPreview.TabStop = false;
             // 
             // btnDone
             // 
             this.btnDone.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDone.Font = new System.Drawing.Font("Tahoma", 16F);
-            this.btnDone.Location = new System.Drawing.Point(625, 446);
+            this.btnDone.Location = new System.Drawing.Point(606, 414);
             this.btnDone.Name = "btnDone";
             this.btnDone.Size = new System.Drawing.Size(195, 59);
             this.btnDone.TabIndex = 123;
@@ -112,29 +109,18 @@
             // 
             // prodQty
             // 
-            this.prodQty.Font = new System.Drawing.Font("Tahoma", 45F);
-            this.prodQty.Location = new System.Drawing.Point(659, 103);
+            this.prodQty.Font = new System.Drawing.Font("Tahoma", 55F);
+            this.prodQty.Location = new System.Drawing.Point(649, 132);
             this.prodQty.Name = "prodQty";
-            this.prodQty.Size = new System.Drawing.Size(326, 80);
+            this.prodQty.Size = new System.Drawing.Size(326, 96);
             this.prodQty.TabIndex = 119;
-            // 
-            // tbLocation
-            // 
-            this.tbLocation.BackColor = System.Drawing.Color.White;
-            this.tbLocation.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.tbLocation.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbLocation.Location = new System.Drawing.Point(659, 312);
-            this.tbLocation.Name = "tbLocation";
-            this.tbLocation.ReadOnly = true;
-            this.tbLocation.Size = new System.Drawing.Size(326, 23);
-            this.tbLocation.TabIndex = 118;
             // 
             // tbPrice
             // 
             this.tbPrice.BackColor = System.Drawing.Color.White;
             this.tbPrice.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.tbPrice.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbPrice.Location = new System.Drawing.Point(659, 263);
+            this.tbPrice.Location = new System.Drawing.Point(649, 329);
             this.tbPrice.MaxLength = 11;
             this.tbPrice.Name = "tbPrice";
             this.tbPrice.ReadOnly = true;
@@ -146,7 +132,7 @@
             this.tbName.BackColor = System.Drawing.Color.White;
             this.tbName.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.tbName.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbName.Location = new System.Drawing.Point(659, 214);
+            this.tbName.Location = new System.Drawing.Point(649, 280);
             this.tbName.Name = "tbName";
             this.tbName.ReadOnly = true;
             this.tbName.Size = new System.Drawing.Size(326, 23);
@@ -162,31 +148,11 @@
             this.label11.TabIndex = 114;
             this.label11.Text = "Sold Product";
             // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(656, 296);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(87, 13);
-            this.label6.TabIndex = 111;
-            this.label6.Text = "Product Location";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(656, 350);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(91, 13);
-            this.label5.TabIndex = 110;
-            this.label5.Text = "Product Shelf Life";
-            // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(656, 247);
+            this.label4.Location = new System.Drawing.Point(646, 313);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(70, 13);
             this.label4.TabIndex = 109;
@@ -196,7 +162,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(656, 87);
+            this.label3.Location = new System.Drawing.Point(646, 116);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(72, 13);
             this.label3.TabIndex = 108;
@@ -206,7 +172,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(656, 198);
+            this.label1.Location = new System.Drawing.Point(646, 264);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(73, 13);
             this.label1.TabIndex = 107;
@@ -223,16 +189,6 @@
             this.Refresh.TabStop = false;
             this.Refresh.Click += new System.EventHandler(this.Refresh_Click);
             this.Refresh.MouseHover += new System.EventHandler(this.Refresh_MouseHover);
-            // 
-            // ProductPreview
-            // 
-            this.ProductPreview.Image = global::DellRainInventorySystem.Properties.Resources.AddImage1;
-            this.ProductPreview.Location = new System.Drawing.Point(29, 47);
-            this.ProductPreview.Name = "ProductPreview";
-            this.ProductPreview.Size = new System.Drawing.Size(160, 160);
-            this.ProductPreview.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.ProductPreview.TabIndex = 73;
-            this.ProductPreview.TabStop = false;
             // 
             // pictureBack
             // 
@@ -266,16 +222,12 @@
             this.Controls.Add(this.tbSearch);
             this.Controls.Add(this.SoldView);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.ShelfLife);
             this.Controls.Add(this.btnDone);
             this.Controls.Add(this.pictureBack);
             this.Controls.Add(this.prodQty);
-            this.Controls.Add(this.tbLocation);
             this.Controls.Add(this.tbPrice);
             this.Controls.Add(this.tbName);
             this.Controls.Add(this.label11);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label1);
@@ -288,9 +240,9 @@
             this.Load += new System.EventHandler(this.SoldProduct_Load);
             ((System.ComponentModel.ISupportInitialize)(this.SoldView)).EndInit();
             this.groupBox1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.ProductPreview)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.prodQty)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Refresh)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ProductPreview)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBack)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.SoldPicture)).EndInit();
             this.ResumeLayout(false);
@@ -305,16 +257,12 @@
         private System.Windows.Forms.DataGridView SoldView;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.PictureBox ProductPreview;
-        private System.Windows.Forms.DateTimePicker ShelfLife;
         private System.Windows.Forms.Button btnDone;
         private System.Windows.Forms.PictureBox pictureBack;
         private System.Windows.Forms.NumericUpDown prodQty;
-        private System.Windows.Forms.TextBox tbLocation;
         private System.Windows.Forms.TextBox tbPrice;
         private System.Windows.Forms.TextBox tbName;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label1;

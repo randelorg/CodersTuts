@@ -287,5 +287,6 @@ namespace DellRainInventorySystem
             var soldWindow = new SoldProduct();
             soldWindow.ShowDialog();
         }
+
     }
 }

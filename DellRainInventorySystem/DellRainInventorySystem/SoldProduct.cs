@@ -56,7 +56,7 @@ namespace DellRainInventorySystem
                 connection.Open();
                 cmd.Connection = connection;
 
-                cmd.CommandText = "SELECT productId, prodName, prodSold, prodType FROM Inventory.Product";
+                cmd.CommandText = "SELECT productId, prodName, prodSold, prodQty, prodType FROM Inventory.Product";
 
                 var adapter = new SqlDataAdapter(cmd);
                 var dataTable = new DataTable();
@@ -91,9 +91,12 @@ namespace DellRainInventorySystem
             //invoke to load the image to the link list
             inventory.LoadForSoldWindow();
 
-            //Display the product image
+            //Display the product details = name, image, and price
             var product = InventoryUtils.LtProducts.Last.Value;
             ProductPreview.Image = product.ProdImage;
+            tbName.Text = product.ProdName;
+            tbPrice.Text = product.Price.ToString("F", CultureInfo.InvariantCulture);
+
         }
 
         private void tbSearch_TextChanged(object sender, EventArgs e)
@@ -110,7 +113,7 @@ namespace DellRainInventorySystem
                     cmd.Connection = connection;
 
                     cmd.CommandText =
-                        "SELECT productId, prodName, prodType, prodSold FROM Inventory.Product WHERE prodName LIKE @omni OR prodType LIKE @omni";
+                        "SELECT productId, prodName, prodType, prodSold, prodQty FROM Inventory.Product WHERE prodName LIKE @omni OR prodType LIKE @omni";
                     cmd.Parameters.AddWithValue("@omni", @"%" + tbSearch.Text.Trim() + @"%");
 
                     var adapter = new SqlDataAdapter(cmd);
@@ -152,6 +155,9 @@ namespace DellRainInventorySystem
                 Console.WriteLine(@"ADD SOLD PRODUCT");
 
                 prodQty.Value = 0;
+                
+                //refresh the table
+                SoldProduct_Load(sender, e);
             }
         }
 

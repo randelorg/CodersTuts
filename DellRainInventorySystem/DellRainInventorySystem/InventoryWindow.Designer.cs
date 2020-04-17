@@ -49,6 +49,7 @@
             this.StockView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.StockView.BackgroundColor = System.Drawing.Color.White;
             this.StockView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.StockView.GridColor = System.Drawing.Color.White;
             this.StockView.Location = new System.Drawing.Point(22, 56);
             this.StockView.Name = "StockView";
             this.StockView.ReadOnly = true;
