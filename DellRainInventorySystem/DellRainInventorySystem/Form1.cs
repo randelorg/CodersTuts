@@ -94,10 +94,5 @@ namespace DellRainInventorySystem
             InventoryUtils.ExistingSuppliers.Clear();
         }
 
-        private void Exit(object sender, EventArgs e)
-        {
-            var tt = new ToolTip();
-            tt.SetToolTip(pictureBox1, "Exit");
-        }
     }
 }

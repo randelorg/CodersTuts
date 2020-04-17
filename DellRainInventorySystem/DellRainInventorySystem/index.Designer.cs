@@ -52,6 +52,11 @@
             this.btnCreateAccount = new System.Windows.Forms.Button();
             this.btnYourAccount = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
             this.SoldProducts = new System.Windows.Forms.PictureBox();
             this.UpdateProduct = new System.Windows.Forms.PictureBox();
             this.AddProduct = new System.Windows.Forms.PictureBox();
@@ -67,7 +72,6 @@
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.groupDasboard.SuspendLayout();
             this.TopNav.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.SoldProducts)).BeginInit();
@@ -85,7 +89,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // groupDasboard
@@ -111,7 +114,6 @@
             this.groupDasboard.Controls.Add(this.label4);
             this.groupDasboard.Controls.Add(this.label2);
             this.groupDasboard.Controls.Add(this.label1);
-            this.groupDasboard.Controls.Add(this.pictureBox2);
             this.groupDasboard.Location = new System.Drawing.Point(169, 63);
             this.groupDasboard.Name = "groupDasboard";
             this.groupDasboard.Size = new System.Drawing.Size(1081, 586);
@@ -123,9 +125,9 @@
             this.DangerProductsView.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
             this.DangerProductsView.HideSelection = false;
             this.DangerProductsView.LargeImageList = this.imageList1;
-            this.DangerProductsView.Location = new System.Drawing.Point(63, 261);
+            this.DangerProductsView.Location = new System.Drawing.Point(45, 261);
             this.DangerProductsView.Name = "DangerProductsView";
-            this.DangerProductsView.Size = new System.Drawing.Size(969, 130);
+            this.DangerProductsView.Size = new System.Drawing.Size(992, 130);
             this.DangerProductsView.Sorting = System.Windows.Forms.SortOrder.Ascending;
             this.DangerProductsView.TabIndex = 26;
             this.DangerProductsView.UseCompatibleStateImageBehavior = false;
@@ -142,7 +144,7 @@
             this.tbWeekSales.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.tbWeekSales.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F);
             this.tbWeekSales.ForeColor = System.Drawing.Color.Black;
-            this.tbWeekSales.Location = new System.Drawing.Point(656, 506);
+            this.tbWeekSales.Location = new System.Drawing.Point(660, 506);
             this.tbWeekSales.MaxLength = 10;
             this.tbWeekSales.Name = "tbWeekSales";
             this.tbWeekSales.ReadOnly = true;
@@ -156,7 +158,7 @@
             this.tbDaySales.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.tbDaySales.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F);
             this.tbDaySales.ForeColor = System.Drawing.Color.Black;
-            this.tbDaySales.Location = new System.Drawing.Point(656, 428);
+            this.tbDaySales.Location = new System.Drawing.Point(660, 428);
             this.tbDaySales.MaxLength = 10;
             this.tbDaySales.Name = "tbDaySales";
             this.tbDaySales.ReadOnly = true;
@@ -168,7 +170,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(610, 548);
+            this.label8.Location = new System.Drawing.Point(614, 548);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(93, 16);
             this.label8.TabIndex = 23;
@@ -178,7 +180,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(610, 469);
+            this.label9.Location = new System.Drawing.Point(614, 469);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(83, 16);
             this.label9.TabIndex = 22;
@@ -188,7 +190,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(82, 67);
+            this.label6.Location = new System.Drawing.Point(64, 67);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(137, 18);
             this.label6.TabIndex = 20;
@@ -199,9 +201,9 @@
             this.TopSellingView.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
             this.TopSellingView.HideSelection = false;
             this.TopSellingView.LargeImageList = this.imageList2;
-            this.TopSellingView.Location = new System.Drawing.Point(66, 89);
+            this.TopSellingView.Location = new System.Drawing.Point(48, 89);
             this.TopSellingView.Name = "TopSellingView";
-            this.TopSellingView.Size = new System.Drawing.Size(966, 130);
+            this.TopSellingView.Size = new System.Drawing.Size(989, 130);
             this.TopSellingView.Sorting = System.Windows.Forms.SortOrder.Ascending;
             this.TopSellingView.TabIndex = 19;
             this.TopSellingView.UseCompatibleStateImageBehavior = false;
@@ -218,7 +220,7 @@
             this.tbAppliancesTotalQty.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.tbAppliancesTotalQty.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F);
             this.tbAppliancesTotalQty.ForeColor = System.Drawing.Color.Black;
-            this.tbAppliancesTotalQty.Location = new System.Drawing.Point(108, 507);
+            this.tbAppliancesTotalQty.Location = new System.Drawing.Point(112, 507);
             this.tbAppliancesTotalQty.MaxLength = 10;
             this.tbAppliancesTotalQty.Name = "tbAppliancesTotalQty";
             this.tbAppliancesTotalQty.ReadOnly = true;
@@ -232,7 +234,7 @@
             this.tbGroceriesTotalQty.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.tbGroceriesTotalQty.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F);
             this.tbGroceriesTotalQty.ForeColor = System.Drawing.Color.Black;
-            this.tbGroceriesTotalQty.Location = new System.Drawing.Point(108, 428);
+            this.tbGroceriesTotalQty.Location = new System.Drawing.Point(112, 428);
             this.tbGroceriesTotalQty.MaxLength = 10;
             this.tbGroceriesTotalQty.Name = "tbGroceriesTotalQty";
             this.tbGroceriesTotalQty.ReadOnly = true;
@@ -244,7 +246,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(62, 548);
+            this.label5.Location = new System.Drawing.Point(66, 548);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(118, 16);
             this.label5.TabIndex = 16;
@@ -254,7 +256,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(62, 468);
+            this.label4.Location = new System.Drawing.Point(66, 468);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(111, 16);
             this.label4.TabIndex = 15;
@@ -264,7 +266,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(84, 239);
+            this.label2.Location = new System.Drawing.Point(66, 239);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(93, 18);
             this.label2.TabIndex = 13;
@@ -274,7 +276,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Tahoma", 18F, System.Drawing.FontStyle.Bold);
-            this.label1.Location = new System.Drawing.Point(49, 19);
+            this.label1.Location = new System.Drawing.Point(20, 19);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(141, 29);
             this.label1.TabIndex = 11;
@@ -355,19 +357,76 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold);
-            this.label10.Location = new System.Drawing.Point(8, 97);
+            this.label10.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
+            this.label10.Location = new System.Drawing.Point(8, 86);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(53, 19);
+            this.label10.Size = new System.Drawing.Size(46, 17);
             this.label10.TabIndex = 34;
-            this.label10.Text = "Tools";
+            this.label10.Text = "Menu";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.label3.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(45, 122);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(43, 15);
+            this.label3.TabIndex = 34;
+            this.label3.Text = "Stocks";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.label7.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(45, 171);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(76, 15);
+            this.label7.TabIndex = 44;
+            this.label7.Text = "New product";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.label11.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(45, 222);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(91, 15);
+            this.label11.TabIndex = 45;
+            this.label11.Text = "Update product";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.label12.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(45, 272);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(76, 15);
+            this.label12.TabIndex = 46;
+            this.label12.Text = "Sold product";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.label13.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(45, 320);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(49, 15);
+            this.label13.TabIndex = 47;
+            this.label13.Text = "Reports";
             // 
             // SoldProducts
             // 
-            this.SoldProducts.Image = global::DellRainInventorySystem.Properties.Resources.Sold;
-            this.SoldProducts.Location = new System.Drawing.Point(11, 339);
+            this.SoldProducts.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.SoldProducts.Image = global::DellRainInventorySystem.Properties.Resources.SoldWindow;
+            this.SoldProducts.Location = new System.Drawing.Point(11, 263);
+            this.SoldProducts.Margin = new System.Windows.Forms.Padding(10);
             this.SoldProducts.Name = "SoldProducts";
-            this.SoldProducts.Size = new System.Drawing.Size(50, 50);
+            this.SoldProducts.Size = new System.Drawing.Size(30, 30);
             this.SoldProducts.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.SoldProducts.TabIndex = 43;
             this.SoldProducts.TabStop = false;
@@ -376,10 +435,12 @@
             // 
             // UpdateProduct
             // 
-            this.UpdateProduct.Image = global::DellRainInventorySystem.Properties.Resources.pencil__1_;
-            this.UpdateProduct.Location = new System.Drawing.Point(11, 266);
+            this.UpdateProduct.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.UpdateProduct.Image = global::DellRainInventorySystem.Properties.Resources.updateProduct;
+            this.UpdateProduct.Location = new System.Drawing.Point(11, 213);
+            this.UpdateProduct.Margin = new System.Windows.Forms.Padding(10);
             this.UpdateProduct.Name = "UpdateProduct";
-            this.UpdateProduct.Size = new System.Drawing.Size(50, 50);
+            this.UpdateProduct.Size = new System.Drawing.Size(30, 30);
             this.UpdateProduct.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.UpdateProduct.TabIndex = 42;
             this.UpdateProduct.TabStop = false;
@@ -388,10 +449,12 @@
             // 
             // AddProduct
             // 
-            this.AddProduct.Image = global::DellRainInventorySystem.Properties.Resources.Add__1_;
-            this.AddProduct.Location = new System.Drawing.Point(11, 198);
+            this.AddProduct.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.AddProduct.Image = global::DellRainInventorySystem.Properties.Resources.newProduct;
+            this.AddProduct.Location = new System.Drawing.Point(11, 163);
+            this.AddProduct.Margin = new System.Windows.Forms.Padding(10);
             this.AddProduct.Name = "AddProduct";
-            this.AddProduct.Size = new System.Drawing.Size(50, 50);
+            this.AddProduct.Size = new System.Drawing.Size(30, 30);
             this.AddProduct.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.AddProduct.TabIndex = 41;
             this.AddProduct.TabStop = false;
@@ -400,10 +463,12 @@
             // 
             // Stock
             // 
-            this.Stock.Image = global::DellRainInventorySystem.Properties.Resources.Product;
-            this.Stock.Location = new System.Drawing.Point(11, 134);
+            this.Stock.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Stock.Image = ((System.Drawing.Image)(resources.GetObject("Stock.Image")));
+            this.Stock.Location = new System.Drawing.Point(11, 113);
+            this.Stock.Margin = new System.Windows.Forms.Padding(10);
             this.Stock.Name = "Stock";
-            this.Stock.Size = new System.Drawing.Size(50, 50);
+            this.Stock.Size = new System.Drawing.Size(30, 30);
             this.Stock.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.Stock.TabIndex = 14;
             this.Stock.TabStop = false;
@@ -412,10 +477,12 @@
             // 
             // SalesReports
             // 
-            this.SalesReports.Image = global::DellRainInventorySystem.Properties.Resources.Document1;
-            this.SalesReports.Location = new System.Drawing.Point(11, 410);
+            this.SalesReports.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.SalesReports.Image = global::DellRainInventorySystem.Properties.Resources.reports;
+            this.SalesReports.Location = new System.Drawing.Point(11, 313);
+            this.SalesReports.Margin = new System.Windows.Forms.Padding(10);
             this.SalesReports.Name = "SalesReports";
-            this.SalesReports.Size = new System.Drawing.Size(50, 50);
+            this.SalesReports.Size = new System.Drawing.Size(30, 30);
             this.SalesReports.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.SalesReports.TabIndex = 13;
             this.SalesReports.TabStop = false;
@@ -424,8 +491,8 @@
             // 
             // closeButton
             // 
-            this.closeButton.Image = global::DellRainInventorySystem.Properties.Resources.Exit;
-            this.closeButton.Location = new System.Drawing.Point(1214, 18);
+            this.closeButton.Image = global::DellRainInventorySystem.Properties.Resources.Sign_out;
+            this.closeButton.Location = new System.Drawing.Point(1214, 17);
             this.closeButton.Name = "closeButton";
             this.closeButton.Size = new System.Drawing.Size(35, 35);
             this.closeButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -446,7 +513,7 @@
             // 
             // UserIcon
             // 
-            this.UserIcon.Image = global::DellRainInventorySystem.Properties.Resources.User;
+            this.UserIcon.Image = ((System.Drawing.Image)(resources.GetObject("UserIcon.Image")));
             this.UserIcon.Location = new System.Drawing.Point(998, 21);
             this.UserIcon.Name = "UserIcon";
             this.UserIcon.Size = new System.Drawing.Size(30, 30);
@@ -456,8 +523,8 @@
             // 
             // Reload
             // 
-            this.Reload.Image = global::DellRainInventorySystem.Properties.Resources.update;
-            this.Reload.Location = new System.Drawing.Point(1040, 17);
+            this.Reload.Image = global::DellRainInventorySystem.Properties.Resources.reload1;
+            this.Reload.Location = new System.Drawing.Point(1046, 18);
             this.Reload.Name = "Reload";
             this.Reload.Size = new System.Drawing.Size(30, 30);
             this.Reload.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -469,7 +536,7 @@
             // pictureBox10
             // 
             this.pictureBox10.Image = global::DellRainInventorySystem.Properties.Resources.Philippine;
-            this.pictureBox10.Location = new System.Drawing.Point(612, 506);
+            this.pictureBox10.Location = new System.Drawing.Point(616, 506);
             this.pictureBox10.Name = "pictureBox10";
             this.pictureBox10.Size = new System.Drawing.Size(38, 38);
             this.pictureBox10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -479,7 +546,7 @@
             // pictureBox9
             // 
             this.pictureBox9.Image = global::DellRainInventorySystem.Properties.Resources.Philippine;
-            this.pictureBox9.Location = new System.Drawing.Point(612, 428);
+            this.pictureBox9.Location = new System.Drawing.Point(616, 428);
             this.pictureBox9.Name = "pictureBox9";
             this.pictureBox9.Size = new System.Drawing.Size(38, 38);
             this.pictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -488,8 +555,8 @@
             // 
             // pictureBox8
             // 
-            this.pictureBox8.Image = global::DellRainInventorySystem.Properties.Resources.Fridge;
-            this.pictureBox8.Location = new System.Drawing.Point(64, 506);
+            this.pictureBox8.Image = global::DellRainInventorySystem.Properties.Resources.Appliances;
+            this.pictureBox8.Location = new System.Drawing.Point(68, 506);
             this.pictureBox8.Name = "pictureBox8";
             this.pictureBox8.Size = new System.Drawing.Size(38, 38);
             this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -498,8 +565,8 @@
             // 
             // pictureBox7
             // 
-            this.pictureBox7.Image = global::DellRainInventorySystem.Properties.Resources.grocery;
-            this.pictureBox7.Location = new System.Drawing.Point(64, 427);
+            this.pictureBox7.Image = global::DellRainInventorySystem.Properties.Resources.Groceries;
+            this.pictureBox7.Location = new System.Drawing.Point(68, 427);
             this.pictureBox7.Name = "pictureBox7";
             this.pictureBox7.Size = new System.Drawing.Size(38, 38);
             this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -508,8 +575,8 @@
             // 
             // pictureBox4
             // 
-            this.pictureBox4.Image = global::DellRainInventorySystem.Properties.Resources.down_arrow;
-            this.pictureBox4.Location = new System.Drawing.Point(64, 239);
+            this.pictureBox4.Image = global::DellRainInventorySystem.Properties.Resources.lowStock;
+            this.pictureBox4.Location = new System.Drawing.Point(46, 239);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(20, 20);
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -518,24 +585,13 @@
             // 
             // pictureBox3
             // 
-            this.pictureBox3.Image = global::DellRainInventorySystem.Properties.Resources.Top;
-            this.pictureBox3.Location = new System.Drawing.Point(64, 67);
+            this.pictureBox3.Image = global::DellRainInventorySystem.Properties.Resources.TopSelling;
+            this.pictureBox3.Location = new System.Drawing.Point(46, 67);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(20, 20);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox3.TabIndex = 18;
             this.pictureBox3.TabStop = false;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = global::DellRainInventorySystem.Properties.Resources.dashboardHome;
-            this.pictureBox2.Location = new System.Drawing.Point(16, 17);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(30, 30);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 10;
-            this.pictureBox2.TabStop = false;
-            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
             // 
             // Index
             // 
@@ -543,6 +599,11 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1287, 698);
+            this.Controls.Add(this.label13);
+            this.Controls.Add(this.label12);
+            this.Controls.Add(this.label11);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.SoldProducts);
             this.Controls.Add(this.UpdateProduct);
@@ -576,7 +637,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -584,7 +644,6 @@
 
         #endregion
         private System.Windows.Forms.GroupBox groupDasboard;
-        private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox TopNav;
         private System.Windows.Forms.Button btnCreateAccount;
@@ -621,5 +680,10 @@
         private System.Windows.Forms.PictureBox UpdateProduct;
         private System.Windows.Forms.PictureBox SoldProducts;
         private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label13;
     }
 }

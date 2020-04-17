@@ -101,7 +101,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(252, 240);
+            this.label4.Location = new System.Drawing.Point(249, 240);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(70, 13);
             this.label4.TabIndex = 43;
@@ -111,7 +111,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(610, 179);
+            this.label5.Location = new System.Drawing.Point(248, 418);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(91, 13);
             this.label5.TabIndex = 44;
@@ -121,7 +121,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(611, 61);
+            this.label6.Location = new System.Drawing.Point(249, 300);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(87, 13);
             this.label6.TabIndex = 45;
@@ -131,7 +131,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(53, 366);
+            this.label8.Location = new System.Drawing.Point(623, 56);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(75, 13);
             this.label8.TabIndex = 47;
@@ -141,7 +141,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(54, 471);
+            this.label9.Location = new System.Drawing.Point(626, 161);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(86, 13);
             this.label9.TabIndex = 48;
@@ -161,7 +161,7 @@
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Tahoma", 16F, System.Drawing.FontStyle.Bold);
-            this.label12.Location = new System.Drawing.Point(46, 327);
+            this.label12.Location = new System.Drawing.Point(622, 17);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(246, 27);
             this.label12.TabIndex = 51;
@@ -180,7 +180,7 @@
             // 
             this.tbPrice.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tbPrice.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbPrice.Location = new System.Drawing.Point(255, 256);
+            this.tbPrice.Location = new System.Drawing.Point(252, 256);
             this.tbPrice.MaxLength = 6;
             this.tbPrice.Name = "tbPrice";
             this.tbPrice.Size = new System.Drawing.Size(323, 30);
@@ -190,7 +190,7 @@
             // 
             this.tbLocation.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tbLocation.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbLocation.Location = new System.Drawing.Point(613, 134);
+            this.tbLocation.Location = new System.Drawing.Point(251, 373);
             this.tbLocation.Name = "tbLocation";
             this.tbLocation.Size = new System.Drawing.Size(326, 30);
             this.tbLocation.TabIndex = 57;
@@ -208,7 +208,7 @@
             // 
             this.tbSuppName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tbSuppName.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbSuppName.Location = new System.Drawing.Point(56, 429);
+            this.tbSuppName.Location = new System.Drawing.Point(626, 119);
             this.tbSuppName.Name = "tbSuppName";
             this.tbSuppName.Size = new System.Drawing.Size(323, 30);
             this.tbSuppName.TabIndex = 62;
@@ -218,7 +218,7 @@
             // 
             this.tbSuppContact.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tbSuppContact.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbSuppContact.Location = new System.Drawing.Point(54, 487);
+            this.tbSuppContact.Location = new System.Drawing.Point(626, 177);
             this.tbSuppContact.MaxLength = 11;
             this.tbSuppContact.Name = "tbSuppContact";
             this.tbSuppContact.Size = new System.Drawing.Size(323, 30);
@@ -230,7 +230,7 @@
             this.cbListOfSupplier.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbListOfSupplier.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbListOfSupplier.FormattingEnabled = true;
-            this.cbListOfSupplier.Location = new System.Drawing.Point(55, 382);
+            this.cbListOfSupplier.Location = new System.Drawing.Point(625, 72);
             this.cbListOfSupplier.Name = "cbListOfSupplier";
             this.cbListOfSupplier.Size = new System.Drawing.Size(323, 31);
             this.cbListOfSupplier.TabIndex = 65;
@@ -240,7 +240,7 @@
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Tahoma", 8F);
-            this.label13.Location = new System.Drawing.Point(54, 413);
+            this.label13.Location = new System.Drawing.Point(624, 103);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(61, 13);
             this.label13.TabIndex = 66;
@@ -262,7 +262,7 @@
             // 
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Tahoma", 8F);
-            this.label14.Location = new System.Drawing.Point(613, 116);
+            this.label14.Location = new System.Drawing.Point(251, 355);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(61, 13);
             this.label14.TabIndex = 69;
@@ -273,7 +273,7 @@
             this.cbProductLocation.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbProductLocation.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbProductLocation.FormattingEnabled = true;
-            this.cbProductLocation.Location = new System.Drawing.Point(613, 77);
+            this.cbProductLocation.Location = new System.Drawing.Point(251, 316);
             this.cbProductLocation.Name = "cbProductLocation";
             this.cbProductLocation.Size = new System.Drawing.Size(326, 31);
             this.cbProductLocation.TabIndex = 68;
@@ -296,9 +296,9 @@
             // 
             this.btnSaveProduct.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSaveProduct.Font = new System.Drawing.Font("Tahoma", 25F);
-            this.btnSaveProduct.Location = new System.Drawing.Point(588, 348);
+            this.btnSaveProduct.Location = new System.Drawing.Point(691, 316);
             this.btnSaveProduct.Name = "btnSaveProduct";
-            this.btnSaveProduct.Size = new System.Drawing.Size(216, 146);
+            this.btnSaveProduct.Size = new System.Drawing.Size(215, 60);
             this.btnSaveProduct.TabIndex = 71;
             this.btnSaveProduct.Text = "Complete";
             this.btnSaveProduct.UseVisualStyleBackColor = true;
@@ -308,7 +308,7 @@
             // 
             this.ShelfLife.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ShelfLife.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.ShelfLife.Location = new System.Drawing.Point(611, 198);
+            this.ShelfLife.Location = new System.Drawing.Point(249, 437);
             this.ShelfLife.Name = "ShelfLife";
             this.ShelfLife.Size = new System.Drawing.Size(326, 30);
             this.ShelfLife.TabIndex = 72;
@@ -325,7 +325,7 @@
             // 
             this.groupBox1.Controls.Add(this.ProductPreview);
             this.groupBox1.Controls.Add(this.btnImage);
-            this.groupBox1.Location = new System.Drawing.Point(28, 51);
+            this.groupBox1.Location = new System.Drawing.Point(25, 57);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(215, 246);
             this.groupBox1.TabIndex = 74;
@@ -333,7 +333,7 @@
             // 
             // ProductPreview
             // 
-            this.ProductPreview.Image = global::DellRainInventorySystem.Properties.Resources.Photo;
+            this.ProductPreview.Image = global::DellRainInventorySystem.Properties.Resources.AddImage1;
             this.ProductPreview.Location = new System.Drawing.Point(28, 26);
             this.ProductPreview.Name = "ProductPreview";
             this.ProductPreview.Size = new System.Drawing.Size(160, 160);
@@ -343,8 +343,8 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::DellRainInventorySystem.Properties.Resources.Supplier;
-            this.pictureBox1.Location = new System.Drawing.Point(12, 325);
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(588, 15);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(30, 30);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -354,7 +354,7 @@
             // pictureBack
             // 
             this.pictureBack.Image = global::DellRainInventorySystem.Properties.Resources.Back;
-            this.pictureBack.Location = new System.Drawing.Point(909, 14);
+            this.pictureBack.Location = new System.Drawing.Point(954, 14);
             this.pictureBack.Name = "pictureBack";
             this.pictureBack.Size = new System.Drawing.Size(30, 30);
             this.pictureBack.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -365,7 +365,7 @@
             // 
             // closeButton
             // 
-            this.closeButton.Image = global::DellRainInventorySystem.Properties.Resources.Add__1_;
+            this.closeButton.Image = ((System.Drawing.Image)(resources.GetObject("closeButton.Image")));
             this.closeButton.Location = new System.Drawing.Point(12, 12);
             this.closeButton.Name = "closeButton";
             this.closeButton.Size = new System.Drawing.Size(30, 30);
@@ -378,7 +378,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(962, 552);
+            this.ClientSize = new System.Drawing.Size(996, 488);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.ShelfLife);

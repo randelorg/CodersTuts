@@ -29,14 +29,11 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SoldProduct));
-            this.Refresh = new System.Windows.Forms.PictureBox();
             this.tbSearch = new System.Windows.Forms.TextBox();
             this.SoldView = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.ProductPreview = new System.Windows.Forms.PictureBox();
             this.ShelfLife = new System.Windows.Forms.DateTimePicker();
             this.btnDone = new System.Windows.Forms.Button();
-            this.pictureBack = new System.Windows.Forms.PictureBox();
             this.prodQty = new System.Windows.Forms.NumericUpDown();
             this.tbLocation = new System.Windows.Forms.TextBox();
             this.tbPrice = new System.Windows.Forms.TextBox();
@@ -47,27 +44,18 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.closeButton = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.Refresh)).BeginInit();
+            this.Refresh = new System.Windows.Forms.PictureBox();
+            this.ProductPreview = new System.Windows.Forms.PictureBox();
+            this.pictureBack = new System.Windows.Forms.PictureBox();
+            this.SoldPicture = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.SoldView)).BeginInit();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.prodQty)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Refresh)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ProductPreview)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBack)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.prodQty)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.closeButton)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SoldPicture)).BeginInit();
             this.SuspendLayout();
-            // 
-            // Refresh
-            // 
-            this.Refresh.Image = global::DellRainInventorySystem.Properties.Resources.update;
-            this.Refresh.Location = new System.Drawing.Point(27, 25);
-            this.Refresh.Name = "Refresh";
-            this.Refresh.Size = new System.Drawing.Size(30, 30);
-            this.Refresh.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.Refresh.TabIndex = 129;
-            this.Refresh.TabStop = false;
-            this.Refresh.Click += new System.EventHandler(this.Refresh_Click);
-            this.Refresh.MouseHover += new System.EventHandler(this.Refresh_MouseHover);
             // 
             // tbSearch
             // 
@@ -88,7 +76,7 @@
             this.SoldView.Location = new System.Drawing.Point(27, 64);
             this.SoldView.Name = "SoldView";
             this.SoldView.ReadOnly = true;
-            this.SoldView.Size = new System.Drawing.Size(361, 478);
+            this.SoldView.Size = new System.Drawing.Size(361, 456);
             this.SoldView.TabIndex = 127;
             this.SoldView.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.SoldView_RowHeaderMouseClick);
             // 
@@ -100,16 +88,6 @@
             this.groupBox1.Size = new System.Drawing.Size(215, 246);
             this.groupBox1.TabIndex = 125;
             this.groupBox1.TabStop = false;
-            // 
-            // ProductPreview
-            // 
-            this.ProductPreview.Image = global::DellRainInventorySystem.Properties.Resources.Photo;
-            this.ProductPreview.Location = new System.Drawing.Point(29, 47);
-            this.ProductPreview.Name = "ProductPreview";
-            this.ProductPreview.Size = new System.Drawing.Size(160, 160);
-            this.ProductPreview.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.ProductPreview.TabIndex = 73;
-            this.ProductPreview.TabStop = false;
             // 
             // ShelfLife
             // 
@@ -124,25 +102,13 @@
             // 
             this.btnDone.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDone.Font = new System.Drawing.Font("Tahoma", 16F);
-            this.btnDone.Location = new System.Drawing.Point(569, 439);
+            this.btnDone.Location = new System.Drawing.Point(625, 446);
             this.btnDone.Name = "btnDone";
-            this.btnDone.Size = new System.Drawing.Size(300, 76);
+            this.btnDone.Size = new System.Drawing.Size(195, 59);
             this.btnDone.TabIndex = 123;
             this.btnDone.Text = "Done";
             this.btnDone.UseVisualStyleBackColor = true;
             this.btnDone.Click += new System.EventHandler(this.btnDone_Click);
-            // 
-            // pictureBack
-            // 
-            this.pictureBack.Image = global::DellRainInventorySystem.Properties.Resources.Back;
-            this.pictureBack.Location = new System.Drawing.Point(987, 25);
-            this.pictureBack.Name = "pictureBack";
-            this.pictureBack.Size = new System.Drawing.Size(30, 30);
-            this.pictureBack.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBack.TabIndex = 122;
-            this.pictureBack.TabStop = false;
-            this.pictureBack.Click += new System.EventHandler(this.pictureBack_Click);
-            this.pictureBack.MouseHover += new System.EventHandler(this.pictureBack_MouseHover);
             // 
             // prodQty
             // 
@@ -246,22 +212,56 @@
             this.label1.TabIndex = 107;
             this.label1.Text = "Product name";
             // 
-            // closeButton
+            // Refresh
             // 
-            this.closeButton.Image = global::DellRainInventorySystem.Properties.Resources.Sold;
-            this.closeButton.Location = new System.Drawing.Point(416, 26);
-            this.closeButton.Name = "closeButton";
-            this.closeButton.Size = new System.Drawing.Size(30, 30);
-            this.closeButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.closeButton.TabIndex = 106;
-            this.closeButton.TabStop = false;
+            this.Refresh.Image = global::DellRainInventorySystem.Properties.Resources.reload1;
+            this.Refresh.Location = new System.Drawing.Point(27, 25);
+            this.Refresh.Name = "Refresh";
+            this.Refresh.Size = new System.Drawing.Size(30, 30);
+            this.Refresh.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.Refresh.TabIndex = 129;
+            this.Refresh.TabStop = false;
+            this.Refresh.Click += new System.EventHandler(this.Refresh_Click);
+            this.Refresh.MouseHover += new System.EventHandler(this.Refresh_MouseHover);
+            // 
+            // ProductPreview
+            // 
+            this.ProductPreview.Image = global::DellRainInventorySystem.Properties.Resources.AddImage1;
+            this.ProductPreview.Location = new System.Drawing.Point(29, 47);
+            this.ProductPreview.Name = "ProductPreview";
+            this.ProductPreview.Size = new System.Drawing.Size(160, 160);
+            this.ProductPreview.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.ProductPreview.TabIndex = 73;
+            this.ProductPreview.TabStop = false;
+            // 
+            // pictureBack
+            // 
+            this.pictureBack.Image = global::DellRainInventorySystem.Properties.Resources.Back;
+            this.pictureBack.Location = new System.Drawing.Point(975, 12);
+            this.pictureBack.Name = "pictureBack";
+            this.pictureBack.Size = new System.Drawing.Size(30, 30);
+            this.pictureBack.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBack.TabIndex = 122;
+            this.pictureBack.TabStop = false;
+            this.pictureBack.Click += new System.EventHandler(this.pictureBack_Click);
+            this.pictureBack.MouseHover += new System.EventHandler(this.pictureBack_MouseHover);
+            // 
+            // SoldPicture
+            // 
+            this.SoldPicture.Image = global::DellRainInventorySystem.Properties.Resources.SoldWindow;
+            this.SoldPicture.Location = new System.Drawing.Point(416, 26);
+            this.SoldPicture.Name = "SoldPicture";
+            this.SoldPicture.Size = new System.Drawing.Size(30, 30);
+            this.SoldPicture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.SoldPicture.TabIndex = 106;
+            this.SoldPicture.TabStop = false;
             // 
             // SoldProduct
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1048, 572);
+            this.ClientSize = new System.Drawing.Size(1017, 561);
             this.Controls.Add(this.Refresh);
             this.Controls.Add(this.tbSearch);
             this.Controls.Add(this.SoldView);
@@ -279,20 +279,20 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.closeButton);
+            this.Controls.Add(this.SoldPicture);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "SoldProduct";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Sold Product";
             this.Load += new System.EventHandler(this.SoldProduct_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.Refresh)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.SoldView)).EndInit();
             this.groupBox1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.prodQty)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Refresh)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ProductPreview)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBack)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.prodQty)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.closeButton)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SoldPicture)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -318,6 +318,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.PictureBox closeButton;
+        private System.Windows.Forms.PictureBox SoldPicture;
     }
 }

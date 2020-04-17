@@ -120,12 +120,6 @@
     <Compile Include="SplashScreen.Designer.cs">
       <DependentUpon>SplashScreen.cs</DependentUpon>
     </Compile>
-    <Compile Include="SuccessWindow.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="SuccessWindow.Designer.cs">
-      <DependentUpon>SuccessWindow.cs</DependentUpon>
-    </Compile>
     <Compile Include="UpdateProductcs.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -175,9 +169,6 @@
     <EmbeddedResource Include="SplashScreen.resx">
       <DependentUpon>SplashScreen.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="SuccessWindow.resx">
-      <DependentUpon>SuccessWindow.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="UpdateProductcs.resx">
       <DependentUpon>UpdateProductcs.cs</DependentUpon>
     </EmbeddedResource>
@@ -209,133 +200,88 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\close1.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\dashboardHome.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\User.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\store.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Sales.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\inventory2.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Tools.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\AccountUserIcon.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Password.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\Back.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\ProfileUser.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\CreateAccountIcon.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\generatePassword.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Eye.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\power.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\addProduct.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Search.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\add.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\update.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Top.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Danger.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Document.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Scale.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\grocery.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Fridge.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\1.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\2.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Philippine.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\NewAdd.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\Reload.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Pencil.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\NewSearch.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Employees.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Photo.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Supplier.png" />
+    <None Include="Resources\Exit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\stock.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\newProduct.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\updateProduct.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SoldWindow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\reports.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Groceries.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Appliances.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\TopSelling.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lowStock.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\reload1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sign out.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\member.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Product.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Document1.png" />
+    <None Include="Resources\Supplier.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Add %281%29.png" />
+    <None Include="Resources\Account.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\pencil %281%29.png" />
+    <None Include="Resources\stock1.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Exit.png" />
+    <None Include="Resources\AddImage.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Sold.png" />
+    <None Include="Resources\AddImage1.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\check.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\down arrow.png" />
+    <None Include="Resources\AddAccount.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -211,6 +211,9 @@ namespace DellRainInventorySystem
                 MessageBox.Show(@"Product is updated", @"Updated",
                     MessageBoxButtons.OK, MessageBoxIcon.Information);
 
+                //refresh the data view
+                UpdateProducts_Load(sender, e);
+
                 //lastly clean the form
                 CleanForm(this);
                 ProductView.ClearSelection();

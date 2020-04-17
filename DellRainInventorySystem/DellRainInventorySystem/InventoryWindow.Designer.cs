@@ -77,7 +77,7 @@
             // 
             // Refresh
             // 
-            this.Refresh.Image = global::DellRainInventorySystem.Properties.Resources.update;
+            this.Refresh.Image = global::DellRainInventorySystem.Properties.Resources.reload1;
             this.Refresh.Location = new System.Drawing.Point(920, 22);
             this.Refresh.Name = "Refresh";
             this.Refresh.Size = new System.Drawing.Size(30, 30);
@@ -101,7 +101,7 @@
             // 
             // closeButton
             // 
-            this.closeButton.Image = global::DellRainInventorySystem.Properties.Resources.inventory2;
+            this.closeButton.Image = global::DellRainInventorySystem.Properties.Resources.stock1;
             this.closeButton.Location = new System.Drawing.Point(26, 19);
             this.closeButton.Name = "closeButton";
             this.closeButton.Size = new System.Drawing.Size(30, 30);
