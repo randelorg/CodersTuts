@@ -175,7 +175,7 @@
             // pictureBox4
             // 
             this.pictureBox4.Image = global::DellRainInventorySystem.Properties.Resources.lowStock;
-            this.pictureBox4.Location = new System.Drawing.Point(46, 239);
+            this.pictureBox4.Location = new System.Drawing.Point(46, 242);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(20, 20);
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -197,9 +197,9 @@
             this.DangerProductsView.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
             this.DangerProductsView.HideSelection = false;
             this.DangerProductsView.LargeImageList = this.imageList1;
-            this.DangerProductsView.Location = new System.Drawing.Point(45, 261);
+            this.DangerProductsView.Location = new System.Drawing.Point(45, 264);
             this.DangerProductsView.Name = "DangerProductsView";
-            this.DangerProductsView.Size = new System.Drawing.Size(992, 130);
+            this.DangerProductsView.Size = new System.Drawing.Size(992, 146);
             this.DangerProductsView.Sorting = System.Windows.Forms.SortOrder.Ascending;
             this.DangerProductsView.TabIndex = 26;
             this.DangerProductsView.UseCompatibleStateImageBehavior = false;
@@ -207,7 +207,7 @@
             // imageList1
             // 
             this.imageList1.ColorDepth = System.Windows.Forms.ColorDepth.Depth24Bit;
-            this.imageList1.ImageSize = new System.Drawing.Size(120, 120);
+            this.imageList1.ImageSize = new System.Drawing.Size(140, 140);
             this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
             // 
             // tbWeekSales
@@ -264,9 +264,9 @@
             this.label6.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Location = new System.Drawing.Point(64, 67);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(137, 18);
+            this.label6.Size = new System.Drawing.Size(76, 18);
             this.label6.TabIndex = 20;
-            this.label6.Text = "Top selling products";
+            this.label6.Text = "Top selling";
             // 
             // TopSellingView
             // 
@@ -275,7 +275,7 @@
             this.TopSellingView.LargeImageList = this.imageList2;
             this.TopSellingView.Location = new System.Drawing.Point(48, 89);
             this.TopSellingView.Name = "TopSellingView";
-            this.TopSellingView.Size = new System.Drawing.Size(989, 130);
+            this.TopSellingView.Size = new System.Drawing.Size(989, 146);
             this.TopSellingView.Sorting = System.Windows.Forms.SortOrder.Ascending;
             this.TopSellingView.TabIndex = 19;
             this.TopSellingView.UseCompatibleStateImageBehavior = false;
@@ -283,7 +283,7 @@
             // imageList2
             // 
             this.imageList2.ColorDepth = System.Windows.Forms.ColorDepth.Depth24Bit;
-            this.imageList2.ImageSize = new System.Drawing.Size(120, 120);
+            this.imageList2.ImageSize = new System.Drawing.Size(140, 140);
             this.imageList2.TransparentColor = System.Drawing.Color.Transparent;
             // 
             // tbAppliancesTotalQty
@@ -338,7 +338,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(66, 239);
+            this.label2.Location = new System.Drawing.Point(66, 242);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(93, 18);
             this.label2.TabIndex = 13;
