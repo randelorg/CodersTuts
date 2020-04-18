@@ -56,11 +56,12 @@ namespace DellRainInventorySystem.Classes.EntityClasses
         }
 
         //image only fod sold product window
-        public Product(Image image, string name, double price)
+        public Product(Image image, string name, double price, int qty)
         {
             ProdImage = image;
             ProdName = name;
             Price = price;
+            Qty = qty;
         }
 
         public string ProdName { get; set; }

@@ -4,10 +4,12 @@ namespace DellRainInventorySystem.Interfaces
     {
         int SoldProduct();
         int ComputeDaySale();
+        int ComputeWeekSale();
         void LoadForSoldWindow();
         bool GetExistingLocation();
         bool GetExistingSupplier();
-        bool DetermineTopSellingProducts();
+        bool TopSellingProductsToday();
+        bool TopSellingProductsThisWeek();
         bool DetermineProductInThresholdLevel();
         int CountGroceriesProductsQty();
         int CountApplianceProductsQty();

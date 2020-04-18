@@ -15,6 +15,6 @@ namespace DellRainInventorySystem
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Form1());
         }
-        
+
     }
 }

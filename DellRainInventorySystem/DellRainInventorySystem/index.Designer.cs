@@ -72,6 +72,8 @@
             this.AddProduct = new System.Windows.Forms.PictureBox();
             this.Stock = new System.Windows.Forms.PictureBox();
             this.SalesReports = new System.Windows.Forms.PictureBox();
+            this.checkToday = new System.Windows.Forms.CheckBox();
+            this.checkWeek = new System.Windows.Forms.CheckBox();
             this.groupDasboard.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Reload)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
@@ -94,6 +96,8 @@
             // groupDasboard
             // 
             this.groupDasboard.BackColor = System.Drawing.Color.White;
+            this.groupDasboard.Controls.Add(this.checkWeek);
+            this.groupDasboard.Controls.Add(this.checkToday);
             this.groupDasboard.Controls.Add(this.Reload);
             this.groupDasboard.Controls.Add(this.pictureBox10);
             this.groupDasboard.Controls.Add(this.pictureBox9);
@@ -254,9 +258,9 @@
             this.label9.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.Location = new System.Drawing.Point(614, 469);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(83, 16);
+            this.label9.Size = new System.Drawing.Size(70, 16);
             this.label9.TabIndex = 22;
-            this.label9.Text = "This day sale";
+            this.label9.Text = "Today sale";
             // 
             // label6
             // 
@@ -598,6 +602,30 @@
             this.SalesReports.Click += new System.EventHandler(this.SalesReports_Click);
             this.SalesReports.MouseHover += new System.EventHandler(this.SalesReport_MouseHover);
             // 
+            // checkToday
+            // 
+            this.checkToday.AutoSize = true;
+            this.checkToday.Location = new System.Drawing.Point(895, 70);
+            this.checkToday.Name = "checkToday";
+            this.checkToday.Size = new System.Drawing.Size(56, 17);
+            this.checkToday.TabIndex = 34;
+            this.checkToday.Text = "Today";
+            this.checkToday.UseVisualStyleBackColor = true;
+            this.checkToday.CheckedChanged += new System.EventHandler(this.checkToday_CheckedChanged);
+            // 
+            // checkWeek
+            // 
+            this.checkWeek.AutoSize = true;
+            this.checkWeek.Checked = true;
+            this.checkWeek.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkWeek.Location = new System.Drawing.Point(957, 70);
+            this.checkWeek.Name = "checkWeek";
+            this.checkWeek.Size = new System.Drawing.Size(75, 17);
+            this.checkWeek.TabIndex = 35;
+            this.checkWeek.Text = "This week";
+            this.checkWeek.UseVisualStyleBackColor = true;
+            this.checkWeek.CheckedChanged += new System.EventHandler(this.checkWeek_CheckedChanged);
+            // 
             // Index
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -690,5 +718,7 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.CheckBox checkWeek;
+        private System.Windows.Forms.CheckBox checkToday;
     }
 }

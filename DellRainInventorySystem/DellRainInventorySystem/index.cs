@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Drawing;
 using System.Globalization;
-using System.Threading;
 using System.Windows.Forms;
 using DellRainInventorySystem.Classes;
 using DellRainInventorySystem.Classes.Utility;
@@ -15,31 +14,14 @@ namespace DellRainInventorySystem
 
         public Index()
         {
-            var t = new Thread(splash);
-            t.Start();
-            Thread.Sleep(1000);
-
             InitializeComponent();
             //display the username of the login user
             lbUsername.Text = inventory.SessUsername;
 
             DetermineAccountType();
             RemoveBorder();
-
-            t.Abort();
         }
 
-        private void splash()
-        {
-            try
-            {
-                Application.Run(new SplashScreen());
-            }
-            catch (ThreadAbortException e)
-            {
-                Console.WriteLine(e.Message);
-            }
-        }
 
         private void DetermineAccountType()
         {
@@ -52,6 +34,140 @@ namespace DellRainInventorySystem
                     btnCreateAccount.Hide();
                     break;
             }
+        }
+
+        private void checkToday_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkToday.Checked)
+            {
+                //unchecked the week
+                checkWeek.Checked = false;
+
+                //for top selling products today
+                if (inventory.TopSellingProductsToday())
+                    ErrorMessage();
+                else
+                    LoadTopSellingProducts();
+            }
+            else
+            {
+                if (imageList2.Images.Count > 0)
+                    imageList2.Images.Clear();
+            }
+        }
+
+        private void checkWeek_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkWeek.Checked)
+            {
+                //unchecked the week
+                checkToday.Checked = false;
+
+                //for top selling products this week
+                if (inventory.TopSellingProductsThisWeek())
+                    ErrorMessage();
+                else
+                    LoadTopSellingProducts();
+            }
+            else
+            {
+                if (imageList2.Images.Count > 0)
+                    imageList2.Images.Clear();
+            }
+        }
+
+        private void Index_Load(object sender, EventArgs e)
+        {
+            //for low stock products
+            if (inventory.DetermineProductInThresholdLevel()) //if returns true Database connection error
+                ErrorMessage();
+            else
+                LoadThresholdProducts();
+
+            if (checkWeek.Checked)
+            {
+                checkWeek_CheckedChanged(sender, e);
+            }
+
+            //for the total qty of groceries
+            LoadGroceryQty();
+
+            //for the total qty of appliances
+            LoadProductQty();
+
+            /*shows the current sales for day
+            invariant culture will display the round up result of the currency
+            with two decimal places*/
+            tbDaySales.Text = inventory.ComputeDaySale().ToString("F", CultureInfo.InvariantCulture);
+
+            /*shows the current sales for the week
+            invariant culture will display the round up result of the currency
+            with two decimal places*/
+            tbWeekSales.Text = inventory.ComputeWeekSale().ToString("F", CultureInfo.InvariantCulture);
+        }
+
+        private void ErrorMessage()
+        {
+            MessageBox.Show(@"There is a problem connecting to the database", @"Connection Error",
+                MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+
+        private void LoadThresholdProducts()
+        {
+            if (imageList1.Images.Count > 0)
+                imageList1.Images.Clear();
+
+            foreach (var t in InventoryUtils.LowOnStock) imageList1.Images.Add(t);
+
+            //clear list view if it does have a content 
+            //to prevent image duplication
+            if (DangerProductsView.Items.Count > 0)
+                DangerProductsView.Items.Clear();
+
+            for (var j = 0; j < imageList1.Images.Count; j++)
+            {
+                var item = new ListViewItem();
+                item.ImageIndex = j;
+                DangerProductsView.Items.Add(item);
+            }
+        }
+
+        private void LoadTopSellingProducts()
+        {
+            if (imageList2.Images.Count > 0)
+                imageList2.Images.Clear();
+
+            foreach (var t in InventoryUtils.TopSelling) imageList2.Images.Add(t);
+
+            //clear list view if it does have a content 
+            //to prevent image duplication
+            if (TopSellingView.Items.Count > 0)
+                TopSellingView.Items.Clear();
+
+            for (var j = 0; j < imageList2.Images.Count; j++)
+            {
+                var item = new ListViewItem();
+                item.ImageIndex = j;
+                TopSellingView.Items.Add(item);
+            }
+        }
+
+        private void LoadGroceryQty()
+        {
+            var groceryQty = inventory.CountGroceriesProductsQty();
+            if (groceryQty >= 0)
+                tbGroceriesTotalQty.Text = groceryQty.ToString();
+            else
+                ErrorMessage();
+        }
+
+        private void LoadProductQty()
+        {
+            var productQty = inventory.CountApplianceProductsQty();
+            if (productQty >= 0)
+                tbAppliancesTotalQty.Text = productQty.ToString();
+            else
+                ErrorMessage();
         }
 
         private void RemoveBorder()
@@ -154,96 +270,6 @@ namespace DellRainInventorySystem
             manageAccounts.ShowDialog();
         }
 
-        private void Index_Load(object sender, EventArgs e)
-        {
-            //for low stock products
-            if (inventory.DetermineProductInThresholdLevel()) //if returns true Database connection error
-                ErrorMessage();
-            else
-                LoadThresholdProducts();
-
-            //for top selling products
-            if (inventory.DetermineTopSellingProducts())
-                ErrorMessage();
-            else
-                LoadTopSellingProducts();
-
-            //for the total qty of groceries
-            LoadGroceryQty();
-
-            //for the total qty of appliances
-            LoadProductQty();
-
-            //shows the current sales for day and week
-            //invariant culture will display the round up result of the currency
-            //with two decimal places
-            tbDaySales.Text = inventory.ComputeDaySale().ToString("F", CultureInfo.InvariantCulture);
-        }
-
-        private void ErrorMessage()
-        {
-            MessageBox.Show(@"There is a problem connecting to the database", @"Connection Error",
-                MessageBoxButtons.OK, MessageBoxIcon.Error);
-        }
-
-        private void LoadThresholdProducts()
-        {
-            if (imageList1.Images.Count > 0)
-                imageList1.Images.Clear();
-
-            foreach (var t in InventoryUtils.LowOnStock) imageList1.Images.Add(t);
-
-            //clear list view if it does have a content 
-            //to prevent image duplication
-            if (DangerProductsView.Items.Count > 0)
-                DangerProductsView.Items.Clear();
-
-            for (var j = 0; j < imageList1.Images.Count; j++)
-            {
-                var item = new ListViewItem();
-                item.ImageIndex = j;
-                DangerProductsView.Items.Add(item);
-            }
-        }
-
-        private void LoadTopSellingProducts()
-        {
-            if (imageList2.Images.Count > 0)
-                imageList2.Images.Clear();
-
-            foreach (var t in InventoryUtils.TopSelling) imageList2.Images.Add(t);
-
-            //clear list view if it does have a content 
-            //to prevent image duplication
-            if (TopSellingView.Items.Count > 0)
-                TopSellingView.Items.Clear();
-
-            for (var j = 0; j < imageList2.Images.Count; j++)
-            {
-                var item = new ListViewItem();
-                item.ImageIndex = j;
-                TopSellingView.Items.Add(item);
-            }
-        }
-
-        private void LoadGroceryQty()
-        {
-            var groceryQty = inventory.CountGroceriesProductsQty();
-            if (groceryQty >= 0)
-                tbGroceriesTotalQty.Text = groceryQty.ToString();
-            else
-                ErrorMessage();
-        }
-
-        private void LoadProductQty()
-        {
-            var productQty = inventory.CountApplianceProductsQty();
-            if (productQty >= 0)
-                tbAppliancesTotalQty.Text = productQty.ToString();
-            else
-                ErrorMessage();
-        }
-
         private void Reload_Click(object sender, EventArgs e)
         {
             Index_Load(sender, e);
@@ -311,5 +337,7 @@ namespace DellRainInventorySystem
         {
             SalesReports_Click(sender, e);
         }
+
+        
     }
 }

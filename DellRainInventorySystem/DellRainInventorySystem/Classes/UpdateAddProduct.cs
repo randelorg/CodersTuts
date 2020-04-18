@@ -52,6 +52,66 @@ namespace DellRainInventorySystem.Classes
             }
         }
 
+        public int AddSupplier()
+        {
+            try
+            {
+                var product = LtProducts.Last.Value; //last product added in the linked list
+
+                cmd = new SqlCommand();
+                con.Open();
+                cmd.Connection = con;
+
+                //supplier table
+                cmd.CommandText = "SELECT * FROM Inventory.Supplier WHERE suppName = @name";
+                cmd.Parameters.AddWithValue("@name", product.CompanyName);
+                _reader = cmd.ExecuteReader();
+
+                Console.WriteLine(product.CompanyName);
+
+                if (_reader.Read()) //if the supplier is already existing
+                {
+                    //store the supplier id to the suppId var
+                    SuppId = int.Parse(_reader["suppId"].ToString());
+                    Console.WriteLine(@"SUPPLIER UPDATE {0}", SuppId);
+                }
+                else //if the supplier is new add to the DB
+                {
+                    _reader.Close();
+
+                    //adding row to the Supplier table
+                    cmd.CommandText = "INSERT INTO Inventory.Supplier (suppName, ContactNumber) VALUES (@newSuppName,@newSuppNum)";
+                    cmd.Parameters.AddWithValue("@newSuppName", product.CompanyName);
+                    cmd.Parameters.AddWithValue("@newSuppNum", product.Contact);
+                    _reader = cmd.ExecuteReader();
+                    _reader.Close(); //close forth query
+
+                    //purpose of getting the primary key of the new added supplier
+                    cmd.CommandText = "SELECT * FROM Inventory.Supplier WHERE suppName = @Suppliername";
+                    cmd.Parameters.AddWithValue("@Suppliername", product.CompanyName);
+                    _reader = cmd.ExecuteReader();
+
+                    //store the supplier id to the suppId var
+                    if (_reader.Read())
+                        SuppId = int.Parse(_reader["suppId"].ToString());
+
+                    _reader.Close(); //close third query
+                }
+
+                _reader.Close(); //close third query
+                return 0; //if adding the supplier is successful
+            }
+            catch (SqlException e)
+            {
+                Console.WriteLine(e.ToString());
+                return 2; //if there are db errors
+            }
+            finally
+            {
+                con.Close();
+            }
+        }
+
         public int AddLocation()
         {
             try

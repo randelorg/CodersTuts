@@ -33,8 +33,9 @@ namespace DellRainInventorySystem.Classes
                 cmd.Parameters.AddWithValue("@firstId", UpdateProdId);
                 _reader = cmd.ExecuteReader();
 
-                if (_reader.Read())
+                if (_reader.Read()) { 
                     price = double.Parse(_reader["prodPrice"].ToString());
+                }
 
                 _reader.Close();
 
@@ -101,6 +102,40 @@ namespace DellRainInventorySystem.Classes
             }
         }
 
+        public int ComputeWeekSale()
+        {
+            //will determine the monday and sunday date of the current week
+            WeekDates();
+
+            try
+            {
+                cmd = new SqlCommand();
+                con.Open();
+                cmd.Connection = con;
+                cmd.CommandText = "SELECT SUM(sales) FROM  Inventory.Sales WHERE date BETWEEN @thismonday AND @thissunday";
+                cmd.Parameters.AddWithValue("@thismonday", MondayDate);
+                cmd.Parameters.AddWithValue("@thissunday", SundayDate);
+
+                return Convert.ToInt32(cmd.ExecuteScalar());
+            }
+            catch (SqlException ex)
+            {
+                Console.WriteLine(ex.Message);
+                return 0;
+            }
+
+            catch (InvalidCastException ex)
+            {
+                Console.WriteLine(ex.Message);
+                return 0;
+            }
+
+            finally
+            {
+                con.Close();
+            }
+        }
+
         public void LoadForSoldWindow()
         {
             try
@@ -117,7 +152,8 @@ namespace DellRainInventorySystem.Classes
                 if (_reader.Read())
                     //add image to the last node 
                     LtProducts.AddLast(new Product(Base64ToImage(_reader["prodImage"].ToString()),
-                        _reader["prodName"].ToString(), double.Parse(_reader["prodPrice"].ToString())));
+                        _reader["prodName"].ToString(), Convert.ToDouble(_reader["prodPrice"].ToString()),
+                        Convert.ToInt32(_reader["prodQty"].ToString())));
 
                 _reader.Close();
             }
@@ -196,8 +232,9 @@ namespace DellRainInventorySystem.Classes
             }
         }
 
-        public bool DetermineTopSellingProducts()
+        public bool TopSellingProductsToday()
         {
+            
             if (TopSelling.Count > 0)
                 TopSelling.Clear();
 
@@ -206,8 +243,8 @@ namespace DellRainInventorySystem.Classes
                 cmd = new SqlCommand();
                 con.Open();
                 cmd.Connection = con;
-                cmd.CommandText = "SELECT prodImage FROM Inventory.Product WHERE prodSold >= @TOP";
-                cmd.Parameters.AddWithValue("@TOP", TopSellingCount);
+                cmd.CommandText = "SELECT DISTINCT [s].product,  [product].prodImage FROM Inventory.Product AS product INNER JOIN Inventory.Sales AS s ON [s].product = [product].productId WHERE qtySold > (SELECT AVG(qtySold) FROM Inventory.Sales WHERE date = @dateToday)";
+                cmd.Parameters.AddWithValue("@dateToday", DateTime.UtcNow.ToShortDateString());
                 _reader = cmd.ExecuteReader();
 
                 while (_reader.Read())
@@ -215,6 +252,49 @@ namespace DellRainInventorySystem.Classes
                     if (string.IsNullOrEmpty(_reader["prodImage"].ToString())) continue;
 
                     if (_reader.HasRows) TopSelling.AddFirst(Base64ToImage(_reader["prodImage"].ToString()));
+                }
+
+                return false;
+            }
+            catch (SqlException e)
+            {
+                Console.WriteLine(e.ToString());
+                return true;
+            }
+
+            finally
+            {
+                con.Close();
+            }
+        }
+
+        public bool TopSellingProductsThisWeek()
+        {
+            //will determine the monday and sunday date of the current week
+            WeekDates();
+
+            if (TopSelling.Count > 0)
+                TopSelling.Clear();
+
+            try
+            {
+                cmd = new SqlCommand();
+                con.Open();
+                cmd.Connection = con;
+                cmd.CommandText = "SELECT DISTINCT [s].product, [product].prodImage FROM Inventory.Product AS product INNER JOIN Inventory.Sales AS s ON [s].product = [product].productId WHERE qtySold > (SELECT AVG(qtySold) FROM Inventory.Sales WHERE date BETWEEN @thismonday AND @thissunday)";
+                cmd.Parameters.AddWithValue("@thismonday", MondayDate);
+                cmd.Parameters.AddWithValue("@thissunday", SundayDate);
+                
+                _reader = cmd.ExecuteReader();
+
+                while (_reader.Read())
+                {
+                    if (string.IsNullOrEmpty(_reader["prodImage"].ToString())) continue;
+
+                    if (_reader.HasRows)
+                    {
+                        TopSelling.AddFirst(Base64ToImage(_reader["prodImage"].ToString()));
+                    }
                 }
 
                 // Console.WriteLine(@"Top selling Row count {0}", TopSelling.Count);
@@ -231,6 +311,7 @@ namespace DellRainInventorySystem.Classes
                 con.Close();
             }
         }
+
 
         public bool DetermineProductInThresholdLevel()
         {
@@ -329,66 +410,6 @@ namespace DellRainInventorySystem.Classes
             }
         }
 
-        public int AddSupplier()
-        {
-            try
-            {
-                var product = LtProducts.Last.Value; //last product added in the linked list
-
-                cmd = new SqlCommand();
-                con.Open();
-                cmd.Connection = con;
-
-                //supplier table
-                cmd.CommandText = "SELECT * FROM Inventory.Supplier WHERE suppName = @name";
-                cmd.Parameters.AddWithValue("@name", product.CompanyName);
-                _reader = cmd.ExecuteReader();
-
-                Console.WriteLine(product.CompanyName);
-
-                if (_reader.Read()) //if the supplier is already existing
-                {
-                    //store the supplier id to the suppId var
-                    SuppId = int.Parse(_reader["suppId"].ToString());
-                    Console.WriteLine(@"SUPPLIER UPDATE {0}", SuppId);
-                }
-                else //if the supplier is new add to the DB
-                {
-                    _reader.Close();
-
-                    //adding row to the Supplier table
-                    cmd.CommandText = "INSERT INTO Inventory.Supplier (suppName, ContactNumber) VALUES (@newSuppName,@newSuppNum)";
-                    cmd.Parameters.AddWithValue("@newSuppName", product.CompanyName);
-                    cmd.Parameters.AddWithValue("@newSuppNum", product.Contact);
-                    _reader = cmd.ExecuteReader();
-                    _reader.Close(); //close forth query
-
-                    //purpose of getting the primary key of the new added supplier
-                    cmd.CommandText = "SELECT * FROM Inventory.Supplier WHERE suppName = @Suppliername";
-                    cmd.Parameters.AddWithValue("@Suppliername", product.CompanyName);
-                    _reader = cmd.ExecuteReader();
-
-                    //store the supplier id to the suppId var
-                    if (_reader.Read())
-                        SuppId = int.Parse(_reader["suppId"].ToString());
-
-                    _reader.Close(); //close third query
-                }
-
-                _reader.Close(); //close third query
-                return 0; //if adding the supplier is successful
-            }
-            catch (SqlException e)
-            {
-                Console.WriteLine(e.ToString());
-                return 2; //if there are db errors
-            }
-            finally
-            {
-                con.Close();
-            }
-        }
-
         protected void ErrorMessage(int i)
         {
             // 1 for adding location and 2 for adding supplier error
@@ -442,6 +463,23 @@ namespace DellRainInventorySystem.Classes
             }
 
             return image;
+        }
+
+        private void WeekDates()
+        {
+            DayOfWeek Day = DateTime.Now.DayOfWeek;
+
+            //Week Start Day
+            int Days = Day - DayOfWeek.Monday;
+
+            //this is the date of monday of the current week
+            DateTime weekStartDate = DateTime.Now.AddDays(-Days);
+
+            //this is the date of sunday of the current week
+            DateTime weekEndDate6 = weekStartDate.AddDays(6);
+
+            MondayDate = weekStartDate.ToShortDateString();
+            SundayDate = weekEndDate6.ToShortDateString();
         }
     }
 }

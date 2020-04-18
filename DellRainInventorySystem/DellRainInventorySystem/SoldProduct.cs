@@ -145,7 +145,20 @@ namespace DellRainInventorySystem
 
             //set the sold number to the current sold qty of the product
             InventoryUtils.SoldNumber = Convert.ToInt32(prodQty.Value.ToString(CultureInfo.InvariantCulture));
-            
+
+            var product = InventoryUtils.LtProducts.Last.Value;
+            if (InventoryUtils.SoldNumber > product.Qty)
+            {
+                MessageBox.Show(@"Sold item is greater than in the stock left", @"Invalid", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+            if (product.Qty == 0)
+            {
+                MessageBox.Show(@"Product is in zero stock ", @"Invalid", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
             //if there is no exception occurs proceed
             //invoke the sold product method
             if (ErrorMsg(inventory.SoldProduct()))

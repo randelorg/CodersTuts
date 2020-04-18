@@ -31,11 +31,12 @@ namespace DellRainInventorySystem
         {
             try
             {
+                var imageCol = new DataGridViewImageColumn();
                 var binder = new BindingSource();
                 var cmd = new SqlCommand();
                 cmd.Connection = con;
 
-                cmd.CommandText = "SELECT  [product].prodName, [product].prodType, [product].prodQty, [product].prodSold,[product].prodPrice, [location].name,[supplier].suppName FROM Inventory.Product AS product INNER JOIN Inventory.Supplier AS supplier ON [product].Supplier = [supplier].suppId INNER JOIN Inventory.Location AS location  ON [location].locaId = [product].Location";
+                cmd.CommandText = "SELECT [product].prodName, [product].prodType, [product].prodQty, [product].prodSold,[product].prodPrice, [location].name,[supplier].suppName FROM Inventory.Product AS product INNER JOIN Inventory.Supplier AS supplier ON [product].Supplier = [supplier].suppId INNER JOIN Inventory.Location AS location  ON [location].locaId = [product].Location";
 
                 DataTable record;
                 using (var sdr = new SqlDataAdapter(cmd))

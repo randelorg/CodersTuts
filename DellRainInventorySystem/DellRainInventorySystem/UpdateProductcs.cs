@@ -189,7 +189,7 @@ namespace DellRainInventorySystem
                     tbSuppName.Text, tbSuppContact.Text));
 
                 //call add supplier to check or add supplier details
-                ErrorMessage(inventory.AddSupplier());
+                ErrorMessage(updateAdd.AddSupplier());
 
                 //call add location to check or add location details
                 ErrorMessage(updateAdd.AddLocation());

@@ -9,9 +9,6 @@ namespace DellRainInventorySystem.Classes.Utility
         //constant critical product threshold level
         protected const int CriticalLevel = 5;
 
-        //constant top selling products count
-        protected const int TopSellingCount = 10;
-
         //Primary key of product soon to be updated
         protected internal static int UpdateProdId = 0;
 
@@ -59,5 +56,8 @@ namespace DellRainInventorySystem.Classes.Utility
             sess_username = username;
             sess_accType = accType;
         }
+
+        protected static string MondayDate { get; set; }
+        protected static string SundayDate { get; set; }
     }
 }
