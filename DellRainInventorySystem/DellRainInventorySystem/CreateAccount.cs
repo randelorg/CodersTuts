@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Drawing;
-using System.Linq;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
 using DellRainInventorySystem.Classes;
+using DellRainInventorySystem.Classes.EntityClasses;
 using DellRainInventorySystem.Classes.Utility;
 
 namespace DellRainInventorySystem
@@ -11,6 +11,7 @@ namespace DellRainInventorySystem
     public partial class CreateAccount : Form
     {
         private Inventory inventory = new Inventory();
+        private NewAccount account = new NewAccount();
         private int _classifier = 0;
 
         public CreateAccount()
@@ -29,7 +30,7 @@ namespace DellRainInventorySystem
                     tbNumber.Text, tbDefaultPassword.Text, cbPosition.SelectedItem.ToString().ToUpper()));
                 
                 //invoke inventory add account method
-                _classifier = inventory.AddAccount();
+                _classifier = account.AddAccount();
 
                 switch (_classifier)
                 {
@@ -107,7 +108,15 @@ namespace DellRainInventorySystem
 
         private string UpperCaseFirstChar(string name)
         {
-            return char.ToUpper(name[0]) + name.Substring(1);
+            try
+            {
+                return char.ToUpper(name[0]) + name.Substring(1);
+            }
+            catch (IndexOutOfRangeException e)
+            {
+                Console.WriteLine(e);
+                return "";
+            }
         }
 
         private void showPassword_MouseDown(object sender, MouseEventArgs e)

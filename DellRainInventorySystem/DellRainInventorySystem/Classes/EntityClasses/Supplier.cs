@@ -1,4 +1,4 @@
-﻿namespace DellRainInventorySystem.Classes
+﻿namespace DellRainInventorySystem.Classes.EntityClasses
 {
     public class Supplier
     {

@@ -44,6 +44,7 @@
             this.Refresh = new System.Windows.Forms.PictureBox();
             this.pictureBack = new System.Windows.Forms.PictureBox();
             this.SoldPicture = new System.Windows.Forms.PictureBox();
+            this.pictureBox9 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.SoldView)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ProductPreview)).BeginInit();
@@ -51,6 +52,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.Refresh)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBack)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.SoldPicture)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
             this.SuspendLayout();
             // 
             // tbSearch
@@ -120,11 +122,11 @@
             this.tbPrice.BackColor = System.Drawing.Color.White;
             this.tbPrice.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.tbPrice.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbPrice.Location = new System.Drawing.Point(649, 329);
+            this.tbPrice.Location = new System.Drawing.Point(679, 329);
             this.tbPrice.MaxLength = 11;
             this.tbPrice.Name = "tbPrice";
             this.tbPrice.ReadOnly = true;
-            this.tbPrice.Size = new System.Drawing.Size(326, 23);
+            this.tbPrice.Size = new System.Drawing.Size(296, 23);
             this.tbPrice.TabIndex = 117;
             // 
             // tbName
@@ -212,12 +214,23 @@
             this.SoldPicture.TabIndex = 106;
             this.SoldPicture.TabStop = false;
             // 
+            // pictureBox9
+            // 
+            this.pictureBox9.Image = global::DellRainInventorySystem.Properties.Resources.Philippine;
+            this.pictureBox9.Location = new System.Drawing.Point(649, 329);
+            this.pictureBox9.Name = "pictureBox9";
+            this.pictureBox9.Size = new System.Drawing.Size(23, 23);
+            this.pictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox9.TabIndex = 130;
+            this.pictureBox9.TabStop = false;
+            // 
             // SoldProduct
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1017, 561);
+            this.Controls.Add(this.pictureBox9);
             this.Controls.Add(this.Refresh);
             this.Controls.Add(this.tbSearch);
             this.Controls.Add(this.SoldView);
@@ -245,6 +258,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.Refresh)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBack)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.SoldPicture)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -267,5 +281,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox SoldPicture;
+        private System.Windows.Forms.PictureBox pictureBox9;
     }
 }

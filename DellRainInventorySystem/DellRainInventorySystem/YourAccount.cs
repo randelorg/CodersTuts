@@ -18,6 +18,7 @@ namespace DellRainInventorySystem
         private readonly SqlConnection con = new SqlConnection(Connect.MainConn);
 
         private readonly Inventory inventory = new Inventory();
+        private NewAccount account = new NewAccount();
         private string password;
 
         public YourAccount()
@@ -84,7 +85,7 @@ namespace DellRainInventorySystem
             var classifier = -1;
 
             if (!string.IsNullOrEmpty(tbConfirmNewPassword.Text))
-                classifier = inventory.ChangePassword(password, tbConfirmNewPassword.Text);
+                classifier = account.ChangePassword(password, tbConfirmNewPassword.Text);
 
             switch (classifier)
             {

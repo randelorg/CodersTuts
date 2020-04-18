@@ -2,6 +2,7 @@
 using System;
 using System.Drawing;
 using System.Windows.Forms;
+using DellRainInventorySystem.Classes.EntityClasses;
 using DellRainInventorySystem.Classes.Utility;
 
 namespace DellRainInventorySystem
@@ -9,6 +10,7 @@ namespace DellRainInventorySystem
     public partial class AddProductWindow : Form
     {
         private Inventory inventory = new Inventory();
+        private UpdateAddProduct updateAdd = new UpdateAddProduct();
         private string[] fields = new string[8];
         private Image _image;
 
@@ -32,7 +34,7 @@ namespace DellRainInventorySystem
                 InventoryUtils.LtProducts.AddLast(new Product(fields[0], fields[1], int.Parse(fields[2]), double.Parse(fields[3]), fields[4], fields[5],
                                                     fields[6], fields[7], _image));
 
-                ErrorMessage(inventory.AddProduct()); //add the whole product
+                ErrorMessage(updateAdd.AddProduct()); //add the whole product
 
                 CleanForm(this);
             }

@@ -6,6 +6,7 @@ using System.Globalization;
 using System.Windows.Forms;
 using System.Windows.Forms.VisualStyles;
 using DellRainInventorySystem.Classes;
+using DellRainInventorySystem.Classes.EntityClasses;
 using DellRainInventorySystem.Classes.Utility;
 using DellRainInventorySystem.ConnectDB;
 using DellRainInventorySystem.Properties;
@@ -17,6 +18,7 @@ namespace DellRainInventorySystem
         private readonly SqlConnection connection = new SqlConnection(Connect.MainConn);
         private readonly ToolTip tt = new ToolTip();
         private Inventory inventory = new Inventory();
+        private UpdateAddProduct updateAdd = new UpdateAddProduct();
         private Image _image;
 
         public UpdateProductcs()
@@ -155,7 +157,7 @@ namespace DellRainInventorySystem
 
         private void LoadDetails()
         {
-            if (ErrorMsg(inventory.PrepareProductToUpdate()))
+            if (ErrorMsg(updateAdd.PrepareProductToUpdate()))
             {
                 if (InventoryUtils.LtProducts.Count > 0)
                 {
@@ -190,7 +192,7 @@ namespace DellRainInventorySystem
                 ErrorMessage(inventory.AddSupplier());
 
                 //call add location to check or add location details
-                ErrorMessage(inventory.AddLocation());
+                ErrorMessage(updateAdd.AddLocation());
 
                 //if the there are no exception occur proceed
                 //if there are new uploaded image set it to the Image object
@@ -205,7 +207,7 @@ namespace DellRainInventorySystem
 
                 //if exception occurs return and display err msg
                 //invoke the method from the inventory class
-                if(!ErrorMsg(inventory.UpdateSelectedProduct())) return;
+                if(!ErrorMsg(updateAdd.UpdateSelectedProduct())) return;
 
                 //when product is successfully updated
                 MessageBox.Show(@"Product is updated", @"Updated",
