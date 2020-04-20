@@ -68,6 +68,7 @@ namespace DellRainInventorySystem
             Chart.Series["Sales"].YValueType= ChartValueType.Double;
             Chart.DataSource = binder;
             Chart.DataBind();
+
         }
 
         private void LoadTable()
@@ -103,6 +104,5 @@ namespace DellRainInventorySystem
                 con.Close();
             }
         }
-
     }
 }
