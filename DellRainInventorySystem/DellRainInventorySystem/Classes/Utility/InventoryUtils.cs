@@ -27,6 +27,7 @@ namespace DellRainInventorySystem.Classes.Utility
         protected internal static LinkedList<string> ExistingSuppliers = new LinkedList<string>();
         protected internal static LinkedList<string> ExistingLocation = new LinkedList<string>();
 
+
         //identifies the user to the index window
         //serves the session 
         private static string sess_username;

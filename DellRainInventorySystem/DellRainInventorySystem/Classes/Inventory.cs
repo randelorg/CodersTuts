@@ -72,7 +72,7 @@ namespace DellRainInventorySystem.Classes
             }
         }
 
-        public int ComputeDaySale()
+        public double ComputeDaySale()
         {
             try
             {
@@ -82,7 +82,7 @@ namespace DellRainInventorySystem.Classes
                 cmd.CommandText = "select SUM(sales) from Inventory.Sales where date = @datetoday";
                 cmd.Parameters.AddWithValue("@datetoday", DateTime.UtcNow.ToShortDateString());
 
-                return Convert.ToInt32(cmd.ExecuteScalar());
+                return Convert.ToDouble(cmd.ExecuteScalar());
             }
             catch (SqlException ex)
             {
@@ -102,7 +102,7 @@ namespace DellRainInventorySystem.Classes
             }
         }
 
-        public int ComputeWeekSale()
+        public double ComputeWeekSale()
         {
             //will determine the monday and sunday date of the current week
             WeekDates();
@@ -116,7 +116,7 @@ namespace DellRainInventorySystem.Classes
                 cmd.Parameters.AddWithValue("@thismonday", MondayDate);
                 cmd.Parameters.AddWithValue("@thissunday", SundayDate);
 
-                return Convert.ToInt32(cmd.ExecuteScalar());
+                return Convert.ToDouble(cmd.ExecuteScalar());
             }
             catch (SqlException ex)
             {

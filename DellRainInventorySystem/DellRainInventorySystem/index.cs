@@ -260,7 +260,7 @@ namespace DellRainInventorySystem
 
         private void SalesReports_Click(object sender, EventArgs e)
         {
-            var reports = new Reports();
+            var reports = new ReportsWindow();
             reports.ShowDialog();
         }
 

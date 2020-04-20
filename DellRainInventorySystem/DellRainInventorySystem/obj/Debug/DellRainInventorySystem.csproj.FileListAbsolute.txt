@@ -19,7 +19,6 @@ D:\dev 2nd year_2nd sem\CodersTuts\DellRainInventorySystem\DellRainInventorySyst
 D:\dev 2nd year_2nd sem\CodersTuts\DellRainInventorySystem\DellRainInventorySystem\obj\Debug\DellRainInventorySystem.exe
 D:\dev 2nd year_2nd sem\CodersTuts\DellRainInventorySystem\DellRainInventorySystem\obj\Debug\DellRainInventorySystem.pdb
 D:\dev 2nd year_2nd sem\CodersTuts\DellRainInventorySystem\DellRainInventorySystem\obj\Debug\DellRainInventorySystem.YourAccount.resources
-E:\2ND YEAR - 2ND SEM\CodersTuts\DellRainInventorySystem\DellRainInventorySystem\obj\Debug\DellRainInventorySystem.csprojAssemblyReference.cache
 E:\2ND YEAR - 2ND SEM\CodersTuts\DellRainInventorySystem\DellRainInventorySystem\obj\Debug\DellRainInventorySystem.Form1.resources
 E:\2ND YEAR - 2ND SEM\CodersTuts\DellRainInventorySystem\DellRainInventorySystem\obj\Debug\DellRainInventorySystem.index.resources
 E:\2ND YEAR - 2ND SEM\CodersTuts\DellRainInventorySystem\DellRainInventorySystem\obj\Debug\DellRainInventorySystem.Properties.Resources.resources
@@ -39,7 +38,6 @@ D:\dev 2nd year_2nd sem\CodersTuts\DellRainInventorySystem\DellRainInventorySyst
 E:\2ND YEAR - 2ND SEM\CodersTuts\DellRainInventorySystem\DellRainInventorySystem\obj\Debug\DellRainInventorySystem.csproj.CoreCompileInputs.cache
 D:\dev 2nd year_2nd sem\CodersTuts\DellRainInventorySystem\DellRainInventorySystem\obj\Debug\DellRainInventorySystem.csproj.CoreCompileInputs.cache
 D:\dev 2nd year_2nd sem\CodersTuts\DellRainInventorySystem\DellRainInventorySystem\obj\Debug\DellRainInventorySystem.Reports.resources
-E:\2ND YEAR - 2ND SEM\CodersTuts\DellRainInventorySystem\DellRainInventorySystem\obj\Debug\DellRainInventorySystem.Reports.resources
 E:\2ND YEAR - 2ND SEM\CodersTuts\DellRainInventorySystem\DellRainInventorySystem\obj\Debug\DellRainInventorySystem.ManageAccounts.resources
 E:\2ND YEAR - 2ND SEM\CodersTuts\DellRainInventorySystem\DellRainInventorySystem\bin\Debug\Inetlab.SMPP.dll
 E:\2ND YEAR - 2ND SEM\CodersTuts\DellRainInventorySystem\DellRainInventorySystem\bin\Debug\Inetlab.SMPP.xml
@@ -53,3 +51,5 @@ D:\dev 2nd year_2nd sem\CodersTuts\DellRainInventorySystem\DellRainInventorySyst
 D:\dev 2nd year_2nd sem\CodersTuts\DellRainInventorySystem\DellRainInventorySystem\obj\Debug\DellRainInventorySystem.csproj.CopyComplete
 E:\2ND YEAR - 2ND SEM\CodersTuts\DellRainInventorySystem\DellRainInventorySystem\obj\Debug\DellRainInventorySystem.SoldProduct.resources
 D:\dev 2nd year_2nd sem\CodersTuts\DellRainInventorySystem\DellRainInventorySystem\obj\Debug\DellRainInventorySystem.SoldProduct.resources
+E:\2ND YEAR - 2ND SEM\CodersTuts\DellRainInventorySystem\DellRainInventorySystem\obj\Debug\DellRainInventorySystem.ReportsWindow.resources
+E:\2ND YEAR - 2ND SEM\CodersTuts\DellRainInventorySystem\DellRainInventorySystem\obj\Debug\DellRainInventorySystem.csprojAssemblyReference.cache

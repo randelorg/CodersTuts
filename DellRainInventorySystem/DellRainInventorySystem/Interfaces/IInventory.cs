@@ -3,8 +3,8 @@ namespace DellRainInventorySystem.Interfaces
     public interface IInventory
     {
         int SoldProduct();
-        int ComputeDaySale();
-        int ComputeWeekSale();
+        double ComputeDaySale();
+        double ComputeWeekSale();
         void LoadForSoldWindow();
         bool GetExistingLocation();
         bool GetExistingSupplier();
