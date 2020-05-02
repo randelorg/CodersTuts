@@ -1,11 +1,65 @@
 ﻿using System;
 using System.Data.SqlClient;
+using System.Diagnostics;
+using System.Diagnostics.Contracts;
+using System.Runtime.CompilerServices;
+using System.Windows.Forms;
+using DellRainInventorySystem.Classes.Hashing;
+using DellRainInventorySystem.Classes.Utility;
 using DellRainInventorySystem.Interfaces;
 
 namespace DellRainInventorySystem.Classes
 {
     internal class NewAccount : Inventory, IAccount
     {
+        private InventoryUtils inventoryUtils = new InventoryUtils();
+
+        public string Login(string username, string password)
+        {
+            
+            //sql query
+            try
+            {
+                cmd = new SqlCommand();
+                con.Open();
+                cmd.Connection = con;
+                //sql query
+                cmd.CommandText = "SELECT * FROM Inventory.Account";
+
+                _reader = cmd.ExecuteReader();
+
+                while (_reader.Read()){
+                    if (_reader.HasRows)
+                    {
+                        if (_reader["username"].ToString().Equals(username) && Hash.Decode(_reader["password"].ToString()).Equals(password))
+                        {
+                            inventoryUtils.Session(_reader["firstname"] + " " + _reader["lastname"],
+                                _reader["accType"].ToString().ToUpper());
+
+                            InventoryUtils.Firstname = _reader["firstname"].ToString();
+                            InventoryUtils.Lastname = _reader["Lastname"].ToString();
+                            return "success";
+                        }
+                    }
+                }
+
+                return "failed";
+            }
+
+            catch (SqlException a)
+            {
+                Debug.WriteLine(a.ToString());
+                MessageBox.Show(@"Cannot connect to the database", @"Error",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return "error";
+            }
+
+            finally
+            {
+                con.Close();
+            }
+        }
+
         public int AddAccount()
         {
             try
@@ -24,7 +78,7 @@ namespace DellRainInventorySystem.Classes
                     cmd.Parameters.AddWithValue("@gender", user.Gender);
                     cmd.Parameters.AddWithValue("@number", user.Contact);
                     cmd.Parameters.AddWithValue("@username", user.Username);
-                    cmd.Parameters.AddWithValue("@password", user.Password);
+                    cmd.Parameters.AddWithValue("@password", Hash.Encode(user.Password));
                     cmd.Parameters.AddWithValue("accType", user.AccType);
                 }
 

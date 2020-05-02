@@ -1,7 +1,11 @@
-﻿namespace DellRainInventorySystem.Interfaces
+﻿using System;
+
+namespace DellRainInventorySystem.Interfaces
 {
     interface IAccount
     {
+        string Login(string username, string password);
+
         /*This method will add account the Inventory.Account
         in the database. */
         int AddAccount();

@@ -62,6 +62,7 @@
     <Compile Include="AddProductWindow.Designer.cs">
       <DependentUpon>AddProductWindow.cs</DependentUpon>
     </Compile>
+    <Compile Include="Classes\Hashing\Hash.cs" />
     <Compile Include="Classes\NewAccount.cs" />
     <Compile Include="Classes\Report.cs" />
     <Compile Include="Classes\UpdateAddProduct.cs" />
@@ -297,5 +298,6 @@
   <ItemGroup>
     <None Include="Resources\Hide Window.png" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

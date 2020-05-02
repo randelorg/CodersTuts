@@ -18,6 +18,7 @@ namespace DellRainInventorySystem
         private readonly SqlConnection con = new SqlConnection(Connect.MainConn);
 
         private readonly Inventory inventory = new Inventory();
+        private readonly NewAccount auth = new NewAccount();
 
         public Form1()
         {
@@ -40,49 +41,24 @@ namespace DellRainInventorySystem
             Close();
         }
 
+
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            //sql query
-            try
+            switch (auth.Login(tbUsername.Text, tbPassword.Text))
             {
-                cmd = new SqlCommand();
-                con.Open();
-                cmd.Connection = con;
-                //sql query
-                cmd.CommandText = "SELECT * FROM Inventory.Account WHERE username = @username AND password = @password";
-                cmd.Parameters.AddWithValue("@username", tbUsername.Text);
-                cmd.Parameters.AddWithValue("@password", tbPassword.Text);
-
-                _reader = cmd.ExecuteReader();
-
-                if (_reader.Read())
-                {
-                    /*stores the full name of the user and account type in the session holder
-                    sets the session for the current user*/
-                    inventory.Session(_reader["firstname"] + " " + _reader["lastname"],
-                        _reader["accType"].ToString().ToUpper());
-                    InventoryUtils.Firstname = _reader["firstname"].ToString();
-                    InventoryUtils.Lastname = _reader["Lastname"].ToString();
-
+                case "success": //if login is successful
                     ShowDashboard();
-                }
-                else
-                {
-                    MessageBox.Show(@"Username or password is incorrect", @"Invalid",
-                        MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                }
-            }
+                    break;
 
-            catch (SqlException a)
-            {
-                Debug.WriteLine(a.ToString());
-                MessageBox.Show(@"Cannot connect to the database", @"Error",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+                case "failed"://if login details is incorrect
+                    MessageBox.Show(@"Your username or password is incorrect.", @"Incorrect",
+                        MessageBoxButtons.OK, MessageBoxIcon.Information);
+                   break;
 
-            finally
-            {
-                con.Close();
+                case "error"://if have an exception
+                    MessageBox.Show(@"Opps! Something went wrong.", @"Error", 
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    break;
             }
         }
 
