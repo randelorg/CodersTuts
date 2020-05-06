@@ -56,6 +56,7 @@ namespace DellRainInventorySystem
             Close();
         }
 
+
         private void ManageAccounts_Load(object sender, EventArgs e)
         {
             try
@@ -81,15 +82,17 @@ namespace DellRainInventorySystem
             var cmd = new SqlCommand();
 
             if (string.IsNullOrEmpty(tbSearchProduct.Text))
-                ManageAccounts_Load(sender, e);
+                LoadEverything();
+
             else
                 try
                 {
                     connection.Open();
                     cmd.Connection = connection;
 
-                    cmd.CommandText = "SELECT * FROM Inventory.Account WHERE firstname LIKE @omni OR lastname LIKE @omni OR accType LIKE @omni OR gender LIKE @omni";
-                    cmd.Parameters.AddWithValue("@omni", @"%" + tbSearchProduct.Text.Trim() + @"%");
+                    cmd.CommandText =
+                        "SELECT * FROM Inventory.Account WHERE firstname LIKE @omni OR lastname LIKE @omni OR accType LIKE @omni OR gender LIKE @omni";
+                    cmd.Parameters.AddWithValue("@omni", @"%" + tbSearchProduct.Text + @"%");
 
                     var adapter = new SqlDataAdapter(cmd);
                     var dataTable = new DataTable();

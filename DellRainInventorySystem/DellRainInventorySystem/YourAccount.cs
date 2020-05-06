@@ -4,6 +4,7 @@ using System.Data.SqlClient;
 using System.Drawing;
 using System.Windows.Forms;
 using DellRainInventorySystem.Classes;
+using DellRainInventorySystem.Classes.Hashing;
 using DellRainInventorySystem.Classes.Utility;
 using DellRainInventorySystem.ConnectDB;
 
@@ -66,7 +67,7 @@ namespace DellRainInventorySystem
 
                 _reader = cmd.ExecuteReader();
 
-                if (_reader.Read()) password = _reader["password"].ToString();
+                if (_reader.Read()) password = Hash.Decode(_reader["password"].ToString());
             }
             catch (SqlException)
             {

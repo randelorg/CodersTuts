@@ -31,12 +31,19 @@ namespace DellRainInventorySystem
             
             if (!CheckEmptyFields())
             {
-                InventoryUtils.LtProducts.AddLast(new Product(fields[0], fields[1], int.Parse(fields[2]), double.Parse(fields[3]), fields[4], fields[5],
-                                                    fields[6], fields[7], _image));
+                try
+                {
+                    InventoryUtils.LtProducts.AddLast(new Product(fields[0], fields[1], int.Parse(fields[2]), double.Parse(fields[3]), fields[4], fields[5],
+                                                        fields[6], fields[7], _image));
 
-                ErrorMessage(updateAdd.AddProduct()); //add the whole product
+                    ErrorMessage(updateAdd.AddProduct()); //add the whole product
 
-                CleanForm(this);
+                    CleanForm(this);
+                }
+                catch (Exception)
+                {
+                    // ignored
+                }
             }
             else
             {

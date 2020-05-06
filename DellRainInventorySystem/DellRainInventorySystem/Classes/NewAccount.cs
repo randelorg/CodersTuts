@@ -114,7 +114,7 @@ namespace DellRainInventorySystem.Classes
                 {
                     cmd.CommandText = "UPDATE Inventory.Account SET password = @newpword WHERE AccountId = @id";
                     cmd.Parameters.AddWithValue("@id", Convert.ToInt32(_reader["AccountId"]));
-                    cmd.Parameters.AddWithValue("@newpword", newPass);
+                    cmd.Parameters.AddWithValue("@newpword", Hash.Encode(newPass));
 
                     /*close the previous reader and execute the 
                     latest query which is the update query*/
