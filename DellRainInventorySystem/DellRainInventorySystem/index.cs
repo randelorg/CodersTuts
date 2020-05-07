@@ -44,10 +44,9 @@ namespace DellRainInventorySystem
                 checkWeek.Checked = false;
 
                 //for top selling products today
-                if (inventory.TopSellingProductsToday())
-                    ErrorMessage();
-                else
-                    LoadTopSellingProducts();
+                inventory.TopSellingProductsToday();
+
+                LoadTopSellingProducts();
             }
             else
             {
@@ -64,10 +63,9 @@ namespace DellRainInventorySystem
                 checkToday.Checked = false;
 
                 //for top selling products this week
-                if (inventory.TopSellingProductsThisWeek())
-                    ErrorMessage();
-                else
-                    LoadTopSellingProducts();
+                inventory.TopSellingProductsThisWeek();
+
+                LoadTopSellingProducts();
             }
             else
             {
@@ -106,11 +104,6 @@ namespace DellRainInventorySystem
             tbWeekSales.Text = inventory.ComputeWeekSale().ToString("F", CultureInfo.InvariantCulture);
         }
 
-        private void ErrorMessage()
-        {
-            MessageBox.Show(@"There is a problem connecting to the database", @"Connection Error",
-                MessageBoxButtons.OK, MessageBoxIcon.Error);
-        }
 
         private void LoadThresholdProducts()
         {
@@ -168,6 +161,12 @@ namespace DellRainInventorySystem
                 tbAppliancesTotalQty.Text = productQty.ToString();
             else
                 ErrorMessage();
+        }
+
+        private void ErrorMessage()
+        {
+            MessageBox.Show(@"There is a problem connecting to the database", @"Connection Error",
+                MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
         private void RemoveBorder()

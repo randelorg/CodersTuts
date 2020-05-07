@@ -68,6 +68,7 @@
     <Compile Include="Classes\UpdateAddProduct.cs" />
     <Compile Include="Classes\EntityClasses\User.cs" />
     <Compile Include="Classes\Inventory.cs" />
+    <Compile Include="Classes\Utility\Dates.cs" />
     <Compile Include="Classes\Utility\InventoryUtils.cs" />
     <Compile Include="Classes\EntityClasses\Person.cs" />
     <Compile Include="Classes\EntityClasses\Product.cs" />

@@ -57,8 +57,5 @@ namespace DellRainInventorySystem.Classes.Utility
             sess_username = username;
             sess_accType = accType;
         }
-
-        protected static string MondayDate { get; set; }
-        protected static string SundayDate { get; set; }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Data.SqlClient;
+using System.Windows.Forms;
 using DellRainInventorySystem.Interfaces;
 
 namespace DellRainInventorySystem.Classes
@@ -30,15 +31,18 @@ namespace DellRainInventorySystem.Classes
                 return Convert.ToDouble(cmd.ExecuteScalar());
 
             }
-            catch (SqlException e)
+            catch (SqlException)
             {
-                Console.WriteLine(e.Message);
-                return -1;
+                MessageBox.Show(@"There is a problem connecting to the database", @"Connection Error",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return 0;
             }
 
-            catch (InvalidCastException ex)
+            catch (InvalidCastException)
             {
-                return -2;
+                MessageBox.Show(@"There is no sales occured in this time-frame", @"Connection Error",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return 0;
             }
 
             finally

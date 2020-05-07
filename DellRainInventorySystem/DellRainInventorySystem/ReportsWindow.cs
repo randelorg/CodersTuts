@@ -1,15 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
-using System.Drawing;
 using System.Globalization;
-using System.Linq;
-using System.Runtime.InteropServices;
 using System.Windows.Forms;
 using System.Windows.Forms.DataVisualization.Charting;
 using DellRainInventorySystem.Classes;
-using DellRainInventorySystem.Classes.Utility;
 using DellRainInventorySystem.ConnectDB;
 
 namespace DellRainInventorySystem
@@ -27,6 +22,11 @@ namespace DellRainInventorySystem
         public ReportsWindow()
         {
             InitializeComponent();
+
+            //load the graph qty
+            appliance = inventory.CountApplianceProductsQty();
+            grocery = inventory.CountGroceriesProductsQty();
+            LoadProductQTyGraph();
         }
 
         private void pictureBack_Click(object sender, EventArgs e)
@@ -40,20 +40,6 @@ namespace DellRainInventorySystem
 
             //invoke sales reports method
             var total = repo.SalesReport();
-
-            /*if there are exception occurs
-              if there is no sales occured time given time-frame*/
-            switch (total)
-            {
-                case -1:
-                    MessageBox.Show(@"There is a problem connecting to the database", @"Connection Error",
-                        MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
-                case -2:
-                    MessageBox.Show(@"There is no sales occured in this time-frame", @"Connection Error",
-                        MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    return;
-            }
 
             //display the total sales in the time frame provided
             TotalSales.Text = total.ToString("F", CultureInfo.InvariantCulture);
@@ -135,14 +121,8 @@ namespace DellRainInventorySystem
         {
             OpenInventory();
 
-            //load the graph qty
-            appliance = inventory.CountApplianceProductsQty();
-            grocery = inventory.CountGroceriesProductsQty();
-
             if (appliance < 0 || grocery < 0)
                 return;
-
-            LoadProductQTyGraph();
         }
 
         //open inventory window

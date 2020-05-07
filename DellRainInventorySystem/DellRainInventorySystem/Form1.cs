@@ -10,10 +10,6 @@ namespace DellRainInventorySystem
 {
     public partial class Form1 : Form
     {
-        private SqlDataReader _reader;
-
-        private SqlCommand cmd;
-
         //connection string
         private readonly SqlConnection con = new SqlConnection(Connect.MainConn);
 

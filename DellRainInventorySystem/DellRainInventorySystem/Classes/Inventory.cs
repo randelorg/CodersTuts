@@ -105,7 +105,7 @@ namespace DellRainInventorySystem.Classes
         public double ComputeWeekSale()
         {
             //will determine the monday and sunday date of the current week
-            WeekDates();
+            Dates.WeekDates();
 
             try
             {
@@ -113,8 +113,8 @@ namespace DellRainInventorySystem.Classes
                 con.Open();
                 cmd.Connection = con;
                 cmd.CommandText = "SELECT SUM(sales) FROM  Inventory.Sales WHERE date BETWEEN @thismonday AND @thissunday";
-                cmd.Parameters.AddWithValue("@thismonday", MondayDate);
-                cmd.Parameters.AddWithValue("@thissunday", SundayDate);
+                cmd.Parameters.AddWithValue("@thismonday", Dates.MondayDate);
+                cmd.Parameters.AddWithValue("@thissunday", Dates.SundayDate);
 
                 return Convert.ToDouble(cmd.ExecuteScalar());
             }
@@ -232,7 +232,7 @@ namespace DellRainInventorySystem.Classes
             }
         }
 
-        public bool TopSellingProductsToday()
+        public void TopSellingProductsToday()
         {
             
             if (TopSelling.Count > 0)
@@ -243,7 +243,7 @@ namespace DellRainInventorySystem.Classes
                 cmd = new SqlCommand();
                 con.Open();
                 cmd.Connection = con;
-                cmd.CommandText = "SELECT DISTINCT [s].product,  [product].prodImage FROM Inventory.Product AS product INNER JOIN Inventory.Sales AS s ON [s].product = [product].productId WHERE qtySold > (SELECT AVG(qtySold) FROM Inventory.Sales WHERE date = @dateToday)";
+                cmd.CommandText = "SELECT DISTINCT [s].product,  [product].prodImage FROM Inventory.Product AS product INNER JOIN Inventory.Sales AS s ON [s].product = [product].productId WHERE qtySold = (SELECT AVG(qtySold) FROM Inventory.Sales WHERE date = @dateToday)";
                 cmd.Parameters.AddWithValue("@dateToday", DateTime.UtcNow.ToShortDateString());
                 _reader = cmd.ExecuteReader();
 
@@ -254,12 +254,11 @@ namespace DellRainInventorySystem.Classes
                     if (_reader.HasRows) TopSelling.AddFirst(Base64ToImage(_reader["prodImage"].ToString()));
                 }
 
-                return false;
             }
-            catch (SqlException e)
+            catch (SqlException)
             {
-                Console.WriteLine(e.ToString());
-                return true;
+                MessageBox.Show(@"There is a problem connecting to the database", @"Connection Error",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
             finally
@@ -268,10 +267,10 @@ namespace DellRainInventorySystem.Classes
             }
         }
 
-        public bool TopSellingProductsThisWeek()
+        public void TopSellingProductsThisWeek()
         {
-            //will determine the monday and sunday date of the current week
-            WeekDates();
+
+            Dates.WeekDates();
 
             if (TopSelling.Count > 0)
                 TopSelling.Clear();
@@ -281,9 +280,9 @@ namespace DellRainInventorySystem.Classes
                 cmd = new SqlCommand();
                 con.Open();
                 cmd.Connection = con;
-                cmd.CommandText = "SELECT DISTINCT [s].product, [product].prodImage FROM Inventory.Product AS product INNER JOIN Inventory.Sales AS s ON [s].product = [product].productId WHERE qtySold > (SELECT AVG(qtySold) FROM Inventory.Sales WHERE date BETWEEN @thismonday AND @thissunday)";
-                cmd.Parameters.AddWithValue("@thismonday", MondayDate);
-                cmd.Parameters.AddWithValue("@thissunday", SundayDate);
+                cmd.CommandText = "SELECT DISTINCT [s].product, [product].prodImage FROM Inventory.Product AS product INNER JOIN Inventory.Sales AS s ON [s].product = [product].productId WHERE qtySold = (SELECT AVG(qtySold) FROM Inventory.Sales WHERE date BETWEEN @thismonday AND @thissunday)";
+                cmd.Parameters.AddWithValue("@thismonday", Dates.MondayDate);
+                cmd.Parameters.AddWithValue("@thissunday", Dates.SundayDate);
                 
                 _reader = cmd.ExecuteReader();
 
@@ -297,13 +296,11 @@ namespace DellRainInventorySystem.Classes
                     }
                 }
 
-                // Console.WriteLine(@"Top selling Row count {0}", TopSelling.Count);
-                return false;
             }
-            catch (SqlException e)
+            catch (SqlException)
             {
-                Console.WriteLine(e.ToString());
-                return true;
+                MessageBox.Show(@"There is a problem connecting to the database", @"Connection Error",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
             finally
@@ -392,22 +389,11 @@ namespace DellRainInventorySystem.Classes
 
                 return Convert.ToInt32(cmd.ExecuteScalar());
             }
-            catch (SqlException e)
-            {
-                Console.WriteLine(e.ToString());
-                return -1;
-            }
+            catch (SqlException) { return -1; }
 
-            catch (InvalidCastException ex)
-            {
-                Console.WriteLine(ex.Message);
-                return 0;
-            }
+            catch (InvalidCastException) { return 0; }
 
-            finally
-            {
-                con.Close();
-            }
+            finally { con.Close(); }
         }
 
         protected void ErrorMessage(int i)
@@ -465,21 +451,6 @@ namespace DellRainInventorySystem.Classes
             return image;
         }
 
-        private void WeekDates()
-        {
-            DayOfWeek Day = DateTime.Now.DayOfWeek;
-
-            //Week Start Day
-            int Days = Day - DayOfWeek.Monday;
-
-            //this is the date of monday of the current week
-            DateTime weekStartDate = DateTime.Now.AddDays(-Days);
-
-            //this is the date of sunday of the current week
-            DateTime weekEndDate6 = weekStartDate.AddDays(6);
-
-            MondayDate = weekStartDate.ToShortDateString();
-            SundayDate = weekEndDate6.ToShortDateString();
-        }
+       
     }
 }
