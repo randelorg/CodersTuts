@@ -31,6 +31,8 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Index));
             this.groupDasboard = new System.Windows.Forms.GroupBox();
+            this.checkWeek = new System.Windows.Forms.CheckBox();
+            this.checkToday = new System.Windows.Forms.CheckBox();
             this.Reload = new System.Windows.Forms.PictureBox();
             this.pictureBox10 = new System.Windows.Forms.PictureBox();
             this.pictureBox9 = new System.Windows.Forms.PictureBox();
@@ -72,8 +74,7 @@
             this.AddProduct = new System.Windows.Forms.PictureBox();
             this.Stock = new System.Windows.Forms.PictureBox();
             this.SalesReports = new System.Windows.Forms.PictureBox();
-            this.checkToday = new System.Windows.Forms.CheckBox();
-            this.checkWeek = new System.Windows.Forms.CheckBox();
+            this.label14 = new System.Windows.Forms.Label();
             this.groupDasboard.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Reload)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
@@ -123,6 +124,30 @@
             this.groupDasboard.Size = new System.Drawing.Size(1081, 586);
             this.groupDasboard.TabIndex = 9;
             this.groupDasboard.TabStop = false;
+            // 
+            // checkWeek
+            // 
+            this.checkWeek.AutoSize = true;
+            this.checkWeek.Checked = true;
+            this.checkWeek.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkWeek.Location = new System.Drawing.Point(957, 70);
+            this.checkWeek.Name = "checkWeek";
+            this.checkWeek.Size = new System.Drawing.Size(75, 17);
+            this.checkWeek.TabIndex = 35;
+            this.checkWeek.Text = "This week";
+            this.checkWeek.UseVisualStyleBackColor = true;
+            this.checkWeek.CheckedChanged += new System.EventHandler(this.checkWeek_CheckedChanged);
+            // 
+            // checkToday
+            // 
+            this.checkToday.AutoSize = true;
+            this.checkToday.Location = new System.Drawing.Point(895, 70);
+            this.checkToday.Name = "checkToday";
+            this.checkToday.Size = new System.Drawing.Size(56, 17);
+            this.checkToday.TabIndex = 34;
+            this.checkToday.Text = "Today";
+            this.checkToday.UseVisualStyleBackColor = true;
+            this.checkToday.CheckedChanged += new System.EventHandler(this.checkToday_CheckedChanged);
             // 
             // Reload
             // 
@@ -477,7 +502,7 @@
             this.label3.AutoSize = true;
             this.label3.Cursor = System.Windows.Forms.Cursors.Hand;
             this.label3.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(45, 122);
+            this.label3.Location = new System.Drawing.Point(45, 163);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(43, 15);
             this.label3.TabIndex = 34;
@@ -489,7 +514,7 @@
             this.label7.AutoSize = true;
             this.label7.Cursor = System.Windows.Forms.Cursors.Hand;
             this.label7.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(45, 171);
+            this.label7.Location = new System.Drawing.Point(45, 212);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(76, 15);
             this.label7.TabIndex = 44;
@@ -501,7 +526,7 @@
             this.label11.AutoSize = true;
             this.label11.Cursor = System.Windows.Forms.Cursors.Hand;
             this.label11.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(45, 222);
+            this.label11.Location = new System.Drawing.Point(45, 263);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(91, 15);
             this.label11.TabIndex = 45;
@@ -513,7 +538,7 @@
             this.label12.AutoSize = true;
             this.label12.Cursor = System.Windows.Forms.Cursors.Hand;
             this.label12.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(45, 272);
+            this.label12.Location = new System.Drawing.Point(45, 313);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(76, 15);
             this.label12.TabIndex = 46;
@@ -525,7 +550,7 @@
             this.label13.AutoSize = true;
             this.label13.Cursor = System.Windows.Forms.Cursors.Hand;
             this.label13.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(45, 320);
+            this.label13.Location = new System.Drawing.Point(45, 361);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(49, 15);
             this.label13.TabIndex = 47;
@@ -536,7 +561,7 @@
             // 
             this.SoldProducts.Cursor = System.Windows.Forms.Cursors.Hand;
             this.SoldProducts.Image = global::DellRainInventorySystem.Properties.Resources.SoldWindow;
-            this.SoldProducts.Location = new System.Drawing.Point(11, 263);
+            this.SoldProducts.Location = new System.Drawing.Point(11, 304);
             this.SoldProducts.Margin = new System.Windows.Forms.Padding(10);
             this.SoldProducts.Name = "SoldProducts";
             this.SoldProducts.Size = new System.Drawing.Size(30, 30);
@@ -550,7 +575,7 @@
             // 
             this.UpdateProduct.Cursor = System.Windows.Forms.Cursors.Hand;
             this.UpdateProduct.Image = global::DellRainInventorySystem.Properties.Resources.updateProduct;
-            this.UpdateProduct.Location = new System.Drawing.Point(11, 213);
+            this.UpdateProduct.Location = new System.Drawing.Point(11, 254);
             this.UpdateProduct.Margin = new System.Windows.Forms.Padding(10);
             this.UpdateProduct.Name = "UpdateProduct";
             this.UpdateProduct.Size = new System.Drawing.Size(30, 30);
@@ -564,7 +589,7 @@
             // 
             this.AddProduct.Cursor = System.Windows.Forms.Cursors.Hand;
             this.AddProduct.Image = global::DellRainInventorySystem.Properties.Resources.newProduct;
-            this.AddProduct.Location = new System.Drawing.Point(11, 163);
+            this.AddProduct.Location = new System.Drawing.Point(11, 204);
             this.AddProduct.Margin = new System.Windows.Forms.Padding(10);
             this.AddProduct.Name = "AddProduct";
             this.AddProduct.Size = new System.Drawing.Size(30, 30);
@@ -578,7 +603,7 @@
             // 
             this.Stock.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Stock.Image = ((System.Drawing.Image)(resources.GetObject("Stock.Image")));
-            this.Stock.Location = new System.Drawing.Point(11, 113);
+            this.Stock.Location = new System.Drawing.Point(11, 154);
             this.Stock.Margin = new System.Windows.Forms.Padding(10);
             this.Stock.Name = "Stock";
             this.Stock.Size = new System.Drawing.Size(30, 30);
@@ -592,7 +617,7 @@
             // 
             this.SalesReports.Cursor = System.Windows.Forms.Cursors.Hand;
             this.SalesReports.Image = global::DellRainInventorySystem.Properties.Resources.reports;
-            this.SalesReports.Location = new System.Drawing.Point(11, 313);
+            this.SalesReports.Location = new System.Drawing.Point(11, 354);
             this.SalesReports.Margin = new System.Windows.Forms.Padding(10);
             this.SalesReports.Name = "SalesReports";
             this.SalesReports.Size = new System.Drawing.Size(30, 30);
@@ -602,29 +627,17 @@
             this.SalesReports.Click += new System.EventHandler(this.SalesReports_Click);
             this.SalesReports.MouseHover += new System.EventHandler(this.SalesReport_MouseHover);
             // 
-            // checkToday
+            // label14
             // 
-            this.checkToday.AutoSize = true;
-            this.checkToday.Location = new System.Drawing.Point(895, 70);
-            this.checkToday.Name = "checkToday";
-            this.checkToday.Size = new System.Drawing.Size(56, 17);
-            this.checkToday.TabIndex = 34;
-            this.checkToday.Text = "Today";
-            this.checkToday.UseVisualStyleBackColor = true;
-            this.checkToday.CheckedChanged += new System.EventHandler(this.checkToday_CheckedChanged);
-            // 
-            // checkWeek
-            // 
-            this.checkWeek.AutoSize = true;
-            this.checkWeek.Checked = true;
-            this.checkWeek.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkWeek.Location = new System.Drawing.Point(957, 70);
-            this.checkWeek.Name = "checkWeek";
-            this.checkWeek.Size = new System.Drawing.Size(75, 17);
-            this.checkWeek.TabIndex = 35;
-            this.checkWeek.Text = "This week";
-            this.checkWeek.UseVisualStyleBackColor = true;
-            this.checkWeek.CheckedChanged += new System.EventHandler(this.checkWeek_CheckedChanged);
+            this.label14.AutoSize = true;
+            this.label14.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.label14.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Location = new System.Drawing.Point(45, 119);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(78, 15);
+            this.label14.TabIndex = 48;
+            this.label14.Text = "Scan Product";
+            this.label14.Click += new System.EventHandler(this.ScanProduct);
             // 
             // Index
             // 
@@ -632,6 +645,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1287, 698);
+            this.Controls.Add(this.label14);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.label11);
@@ -720,5 +734,6 @@
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.CheckBox checkWeek;
         private System.Windows.Forms.CheckBox checkToday;
+        private System.Windows.Forms.Label label14;
     }
 }

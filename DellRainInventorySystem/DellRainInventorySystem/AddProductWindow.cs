@@ -42,7 +42,7 @@ namespace DellRainInventorySystem
                 }
                 catch (Exception)
                 {
-                    // ignored
+                    Console.WriteLine("Some error occured");
                 }
             }
             else
@@ -201,6 +201,13 @@ namespace DellRainInventorySystem
         {
             var create = new CreateAccount();
             tbSuppContact.BackColor = !create.IsValidMobileNumber(tbSuppContact.Text) ? Color.Red : Color.Green;
+        }
+
+        //show the barcode sanner window
+        private void button1_Click(object sender, EventArgs e)
+        {
+            var barcodeScanner = new BarcodeScan();
+            barcodeScanner.ShowDialog();
         }
     }
 }

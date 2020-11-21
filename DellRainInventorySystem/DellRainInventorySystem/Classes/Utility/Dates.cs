@@ -1,8 +1,12 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace DellRainInventorySystem.Classes.Utility
 {
-    public class Dates
+    class Dates
     {
         public static string MondayDate { get; set; }
         public static string SundayDate { get; set; }

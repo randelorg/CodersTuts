@@ -53,3 +53,14 @@ E:\2ND YEAR - 2ND SEM\CodersTuts\DellRainInventorySystem\DellRainInventorySystem
 D:\dev 2nd year_2nd sem\CodersTuts\DellRainInventorySystem\DellRainInventorySystem\obj\Debug\DellRainInventorySystem.SoldProduct.resources
 E:\2ND YEAR - 2ND SEM\CodersTuts\DellRainInventorySystem\DellRainInventorySystem\obj\Debug\DellRainInventorySystem.ReportsWindow.resources
 E:\2ND YEAR - 2ND SEM\CodersTuts\DellRainInventorySystem\DellRainInventorySystem\obj\Debug\DellRainInventorySystem.csprojAssemblyReference.cache
+E:\2ND YEAR - 2ND SEM\CodersTuts\DellRainInventorySystem\DellRainInventorySystem\bin\Debug\AForge.dll
+E:\2ND YEAR - 2ND SEM\CodersTuts\DellRainInventorySystem\DellRainInventorySystem\bin\Debug\AForge.Video.DirectShow.dll
+E:\2ND YEAR - 2ND SEM\CodersTuts\DellRainInventorySystem\DellRainInventorySystem\bin\Debug\AForge.Video.dll
+E:\2ND YEAR - 2ND SEM\CodersTuts\DellRainInventorySystem\DellRainInventorySystem\bin\Debug\zxing.dll
+E:\2ND YEAR - 2ND SEM\CodersTuts\DellRainInventorySystem\DellRainInventorySystem\bin\Debug\zxing.presentation.dll
+E:\2ND YEAR - 2ND SEM\CodersTuts\DellRainInventorySystem\DellRainInventorySystem\bin\Debug\AForge.xml
+E:\2ND YEAR - 2ND SEM\CodersTuts\DellRainInventorySystem\DellRainInventorySystem\bin\Debug\AForge.Video.xml
+E:\2ND YEAR - 2ND SEM\CodersTuts\DellRainInventorySystem\DellRainInventorySystem\bin\Debug\AForge.Video.DirectShow.xml
+E:\2ND YEAR - 2ND SEM\CodersTuts\DellRainInventorySystem\DellRainInventorySystem\bin\Debug\zxing.xml
+E:\2ND YEAR - 2ND SEM\CodersTuts\DellRainInventorySystem\DellRainInventorySystem\bin\Debug\zxing.presentation.xml
+E:\2ND YEAR - 2ND SEM\CodersTuts\DellRainInventorySystem\DellRainInventorySystem\obj\Debug\DellRainInventorySystem.BarcodeScan.resources

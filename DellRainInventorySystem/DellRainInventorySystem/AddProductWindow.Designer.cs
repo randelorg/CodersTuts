@@ -50,7 +50,6 @@
             this.btnImage = new System.Windows.Forms.Button();
             this.label14 = new System.Windows.Forms.Label();
             this.cbProductLocation = new System.Windows.Forms.ComboBox();
-            this.cbProductType = new System.Windows.Forms.ComboBox();
             this.btnSaveProduct = new System.Windows.Forms.Button();
             this.ShelfLife = new System.Windows.Forms.DateTimePicker();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
@@ -59,6 +58,7 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBack = new System.Windows.Forms.PictureBox();
             this.closeButton = new System.Windows.Forms.PictureBox();
+            this.cbProductType = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.prodQty)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ProductPreview)).BeginInit();
@@ -81,7 +81,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(249, 117);
+            this.label2.Location = new System.Drawing.Point(251, 129);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(71, 13);
             this.label2.TabIndex = 41;
@@ -91,7 +91,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(249, 179);
+            this.label3.Location = new System.Drawing.Point(251, 191);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(89, 13);
             this.label3.TabIndex = 42;
@@ -101,7 +101,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(249, 240);
+            this.label4.Location = new System.Drawing.Point(251, 252);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(70, 13);
             this.label4.TabIndex = 43;
@@ -111,7 +111,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(248, 418);
+            this.label5.Location = new System.Drawing.Point(250, 430);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(91, 13);
             this.label5.TabIndex = 44;
@@ -121,7 +121,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(249, 300);
+            this.label6.Location = new System.Drawing.Point(251, 312);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(87, 13);
             this.label6.TabIndex = 45;
@@ -180,7 +180,7 @@
             // 
             this.tbPrice.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tbPrice.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbPrice.Location = new System.Drawing.Point(252, 256);
+            this.tbPrice.Location = new System.Drawing.Point(254, 268);
             this.tbPrice.MaxLength = 6;
             this.tbPrice.Name = "tbPrice";
             this.tbPrice.Size = new System.Drawing.Size(323, 30);
@@ -190,7 +190,7 @@
             // 
             this.tbLocation.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tbLocation.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbLocation.Location = new System.Drawing.Point(251, 373);
+            this.tbLocation.Location = new System.Drawing.Point(253, 385);
             this.tbLocation.Name = "tbLocation";
             this.tbLocation.Size = new System.Drawing.Size(326, 30);
             this.tbLocation.TabIndex = 57;
@@ -199,7 +199,7 @@
             // prodQty
             // 
             this.prodQty.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.prodQty.Location = new System.Drawing.Point(252, 195);
+            this.prodQty.Location = new System.Drawing.Point(254, 207);
             this.prodQty.Name = "prodQty";
             this.prodQty.Size = new System.Drawing.Size(326, 30);
             this.prodQty.TabIndex = 60;
@@ -262,7 +262,7 @@
             // 
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Tahoma", 8F);
-            this.label14.Location = new System.Drawing.Point(251, 355);
+            this.label14.Location = new System.Drawing.Point(253, 367);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(61, 13);
             this.label14.TabIndex = 69;
@@ -273,24 +273,11 @@
             this.cbProductLocation.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbProductLocation.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbProductLocation.FormattingEnabled = true;
-            this.cbProductLocation.Location = new System.Drawing.Point(251, 316);
+            this.cbProductLocation.Location = new System.Drawing.Point(253, 328);
             this.cbProductLocation.Name = "cbProductLocation";
             this.cbProductLocation.Size = new System.Drawing.Size(326, 31);
             this.cbProductLocation.TabIndex = 68;
             this.cbProductLocation.SelectedIndexChanged += new System.EventHandler(this.cbProductLocation_SelectedIndexChanged);
-            // 
-            // cbProductType
-            // 
-            this.cbProductType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbProductType.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbProductType.FormattingEnabled = true;
-            this.cbProductType.Items.AddRange(new object[] {
-            "Appliance",
-            "Grocery"});
-            this.cbProductType.Location = new System.Drawing.Point(252, 133);
-            this.cbProductType.Name = "cbProductType";
-            this.cbProductType.Size = new System.Drawing.Size(326, 31);
-            this.cbProductType.TabIndex = 70;
             // 
             // btnSaveProduct
             // 
@@ -308,7 +295,7 @@
             // 
             this.ShelfLife.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ShelfLife.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.ShelfLife.Location = new System.Drawing.Point(249, 437);
+            this.ShelfLife.Location = new System.Drawing.Point(251, 449);
             this.ShelfLife.Name = "ShelfLife";
             this.ShelfLife.Size = new System.Drawing.Size(326, 30);
             this.ShelfLife.TabIndex = 72;
@@ -373,12 +360,25 @@
             this.closeButton.TabIndex = 38;
             this.closeButton.TabStop = false;
             // 
+            // cbProductType
+            // 
+            this.cbProductType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbProductType.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbProductType.FormattingEnabled = true;
+            this.cbProductType.Items.AddRange(new object[] {
+            "Appliance",
+            "Grocery"});
+            this.cbProductType.Location = new System.Drawing.Point(254, 145);
+            this.cbProductType.Name = "cbProductType";
+            this.cbProductType.Size = new System.Drawing.Size(326, 31);
+            this.cbProductType.TabIndex = 70;
+            // 
             // AddProductWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(996, 488);
+            this.ClientSize = new System.Drawing.Size(996, 497);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.ShelfLife);
@@ -447,12 +447,12 @@
         private System.Windows.Forms.Button btnImage;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.ComboBox cbProductLocation;
-        private System.Windows.Forms.ComboBox cbProductType;
         private System.Windows.Forms.Button btnSaveProduct;
         private System.Windows.Forms.DateTimePicker ShelfLife;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.PictureBox ProductPreview;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.ComboBox cbProductType;
     }
 }

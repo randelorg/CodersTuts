@@ -22,6 +22,12 @@ namespace DellRainInventorySystem.Classes.EntityClasses
             ProdImage = image;
         }
 
+        //for barcode only
+        public Product (string barcode)
+        {
+            Barcode = barcode;
+        }
+
         //for updating product except the qty
         public Product(Image image, string prodName, double price,
             string location, string life, string suppName, string suppContact) : base(suppName, suppContact)
@@ -63,6 +69,8 @@ namespace DellRainInventorySystem.Classes.EntityClasses
             Price = price;
             Qty = qty;
         }
+
+        public string Barcode { get; set; }
 
         public string ProdName { get; set; }
 

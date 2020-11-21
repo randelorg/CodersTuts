@@ -268,6 +268,11 @@ namespace DellRainInventorySystem
             var manageAccounts = new ManageAccounts();
             manageAccounts.ShowDialog();
         }
+        private void ScanProduct(object sender, EventArgs e)
+        {
+            var barcodeScan = new BarcodeScan();
+            barcodeScan.ShowDialog();
+        }
 
         private void Reload_Click(object sender, EventArgs e)
         {
